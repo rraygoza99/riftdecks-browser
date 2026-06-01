@@ -137,9 +137,6 @@ export default function App() {
               : 'Top tournament decks from riftdecks.com'}
           </div>
         </div>
-        <div className="app-header-actions">
-          <span className="app-hint">Run <code>npm run scrape</code> to refresh data</span>
-        </div>
       </header>
 
       {!loading && !error && (
