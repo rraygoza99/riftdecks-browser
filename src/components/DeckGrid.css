@@ -1,0 +1,110 @@
+.deck-list-wrap {
+  overflow-x: auto;
+  margin-top: 8px;
+}
+
+.deck-list {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.88rem;
+}
+
+.deck-list thead th {
+  text-align: left;
+  padding: 8px 12px;
+  color: var(--text-muted);
+  font-weight: 600;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-bottom: 1px solid var(--border);
+  white-space: nowrap;
+}
+
+.deck-row {
+  border-bottom: 1px solid var(--border);
+  transition: background 0.12s;
+}
+
+.deck-row:hover {
+  background: rgba(255,255,255,0.04);
+}
+
+.deck-row td {
+  padding: 10px 12px;
+  vertical-align: middle;
+}
+
+.col-standing {
+  width: 64px;
+  text-align: center;
+}
+
+.standing-badge {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  background: var(--bg-card);
+  color: var(--text-muted);
+}
+
+.standing-badge--gold   { background: #7a5c00; color: #ffd966; }
+.standing-badge--silver { background: #3a3a3a; color: #c0c0c0; }
+.standing-badge--bronze { background: #4a2800; color: #cd7f32; }
+
+.col-legend {
+  font-weight: 500;
+  color: var(--text-primary);
+  white-space: nowrap;
+}
+
+.col-tournament {
+  max-width: 260px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: var(--text-muted);
+}
+
+.col-players {
+  white-space: nowrap;
+  color: var(--text-muted);
+  text-align: right;
+}
+
+.col-date {
+  white-space: nowrap;
+  color: var(--text-muted);
+}
+
+.col-price {
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+  color: var(--text-primary);
+}
+
+.col-link {
+  width: 80px;
+  text-align: right;
+}
+
+.deck-link-btn {
+  display: inline-block;
+  padding: 4px 12px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  font-size: 0.78rem;
+  color: var(--accent-bright, #7eb8f7);
+  white-space: nowrap;
+  transition: background 0.15s, border-color 0.15s;
+}
+
+.deck-link-btn:hover {
+  background: var(--bg-card);
+  border-color: var(--accent-bright, #7eb8f7);
+  text-decoration: none;
+  color: var(--text-primary);
+}
+}

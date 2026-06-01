@@ -1,0 +1,242 @@
+.deck-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.18s, border-color 0.18s, box-shadow 0.18s;
+}
+
+.deck-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--accent);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4), 0 0 0 1px var(--accent-glow);
+}
+
+/* Thumbnail */
+.deck-card__thumb {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: var(--bg-secondary);
+  overflow: hidden;
+}
+
+.deck-card__thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.deck-card__thumb-fallback {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  background: linear-gradient(135deg, var(--bg-secondary), var(--bg-card));
+  letter-spacing: 0.05em;
+}
+
+/* Standing badge */
+.deck-card__standing {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  padding: 3px 9px;
+  border-radius: 20px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  backdrop-filter: blur(6px);
+}
+
+.deck-card__standing--gold {
+  background: rgba(240, 192, 64, 0.85);
+  color: #1a1000;
+}
+
+.deck-card__standing--silver {
+  background: rgba(168, 184, 200, 0.85);
+  color: #0e0e18;
+}
+
+.deck-card__standing--bronze {
+  background: rgba(200, 112, 64, 0.85);
+  color: #180800;
+}
+
+.deck-card__standing--default {
+  background: rgba(20, 20, 48, 0.85);
+  color: var(--text-secondary);
+  border: 1px solid var(--border);
+}
+
+/* Body */
+.deck-card__body {
+  padding: 12px 14px 8px;
+  flex: 1;
+}
+
+.deck-card__legend {
+  margin: 0 0 2px;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.3;
+}
+
+.deck-card__deck-name {
+  margin: 0 0 6px;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.deck-card__tournament {
+  margin: 0 0 2px;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.deck-card__date {
+  margin: 0;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.deck-card__price {
+  margin: 6px 0 0;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--success);
+}
+
+.deck-card__price-note {
+  font-size: 0.72rem;
+  font-weight: 400;
+  color: var(--text-muted);
+}
+
+/* Card list */
+.deck-card__list {
+  border-top: 1px solid var(--border);
+  max-height: 220px;
+  overflow-y: auto;
+  padding: 6px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.deck-card__card {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 2px 4px;
+  border-radius: 3px;
+  font-size: 0.78rem;
+}
+
+.deck-card__card:hover {
+  background: var(--bg-card-hover);
+}
+
+.deck-card__qty {
+  color: var(--text-muted);
+  min-width: 24px;
+  font-variant-numeric: tabular-nums;
+}
+
+.deck-card__card-name {
+  flex: 1;
+  color: var(--text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.deck-card__rarity {
+  font-size: 0.68rem;
+  font-weight: 700;
+  width: 16px;
+  text-align: center;
+  border-radius: 2px;
+  padding: 0 2px;
+}
+
+.deck-card__card--common    .deck-card__rarity { color: #888; }
+.deck-card__card--uncommon  .deck-card__rarity { color: #4dae8a; }
+.deck-card__card--rare      .deck-card__rarity { color: #5b9bd5; }
+.deck-card__card--epic      .deck-card__rarity { color: #c080e0; }
+.deck-card__card--legend    .deck-card__rarity { color: var(--gold); }
+
+/* Footer */
+.deck-card__footer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border-top: 1px solid var(--border);
+  background: rgba(0, 0, 0, 0.15);
+}
+
+.deck-card__btn {
+  background: var(--accent);
+  border: none;
+  color: #fff;
+  padding: 5px 12px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  transition: background 0.15s;
+}
+
+.deck-card__btn:hover:not(:disabled) {
+  background: var(--accent-bright);
+}
+
+.deck-card__btn:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.deck-card__btn--ghost {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text-secondary);
+}
+
+.deck-card__btn--ghost:hover {
+  border-color: var(--accent);
+  color: var(--text-primary);
+  background: transparent;
+}
+
+.deck-card__link {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  transition: color 0.15s;
+}
+
+.deck-card__link--primary {
+  font-size: 0.82rem;
+  color: var(--accent-bright);
+  font-weight: 500;
+}
+
+.deck-card__link:hover,
+.deck-card__link--primary:hover {
+  color: var(--text-primary);
+  text-decoration: none;
+}

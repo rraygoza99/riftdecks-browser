@@ -1,0 +1,178 @@
+import { useState, useEffect, useMemo } from 'react'
+import './App.css'
+import FilterBar from './components/FilterBar'
+import DeckGrid from './components/DeckGrid'
+
+const RELEVANCE_LABELS = { 0: 'All Events', 1: 'Local / Casual', 2: 'Competitive' }
+
+const DATE_RANGES = { '7d': 7, '30d': 30, '90d': 90, all: null }
+
+export default function App() {
+  const [allDecks, setAllDecks] = useState([])
+  const [scrapedAt, setScrapedAt] = useState(null)
+  const [relevanceLabel, setRelevanceLabel] = useState('')
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState(null)
+
+  const [filters, setFilters] = useState({
+    legend: '',
+    dateRange: '30d',
+    maxPlacement: 0,
+    maxPrice: 0,
+    sortBy: 'date',
+  })
+
+  // Load static JSON produced by the scrape script
+  useEffect(() => {
+    setLoading(true)
+    setError(null)
+    fetch('/decks.json')
+      .then((res) => {
+        if (!res.ok) throw new Error(`HTTP ${res.status}`)
+        return res.json()
+      })
+      .then((data) => {
+        // Parse tournament dates into Date objects
+        const decks = (data.decks || []).map((d) => ({
+          ...d,
+          tournamentDate: d.tournamentDate ? new Date(d.tournamentDate + 'T00:00:00Z') : null,
+          details: null,
+        }))
+        setAllDecks(decks)
+        setScrapedAt(data.scrapedAt ? new Date(data.scrapedAt) : null)
+        setRelevanceLabel(RELEVANCE_LABELS[data.relevance] ?? '')
+      })
+      .catch((err) => {
+        setError(
+          err.message.includes('404') || err.message.includes('HTTP 4')
+            ? 'No data file found. Run "npm run scrape" first to fetch tournament data.'
+            : `Failed to load data: ${err.message}`
+        )
+      })
+      .finally(() => setLoading(false))
+  }, [])
+
+  // Unique legend options from loaded data — deduplicate by display name
+  const legendOptions = useMemo(() => {
+    const seen = new Set()
+    const result = []
+    for (const d of allDecks) {
+      if (d.legendName && !seen.has(d.legendName)) {
+        seen.add(d.legendName)
+        result.push({ name: d.legendName })
+      }
+    }
+    return result.sort((a, b) => a.name.localeCompare(b.name))
+  }, [allDecks])
+
+  // Max price in dataset (for slider ceiling)
+  const maxPriceInData = useMemo(
+    () => Math.ceil(Math.max(0, ...allDecks.map((d) => d.price ?? 0))),
+    [allDecks]
+  )
+
+  // Filtered + sorted deck list
+  const filteredDecks = useMemo(() => {
+    let result = [...allDecks]
+
+    if (filters.legend) {
+      result = result.filter((d) => d.legendName === filters.legend)
+    }
+
+    if (filters.dateRange !== 'all') {
+      const days = DATE_RANGES[filters.dateRange]
+      if (days) {
+        const cutoff = new Date(Date.now() - days * 86_400_000)
+        result = result.filter((d) => d.tournamentDate && d.tournamentDate >= cutoff)
+      }
+    }
+
+    if (filters.maxPlacement > 0) {
+      result = result.filter((d) => d.standing <= filters.maxPlacement)
+    }
+
+    if (filters.maxPrice > 0) {
+      result = result.filter((d) => d.price != null && d.price <= filters.maxPrice)
+    }
+
+    if (filters.sortBy === 'date') {
+      result.sort((a, b) => {
+        const dt = (b.tournamentDate?.getTime() ?? 0) - (a.tournamentDate?.getTime() ?? 0)
+        return dt !== 0 ? dt : a.standing - b.standing
+      })
+    } else if (filters.sortBy === 'placement') {
+      result.sort((a, b) => {
+        if (a.standing !== b.standing) return a.standing - b.standing
+        return (b.tournamentDate?.getTime() ?? 0) - (a.tournamentDate?.getTime() ?? 0)
+      })
+    } else if (filters.sortBy === 'price') {
+      result.sort((a, b) => (a.price ?? Infinity) - (b.price ?? Infinity))
+    }
+
+    return result
+  }, [allDecks, filters])
+
+  const handleFilterChange = (key, value) => {
+    setFilters((prev) => ({ ...prev, [key]: value }))
+  }
+
+  const scrapedAtStr = scrapedAt
+    ? scrapedAt.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })
+    : null
+
+  return (
+    <div className="app">
+      <header className="app-header">
+        <img
+          className="app-logo"
+          src="https://riftdecks.com/img/logo4.png"
+          alt="RiftDecks logo"
+          onError={(e) => (e.target.style.display = 'none')}
+        />
+        <div>
+          <h1>RiftDecks Browser</h1>
+          <div className="app-header-sub">
+            {scrapedAtStr
+              ? `${relevanceLabel} tournaments · data from ${scrapedAtStr}`
+              : 'Top tournament decks from riftdecks.com'}
+          </div>
+        </div>
+        <div className="app-header-actions">
+          <span className="app-hint">Run <code>npm run scrape</code> to refresh data</span>
+        </div>
+      </header>
+
+      {!loading && !error && (
+        <FilterBar
+          filters={filters}
+          onFilterChange={handleFilterChange}
+          legendOptions={legendOptions}
+          maxPriceInData={maxPriceInData}
+        />
+      )}
+
+      {loading && <div className="app-status">Loading data…</div>}
+      {error && <div className="app-status app-status--error">{error}</div>}
+
+      {!loading && !error && (
+        <>
+          {filteredDecks.length > 0 && (
+            <div className="deck-count">
+              Showing {filteredDecks.length} deck{filteredDecks.length !== 1 ? 's' : ''}
+              {allDecks.length !== filteredDecks.length ? ` (filtered from ${allDecks.length})` : ''}
+            </div>
+          )}
+
+          <DeckGrid decks={filteredDecks} />
+
+          {!filteredDecks.length && (
+            <div className="app-status">
+              No decks match the current filters.{' '}
+              {filters.dateRange !== 'all' && 'Try expanding the date range.'}
+            </div>
+          )}
+        </>
+      )}
+    </div>
+  )
+}
