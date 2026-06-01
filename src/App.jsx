@@ -2,6 +2,8 @@ import { useState, useEffect, useMemo } from 'react'
 import './App.css'
 import FilterBar from './components/FilterBar'
 import DeckGrid from './components/DeckGrid'
+import FavouritesView from './components/FavouritesView'
+import useFavourites from './hooks/useFavourites'
 
 const RELEVANCE_LABELS = { 0: 'All Events', 1: 'Local / Casual', 2: 'Competitive' }
 
@@ -13,6 +15,9 @@ export default function App() {
   const [relevanceLabel, setRelevanceLabel] = useState('')
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
+
+  const [view, setView] = useState('main') // 'main' | 'favourites'
+  const { favourites, toggleFavourite, isFavourite } = useFavourites()
 
   const [filters, setFilters] = useState({
     legend: '',
@@ -137,36 +142,66 @@ export default function App() {
               : 'Top tournament decks from riftdecks.com'}
           </div>
         </div>
+        <div className="app-header-actions">
+          <button
+            className={`fav-nav-btn${view === 'favourites' ? ' fav-nav-btn--active' : ''}`}
+            onClick={() => setView((v) => v === 'favourites' ? 'main' : 'favourites')}
+            title="Favourite decks"
+            type="button"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" style={{marginRight: '6px', verticalAlign: '-2px'}}>
+              <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+            </svg>
+            Favourites
+            {favourites.size > 0 && (
+              <span className="fav-nav-badge">{favourites.size}</span>
+            )}
+          </button>
+        </div>
       </header>
 
-      {!loading && !error && (
-        <FilterBar
-          filters={filters}
-          onFilterChange={handleFilterChange}
-          legendOptions={legendOptions}
-          maxPriceInData={maxPriceInData}
+      {view === 'favourites' ? (
+        <FavouritesView
+          allDecks={allDecks}
+          favourites={favourites}
+          onToggleFavourite={toggleFavourite}
         />
-      )}
-
-      {loading && <div className="app-status">Loading data…</div>}
-      {error && <div className="app-status app-status--error">{error}</div>}
-
-      {!loading && !error && (
+      ) : (
         <>
-          {filteredDecks.length > 0 && (
-            <div className="deck-count">
-              Showing {filteredDecks.length} deck{filteredDecks.length !== 1 ? 's' : ''}
-              {allDecks.length !== filteredDecks.length ? ` (filtered from ${allDecks.length})` : ''}
-            </div>
+          {!loading && !error && (
+            <FilterBar
+              filters={filters}
+              onFilterChange={handleFilterChange}
+              legendOptions={legendOptions}
+              maxPriceInData={maxPriceInData}
+            />
           )}
 
-          <DeckGrid decks={filteredDecks} />
+          {loading && <div className="app-status">Loading data…</div>}
+          {error && <div className="app-status app-status--error">{error}</div>}
 
-          {!filteredDecks.length && (
-            <div className="app-status">
-              No decks match the current filters.{' '}
-              {filters.dateRange !== 'all' && 'Try expanding the date range.'}
-            </div>
+          {!loading && !error && (
+            <>
+              {filteredDecks.length > 0 && (
+                <div className="deck-count">
+                  Showing {filteredDecks.length} deck{filteredDecks.length !== 1 ? 's' : ''}
+                  {allDecks.length !== filteredDecks.length ? ` (filtered from ${allDecks.length})` : ''}
+                </div>
+              )}
+
+              <DeckGrid
+                decks={filteredDecks}
+                isFavourite={isFavourite}
+                onToggleFavourite={toggleFavourite}
+              />
+
+              {!filteredDecks.length && (
+                <div className="app-status">
+                  No decks match the current filters.{' '}
+                  {filters.dateRange !== 'all' && 'Try expanding the date range.'}
+                </div>
+              )}
+            </>
           )}
         </>
       )}

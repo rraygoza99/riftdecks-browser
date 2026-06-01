@@ -41,6 +41,49 @@
   margin-left: auto;
 }
 
+/* Favourites nav button */
+.fav-nav-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 8px 16px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: transparent;
+  color: var(--text-secondary);
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: border-color 0.15s, color 0.15s, background 0.15s;
+  white-space: nowrap;
+}
+
+.fav-nav-btn:hover {
+  border-color: #f5c518;
+  color: #f5c518;
+}
+
+.fav-nav-btn--active {
+  border-color: #f5c518;
+  color: #f5c518;
+  background: rgba(245, 197, 24, 0.08);
+}
+
+.fav-nav-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 18px;
+  height: 18px;
+  padding: 0 5px;
+  border-radius: 9px;
+  background: #f5c518;
+  color: #1a1200;
+  font-size: 0.72rem;
+  font-weight: 700;
+  margin-left: 4px;
+}
+
 .app-hint {
   font-size: 0.78rem;
   color: var(--text-muted);
