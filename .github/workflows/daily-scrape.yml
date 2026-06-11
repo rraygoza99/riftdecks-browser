@@ -2,7 +2,7 @@ name: Daily Deck Scrape
 
 on:
   schedule:
-    - cron: '0 12 * * *'   # 06:00 UTC every day
+    - cron: '0 12,20 * * *'   # 06:00 UTC every day
   workflow_dispatch:        # allow manual trigger from GitHub UI
 
 jobs:
