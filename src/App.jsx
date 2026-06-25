@@ -3,6 +3,7 @@ import './App.css'
 import FilterBar from './components/FilterBar'
 import DeckGrid from './components/DeckGrid'
 import FavouritesView from './components/FavouritesView'
+import AdSlot from './components/AdSlot'
 import useFavourites from './hooks/useFavourites'
 
 const RELEVANCE_LABELS = { 0: 'All Events', 1: 'Local / Casual', 2: 'Competitive' }
@@ -189,11 +190,15 @@ export default function App() {
                 </div>
               )}
 
+              <AdSlot />
+
               <DeckGrid
                 decks={filteredDecks}
                 isFavourite={isFavourite}
                 onToggleFavourite={toggleFavourite}
               />
+
+              {filteredDecks.length > 0 && <AdSlot variant="banner" />}
 
               {!filteredDecks.length && (
                 <div className="app-status">

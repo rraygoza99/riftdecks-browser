@@ -31,6 +31,9 @@ const getArg = (flag, def) => {
 }
 const MAX_PAGES = parseInt(getArg('--pages', '5'), 10)
 const RELEVANCE = parseInt(getArg('--relevance', '2'), 10)
+// Decks from tournaments older than this many days are pruned from the output
+// to keep decks.json small. Set to 0 to disable pruning.
+const MAX_AGE_DAYS = parseInt(getArg('--max-age', '45'), 10)
 
 // --- Helpers -----------------------------------------------------------
 function legendSlugFromDeckUrl(deckUrl) {
@@ -49,6 +52,20 @@ function slugToTitle(slug) {
 
 function sleep(ms) {
   return new Promise((r) => setTimeout(r, ms))
+}
+
+// Remove decks whose tournament is older than `maxAgeDays` days.
+// Decks with an unknown/unparseable date are kept (we can't judge their age).
+function pruneOldDecks(decks, maxAgeDays) {
+  if (!maxAgeDays || maxAgeDays <= 0) return decks
+  const cutoff = new Date()
+  cutoff.setUTCHours(0, 0, 0, 0)
+  cutoff.setUTCDate(cutoff.getUTCDate() - maxAgeDays)
+  return decks.filter((d) => {
+    if (!d.tournamentDate) return true
+    const date = new Date(`${d.tournamentDate}T00:00:00Z`)
+    return !Number.isNaN(date.getTime()) && date >= cutoff
+  })
 }
 
 // --- Main --------------------------------------------------------------
@@ -214,17 +231,24 @@ async function main() {
 
   await browser.close()
 
+  // Drop stale decks so decks.json stays lean
+  const decks = pruneOldDecks(allDecks, MAX_AGE_DAYS)
+  const prunedCount = allDecks.length - decks.length
+  if (prunedCount > 0) {
+    console.log(`\nPruned ${prunedCount} deck(s) older than ${MAX_AGE_DAYS} days.`)
+  }
+
   // Write output
   const output = {
     scrapedAt: new Date().toISOString(),
     relevance: RELEVANCE,
-    deckCount: allDecks.length,
-    decks: allDecks,
+    deckCount: decks.length,
+    decks,
   }
 
   await fs.mkdir(path.dirname(OUTPUT), { recursive: true })
   await fs.writeFile(OUTPUT, JSON.stringify(output, null, 2), 'utf-8')
-  console.log(`\nDone. Saved ${allDecks.length} decks → ${OUTPUT}`)
+  console.log(`\nDone. Saved ${decks.length} decks → ${OUTPUT}`)
 }
 
 main().catch((err) => {
