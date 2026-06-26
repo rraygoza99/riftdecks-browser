@@ -4,6 +4,7 @@ import FilterBar from './components/FilterBar'
 import DeckGrid from './components/DeckGrid'
 import Pagination from './components/Pagination'
 import FavouritesView from './components/FavouritesView'
+import PrivacyPolicy from './components/PrivacyPolicy'
 import AdSlot from './components/AdSlot'
 import useFavourites from './hooks/useFavourites'
 
@@ -182,6 +183,8 @@ export default function App() {
           favourites={favourites}
           onToggleFavourite={toggleFavourite}
         />
+      ) : view === 'privacy' ? (
+        <PrivacyPolicy onBack={() => setView('main')} />
       ) : (
         <>
           {!loading && !error && (
@@ -237,6 +240,30 @@ export default function App() {
           )}
         </>
       )}
+
+      <footer className="app-footer">
+        <div className="footer-links">
+          <button type="button" className="footer-link" onClick={() => setView('privacy')}>
+            Privacy Policy
+          </button>
+          <span className="footer-sep">·</span>
+          <span>
+            Deck data from{' '}
+            <a href="https://riftdecks.com" target="_blank" rel="noopener noreferrer">
+              riftdecks.com
+            </a>
+          </span>
+        </div>
+        <p className="footer-disclaimer">
+          This is an unofficial, fan-made site for informational purposes only. It is
+          not affiliated with, endorsed by, or associated with{' '}
+          <a href="https://riftdecks.com" target="_blank" rel="noopener noreferrer">
+            riftDecks.com
+          </a>{' '}
+          or Riot Games. All deck data is publicly sourced and belongs to its
+          respective owners.
+        </p>
+      </footer>
     </div>
   )
 }

@@ -4,6 +4,53 @@
   padding: 0 16px 48px;
 }
 
+.app-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 40px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.app-footer .footer-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.app-footer .footer-disclaimer {
+  max-width: 720px;
+  margin: 0;
+  text-align: center;
+  font-size: 0.72rem;
+  line-height: 1.5;
+  color: var(--text-muted);
+}
+
+.app-footer .footer-link {
+  background: transparent;
+  border: none;
+  color: var(--accent-bright);
+  font-size: 0.8rem;
+  cursor: pointer;
+  padding: 0;
+}
+
+.app-footer .footer-link:hover {
+  text-decoration: underline;
+}
+
+.app-footer .footer-sep {
+  color: var(--text-muted);
+}
+
 .app-header {
   display: flex;
   align-items: center;
