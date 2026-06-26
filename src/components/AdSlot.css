@@ -32,3 +32,9 @@
   width: 100%;
 }
 
+.ad-slot-ins {
+  display: block;
+  width: 100%;
+  min-height: 90px;
+}
+

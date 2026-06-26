@@ -2,6 +2,7 @@ import { useState, useEffect, useMemo } from 'react'
 import './App.css'
 import FilterBar from './components/FilterBar'
 import DeckGrid from './components/DeckGrid'
+import Pagination from './components/Pagination'
 import FavouritesView from './components/FavouritesView'
 import AdSlot from './components/AdSlot'
 import useFavourites from './hooks/useFavourites'
@@ -21,12 +22,15 @@ export default function App() {
   const { favourites, toggleFavourite, isFavourite } = useFavourites()
 
   const [filters, setFilters] = useState({
-    legend: '',
+    legends: [],
     dateRange: '30d',
     maxPlacement: 0,
     maxPrice: 0,
     sortBy: 'date',
   })
+
+  const [pageSize, setPageSize] = useState(20)
+  const [currentPage, setCurrentPage] = useState(1)
 
   // Load static JSON produced by the scrape script
   useEffect(() => {
@@ -81,8 +85,8 @@ export default function App() {
   const filteredDecks = useMemo(() => {
     let result = [...allDecks]
 
-    if (filters.legend) {
-      result = result.filter((d) => d.legendName === filters.legend)
+    if (filters.legends.length) {
+      result = result.filter((d) => filters.legends.includes(d.legendName))
     }
 
     if (filters.dateRange !== 'all') {
@@ -117,6 +121,17 @@ export default function App() {
 
     return result
   }, [allDecks, filters])
+
+  // Reset to the first page whenever the filters or page size change
+  useEffect(() => {
+    setCurrentPage(1)
+  }, [filters, pageSize])
+
+  // Current page slice
+  const paginatedDecks = useMemo(
+    () => filteredDecks.slice((currentPage - 1) * pageSize, currentPage * pageSize),
+    [filteredDecks, currentPage, pageSize]
+  )
 
   const handleFilterChange = (key, value) => {
     setFilters((prev) => ({ ...prev, [key]: value }))
@@ -190,15 +205,27 @@ export default function App() {
                 </div>
               )}
 
-              <AdSlot />
+              <AdSlot slot={import.meta.env.VITE_ADSENSE_SLOT_TOP} />
 
               <DeckGrid
-                decks={filteredDecks}
+                decks={paginatedDecks}
                 isFavourite={isFavourite}
                 onToggleFavourite={toggleFavourite}
               />
 
-              {filteredDecks.length > 0 && <AdSlot variant="banner" />}
+              {filteredDecks.length > 0 && (
+                <Pagination
+                  currentPage={currentPage}
+                  totalItems={filteredDecks.length}
+                  pageSize={pageSize}
+                  onPageChange={setCurrentPage}
+                  onPageSizeChange={setPageSize}
+                />
+              )}
+
+              {filteredDecks.length > 0 && (
+                <AdSlot slot={import.meta.env.VITE_ADSENSE_SLOT_BOTTOM} />
+              )}
 
               {!filteredDecks.length && (
                 <div className="app-status">

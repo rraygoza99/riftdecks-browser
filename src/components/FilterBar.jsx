@@ -1,4 +1,5 @@
 import './FilterBar.css'
+import MultiSelect from './MultiSelect'
 
 const DATE_OPTIONS = [
   { value: '7d', label: '7 days' },
@@ -50,22 +51,13 @@ export default function FilterBar({
 
       {/* Legend filter */}
       <div className="filter-group">
-        <label className="filter-label" htmlFor="legend-select">
-          Legend
-        </label>
-        <select
-          id="legend-select"
-          className="filter-select"
-          value={filters.legend}
-          onChange={(e) => onFilterChange('legend', e.target.value)}
-        >
-          <option value="">All legends</option>
-          {legendOptions.map((opt) => (
-            <option key={opt.name} value={opt.name}>
-              {opt.name}
-            </option>
-          ))}
-        </select>
+        <label className="filter-label">Legend</label>
+        <MultiSelect
+          options={legendOptions.map((opt) => opt.name)}
+          selected={filters.legends}
+          onChange={(values) => onFilterChange('legends', values)}
+          placeholder="All legends"
+        />
       </div>
 
       {/* Max placement */}
