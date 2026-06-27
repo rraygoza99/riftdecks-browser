@@ -7,6 +7,8 @@
 }
 
 .legal-back {
+  display: inline-flex;
+  align-items: center;
   background: transparent;
   border: 1px solid var(--border);
   color: var(--text-secondary);

@@ -35,5 +35,16 @@ export default function useFavourites() {
     [favourites]
   )
 
-  return { favourites, toggleFavourite, isFavourite }
+  const importFavourites = useCallback((deckUrls) => {
+    setFavourites((prev) => {
+      const next = new Set(prev)
+      for (const url of deckUrls) {
+        if (typeof url === 'string' && url) next.add(url)
+      }
+      save(next)
+      return next
+    })
+  }, [])
+
+  return { favourites, toggleFavourite, isFavourite, importFavourites }
 }

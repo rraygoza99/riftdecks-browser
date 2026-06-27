@@ -1,0 +1,39 @@
+.line-chart {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.line-chart-grid {
+  stroke: var(--border);
+  stroke-width: 1;
+  opacity: 0.5;
+}
+
+.line-chart-axis {
+  fill: var(--text-muted);
+  font-size: 11px;
+}
+
+.line-chart-area {
+  fill: var(--accent-glow);
+  opacity: 0.5;
+}
+
+.line-chart-line {
+  fill: none;
+  stroke: var(--accent-bright);
+  stroke-width: 2;
+  vector-effect: non-scaling-stroke;
+}
+
+.line-chart-dot {
+  fill: var(--accent-bright);
+}
+
+.chart-empty {
+  padding: 24px;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}

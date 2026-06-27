@@ -2,6 +2,36 @@
   padding-top: 8px;
 }
 
+.fav-toolbar {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.fav-tool-btn {
+  padding: 6px 14px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: transparent;
+  color: var(--text-secondary);
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: border-color 0.15s, color 0.15s, background 0.15s;
+}
+
+.fav-tool-btn:hover:not(:disabled) {
+  border-color: var(--accent-bright);
+  color: var(--accent-bright);
+  background: var(--accent-glow);
+}
+
+.fav-tool-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
 .fav-count {
   font-size: 0.8rem;
   color: var(--text-muted);

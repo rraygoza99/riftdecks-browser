@@ -1,3 +1,4 @@
+import { useRef } from 'react'
 import './FavouritesView.css'
 
 function standingLabel(n) {
@@ -25,9 +26,62 @@ function StarFilled() {
   )
 }
 
-export default function FavouritesView({ allDecks, favourites, onToggleFavourite }) {
+export default function FavouritesView({ allDecks, favourites, onToggleFavourite, onImport }) {
+  const fileInputRef = useRef(null)
+
   // Filter decks to only favourites
   const favDecks = allDecks.filter((d) => favourites.has(d.deckUrl))
+
+  const handleExport = () => {
+    const blob = new Blob([JSON.stringify([...favourites], null, 2)], {
+      type: 'application/json',
+    })
+    const url = URL.createObjectURL(blob)
+    const a = document.createElement('a')
+    a.href = url
+    a.download = 'riftdecks-favourites.json'
+    a.click()
+    URL.revokeObjectURL(url)
+  }
+
+  const handleImportFile = (e) => {
+    const file = e.target.files?.[0]
+    e.target.value = ''
+    if (!file) return
+    const reader = new FileReader()
+    reader.onload = () => {
+      try {
+        const parsed = JSON.parse(String(reader.result))
+        const urls = Array.isArray(parsed) ? parsed : parsed?.favourites
+        if (Array.isArray(urls)) {
+          onImport(urls.filter((u) => typeof u === 'string'))
+        } else {
+          alert('That file does not look like a favourites export.')
+        }
+      } catch {
+        alert('Could not read that file. Make sure it is a valid favourites export.')
+      }
+    }
+    reader.readAsText(file)
+  }
+
+  const toolbar = (
+    <div className="fav-toolbar">
+      <button type="button" className="fav-tool-btn" onClick={handleExport} disabled={favourites.size === 0}>
+        Export
+      </button>
+      <button type="button" className="fav-tool-btn" onClick={() => fileInputRef.current?.click()}>
+        Import
+      </button>
+      <input
+        ref={fileInputRef}
+        type="file"
+        accept="application/json,.json"
+        onChange={handleImportFile}
+        style={{ display: 'none' }}
+      />
+    </div>
+  )
 
   // Group by legend name
   const groups = []
@@ -44,15 +98,19 @@ export default function FavouritesView({ allDecks, favourites, onToggleFavourite
 
   if (!favDecks.length) {
     return (
-      <div className="fav-empty">
-        <p>No favourite decks yet.</p>
-        <p className="fav-empty__hint">Click the ★ next to any deck to save it here.</p>
+      <div className="fav-view">
+        {toolbar}
+        <div className="fav-empty">
+          <p>No favourite decks yet.</p>
+          <p className="fav-empty__hint">Click the ★ next to any deck to save it here, or import a saved list.</p>
+        </div>
       </div>
     )
   }
 
   return (
     <div className="fav-view">
+      {toolbar}
       <p className="fav-count">{favDecks.length} favourite deck{favDecks.length !== 1 ? 's' : ''}</p>
       {groups.map((group) => (
         <section key={group.legendName} className="fav-group">
