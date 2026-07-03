@@ -21,6 +21,8 @@ chromium.use(StealthPlugin())
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const OUTPUT = path.join(__dirname, '../public/decks.json')
+const LEGEND_CARDS_OUTPUT = path.join(__dirname, '../public/legend-cards.json')
+const CARDS_CACHE = path.join(__dirname, '../data/deck-cards.json')
 const BASE = 'https://riftdecks.com'
 
 // --- CLI args ----------------------------------------------------------
@@ -29,11 +31,20 @@ const getArg = (flag, def) => {
   const i = args.indexOf(flag)
   return i !== -1 && args[i + 1] !== undefined ? args[i + 1] : def
 }
+const hasFlag = (flag) => args.includes(flag)
 const MAX_PAGES = parseInt(getArg('--pages', '5'), 10)
 const RELEVANCE = parseInt(getArg('--relevance', '2'), 10)
 // Decks from tournaments older than this many days are pruned from the output
 // to keep decks.json small. Set to 0 to disable pruning.
 const MAX_AGE_DAYS = parseInt(getArg('--max-age', '45'), 10)
+// Card analysis: visit individual deck pages to collect their card lists and
+// aggregate them per legend into legend-cards.json. Disable with --no-cards.
+const SCRAPE_CARDS = !hasFlag('--no-cards')
+// How many decks to sample per legend when building the card analysis.
+const CARDS_PER_LEGEND = parseInt(getArg('--cards-per-legend', '8'), 10)
+// Global cap on how many *new* deck pages to fetch for cards in one run
+// (cached decks don't count). Keeps each run's runtime bounded.
+const MAX_CARD_DECKS = parseInt(getArg('--max-card-decks', '400'), 10)
 
 // --- Helpers -----------------------------------------------------------
 function legendSlugFromDeckUrl(deckUrl) {
@@ -48,6 +59,16 @@ function deckIdFromUrl(deckUrl) {
 
 function slugToTitle(slug) {
   return slug.replace(/-/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase())
+}
+
+// Build a stable URL slug from a legend's display name.
+function slugify(s) {
+  return (s || '')
+    .toLowerCase()
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/(^-|-$)/g, '')
 }
 
 function sleep(ms) {
@@ -66,6 +87,196 @@ function pruneOldDecks(decks, maxAgeDays) {
     const date = new Date(`${d.tournamentDate}T00:00:00Z`)
     return !Number.isNaN(date.getTime()) && date >= cutoff
   })
+}
+
+// --- Card analysis helpers --------------------------------------------
+async function loadDeckCardCache() {
+  try {
+    const raw = await fs.readFile(CARDS_CACHE, 'utf-8')
+    return JSON.parse(raw)
+  } catch {
+    return {}
+  }
+}
+
+// Drop cache entries older than `days` so the cache file doesn't grow forever.
+function pruneCardCache(cache, days = 120) {
+  const cutoff = Date.now() - days * 86_400_000
+  for (const [id, entry] of Object.entries(cache)) {
+    const t = new Date(entry?.fetchedAt || 0).getTime()
+    if (Number.isNaN(t) || t < cutoff) delete cache[id]
+  }
+  return cache
+}
+
+// Extract the card list from an already-loaded deck detail page.
+async function extractCards(page) {
+  return page
+    .$$eval(
+      'tr.card-list-item',
+      (rows, base) =>
+        rows.map((row) => {
+          const type = (row.getAttribute('data-card-type') || 'other').toLowerCase()
+          const quantity = parseInt(row.getAttribute('data-quantity') || '1', 10) || 1
+          const imgSrc = row.getAttribute('data-image-src') || ''
+          const linkEl = row.querySelector('td a[href^="/cards/"]')
+          const name = (linkEl?.textContent || '').trim()
+          const cardUrl = linkEl?.getAttribute('href') || ''
+          const rarityEl = row.querySelector('img[src*="rarity_"]')
+          const rarity = rarityEl?.getAttribute('alt') || ''
+          let price = null
+          const priceCell = [...row.querySelectorAll('td')]
+            .map((td) => td.textContent || '')
+            .find((t) => /\$/.test(t))
+          if (priceCell) {
+            const m = priceCell.match(/\$([\d.]+)/)
+            if (m) price = parseFloat(m[1])
+          }
+          const runes = [...new Set(
+            [...row.querySelectorAll('img[src*="rune_"]')]
+              .map((im) => im.getAttribute('alt'))
+              .filter(Boolean)
+          )]
+          return {
+            name,
+            cardUrl,
+            type,
+            quantity,
+            imageSrc: imgSrc ? base + imgSrc : '',
+            rarity,
+            price,
+            runes,
+          }
+        }),
+      BASE
+    )
+    .catch(() => [])
+}
+
+// Load a deck detail page and return its cards (waiting past Cloudflare).
+async function fetchDeckCards(page, deckUrl) {
+  await page.goto(deckUrl, { waitUntil: 'domcontentloaded', timeout: 30000 })
+  await page
+    .waitForFunction(() => !document.title.toLowerCase().includes('moment'), { timeout: 20000 })
+    .catch(() => {})
+  await page.waitForSelector('tr.card-list-item', { timeout: 10000 }).catch(() => {})
+  return extractCards(page)
+}
+
+// Aggregate the sampled decks of one legend into per-card inclusion stats.
+function aggregateLegendCards(legendName, group, chosen) {
+  const slug = slugify(legendName) || slugify(group[0]?.legendSlug) || 'unknown'
+  const legendTileUrl = group.find((d) => d.legendTileUrl)?.legendTileUrl || ''
+  const decksSampled = chosen.length
+  const cardMap = new Map()
+
+  for (const { cards } of chosen) {
+    const seenInDeck = new Set()
+    for (const c of cards) {
+      const key = c.cardUrl || c.name
+      if (!key) continue
+      if (!cardMap.has(key)) {
+        cardMap.set(key, {
+          name: c.name,
+          cardUrl: c.cardUrl,
+          imageSrc: c.imageSrc,
+          type: c.type,
+          rarity: c.rarity,
+          price: c.price,
+          runes: c.runes || [],
+          decks: 0,
+          copies: 0,
+        })
+      }
+      const agg = cardMap.get(key)
+      if (!seenInDeck.has(key)) {
+        agg.decks += 1
+        seenInDeck.add(key)
+      }
+      agg.copies += c.quantity
+      if (agg.price == null && c.price != null) agg.price = c.price
+      if (!agg.imageSrc && c.imageSrc) agg.imageSrc = c.imageSrc
+    }
+  }
+
+  const cards = [...cardMap.values()]
+    .map((a) => ({
+      name: a.name,
+      cardUrl: a.cardUrl,
+      imageSrc: a.imageSrc,
+      type: a.type,
+      rarity: a.rarity,
+      price: a.price,
+      runes: a.runes,
+      decks: a.decks,
+      inclusionRate: a.decks / decksSampled,
+      avgCopies: Math.round((a.copies / a.decks) * 100) / 100,
+    }))
+    .sort(
+      (x, y) =>
+        y.inclusionRate - x.inclusionRate ||
+        y.avgCopies - x.avgCopies ||
+        x.name.localeCompare(y.name)
+    )
+
+  return { legendSlug: slug, legendName, legendTileUrl, decksSampled, totalDecks: group.length, cards }
+}
+
+// Build the per-legend card analysis by sampling deck pages (cache-backed).
+async function buildLegendCardAnalysis(page, decks, cache) {
+  const groups = new Map()
+  for (const d of decks) {
+    const key = d.legendName || slugToTitle(d.legendSlug) || 'Unknown'
+    if (!groups.has(key)) groups.set(key, [])
+    groups.get(key).push(d)
+  }
+
+  // Popular legends first so they get priority on the fetch budget.
+  const ordered = [...groups.entries()].sort((a, b) => b[1].length - a[1].length)
+
+  let fetchBudget = MAX_CARD_DECKS
+  let fetched = 0
+  let fromCache = 0
+  const legends = []
+
+  for (const [legendName, group] of ordered) {
+    // Only analyse top-8 finishers so the card lists reflect competitive,
+    // complete decks. Prefer the best-placed, most recent as samples.
+    const candidates = [...group]
+      .filter((d) => d.standing <= 8)
+      .sort((a, b) => {
+        if (a.standing !== b.standing) return a.standing - b.standing
+        const da = a.tournamentDate ? Date.parse(a.tournamentDate) : 0
+        const db = b.tournamentDate ? Date.parse(b.tournamentDate) : 0
+        return db - da
+      })
+
+    const chosen = []
+    for (const d of candidates) {
+      if (chosen.length >= CARDS_PER_LEGEND) break
+      let entry = cache[d.deckId]
+      if (!entry) {
+        if (fetchBudget <= 0) continue
+        const cards = await fetchDeckCards(page, `${BASE}${d.deckUrl}`)
+        if (!cards || !cards.length) continue
+        entry = { cards, fetchedAt: new Date().toISOString() }
+        cache[d.deckId] = entry
+        fetchBudget -= 1
+        fetched += 1
+      } else {
+        fromCache += 1
+      }
+      chosen.push({ deck: d, cards: entry.cards })
+    }
+
+    if (chosen.length) {
+      legends.push(aggregateLegendCards(legendName, group, chosen))
+    }
+  }
+
+  legends.sort((a, b) => b.totalDecks - a.totalDecks)
+  console.log(`  Card analysis: ${fetched} deck(s) fetched, ${fromCache} from cache, ${legends.length} legends.`)
+  return legends
 }
 
 // --- Main --------------------------------------------------------------
@@ -229,16 +440,34 @@ async function main() {
     pageNum++
   }
 
-  await browser.close()
-
   // Drop stale decks so decks.json stays lean
-  const decks = pruneOldDecks(allDecks, MAX_AGE_DAYS)
-  const prunedCount = allDecks.length - decks.length
-  if (prunedCount > 0) {
-    console.log(`\nPruned ${prunedCount} deck(s) older than ${MAX_AGE_DAYS} days.`)
+  const dated = pruneOldDecks(allDecks, MAX_AGE_DAYS)
+  const agePruned = allDecks.length - dated.length
+  if (agePruned > 0) {
+    console.log(`\nPruned ${agePruned} deck(s) older than ${MAX_AGE_DAYS} days.`)
   }
 
-  // Write output
+  // Drop decks whose total value is under $1 — these are almost always
+  // incomplete/placeholder lists rather than real tournament decks.
+  const decks = dated.filter((d) => d.price == null || d.price >= 1)
+  const pricePruned = dated.length - decks.length
+  if (pricePruned > 0) {
+    console.log(`Pruned ${pricePruned} deck(s) with total value under $1.`)
+  }
+
+  // Per-legend card analysis (visits individual deck pages, cache-backed)
+  let legendCards = null
+  if (SCRAPE_CARDS && decks.length) {
+    console.log(`\nBuilding per-legend card analysis (≤${CARDS_PER_LEGEND}/legend, budget ${MAX_CARD_DECKS})…`)
+    const cache = pruneCardCache(await loadDeckCardCache())
+    legendCards = await buildLegendCardAnalysis(page, decks, cache)
+    await fs.mkdir(path.dirname(CARDS_CACHE), { recursive: true })
+    await fs.writeFile(CARDS_CACHE, JSON.stringify(cache), 'utf-8')
+  }
+
+  await browser.close()
+
+  // Write deck output
   const output = {
     scrapedAt: new Date().toISOString(),
     relevance: RELEVANCE,
@@ -249,6 +478,18 @@ async function main() {
   await fs.mkdir(path.dirname(OUTPUT), { recursive: true })
   await fs.writeFile(OUTPUT, JSON.stringify(output, null, 2), 'utf-8')
   console.log(`\nDone. Saved ${decks.length} decks → ${OUTPUT}`)
+
+  // Write legend card analysis
+  if (legendCards) {
+    const legendOutput = {
+      generatedAt: new Date().toISOString(),
+      cardsPerLegend: CARDS_PER_LEGEND,
+      legendCount: legendCards.length,
+      legends: legendCards,
+    }
+    await fs.writeFile(LEGEND_CARDS_OUTPUT, JSON.stringify(legendOutput, null, 2), 'utf-8')
+    console.log(`Saved card analysis for ${legendCards.length} legends → ${LEGEND_CARDS_OUTPUT}`)
+  }
 }
 
 main().catch((err) => {

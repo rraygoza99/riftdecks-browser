@@ -7,6 +7,8 @@ import Pagination from './components/Pagination'
 import FavouritesView from './components/FavouritesView'
 import PrivacyPolicy from './components/PrivacyPolicy'
 import MetaView from './components/MetaView'
+import LegendsView from './components/LegendsView'
+import LegendAnalysis from './components/LegendAnalysis'
 import AboutView from './components/AboutView'
 import ContactView from './components/ContactView'
 import AdSlot from './components/AdSlot'
@@ -20,6 +22,7 @@ const DATE_RANGES = { '7d': 7, '30d': 30, '90d': 90, all: null }
 const PATH_TO_VIEW = {
   '/': 'main',
   '/meta': 'meta',
+  '/legends': 'legends',
   '/favourites': 'favourites',
   '/privacy': 'privacy',
   '/about': 'about',
@@ -29,7 +32,10 @@ const PATH_TO_VIEW = {
 export default function App() {
   const navigate = useNavigate()
   const location = useLocation()
-  const view = PATH_TO_VIEW[location.pathname] ?? 'main'
+  const legendSlug = location.pathname.startsWith('/legend/')
+    ? decodeURIComponent(location.pathname.slice('/legend/'.length))
+    : null
+  const view = legendSlug ? 'legend' : (PATH_TO_VIEW[location.pathname] ?? 'main')
   const goTo = (target) => navigate(target === 'main' ? '/' : `/${target}`)
 
   const [allDecks, setAllDecks] = useState([])
@@ -212,6 +218,17 @@ export default function App() {
             Meta
           </button>
           <button
+            className={`fav-nav-btn${view === 'legends' || view === 'legend' ? ' fav-nav-btn--active' : ''}`}
+            onClick={() => goTo(view === 'legends' || view === 'legend' ? 'main' : 'legends')}
+            title="Legend card analysis"
+            type="button"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" style={{marginRight: '6px', verticalAlign: '-2px'}}>
+              <path d="M3.5 2A1.5 1.5 0 0 0 2 3.5v9A1.5 1.5 0 0 0 3.5 14h9a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 12.5 2h-9zM3 3.5a.5.5 0 0 1 .5-.5H8v10H3.5a.5.5 0 0 1-.5-.5v-9zM9 13V3h3.5a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5H9z"/>
+            </svg>
+            Legends
+          </button>
+          <button
             className={`fav-nav-btn${view === 'favourites' ? ' fav-nav-btn--active' : ''}`}
             onClick={() => goTo(view === 'favourites' ? 'main' : 'favourites')}
             title="Favourite decks"
@@ -254,6 +271,14 @@ export default function App() {
         />
       ) : view === 'meta' ? (
         <MetaView allDecks={allDecks} />
+      ) : view === 'legends' ? (
+        <LegendsView onOpen={(slug) => goTo(`legend/${slug}`)} />
+      ) : view === 'legend' ? (
+        <LegendAnalysis
+          slug={legendSlug}
+          onBack={() => goTo('main')}
+          onBackToList={() => goTo('legends')}
+        />
       ) : view === 'privacy' ? (
         <PrivacyPolicy onBack={() => goTo('main')} />
       ) : view === 'about' ? (
