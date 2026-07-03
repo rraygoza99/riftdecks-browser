@@ -223,7 +223,9 @@ function aggregateLegendCards(legendName, group, chosen) {
 }
 
 // Build the per-legend card analysis by sampling deck pages (cache-backed).
-async function buildLegendCardAnalysis(page, decks, cache) {
+// `saveCache` (optional) is awaited after every newly-fetched deck so that an
+// interrupted run keeps its progress and the next run resumes from the cache.
+async function buildLegendCardAnalysis(page, decks, cache, saveCache) {
   const groups = new Map()
   for (const d of decks) {
     const key = d.legendName || slugToTitle(d.legendSlug) || 'Unknown'
@@ -263,6 +265,8 @@ async function buildLegendCardAnalysis(page, decks, cache) {
         cache[d.deckId] = entry
         fetchBudget -= 1
         fetched += 1
+        // Persist after each fetch so progress survives interruption/crash.
+        if (saveCache) await saveCache()
       } else {
         fromCache += 1
       }
@@ -460,9 +464,10 @@ async function main() {
   if (SCRAPE_CARDS && decks.length) {
     console.log(`\nBuilding per-legend card analysis (≤${CARDS_PER_LEGEND}/legend, budget ${MAX_CARD_DECKS})…`)
     const cache = pruneCardCache(await loadDeckCardCache())
-    legendCards = await buildLegendCardAnalysis(page, decks, cache)
     await fs.mkdir(path.dirname(CARDS_CACHE), { recursive: true })
-    await fs.writeFile(CARDS_CACHE, JSON.stringify(cache), 'utf-8')
+    const saveCache = () => fs.writeFile(CARDS_CACHE, JSON.stringify(cache), 'utf-8')
+    legendCards = await buildLegendCardAnalysis(page, decks, cache, saveCache)
+    await saveCache()
   }
 
   await browser.close()
