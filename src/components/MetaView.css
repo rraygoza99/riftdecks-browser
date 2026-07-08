@@ -2,6 +2,23 @@
   margin-top: 16px;
 }
 
+.meta-intro {
+  margin-bottom: 22px;
+}
+
+.meta-intro-title {
+  font-size: 1.7rem;
+  margin: 0 0 8px;
+  color: var(--text-primary);
+}
+
+.meta-intro-text {
+  margin: 0;
+  color: var(--text-secondary);
+  line-height: 1.65;
+  max-width: 70ch;
+}
+
 .meta-summary {
   display: flex;
   gap: 16px;

@@ -16,6 +16,26 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://bestriftdecks.xyz/guides</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://bestriftdecks.xyz/guide/how-we-track-the-riftbound-meta</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://bestriftdecks.xyz/guide/reading-tournament-results</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://bestriftdecks.xyz/guide/understanding-deck-prices</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://bestriftdecks.xyz/about</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>

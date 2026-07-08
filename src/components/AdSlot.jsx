@@ -5,6 +5,11 @@ import './AdSlot.css'
 //   VITE_ADSENSE_CLIENT=ca-pub-XXXXXXXXXXXXXXXX
 const CLIENT = import.meta.env.VITE_ADSENSE_CLIENT || ''
 
+// Global kill-switch. Set VITE_ADS_ENABLED=false to serve the whole site
+// ad-free (e.g. while an AdSense policy review is pending). Ads are on by
+// default when a client id and slot are configured.
+const ADS_ENABLED = import.meta.env.VITE_ADS_ENABLED !== 'false'
+
 // Load the AdSense library once, lazily, using the configured publisher id.
 let scriptRequested = false
 function ensureAdSenseScript(client) {
@@ -31,7 +36,7 @@ export default function AdSlot({ slot, label = 'Advertisement', format = 'auto' 
   const pushed = useRef(false)
 
   useEffect(() => {
-    if (!CLIENT || !slot || pushed.current) return
+    if (!ADS_ENABLED || !CLIENT || !slot || pushed.current) return
     pushed.current = true
     ensureAdSenseScript(CLIENT)
     try {
@@ -41,7 +46,7 @@ export default function AdSlot({ slot, label = 'Advertisement', format = 'auto' 
     }
   }, [slot])
 
-  if (!CLIENT || !slot) return null
+  if (!ADS_ENABLED || !CLIENT || !slot) return null
 
   return (
     <aside className="ad-slot" aria-label={label}>

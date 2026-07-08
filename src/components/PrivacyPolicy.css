@@ -6,6 +6,22 @@
   color: var(--text-secondary);
 }
 
+.about-glossary {
+  margin: 0 0 8px;
+}
+
+.about-glossary dt {
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-top: 12px;
+}
+
+.about-glossary dd {
+  margin: 4px 0 0;
+  padding-left: 0;
+  color: var(--text-secondary);
+}
+
 .legal-back {
   display: inline-flex;
   align-items: center;

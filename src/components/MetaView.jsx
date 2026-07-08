@@ -82,6 +82,18 @@ export default function MetaView({ allDecks }) {
 
   return (
     <section className="meta-view">
+      <header className="meta-intro">
+        <h1 className="meta-intro-title">Riftbound Meta Dashboard</h1>
+        <p className="meta-intro-text">
+          A living snapshot of the competitive Riftbound format, built from recent tournament
+          results. Use <strong>popularity</strong> to see what the field is bringing, the{' '}
+          <strong>1st-place rate</strong> to see what is actually converting into wins, and the{' '}
+          <strong>price trend</strong> to track where the format&apos;s cost is heading. These are
+          placement-based statistics, not head-to-head match results — for a full explanation of
+          how we build them, see our Guides.
+        </p>
+      </header>
+
       <div className="meta-summary">
         <div className="meta-stat">
           <span className="meta-stat-num">{stats.total.toLocaleString()}</span>

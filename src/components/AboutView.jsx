@@ -50,6 +50,73 @@ export default function AboutView({ onBack }) {
         focused on what is currently relevant.
       </p>
 
+      <h2>How we build the analysis (methodology)</h2>
+      <p>
+        We try to be transparent about exactly what our numbers measure. Each day we
+        collect competitive tournament results — the finishing placement, the legend
+        played, the event name and date, and an estimated market price for each list.
+        We then clean the data before it ever reaches you:
+      </p>
+      <ul>
+        <li>
+          <strong>Recency:</strong> tournaments older than roughly six weeks are removed
+          so the meta reflects the current format rather than a past patch.
+        </li>
+        <li>
+          <strong>Quality filtering:</strong> decks whose total card value is under a
+          dollar are dropped, because these are almost always incomplete or placeholder
+          lists rather than genuine tournament entries.
+        </li>
+        <li>
+          <strong>Card analysis:</strong> for each legend we sample its strongest recent
+          lists — top-8 finishers — and aggregate the cards they run into inclusion rates
+          and average copy counts, so you can see which cards are staples and which are
+          flexible choices.
+        </li>
+        <li>
+          <strong>Meaningful thresholds:</strong> a legend must have at least ten tracked
+          decks before we rank it by 1st-place rate, which filters out the noise of a
+          single lucky result.
+        </li>
+      </ul>
+      <p>
+        For a deeper walk-through of the pipeline and how to read the numbers responsibly,
+        see our <strong>Guides</strong> section.
+      </p>
+
+      <h2>Glossary of terms</h2>
+      <dl className="about-glossary">
+        <dt>Legend</dt>
+        <dd>
+          The central card that defines a Riftbound deck&apos;s identity. We group and
+          analyse decks by their legend.
+        </dd>
+        <dt>Placement / standing</dt>
+        <dd>
+          Where a deck finished at its tournament. Placement is our proxy for success — we
+          do not have access to individual game results.
+        </dd>
+        <dt>1st-place rate</dt>
+        <dd>
+          The share of a legend&apos;s tracked decks that finished first. This is a
+          placement statistic, not a head-to-head win rate between two decks.
+        </dd>
+        <dt>Popularity / meta share</dt>
+        <dd>
+          How often a legend appears across all tracked decks. High popularity tells you
+          what the field is bringing, which is what you must prepare to beat.
+        </dd>
+        <dt>Inclusion rate</dt>
+        <dd>
+          On a legend&apos;s card-analysis page, the share of sampled decks that run a
+          given card. A high inclusion rate means the card is effectively a staple.
+        </dd>
+        <dt>Average copies</dt>
+        <dd>
+          The typical number of copies of a card that decks running it choose to play.
+        </dd>
+      </dl>
+
       <h2>Contact</h2>
       <p>
         Questions, corrections, or suggestions? Reach us at{' '}

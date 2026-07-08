@@ -22,7 +22,10 @@ export default function LegendsView({ onOpen }) {
         <div>
           <h2 className="legends-title">Legend card analysis</h2>
           <p className="legends-sub">
-            The most-played cards for each legend, based on a sample of its top tournament decks.
+            The most-played cards for each legend, aggregated from a sample of its top-8
+            tournament decks. Open a legend to see which cards are staples, which are flexible
+            choices, and how many copies winning lists typically run. Choose a legend below to
+            dive in.
           </p>
         </div>
         <input

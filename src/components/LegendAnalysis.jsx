@@ -83,6 +83,14 @@ export default function LegendAnalysis({ slug, onBack, onBackToList }) {
         </div>
       </header>
 
+      <p className="legend-analysis-guide">
+        Cards are grouped by role and sorted by how often winning decks run them.{' '}
+        <strong>Inclusion</strong> is the share of sampled top-8 decks that play the card — treat
+        high-inclusion cards as the legend&apos;s core staples and lower-inclusion cards as
+        flexible, meta-dependent choices. <strong>Avg</strong> shows the typical number of copies
+        those decks run. Use this to prioritise which cards to acquire first when building the deck.
+      </p>
+
       {sections.map((section) => (
         <div key={section.type} className="legend-section">
           <h3 className="legend-section-title">
