@@ -114,6 +114,22 @@ export default function FilterBar({
           ))}
         </select>
       </div>
+
+      {/* Best per legend */}
+      <div className="filter-group">
+        <label className="filter-label" htmlFor="best-per-legend">
+          Show
+        </label>
+        <label className="filter-toggle" htmlFor="best-per-legend">
+          <input
+            id="best-per-legend"
+            type="checkbox"
+            checked={filters.bestPerLegend}
+            onChange={(e) => onFilterChange('bestPerLegend', e.target.checked)}
+          />
+          <span>Best deck per legend</span>
+        </label>
+      </div>
     </div>
   )
 }

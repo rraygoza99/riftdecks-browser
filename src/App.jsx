@@ -62,6 +62,7 @@ export default function App() {
     dateRange: '30d',
     maxPlacement: 0,
     maxPrice: 0,
+    bestPerLegend: false,
     sortBy: 'date',
   })
 
@@ -139,6 +140,24 @@ export default function App() {
 
     if (filters.maxPrice > 0) {
       result = result.filter((d) => d.price != null && d.price <= filters.maxPrice)
+    }
+
+    // Keep only each legend's single best-placed deck (tie-break: most recent).
+    if (filters.bestPerLegend) {
+      const best = new Map()
+      for (const d of result) {
+        const key = d.legendName || 'Unknown'
+        const cur = best.get(key)
+        if (
+          !cur ||
+          d.standing < cur.standing ||
+          (d.standing === cur.standing &&
+            (d.tournamentDate?.getTime() ?? 0) > (cur.tournamentDate?.getTime() ?? 0))
+        ) {
+          best.set(key, d)
+        }
+      }
+      result = [...best.values()]
     }
 
     if (filters.sortBy === 'date') {
