@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-15T13:28:33.457Z",
+  "generatedAt": "2026-07-15T21:19:00.769Z",
   "cardsPerLegend": 8,
   "legendCount": 34,
   "legends": [
@@ -579,7 +579,7 @@
       "legendName": "Diana, Scorn of the Moon",
       "legendTileUrl": "https://riftdecks.com/img/cards/riftbound//UNL/unl-234-219_tile.png",
       "decksSampled": 8,
-      "totalDecks": 351,
+      "totalDecks": 352,
       "cards": [
         {
           "name": "Chaos Rune",
@@ -7365,7 +7365,7 @@
       "legendName": "Rengar, Pridestalker",
       "legendTileUrl": "https://riftdecks.com/img/cards/riftbound//UNL/unl-183-219_tile.png",
       "decksSampled": 6,
-      "totalDecks": 83,
+      "totalDecks": 84,
       "cards": [
         {
           "name": "Body Rune",
@@ -7964,7 +7964,7 @@
       "legendName": "Khazix, Voidreaver",
       "legendTileUrl": "https://riftdecks.com/img/cards/riftbound//UNL/unl-236-219_tile.png",
       "decksSampled": 7,
-      "totalDecks": 76,
+      "totalDecks": 77,
       "cards": [
         {
           "name": "Body Rune",
@@ -10209,7 +10209,7 @@
       "legendName": "Sivir, Battle Mistress",
       "legendTileUrl": "https://riftdecks.com/img/cards/riftbound//SFD/sfd-203-221_tile.png",
       "decksSampled": 5,
-      "totalDecks": 65,
+      "totalDecks": 66,
       "cards": [
         {
           "name": "Body Rune",
