@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-15T21:19:00.769Z",
+  "generatedAt": "2026-07-16T13:34:00.036Z",
   "cardsPerLegend": 8,
   "legendCount": 34,
   "legends": [
@@ -8,7 +8,7 @@
       "legendName": "Master Yi, Wuju Bladesman",
       "legendTileUrl": "https://riftdecks.com/img/cards/riftbound//OGS/ogs-019-024_tile.png",
       "decksSampled": 8,
-      "totalDecks": 535,
+      "totalDecks": 537,
       "cards": [
         {
           "name": "Body Rune",
@@ -579,7 +579,7 @@
       "legendName": "Diana, Scorn of the Moon",
       "legendTileUrl": "https://riftdecks.com/img/cards/riftbound//UNL/unl-234-219_tile.png",
       "decksSampled": 8,
-      "totalDecks": 352,
+      "totalDecks": 355,
       "cards": [
         {
           "name": "Chaos Rune",
@@ -1220,7 +1220,7 @@
       "legendName": "Irelia, Blade Dancer",
       "legendTileUrl": "https://riftdecks.com/img/cards/riftbound//SFD/sfd-195-221_tile.png",
       "decksSampled": 8,
-      "totalDecks": 297,
+      "totalDecks": 298,
       "cards": [
         {
           "name": "Calm Rune",
@@ -1819,7 +1819,7 @@
       "legendName": "Leblanc, Deceiver",
       "legendTileUrl": "https://riftdecks.com/img/cards/riftbound//UNL/unl-199-219_tile.png",
       "decksSampled": 7,
-      "totalDecks": 165,
+      "totalDecks": 166,
       "cards": [
         {
           "name": "Order Rune",
@@ -3044,7 +3044,7 @@
       "legendName": "Azir, Emperor of the Sands",
       "legendTileUrl": "https://riftdecks.com/img/cards/riftbound//SFD/sfd-197-221_tile.png",
       "decksSampled": 5,
-      "totalDecks": 157,
+      "totalDecks": 158,
       "cards": [
         {
           "name": "Calm Rune",
@@ -7365,7 +7365,7 @@
       "legendName": "Rengar, Pridestalker",
       "legendTileUrl": "https://riftdecks.com/img/cards/riftbound//UNL/unl-183-219_tile.png",
       "decksSampled": 6,
-      "totalDecks": 84,
+      "totalDecks": 85,
       "cards": [
         {
           "name": "Body Rune",
@@ -7963,8 +7963,8 @@
       "legendSlug": "khazix-voidreaver",
       "legendName": "Khazix, Voidreaver",
       "legendTileUrl": "https://riftdecks.com/img/cards/riftbound//UNL/unl-236-219_tile.png",
-      "decksSampled": 7,
-      "totalDecks": 77,
+      "decksSampled": 6,
+      "totalDecks": 76,
       "cards": [
         {
           "name": "Body Rune",
@@ -7976,9 +7976,9 @@
           "runes": [
             "body"
           ],
-          "decks": 7,
+          "decks": 6,
           "inclusionRate": 1,
-          "avgCopies": 6.14
+          "avgCopies": 6.17
         },
         {
           "name": "Chaos Rune",
@@ -7990,9 +7990,9 @@
           "runes": [
             "chaos"
           ],
-          "decks": 7,
+          "decks": 6,
           "inclusionRate": 1,
-          "avgCopies": 5.86
+          "avgCopies": 5.83
         },
         {
           "name": "Void Assault",
@@ -8005,7 +8005,7 @@
             "body",
             "chaos"
           ],
-          "decks": 7,
+          "decks": 6,
           "inclusionRate": 1,
           "avgCopies": 3
         },
@@ -8019,9 +8019,9 @@
           "runes": [
             "chaos"
           ],
-          "decks": 7,
+          "decks": 6,
           "inclusionRate": 1,
-          "avgCopies": 2.43
+          "avgCopies": 2.33
         },
         {
           "name": "Sabotage",
@@ -8033,9 +8033,9 @@
           "runes": [
             "body"
           ],
-          "decks": 7,
+          "decks": 6,
           "inclusionRate": 1,
-          "avgCopies": 2.14
+          "avgCopies": 2
         },
         {
           "name": "Kha'Zix, Mutating Horror",
@@ -8047,9 +8047,9 @@
           "runes": [
             "chaos"
           ],
-          "decks": 7,
+          "decks": 6,
           "inclusionRate": 1,
-          "avgCopies": 1.43
+          "avgCopies": 1.5
         },
         {
           "name": "Khazix, Voidreaver",
@@ -8062,7 +8062,7 @@
             "body",
             "chaos"
           ],
-          "decks": 7,
+          "decks": 6,
           "inclusionRate": 1,
           "avgCopies": 1
         },
@@ -8076,8 +8076,8 @@
           "runes": [
             "body"
           ],
-          "decks": 6,
-          "inclusionRate": 0.8571428571428571,
+          "decks": 5,
+          "inclusionRate": 0.8333333333333334,
           "avgCopies": 3
         },
         {
@@ -8090,9 +8090,9 @@
           "runes": [
             "body"
           ],
-          "decks": 6,
-          "inclusionRate": 0.8571428571428571,
-          "avgCopies": 2.83
+          "decks": 5,
+          "inclusionRate": 0.8333333333333334,
+          "avgCopies": 2.8
         },
         {
           "name": "Lucian, Merciless",
@@ -8104,9 +8104,9 @@
           "runes": [
             "body"
           ],
-          "decks": 6,
-          "inclusionRate": 0.8571428571428571,
-          "avgCopies": 2.5
+          "decks": 5,
+          "inclusionRate": 0.8333333333333334,
+          "avgCopies": 2.4
         },
         {
           "name": "Rengar, Trophy Hunter",
@@ -8118,23 +8118,9 @@
           "runes": [
             "body"
           ],
-          "decks": 6,
-          "inclusionRate": 0.8571428571428571,
-          "avgCopies": 2.5
-        },
-        {
-          "name": "Star-Crossed",
-          "cardUrl": "/cards/details-star-crossed",
-          "imageSrc": "https://riftdecks.com/img/cards/riftbound/UNL/unl-128-219_full.png",
-          "type": "spell",
-          "rarity": "common",
-          "price": 0.13,
-          "runes": [
-            "chaos"
-          ],
-          "decks": 6,
-          "inclusionRate": 0.8571428571428571,
-          "avgCopies": 2.33
+          "decks": 5,
+          "inclusionRate": 0.8333333333333334,
+          "avgCopies": 2.4
         },
         {
           "name": "Punch First",
@@ -8146,9 +8132,23 @@
           "runes": [
             "body"
           ],
-          "decks": 6,
-          "inclusionRate": 0.8571428571428571,
-          "avgCopies": 2.17
+          "decks": 5,
+          "inclusionRate": 0.8333333333333334,
+          "avgCopies": 2.2
+        },
+        {
+          "name": "Star-Crossed",
+          "cardUrl": "/cards/details-star-crossed",
+          "imageSrc": "https://riftdecks.com/img/cards/riftbound/UNL/unl-128-219_full.png",
+          "type": "spell",
+          "rarity": "common",
+          "price": 0.13,
+          "runes": [
+            "chaos"
+          ],
+          "decks": 5,
+          "inclusionRate": 0.8333333333333334,
+          "avgCopies": 2.2
         },
         {
           "name": "Vex, Apathetic",
@@ -8160,23 +8160,9 @@
           "runes": [
             "chaos"
           ],
-          "decks": 6,
-          "inclusionRate": 0.8571428571428571,
-          "avgCopies": 2.17
-        },
-        {
-          "name": "Fizz, Trickster",
-          "cardUrl": "/cards/details-fizz-trickster",
-          "imageSrc": "https://riftdecks.com/img/cards/riftbound/SFD/sfd-140-221_full.png",
-          "type": "unit",
-          "rarity": "rare",
-          "price": 6.22,
-          "runes": [
-            "chaos"
-          ],
-          "decks": 6,
-          "inclusionRate": 0.8571428571428571,
-          "avgCopies": 1.83
+          "decks": 5,
+          "inclusionRate": 0.8333333333333334,
+          "avgCopies": 2.2
         },
         {
           "name": "Hard Bargain",
@@ -8188,9 +8174,23 @@
           "runes": [
             "chaos"
           ],
-          "decks": 6,
-          "inclusionRate": 0.8571428571428571,
-          "avgCopies": 1.83
+          "decks": 5,
+          "inclusionRate": 0.8333333333333334,
+          "avgCopies": 2
+        },
+        {
+          "name": "Fizz, Trickster",
+          "cardUrl": "/cards/details-fizz-trickster",
+          "imageSrc": "https://riftdecks.com/img/cards/riftbound/SFD/sfd-140-221_full.png",
+          "type": "unit",
+          "rarity": "rare",
+          "price": 6.22,
+          "runes": [
+            "chaos"
+          ],
+          "decks": 5,
+          "inclusionRate": 0.8333333333333334,
+          "avgCopies": 1.6
         },
         {
           "name": "Akshan, Mischievous",
@@ -8202,9 +8202,9 @@
           "runes": [
             "body"
           ],
-          "decks": 6,
-          "inclusionRate": 0.8571428571428571,
-          "avgCopies": 1.67
+          "decks": 5,
+          "inclusionRate": 0.8333333333333334,
+          "avgCopies": 1.4
         },
         {
           "name": "Last Rites",
@@ -8216,9 +8216,9 @@
           "runes": [
             "chaos"
           ],
-          "decks": 6,
-          "inclusionRate": 0.8571428571428571,
-          "avgCopies": 1.17
+          "decks": 5,
+          "inclusionRate": 0.8333333333333334,
+          "avgCopies": 1.2
         },
         {
           "name": "Forbidding Waste",
@@ -8230,8 +8230,8 @@
           "runes": [
             "colorless"
           ],
-          "decks": 6,
-          "inclusionRate": 0.8571428571428571,
+          "decks": 5,
+          "inclusionRate": 0.8333333333333334,
           "avgCopies": 1
         },
         {
@@ -8245,21 +8245,7 @@
             "colorless"
           ],
           "decks": 5,
-          "inclusionRate": 0.7142857142857143,
-          "avgCopies": 1
-        },
-        {
-          "name": "Rebuke",
-          "cardUrl": "/cards/details-rebuke",
-          "imageSrc": "https://riftdecks.com/img/cards/riftbound/OGN/ogn-172-298_full.png",
-          "type": "spell",
-          "rarity": "common",
-          "price": 0.27,
-          "runes": [
-            "chaos"
-          ],
-          "decks": 5,
-          "inclusionRate": 0.7142857142857143,
+          "inclusionRate": 0.8333333333333334,
           "avgCopies": 1
         },
         {
@@ -8273,7 +8259,7 @@
             "chaos"
           ],
           "decks": 4,
-          "inclusionRate": 0.5714285714285714,
+          "inclusionRate": 0.6666666666666666,
           "avgCopies": 2.25
         },
         {
@@ -8287,7 +8273,7 @@
             "body"
           ],
           "decks": 4,
-          "inclusionRate": 0.5714285714285714,
+          "inclusionRate": 0.6666666666666666,
           "avgCopies": 2.25
         },
         {
@@ -8301,7 +8287,7 @@
             "chaos"
           ],
           "decks": 4,
-          "inclusionRate": 0.5714285714285714,
+          "inclusionRate": 0.6666666666666666,
           "avgCopies": 1.75
         },
         {
@@ -8315,7 +8301,7 @@
             "chaos"
           ],
           "decks": 4,
-          "inclusionRate": 0.5714285714285714,
+          "inclusionRate": 0.6666666666666666,
           "avgCopies": 1.25
         },
         {
@@ -8329,7 +8315,7 @@
             "body"
           ],
           "decks": 4,
-          "inclusionRate": 0.5714285714285714,
+          "inclusionRate": 0.6666666666666666,
           "avgCopies": 1.25
         },
         {
@@ -8343,7 +8329,7 @@
             "chaos"
           ],
           "decks": 4,
-          "inclusionRate": 0.5714285714285714,
+          "inclusionRate": 0.6666666666666666,
           "avgCopies": 1.25
         },
         {
@@ -8357,7 +8343,21 @@
             "chaos"
           ],
           "decks": 4,
-          "inclusionRate": 0.5714285714285714,
+          "inclusionRate": 0.6666666666666666,
+          "avgCopies": 1
+        },
+        {
+          "name": "Rebuke",
+          "cardUrl": "/cards/details-rebuke",
+          "imageSrc": "https://riftdecks.com/img/cards/riftbound/OGN/ogn-172-298_full.png",
+          "type": "spell",
+          "rarity": "common",
+          "price": 0.27,
+          "runes": [
+            "chaos"
+          ],
+          "decks": 4,
+          "inclusionRate": 0.6666666666666666,
           "avgCopies": 1
         },
         {
@@ -8371,22 +8371,8 @@
             "colorless"
           ],
           "decks": 4,
-          "inclusionRate": 0.5714285714285714,
+          "inclusionRate": 0.6666666666666666,
           "avgCopies": 1
-        },
-        {
-          "name": "Gust",
-          "cardUrl": "/cards/details-gust",
-          "imageSrc": "https://riftdecks.com/img/cards/riftbound/OGN/ogn-169-298_full.png",
-          "type": "sideboard",
-          "rarity": "common",
-          "price": 0.15,
-          "runes": [
-            "chaos"
-          ],
-          "decks": 3,
-          "inclusionRate": 0.42857142857142855,
-          "avgCopies": 3
         },
         {
           "name": "Kinkou Initiate",
@@ -8399,22 +8385,8 @@
             "body"
           ],
           "decks": 3,
-          "inclusionRate": 0.42857142857142855,
+          "inclusionRate": 0.5,
           "avgCopies": 3
-        },
-        {
-          "name": "Traveling Merchant",
-          "cardUrl": "/cards/details-traveling-merchant",
-          "imageSrc": "https://riftdecks.com/img/cards/riftbound/OGN/ogn-185-298_full.png",
-          "type": "unit",
-          "rarity": "uncommon",
-          "price": 0.2,
-          "runes": [
-            "chaos"
-          ],
-          "decks": 3,
-          "inclusionRate": 0.42857142857142855,
-          "avgCopies": 2.67
         },
         {
           "name": "Overzealous Fan",
@@ -8427,22 +8399,8 @@
             "chaos"
           ],
           "decks": 3,
-          "inclusionRate": 0.42857142857142855,
+          "inclusionRate": 0.5,
           "avgCopies": 2
-        },
-        {
-          "name": "Invert Timelines",
-          "cardUrl": "/cards/details-invert-timelines",
-          "imageSrc": "https://riftdecks.com/img/cards/riftbound/OGN/ogn-201-298_full.png",
-          "type": "sideboard",
-          "rarity": "epic",
-          "price": 11.89,
-          "runes": [
-            "chaos"
-          ],
-          "decks": 3,
-          "inclusionRate": 0.42857142857142855,
-          "avgCopies": 1.33
         },
         {
           "name": "Draven, Audacious",
@@ -8455,7 +8413,7 @@
             "chaos"
           ],
           "decks": 3,
-          "inclusionRate": 0.42857142857142855,
+          "inclusionRate": 0.5,
           "avgCopies": 1
         },
         {
@@ -8469,7 +8427,7 @@
             "chaos"
           ],
           "decks": 3,
-          "inclusionRate": 0.42857142857142855,
+          "inclusionRate": 0.5,
           "avgCopies": 1
         },
         {
@@ -8483,36 +8441,50 @@
             "chaos"
           ],
           "decks": 3,
-          "inclusionRate": 0.42857142857142855,
+          "inclusionRate": 0.5,
           "avgCopies": 1
         },
         {
-          "name": "The Arena's Greatest",
-          "cardUrl": "/cards/details-the-arenas-greatest",
-          "imageSrc": "https://riftdecks.com/img/cards/riftbound/OGN/ogn-290-298_full.png",
-          "type": "battlefields",
-          "rarity": "uncommon",
-          "price": 0.54,
+          "name": "Gust",
+          "cardUrl": "/cards/details-gust",
+          "imageSrc": "https://riftdecks.com/img/cards/riftbound/OGN/ogn-169-298_full.png",
+          "type": "spell",
+          "rarity": "common",
+          "price": 0.19,
           "runes": [
-            "colorless"
+            "chaos"
           ],
           "decks": 2,
-          "inclusionRate": 0.2857142857142857,
-          "avgCopies": 1
+          "inclusionRate": 0.3333333333333333,
+          "avgCopies": 3
         },
         {
-          "name": "Zaun Warrens",
-          "cardUrl": "/cards/details-zaun-warrens",
-          "imageSrc": "https://riftdecks.com/img/cards/riftbound/OGN/ogn-298-298_full.png",
-          "type": "battlefields",
+          "name": "Traveling Merchant",
+          "cardUrl": "/cards/details-traveling-merchant",
+          "imageSrc": "https://riftdecks.com/img/cards/riftbound/OGN/ogn-185-298_full.png",
+          "type": "unit",
           "rarity": "uncommon",
-          "price": 0.23,
+          "price": 0.19,
           "runes": [
-            "colorless"
+            "chaos"
           ],
           "decks": 2,
-          "inclusionRate": 0.2857142857142857,
-          "avgCopies": 1
+          "inclusionRate": 0.3333333333333333,
+          "avgCopies": 2.5
+        },
+        {
+          "name": "Invert Timelines",
+          "cardUrl": "/cards/details-invert-timelines",
+          "imageSrc": "https://riftdecks.com/img/cards/riftbound/OGN/ogn-201-298_full.png",
+          "type": "spell",
+          "rarity": "epic",
+          "price": 13.36,
+          "runes": [
+            "chaos"
+          ],
+          "decks": 2,
+          "inclusionRate": 0.3333333333333333,
+          "avgCopies": 1.5
         },
         {
           "name": "Catalyst of Aeons",
@@ -8525,7 +8497,7 @@
             "body"
           ],
           "decks": 1,
-          "inclusionRate": 0.14285714285714285,
+          "inclusionRate": 0.16666666666666666,
           "avgCopies": 3
         },
         {
@@ -8539,7 +8511,7 @@
             "body"
           ],
           "decks": 1,
-          "inclusionRate": 0.14285714285714285,
+          "inclusionRate": 0.16666666666666666,
           "avgCopies": 3
         },
         {
@@ -8553,7 +8525,7 @@
             "body"
           ],
           "decks": 1,
-          "inclusionRate": 0.14285714285714285,
+          "inclusionRate": 0.16666666666666666,
           "avgCopies": 3
         },
         {
@@ -8567,7 +8539,7 @@
             "chaos"
           ],
           "decks": 1,
-          "inclusionRate": 0.14285714285714285,
+          "inclusionRate": 0.16666666666666666,
           "avgCopies": 3
         },
         {
@@ -8581,7 +8553,7 @@
             "body"
           ],
           "decks": 1,
-          "inclusionRate": 0.14285714285714285,
+          "inclusionRate": 0.16666666666666666,
           "avgCopies": 3
         },
         {
@@ -8595,7 +8567,7 @@
             "chaos"
           ],
           "decks": 1,
-          "inclusionRate": 0.14285714285714285,
+          "inclusionRate": 0.16666666666666666,
           "avgCopies": 3
         },
         {
@@ -8609,21 +8581,7 @@
             "chaos"
           ],
           "decks": 1,
-          "inclusionRate": 0.14285714285714285,
-          "avgCopies": 2
-        },
-        {
-          "name": "Demacian Diplomat",
-          "cardUrl": "/cards/details-demacian-diplomat",
-          "imageSrc": "https://riftdecks.com/img/cards/riftbound/UNL/unl-092-219_full.png",
-          "type": "unit",
-          "rarity": "common",
-          "price": 0.08,
-          "runes": [
-            "body"
-          ],
-          "decks": 1,
-          "inclusionRate": 0.14285714285714285,
+          "inclusionRate": 0.16666666666666666,
           "avgCopies": 2
         },
         {
@@ -8637,7 +8595,7 @@
             "chaos"
           ],
           "decks": 1,
-          "inclusionRate": 0.14285714285714285,
+          "inclusionRate": 0.16666666666666666,
           "avgCopies": 2
         },
         {
@@ -8651,7 +8609,7 @@
             "body"
           ],
           "decks": 1,
-          "inclusionRate": 0.14285714285714285,
+          "inclusionRate": 0.16666666666666666,
           "avgCopies": 2
         },
         {
@@ -8665,7 +8623,7 @@
             "chaos"
           ],
           "decks": 1,
-          "inclusionRate": 0.14285714285714285,
+          "inclusionRate": 0.16666666666666666,
           "avgCopies": 2
         },
         {
@@ -8679,7 +8637,7 @@
             "chaos"
           ],
           "decks": 1,
-          "inclusionRate": 0.14285714285714285,
+          "inclusionRate": 0.16666666666666666,
           "avgCopies": 2
         },
         {
@@ -8693,7 +8651,7 @@
             "chaos"
           ],
           "decks": 1,
-          "inclusionRate": 0.14285714285714285,
+          "inclusionRate": 0.16666666666666666,
           "avgCopies": 1
         },
         {
@@ -8707,21 +8665,7 @@
             "body"
           ],
           "decks": 1,
-          "inclusionRate": 0.14285714285714285,
-          "avgCopies": 1
-        },
-        {
-          "name": "Disposal Order",
-          "cardUrl": "/cards/details-disposal-order",
-          "imageSrc": "https://riftdecks.com/img/cards/riftbound/UNL/unl-103-219_full.png",
-          "type": "sideboard",
-          "rarity": "uncommon",
-          "price": 0.14,
-          "runes": [
-            "body"
-          ],
-          "decks": 1,
-          "inclusionRate": 0.14285714285714285,
+          "inclusionRate": 0.16666666666666666,
           "avgCopies": 1
         },
         {
@@ -8735,7 +8679,7 @@
             "chaos"
           ],
           "decks": 1,
-          "inclusionRate": 0.14285714285714285,
+          "inclusionRate": 0.16666666666666666,
           "avgCopies": 1
         },
         {
@@ -8749,7 +8693,7 @@
             "colorless"
           ],
           "decks": 1,
-          "inclusionRate": 0.14285714285714285,
+          "inclusionRate": 0.16666666666666666,
           "avgCopies": 1
         },
         {
@@ -8763,7 +8707,21 @@
             "body"
           ],
           "decks": 1,
-          "inclusionRate": 0.14285714285714285,
+          "inclusionRate": 0.16666666666666666,
+          "avgCopies": 1
+        },
+        {
+          "name": "The Arena's Greatest",
+          "cardUrl": "/cards/details-the-arenas-greatest",
+          "imageSrc": "https://riftdecks.com/img/cards/riftbound/OGN/ogn-290-298_full.png",
+          "type": "battlefields",
+          "rarity": "uncommon",
+          "price": 0.55,
+          "runes": [
+            "colorless"
+          ],
+          "decks": 1,
+          "inclusionRate": 0.16666666666666666,
           "avgCopies": 1
         },
         {
@@ -8777,7 +8735,21 @@
             "colorless"
           ],
           "decks": 1,
-          "inclusionRate": 0.14285714285714285,
+          "inclusionRate": 0.16666666666666666,
+          "avgCopies": 1
+        },
+        {
+          "name": "Zaun Warrens",
+          "cardUrl": "/cards/details-zaun-warrens",
+          "imageSrc": "https://riftdecks.com/img/cards/riftbound/OGN/ogn-298-298_full.png",
+          "type": "battlefields",
+          "rarity": "uncommon",
+          "price": 0.22,
+          "runes": [
+            "colorless"
+          ],
+          "decks": 1,
+          "inclusionRate": 0.16666666666666666,
           "avgCopies": 1
         }
       ]
@@ -10208,8 +10180,8 @@
       "legendSlug": "sivir-battle-mistress",
       "legendName": "Sivir, Battle Mistress",
       "legendTileUrl": "https://riftdecks.com/img/cards/riftbound//SFD/sfd-203-221_tile.png",
-      "decksSampled": 5,
-      "totalDecks": 66,
+      "decksSampled": 4,
+      "totalDecks": 65,
       "cards": [
         {
           "name": "Body Rune",
@@ -10221,9 +10193,9 @@
           "runes": [
             "body"
           ],
-          "decks": 5,
+          "decks": 4,
           "inclusionRate": 1,
-          "avgCopies": 6.2
+          "avgCopies": 6.25
         },
         {
           "name": "Chaos Rune",
@@ -10235,9 +10207,9 @@
           "runes": [
             "chaos"
           ],
-          "decks": 5,
+          "decks": 4,
           "inclusionRate": 1,
-          "avgCopies": 5.8
+          "avgCopies": 5.75
         },
         {
           "name": "Catalyst of Aeons",
@@ -10249,7 +10221,7 @@
           "runes": [
             "body"
           ],
-          "decks": 5,
+          "decks": 4,
           "inclusionRate": 1,
           "avgCopies": 3
         },
@@ -10263,7 +10235,7 @@
           "runes": [
             "body"
           ],
-          "decks": 5,
+          "decks": 4,
           "inclusionRate": 1,
           "avgCopies": 3
         },
@@ -10277,7 +10249,7 @@
           "runes": [
             "body"
           ],
-          "decks": 5,
+          "decks": 4,
           "inclusionRate": 1,
           "avgCopies": 3
         },
@@ -10291,7 +10263,7 @@
           "runes": [
             "body"
           ],
-          "decks": 5,
+          "decks": 4,
           "inclusionRate": 1,
           "avgCopies": 3
         },
@@ -10305,7 +10277,7 @@
           "runes": [
             "chaos"
           ],
-          "decks": 5,
+          "decks": 4,
           "inclusionRate": 1,
           "avgCopies": 3
         },
@@ -10319,7 +10291,7 @@
           "runes": [
             "chaos"
           ],
-          "decks": 5,
+          "decks": 4,
           "inclusionRate": 1,
           "avgCopies": 3
         },
@@ -10333,7 +10305,7 @@
           "runes": [
             "body"
           ],
-          "decks": 5,
+          "decks": 4,
           "inclusionRate": 1,
           "avgCopies": 3
         },
@@ -10347,7 +10319,7 @@
           "runes": [
             "chaos"
           ],
-          "decks": 5,
+          "decks": 4,
           "inclusionRate": 1,
           "avgCopies": 3
         },
@@ -10361,7 +10333,7 @@
           "runes": [
             "chaos"
           ],
-          "decks": 5,
+          "decks": 4,
           "inclusionRate": 1,
           "avgCopies": 3
         },
@@ -10375,9 +10347,9 @@
           "runes": [
             "body"
           ],
-          "decks": 5,
+          "decks": 4,
           "inclusionRate": 1,
-          "avgCopies": 2.8
+          "avgCopies": 2.75
         },
         {
           "name": "Akshan, Mischievous",
@@ -10389,7 +10361,7 @@
           "runes": [
             "body"
           ],
-          "decks": 5,
+          "decks": 4,
           "inclusionRate": 1,
           "avgCopies": 2
         },
@@ -10403,7 +10375,7 @@
           "runes": [
             "body"
           ],
-          "decks": 5,
+          "decks": 4,
           "inclusionRate": 1,
           "avgCopies": 2
         },
@@ -10417,7 +10389,7 @@
           "runes": [
             "chaos"
           ],
-          "decks": 5,
+          "decks": 4,
           "inclusionRate": 1,
           "avgCopies": 2
         },
@@ -10431,7 +10403,7 @@
           "runes": [
             "chaos"
           ],
-          "decks": 5,
+          "decks": 4,
           "inclusionRate": 1,
           "avgCopies": 2
         },
@@ -10445,7 +10417,7 @@
           "runes": [
             "colorless"
           ],
-          "decks": 5,
+          "decks": 4,
           "inclusionRate": 1,
           "avgCopies": 1
         },
@@ -10459,7 +10431,7 @@
           "runes": [
             "colorless"
           ],
-          "decks": 5,
+          "decks": 4,
           "inclusionRate": 1,
           "avgCopies": 1
         },
@@ -10473,7 +10445,7 @@
           "runes": [
             "colorless"
           ],
-          "decks": 5,
+          "decks": 4,
           "inclusionRate": 1,
           "avgCopies": 1
         },
@@ -10488,7 +10460,7 @@
             "body",
             "chaos"
           ],
-          "decks": 5,
+          "decks": 4,
           "inclusionRate": 1,
           "avgCopies": 1
         },
@@ -10502,7 +10474,7 @@
           "runes": [
             "chaos"
           ],
-          "decks": 5,
+          "decks": 4,
           "inclusionRate": 1,
           "avgCopies": 1
         },
@@ -10516,8 +10488,8 @@
           "runes": [
             "chaos"
           ],
-          "decks": 4,
-          "inclusionRate": 0.8,
+          "decks": 3,
+          "inclusionRate": 0.75,
           "avgCopies": 3
         },
         {
@@ -10530,8 +10502,8 @@
           "runes": [
             "chaos"
           ],
-          "decks": 4,
-          "inclusionRate": 0.8,
+          "decks": 3,
+          "inclusionRate": 0.75,
           "avgCopies": 2
         },
         {
@@ -10544,23 +10516,9 @@
           "runes": [
             "chaos"
           ],
-          "decks": 4,
-          "inclusionRate": 0.8,
-          "avgCopies": 1.25
-        },
-        {
-          "name": "Fading Memories",
-          "cardUrl": "/cards/details-fading-memories",
-          "imageSrc": "https://riftdecks.com/img/cards/riftbound/OGN/ogn-180-298_full.png",
-          "type": "spell",
-          "rarity": "uncommon",
-          "price": 0.16,
-          "runes": [
-            "chaos"
-          ],
           "decks": 3,
-          "inclusionRate": 0.6,
-          "avgCopies": 1
+          "inclusionRate": 0.75,
+          "avgCopies": 1.33
         },
         {
           "name": "Heedless Resurrection",
@@ -10573,22 +10531,8 @@
             "chaos"
           ],
           "decks": 3,
-          "inclusionRate": 0.6,
+          "inclusionRate": 0.75,
           "avgCopies": 1
-        },
-        {
-          "name": "Factory Recall",
-          "cardUrl": "/cards/details-factory-recall",
-          "imageSrc": "https://riftdecks.com/img/cards/riftbound/SFD/sfd-135-221_full.png",
-          "type": "sideboard",
-          "rarity": "uncommon",
-          "price": 0.09,
-          "runes": [
-            "chaos"
-          ],
-          "decks": 2,
-          "inclusionRate": 0.4,
-          "avgCopies": 1.5
         },
         {
           "name": "Hard Bargain",
@@ -10601,7 +10545,7 @@
             "chaos"
           ],
           "decks": 2,
-          "inclusionRate": 0.4,
+          "inclusionRate": 0.5,
           "avgCopies": 1.5
         },
         {
@@ -10615,7 +10559,21 @@
             "chaos"
           ],
           "decks": 2,
-          "inclusionRate": 0.4,
+          "inclusionRate": 0.5,
+          "avgCopies": 1
+        },
+        {
+          "name": "Fading Memories",
+          "cardUrl": "/cards/details-fading-memories",
+          "imageSrc": "https://riftdecks.com/img/cards/riftbound/OGN/ogn-180-298_full.png",
+          "type": "sideboard",
+          "rarity": "uncommon",
+          "price": 0.16,
+          "runes": [
+            "chaos"
+          ],
+          "decks": 2,
+          "inclusionRate": 0.5,
           "avgCopies": 1
         },
         {
@@ -10629,7 +10587,7 @@
             "chaos"
           ],
           "decks": 1,
-          "inclusionRate": 0.2,
+          "inclusionRate": 0.25,
           "avgCopies": 3
         },
         {
@@ -10643,7 +10601,7 @@
             "chaos"
           ],
           "decks": 1,
-          "inclusionRate": 0.2,
+          "inclusionRate": 0.25,
           "avgCopies": 1
         },
         {
@@ -10657,7 +10615,21 @@
             "body"
           ],
           "decks": 1,
-          "inclusionRate": 0.2,
+          "inclusionRate": 0.25,
+          "avgCopies": 1
+        },
+        {
+          "name": "Factory Recall",
+          "cardUrl": "/cards/details-factory-recall",
+          "imageSrc": "https://riftdecks.com/img/cards/riftbound/SFD/sfd-135-221_full.png",
+          "type": "sideboard",
+          "rarity": "uncommon",
+          "price": 0.09,
+          "runes": [
+            "chaos"
+          ],
+          "decks": 1,
+          "inclusionRate": 0.25,
           "avgCopies": 1
         },
         {
@@ -10671,7 +10643,7 @@
             "chaos"
           ],
           "decks": 1,
-          "inclusionRate": 0.2,
+          "inclusionRate": 0.25,
           "avgCopies": 1
         },
         {
@@ -10685,7 +10657,7 @@
             "body"
           ],
           "decks": 1,
-          "inclusionRate": 0.2,
+          "inclusionRate": 0.25,
           "avgCopies": 1
         }
       ]
@@ -12131,7 +12103,7 @@
       "legendName": "Master Yi, Wuju Master",
       "legendTileUrl": "https://riftdecks.com/img/cards/riftbound//UNL/unl-191-219_tile.png",
       "decksSampled": 2,
-      "totalDecks": 56,
+      "totalDecks": 57,
       "cards": [
         {
           "name": "Body Rune",
@@ -13245,7 +13217,7 @@
       "legendName": "Sett, The Boss",
       "legendTileUrl": "https://riftdecks.com/img/cards/riftbound//OGN/ogn-310-298_tile.png",
       "decksSampled": 7,
-      "totalDecks": 42,
+      "totalDecks": 43,
       "cards": [
         {
           "name": "Body Rune",
@@ -13829,8 +13801,8 @@
       "legendSlug": "ornn-fire-below-the-mountain",
       "legendName": "Ornn, Fire Below the Mountain",
       "legendTileUrl": "https://riftdecks.com/img/cards/riftbound//SFD/sfd-189-221_tile.png",
-      "decksSampled": 6,
-      "totalDecks": 39,
+      "decksSampled": 5,
+      "totalDecks": 38,
       "cards": [
         {
           "name": "Calm Rune",
@@ -13842,9 +13814,9 @@
           "runes": [
             "calm"
           ],
-          "decks": 6,
+          "decks": 5,
           "inclusionRate": 1,
-          "avgCopies": 6.67
+          "avgCopies": 6.4
         },
         {
           "name": "Mind Rune",
@@ -13856,9 +13828,9 @@
           "runes": [
             "mind"
           ],
-          "decks": 6,
+          "decks": 5,
           "inclusionRate": 1,
-          "avgCopies": 5.33
+          "avgCopies": 5.6
         },
         {
           "name": "Defy",
@@ -13870,9 +13842,9 @@
           "runes": [
             "calm"
           ],
-          "decks": 6,
+          "decks": 5,
           "inclusionRate": 1,
-          "avgCopies": 2.67
+          "avgCopies": 2.6
         },
         {
           "name": "Ornn, Forge God",
@@ -13884,9 +13856,9 @@
           "runes": [
             "mind"
           ],
-          "decks": 6,
+          "decks": 5,
           "inclusionRate": 1,
-          "avgCopies": 1.5
+          "avgCopies": 1.6
         },
         {
           "name": "Ornn, Fire Below the Mountain",
@@ -13899,7 +13871,7 @@
             "calm",
             "mind"
           ],
-          "decks": 6,
+          "decks": 5,
           "inclusionRate": 1,
           "avgCopies": 1
         },
@@ -13914,7 +13886,7 @@
             "calm",
             "mind"
           ],
-          "decks": 6,
+          "decks": 5,
           "inclusionRate": 1,
           "avgCopies": 1
         },
@@ -13928,121 +13900,9 @@
           "runes": [
             "mind"
           ],
-          "decks": 5,
-          "inclusionRate": 0.8333333333333334,
-          "avgCopies": 3
-        },
-        {
-          "name": "Lonely Poro",
-          "cardUrl": "/cards/details-lonely-poro",
-          "imageSrc": "https://riftdecks.com/img/cards/riftbound/SFD/sfd-036-221_full.png",
-          "type": "unit",
-          "rarity": "showcase",
-          "price": 0.11,
-          "runes": [
-            "calm"
-          ],
-          "decks": 5,
-          "inclusionRate": 0.8333333333333334,
-          "avgCopies": 2.6
-        },
-        {
-          "name": "Disarming Rake",
-          "cardUrl": "/cards/details-disarming-rake",
-          "imageSrc": "https://riftdecks.com/img/cards/riftbound/SFD/sfd-032-221_full.png",
-          "type": "sideboard",
-          "rarity": "common",
-          "price": 0.15,
-          "runes": [
-            "calm"
-          ],
-          "decks": 5,
-          "inclusionRate": 0.8333333333333334,
-          "avgCopies": 2.4
-        },
-        {
-          "name": "Poro Snax",
-          "cardUrl": "/cards/details-poro-snax",
-          "imageSrc": "https://riftdecks.com/img/cards/riftbound/SFD/sfd-046-221_full.png",
-          "type": "gear",
-          "rarity": "uncommon",
-          "price": 0.15,
-          "runes": [
-            "calm"
-          ],
-          "decks": 5,
-          "inclusionRate": 0.8333333333333334,
-          "avgCopies": 2.4
-        },
-        {
-          "name": "Seal of Focus",
-          "cardUrl": "/cards/details-seal-of-focus",
-          "imageSrc": "https://riftdecks.com/img/cards/riftbound/OGN/ogn-081-298_full.png",
-          "type": "gear",
-          "rarity": "epic",
-          "price": 8.04,
-          "runes": [
-            "calm"
-          ],
-          "decks": 5,
-          "inclusionRate": 0.8333333333333334,
-          "avgCopies": 2.4
-        },
-        {
-          "name": "Charm",
-          "cardUrl": "/cards/details-charm",
-          "imageSrc": "https://riftdecks.com/img/cards/riftbound/OGN/ogn-043-298_full.png",
-          "type": "spell",
-          "rarity": "common",
-          "price": 0.63,
-          "runes": [
-            "calm"
-          ],
-          "decks": 5,
-          "inclusionRate": 0.8333333333333334,
-          "avgCopies": 2
-        },
-        {
-          "name": "Not So Fast",
-          "cardUrl": "/cards/details-not-so-fast",
-          "imageSrc": "https://riftdecks.com/img/cards/riftbound/SFD/sfd-045-221_full.png",
-          "type": "sideboard",
-          "rarity": "uncommon",
-          "price": 2.65,
-          "runes": [
-            "calm"
-          ],
-          "decks": 5,
-          "inclusionRate": 0.8333333333333334,
-          "avgCopies": 1.6
-        },
-        {
-          "name": "Ornn's Forge",
-          "cardUrl": "/cards/details-ornns-forge",
-          "imageSrc": "https://riftdecks.com/img/cards/riftbound/SFD/sfd-213-221_full.png",
-          "type": "battlefields",
-          "rarity": "uncommon",
-          "price": 0.1,
-          "runes": [
-            "colorless"
-          ],
-          "decks": 5,
-          "inclusionRate": 0.8333333333333334,
-          "avgCopies": 1
-        },
-        {
-          "name": "Discipline",
-          "cardUrl": "/cards/details-discipline",
-          "imageSrc": "https://riftdecks.com/img/cards/riftbound/OGN/ogn-058-298_full.png",
-          "type": "spell",
-          "rarity": "uncommon",
-          "price": 1.88,
-          "runes": [
-            "calm"
-          ],
           "decks": 4,
-          "inclusionRate": 0.6666666666666666,
-          "avgCopies": 2.5
+          "inclusionRate": 0.8,
+          "avgCopies": 3
         },
         {
           "name": "Guardian Angel",
@@ -14055,21 +13915,77 @@
             "calm"
           ],
           "decks": 4,
-          "inclusionRate": 0.6666666666666666,
+          "inclusionRate": 0.8,
           "avgCopies": 2.5
         },
         {
-          "name": "Scuttle Crab",
-          "cardUrl": "/cards/details-scuttle-crab",
-          "imageSrc": "https://riftdecks.com/img/cards/riftbound/UNL/unl-053-219_full.png",
+          "name": "Lonely Poro",
+          "cardUrl": "/cards/details-lonely-poro",
+          "imageSrc": "https://riftdecks.com/img/cards/riftbound/SFD/sfd-036-221_full.png",
           "type": "unit",
-          "rarity": "rare",
-          "price": 1.11,
+          "rarity": "showcase",
+          "price": 0.11,
           "runes": [
             "calm"
           ],
           "decks": 4,
-          "inclusionRate": 0.6666666666666666,
+          "inclusionRate": 0.8,
+          "avgCopies": 2.5
+        },
+        {
+          "name": "Disarming Rake",
+          "cardUrl": "/cards/details-disarming-rake",
+          "imageSrc": "https://riftdecks.com/img/cards/riftbound/SFD/sfd-032-221_full.png",
+          "type": "sideboard",
+          "rarity": "common",
+          "price": 0.15,
+          "runes": [
+            "calm"
+          ],
+          "decks": 4,
+          "inclusionRate": 0.8,
+          "avgCopies": 2.25
+        },
+        {
+          "name": "Poro Snax",
+          "cardUrl": "/cards/details-poro-snax",
+          "imageSrc": "https://riftdecks.com/img/cards/riftbound/SFD/sfd-046-221_full.png",
+          "type": "gear",
+          "rarity": "uncommon",
+          "price": 0.15,
+          "runes": [
+            "calm"
+          ],
+          "decks": 4,
+          "inclusionRate": 0.8,
+          "avgCopies": 2.25
+        },
+        {
+          "name": "Seal of Focus",
+          "cardUrl": "/cards/details-seal-of-focus",
+          "imageSrc": "https://riftdecks.com/img/cards/riftbound/OGN/ogn-081-298_full.png",
+          "type": "gear",
+          "rarity": "epic",
+          "price": 8.04,
+          "runes": [
+            "calm"
+          ],
+          "decks": 4,
+          "inclusionRate": 0.8,
+          "avgCopies": 2.25
+        },
+        {
+          "name": "Charm",
+          "cardUrl": "/cards/details-charm",
+          "imageSrc": "https://riftdecks.com/img/cards/riftbound/OGN/ogn-043-298_full.png",
+          "type": "spell",
+          "rarity": "common",
+          "price": 0.63,
+          "runes": [
+            "calm"
+          ],
+          "decks": 4,
+          "inclusionRate": 0.8,
           "avgCopies": 2
         },
         {
@@ -14083,36 +13999,36 @@
             "calm"
           ],
           "decks": 4,
-          "inclusionRate": 0.6666666666666666,
+          "inclusionRate": 0.8,
           "avgCopies": 2
         },
         {
-          "name": "Thousand-Tailed Watcher",
-          "cardUrl": "/cards/details-thousand-tailed-watcher",
-          "imageSrc": "https://riftdecks.com/img/cards/riftbound/OGN/ogn-116-298_full.png",
-          "type": "unit",
-          "rarity": "rare",
-          "price": 17.91,
-          "runes": [
-            "mind"
-          ],
-          "decks": 4,
-          "inclusionRate": 0.6666666666666666,
-          "avgCopies": 1.5
-        },
-        {
-          "name": "Brutalizer",
-          "cardUrl": "/cards/details-brutalizer",
-          "imageSrc": "https://riftdecks.com/img/cards/riftbound/SFD/sfd-042-221_full.png",
-          "type": "gear",
+          "name": "Not So Fast",
+          "cardUrl": "/cards/details-not-so-fast",
+          "imageSrc": "https://riftdecks.com/img/cards/riftbound/SFD/sfd-045-221_full.png",
+          "type": "sideboard",
           "rarity": "uncommon",
-          "price": 0.25,
+          "price": 2.65,
           "runes": [
             "calm"
           ],
-          "decks": 3,
-          "inclusionRate": 0.5,
-          "avgCopies": 2.67
+          "decks": 4,
+          "inclusionRate": 0.8,
+          "avgCopies": 1.5
+        },
+        {
+          "name": "Ornn's Forge",
+          "cardUrl": "/cards/details-ornns-forge",
+          "imageSrc": "https://riftdecks.com/img/cards/riftbound/SFD/sfd-213-221_full.png",
+          "type": "battlefields",
+          "rarity": "uncommon",
+          "price": 0.1,
+          "runes": [
+            "colorless"
+          ],
+          "decks": 4,
+          "inclusionRate": 0.8,
+          "avgCopies": 1
         },
         {
           "name": "Consult the Past",
@@ -14125,22 +14041,50 @@
             "mind"
           ],
           "decks": 3,
-          "inclusionRate": 0.5,
+          "inclusionRate": 0.6,
           "avgCopies": 2.33
         },
         {
-          "name": "Sterak's Gage",
-          "cardUrl": "/cards/details-steraks-gage",
-          "imageSrc": "https://riftdecks.com/img/cards/riftbound/SFD/sfd-056-221_full.png",
-          "type": "gear",
-          "rarity": "rare",
-          "price": 0.24,
+          "name": "Discipline",
+          "cardUrl": "/cards/details-discipline",
+          "imageSrc": "https://riftdecks.com/img/cards/riftbound/OGN/ogn-058-298_full.png",
+          "type": "spell",
+          "rarity": "uncommon",
+          "price": 1.88,
           "runes": [
             "calm"
           ],
           "decks": 3,
-          "inclusionRate": 0.5,
+          "inclusionRate": 0.6,
           "avgCopies": 2.33
+        },
+        {
+          "name": "Scuttle Crab",
+          "cardUrl": "/cards/details-scuttle-crab",
+          "imageSrc": "https://riftdecks.com/img/cards/riftbound/UNL/unl-053-219_full.png",
+          "type": "unit",
+          "rarity": "rare",
+          "price": 1.11,
+          "runes": [
+            "calm"
+          ],
+          "decks": 3,
+          "inclusionRate": 0.6,
+          "avgCopies": 2
+        },
+        {
+          "name": "Thousand-Tailed Watcher",
+          "cardUrl": "/cards/details-thousand-tailed-watcher",
+          "imageSrc": "https://riftdecks.com/img/cards/riftbound/OGN/ogn-116-298_full.png",
+          "type": "unit",
+          "rarity": "rare",
+          "price": 17.91,
+          "runes": [
+            "mind"
+          ],
+          "decks": 3,
+          "inclusionRate": 0.6,
+          "avgCopies": 1.67
         },
         {
           "name": "Turn to Dust",
@@ -14153,22 +14097,8 @@
             "mind"
           ],
           "decks": 3,
-          "inclusionRate": 0.5,
+          "inclusionRate": 0.6,
           "avgCopies": 1.67
-        },
-        {
-          "name": "Dusk Rose Lab",
-          "cardUrl": "/cards/details-dusk-rose-lab",
-          "imageSrc": "https://riftdecks.com/img/cards/riftbound/UNL/unl-209-219_full.png",
-          "type": "battlefields",
-          "rarity": "uncommon",
-          "price": 0.08,
-          "runes": [
-            "colorless"
-          ],
-          "decks": 3,
-          "inclusionRate": 0.5,
-          "avgCopies": 1
         },
         {
           "name": "Flurry of Feathers",
@@ -14181,23 +14111,22 @@
             "calm"
           ],
           "decks": 3,
-          "inclusionRate": 0.5,
+          "inclusionRate": 0.6,
           "avgCopies": 1
         },
         {
-          "name": "Forgefire Cape",
-          "cardUrl": "/cards/details-forgefire-cape",
-          "imageSrc": "https://riftdecks.com/img/cards/riftbound/SFD/sfd-190-221_full.png",
+          "name": "Brutalizer",
+          "cardUrl": "/cards/details-brutalizer",
+          "imageSrc": "https://riftdecks.com/img/cards/riftbound/SFD/sfd-042-221_full.png",
           "type": "gear",
-          "rarity": "epic",
-          "price": 0.53,
+          "rarity": "uncommon",
+          "price": 0.25,
           "runes": [
-            "calm",
-            "mind"
+            "calm"
           ],
-          "decks": 3,
-          "inclusionRate": 0.5,
-          "avgCopies": 1
+          "decks": 2,
+          "inclusionRate": 0.4,
+          "avgCopies": 2.5
         },
         {
           "name": "Lecturing Yordle",
@@ -14210,35 +14139,21 @@
             "mind"
           ],
           "decks": 2,
-          "inclusionRate": 0.3333333333333333,
+          "inclusionRate": 0.4,
           "avgCopies": 2.5
         },
         {
-          "name": "Pit Crew",
-          "cardUrl": "/cards/details-pit-crew",
-          "imageSrc": "https://riftdecks.com/img/cards/riftbound/OGN/ogn-091-298_full.png",
-          "type": "unit",
-          "rarity": "common",
-          "price": 0.12,
+          "name": "Sterak's Gage",
+          "cardUrl": "/cards/details-steraks-gage",
+          "imageSrc": "https://riftdecks.com/img/cards/riftbound/SFD/sfd-056-221_full.png",
+          "type": "gear",
+          "rarity": "rare",
+          "price": 0.24,
           "runes": [
-            "mind"
+            "calm"
           ],
           "decks": 2,
-          "inclusionRate": 0.3333333333333333,
-          "avgCopies": 2.5
-        },
-        {
-          "name": "Sprite Burst",
-          "cardUrl": "/cards/details-sprite-burst",
-          "imageSrc": "https://riftdecks.com/img/cards/riftbound/UNL/unl-069-219_full.png",
-          "type": "spell",
-          "rarity": "common",
-          "price": 0.1,
-          "runes": [
-            "mind"
-          ],
-          "decks": 2,
-          "inclusionRate": 0.3333333333333333,
+          "inclusionRate": 0.4,
           "avgCopies": 2.5
         },
         {
@@ -14252,22 +14167,8 @@
             "mind"
           ],
           "decks": 2,
-          "inclusionRate": 0.3333333333333333,
+          "inclusionRate": 0.4,
           "avgCopies": 2.5
-        },
-        {
-          "name": "Aspiring Engineer",
-          "cardUrl": "/cards/details-aspiring-engineer",
-          "imageSrc": "https://riftdecks.com/img/cards/riftbound/SFD/sfd-061-221_full.png",
-          "type": "unit",
-          "rarity": "common",
-          "price": 0.08,
-          "runes": [
-            "mind"
-          ],
-          "decks": 2,
-          "inclusionRate": 0.3333333333333333,
-          "avgCopies": 2
         },
         {
           "name": "Dropboarder",
@@ -14280,7 +14181,7 @@
             "mind"
           ],
           "decks": 2,
-          "inclusionRate": 0.3333333333333333,
+          "inclusionRate": 0.4,
           "avgCopies": 2
         },
         {
@@ -14294,7 +14195,7 @@
             "mind"
           ],
           "decks": 2,
-          "inclusionRate": 0.3333333333333333,
+          "inclusionRate": 0.4,
           "avgCopies": 1.5
         },
         {
@@ -14308,7 +14209,7 @@
             "calm"
           ],
           "decks": 2,
-          "inclusionRate": 0.3333333333333333,
+          "inclusionRate": 0.4,
           "avgCopies": 1.5
         },
         {
@@ -14322,7 +14223,7 @@
             "mind"
           ],
           "decks": 2,
-          "inclusionRate": 0.3333333333333333,
+          "inclusionRate": 0.4,
           "avgCopies": 1.5
         },
         {
@@ -14336,21 +14237,36 @@
             "calm"
           ],
           "decks": 2,
-          "inclusionRate": 0.3333333333333333,
+          "inclusionRate": 0.4,
           "avgCopies": 1.5
         },
         {
-          "name": "Azir, Ascendant",
-          "cardUrl": "/cards/details-azir-ascendant",
-          "imageSrc": "https://riftdecks.com/img/cards/riftbound/SFD/sfd-050-221_full.png",
-          "type": "unit",
-          "rarity": "showcase",
-          "price": 0.24,
+          "name": "Dusk Rose Lab",
+          "cardUrl": "/cards/details-dusk-rose-lab",
+          "imageSrc": "https://riftdecks.com/img/cards/riftbound/UNL/unl-209-219_full.png",
+          "type": "battlefields",
+          "rarity": "uncommon",
+          "price": 0.08,
           "runes": [
-            "calm"
+            "colorless"
           ],
           "decks": 2,
-          "inclusionRate": 0.3333333333333333,
+          "inclusionRate": 0.4,
+          "avgCopies": 1
+        },
+        {
+          "name": "Forgefire Cape",
+          "cardUrl": "/cards/details-forgefire-cape",
+          "imageSrc": "https://riftdecks.com/img/cards/riftbound/SFD/sfd-190-221_full.png",
+          "type": "gear",
+          "rarity": "epic",
+          "price": 0.53,
+          "runes": [
+            "calm",
+            "mind"
+          ],
+          "decks": 2,
+          "inclusionRate": 0.4,
           "avgCopies": 1
         },
         {
@@ -14364,21 +14280,7 @@
             "calm"
           ],
           "decks": 2,
-          "inclusionRate": 0.3333333333333333,
-          "avgCopies": 1
-        },
-        {
-          "name": "Ornn, Blacksmith",
-          "cardUrl": "/cards/details-ornn-blacksmith",
-          "imageSrc": "https://riftdecks.com/img/cards/riftbound/SFD/sfd-058-221_full.png",
-          "type": "unit",
-          "rarity": "showcase",
-          "price": 0.71,
-          "runes": [
-            "calm"
-          ],
-          "decks": 2,
-          "inclusionRate": 0.3333333333333333,
+          "inclusionRate": 0.4,
           "avgCopies": 1
         },
         {
@@ -14393,7 +14295,7 @@
             "mind"
           ],
           "decks": 2,
-          "inclusionRate": 0.3333333333333333,
+          "inclusionRate": 0.4,
           "avgCopies": 1
         },
         {
@@ -14407,7 +14309,7 @@
             "colorless"
           ],
           "decks": 2,
-          "inclusionRate": 0.3333333333333333,
+          "inclusionRate": 0.4,
           "avgCopies": 1
         },
         {
@@ -14421,7 +14323,7 @@
             "colorless"
           ],
           "decks": 2,
-          "inclusionRate": 0.3333333333333333,
+          "inclusionRate": 0.4,
           "avgCopies": 1
         },
         {
@@ -14435,7 +14337,7 @@
             "calm"
           ],
           "decks": 1,
-          "inclusionRate": 0.16666666666666666,
+          "inclusionRate": 0.2,
           "avgCopies": 3
         },
         {
@@ -14449,7 +14351,7 @@
             "mind"
           ],
           "decks": 1,
-          "inclusionRate": 0.16666666666666666,
+          "inclusionRate": 0.2,
           "avgCopies": 3
         },
         {
@@ -14463,7 +14365,7 @@
             "mind"
           ],
           "decks": 1,
-          "inclusionRate": 0.16666666666666666,
+          "inclusionRate": 0.2,
           "avgCopies": 3
         },
         {
@@ -14477,7 +14379,7 @@
             "mind"
           ],
           "decks": 1,
-          "inclusionRate": 0.16666666666666666,
+          "inclusionRate": 0.2,
           "avgCopies": 3
         },
         {
@@ -14491,7 +14393,7 @@
             "calm"
           ],
           "decks": 1,
-          "inclusionRate": 0.16666666666666666,
+          "inclusionRate": 0.2,
           "avgCopies": 3
         },
         {
@@ -14505,7 +14407,7 @@
             "calm"
           ],
           "decks": 1,
-          "inclusionRate": 0.16666666666666666,
+          "inclusionRate": 0.2,
           "avgCopies": 3
         },
         {
@@ -14519,21 +14421,21 @@
             "mind"
           ],
           "decks": 1,
-          "inclusionRate": 0.16666666666666666,
+          "inclusionRate": 0.2,
           "avgCopies": 3
         },
         {
-          "name": "Clockwork Keeper",
-          "cardUrl": "/cards/details-clockwork-keeper",
-          "imageSrc": "https://riftdecks.com/img/cards/riftbound/OGN/ogn-044-298_full.png",
+          "name": "Aspiring Engineer",
+          "cardUrl": "/cards/details-aspiring-engineer",
+          "imageSrc": "https://riftdecks.com/img/cards/riftbound/SFD/sfd-061-221_full.png",
           "type": "unit",
           "rarity": "common",
-          "price": 0.1,
+          "price": 0.08,
           "runes": [
-            "calm"
+            "mind"
           ],
           "decks": 1,
-          "inclusionRate": 0.16666666666666666,
+          "inclusionRate": 0.2,
           "avgCopies": 2
         },
         {
@@ -14547,7 +14449,7 @@
             "mind"
           ],
           "decks": 1,
-          "inclusionRate": 0.16666666666666666,
+          "inclusionRate": 0.2,
           "avgCopies": 2
         },
         {
@@ -14561,7 +14463,7 @@
             "mind"
           ],
           "decks": 1,
-          "inclusionRate": 0.16666666666666666,
+          "inclusionRate": 0.2,
           "avgCopies": 2
         },
         {
@@ -14575,7 +14477,7 @@
             "calm"
           ],
           "decks": 1,
-          "inclusionRate": 0.16666666666666666,
+          "inclusionRate": 0.2,
           "avgCopies": 2
         },
         {
@@ -14589,7 +14491,7 @@
             "calm"
           ],
           "decks": 1,
-          "inclusionRate": 0.16666666666666666,
+          "inclusionRate": 0.2,
           "avgCopies": 2
         },
         {
@@ -14603,7 +14505,21 @@
             "mind"
           ],
           "decks": 1,
-          "inclusionRate": 0.16666666666666666,
+          "inclusionRate": 0.2,
+          "avgCopies": 2
+        },
+        {
+          "name": "Pit Crew",
+          "cardUrl": "/cards/details-pit-crew",
+          "imageSrc": "https://riftdecks.com/img/cards/riftbound/OGN/ogn-091-298_full.png",
+          "type": "unit",
+          "rarity": "common",
+          "price": 0.12,
+          "runes": [
+            "mind"
+          ],
+          "decks": 1,
+          "inclusionRate": 0.2,
           "avgCopies": 2
         },
         {
@@ -14617,7 +14533,7 @@
             "mind"
           ],
           "decks": 1,
-          "inclusionRate": 0.16666666666666666,
+          "inclusionRate": 0.2,
           "avgCopies": 2
         },
         {
@@ -14631,7 +14547,21 @@
             "mind"
           ],
           "decks": 1,
-          "inclusionRate": 0.16666666666666666,
+          "inclusionRate": 0.2,
+          "avgCopies": 2
+        },
+        {
+          "name": "Sprite Burst",
+          "cardUrl": "/cards/details-sprite-burst",
+          "imageSrc": "https://riftdecks.com/img/cards/riftbound/UNL/unl-069-219_full.png",
+          "type": "spell",
+          "rarity": "common",
+          "price": 0.1,
+          "runes": [
+            "mind"
+          ],
+          "decks": 1,
+          "inclusionRate": 0.2,
           "avgCopies": 2
         },
         {
@@ -14645,7 +14575,7 @@
             "mind"
           ],
           "decks": 1,
-          "inclusionRate": 0.16666666666666666,
+          "inclusionRate": 0.2,
           "avgCopies": 2
         },
         {
@@ -14659,7 +14589,7 @@
             "calm"
           ],
           "decks": 1,
-          "inclusionRate": 0.16666666666666666,
+          "inclusionRate": 0.2,
           "avgCopies": 2
         },
         {
@@ -14673,7 +14603,7 @@
             "calm"
           ],
           "decks": 1,
-          "inclusionRate": 0.16666666666666666,
+          "inclusionRate": 0.2,
           "avgCopies": 1
         },
         {
@@ -14687,7 +14617,7 @@
             "colorless"
           ],
           "decks": 1,
-          "inclusionRate": 0.16666666666666666,
+          "inclusionRate": 0.2,
           "avgCopies": 1
         },
         {
@@ -14701,7 +14631,21 @@
             "colorless"
           ],
           "decks": 1,
-          "inclusionRate": 0.16666666666666666,
+          "inclusionRate": 0.2,
+          "avgCopies": 1
+        },
+        {
+          "name": "Azir, Ascendant",
+          "cardUrl": "/cards/details-azir-ascendant",
+          "imageSrc": "https://riftdecks.com/img/cards/riftbound/SFD/sfd-050-221_full.png",
+          "type": "unit",
+          "rarity": "showcase",
+          "price": 0.24,
+          "runes": [
+            "calm"
+          ],
+          "decks": 1,
+          "inclusionRate": 0.2,
           "avgCopies": 1
         },
         {
@@ -14715,7 +14659,7 @@
             "mind"
           ],
           "decks": 1,
-          "inclusionRate": 0.16666666666666666,
+          "inclusionRate": 0.2,
           "avgCopies": 1
         },
         {
@@ -14729,21 +14673,21 @@
             "colorless"
           ],
           "decks": 1,
-          "inclusionRate": 0.16666666666666666,
+          "inclusionRate": 0.2,
           "avgCopies": 1
         },
         {
-          "name": "Seat of Power",
-          "cardUrl": "/cards/details-seat-of-power",
-          "imageSrc": "https://riftdecks.com/img/cards/riftbound/SFD/sfd-217-221_full.png",
-          "type": "battlefields",
-          "rarity": "uncommon",
-          "price": 0.12,
+          "name": "Ornn, Blacksmith",
+          "cardUrl": "/cards/details-ornn-blacksmith",
+          "imageSrc": "https://riftdecks.com/img/cards/riftbound/SFD/sfd-058-221_full.png",
+          "type": "unit",
+          "rarity": "showcase",
+          "price": 0.71,
           "runes": [
-            "colorless"
+            "calm"
           ],
           "decks": 1,
-          "inclusionRate": 0.16666666666666666,
+          "inclusionRate": 0.2,
           "avgCopies": 1
         },
         {
@@ -14757,7 +14701,7 @@
             "colorless"
           ],
           "decks": 1,
-          "inclusionRate": 0.16666666666666666,
+          "inclusionRate": 0.2,
           "avgCopies": 1
         },
         {
@@ -14771,7 +14715,7 @@
             "mind"
           ],
           "decks": 1,
-          "inclusionRate": 0.16666666666666666,
+          "inclusionRate": 0.2,
           "avgCopies": 1
         },
         {
@@ -14785,7 +14729,7 @@
             "colorless"
           ],
           "decks": 1,
-          "inclusionRate": 0.16666666666666666,
+          "inclusionRate": 0.2,
           "avgCopies": 1
         }
       ]
@@ -14795,7 +14739,7 @@
       "legendName": "Lux, Lady of Luminosity",
       "legendTileUrl": "https://riftdecks.com/img/cards/riftbound//OGS/ogs-021-024_tile.png",
       "decksSampled": 6,
-      "totalDecks": 36,
+      "totalDecks": 37,
       "cards": [
         {
           "name": "Mind Rune",
@@ -17032,6 +16976,353 @@
       ]
     },
     {
+      "legendSlug": "ahri-nine-tailed-fox",
+      "legendName": "Ahri, Nine-Tailed Fox",
+      "legendTileUrl": "https://riftdecks.com/img/cards/riftbound//OGN/ogn-303-298_tile.png",
+      "decksSampled": 1,
+      "totalDecks": 26,
+      "cards": [
+        {
+          "name": "Calm Rune",
+          "cardUrl": "/cards/details-calm-rune",
+          "imageSrc": "https://riftdecks.com/img/cards/riftbound/OGN/ogn-042-298_full.png",
+          "type": "runes",
+          "rarity": "showcase",
+          "price": 0.11,
+          "runes": [
+            "calm"
+          ],
+          "decks": 1,
+          "inclusionRate": 1,
+          "avgCopies": 6
+        },
+        {
+          "name": "Mind Rune",
+          "cardUrl": "/cards/details-mind-rune",
+          "imageSrc": "https://riftdecks.com/img/cards/riftbound/OGN/ogn-089a-298_full.png",
+          "type": "runes",
+          "rarity": "common",
+          "price": 0.14,
+          "runes": [
+            "mind"
+          ],
+          "decks": 1,
+          "inclusionRate": 1,
+          "avgCopies": 6
+        },
+        {
+          "name": "Defy",
+          "cardUrl": "/cards/details-defy",
+          "imageSrc": "https://riftdecks.com/img/cards/riftbound/OGN/ogn-045-298_full.png",
+          "type": "spell",
+          "rarity": "common",
+          "price": 2.47,
+          "runes": [
+            "calm"
+          ],
+          "decks": 1,
+          "inclusionRate": 1,
+          "avgCopies": 3
+        },
+        {
+          "name": "Discipline",
+          "cardUrl": "/cards/details-discipline",
+          "imageSrc": "https://riftdecks.com/img/cards/riftbound/OGN/ogn-058-298_full.png",
+          "type": "spell",
+          "rarity": "uncommon",
+          "price": 1.88,
+          "runes": [
+            "calm"
+          ],
+          "decks": 1,
+          "inclusionRate": 1,
+          "avgCopies": 3
+        },
+        {
+          "name": "Eager Apprentice",
+          "cardUrl": "/cards/details-eager-apprentice",
+          "imageSrc": "https://riftdecks.com/img/cards/riftbound/OGN/ogn-084-298_full.png",
+          "type": "unit",
+          "rarity": "common",
+          "price": 0.07,
+          "runes": [
+            "mind"
+          ],
+          "decks": 1,
+          "inclusionRate": 1,
+          "avgCopies": 3
+        },
+        {
+          "name": "Ravenbloom Student",
+          "cardUrl": "/cards/details-ravenbloom-student",
+          "imageSrc": "https://riftdecks.com/img/cards/riftbound/OGN/ogn-103-298_full.png",
+          "type": "unit",
+          "rarity": "uncommon",
+          "price": 0.27,
+          "runes": [
+            "mind"
+          ],
+          "decks": 1,
+          "inclusionRate": 1,
+          "avgCopies": 3
+        },
+        {
+          "name": "Stalwart Poro",
+          "cardUrl": "/cards/details-stalwart-poro",
+          "imageSrc": "https://riftdecks.com/img/cards/riftbound/OGN/ogn-052-298_full.png",
+          "type": "unit",
+          "rarity": "common",
+          "price": 0.1,
+          "runes": [
+            "calm"
+          ],
+          "decks": 1,
+          "inclusionRate": 1,
+          "avgCopies": 3
+        },
+        {
+          "name": "Stupefy",
+          "cardUrl": "/cards/details-stupefy",
+          "imageSrc": "https://riftdecks.com/img/cards/riftbound/OGN/ogn-095-298_full.png",
+          "type": "spell",
+          "rarity": "common",
+          "price": 0.22,
+          "runes": [
+            "mind"
+          ],
+          "decks": 1,
+          "inclusionRate": 1,
+          "avgCopies": 3
+        },
+        {
+          "name": "Back Off",
+          "cardUrl": "/cards/details-back-off",
+          "imageSrc": "https://riftdecks.com/img/cards/riftbound/UNL/unl-042-219_full.png",
+          "type": "sideboard",
+          "rarity": "uncommon",
+          "price": 0.16,
+          "runes": [
+            "calm"
+          ],
+          "decks": 1,
+          "inclusionRate": 1,
+          "avgCopies": 2
+        },
+        {
+          "name": "Blitzcrank, Impassive",
+          "cardUrl": "/cards/details-blitzcrank-impassive",
+          "imageSrc": "https://riftdecks.com/img/cards/riftbound/OGN/ogn-067-298_full.png",
+          "type": "unit",
+          "rarity": "rare",
+          "price": 0.67,
+          "runes": [
+            "calm"
+          ],
+          "decks": 1,
+          "inclusionRate": 1,
+          "avgCopies": 2
+        },
+        {
+          "name": "Block",
+          "cardUrl": "/cards/details-block",
+          "imageSrc": "https://riftdecks.com/img/cards/riftbound/OGN/ogn-057-298_full.png",
+          "type": "spell",
+          "rarity": "uncommon",
+          "price": 0.18,
+          "runes": [
+            "calm"
+          ],
+          "decks": 1,
+          "inclusionRate": 1,
+          "avgCopies": 2
+        },
+        {
+          "name": "Charm",
+          "cardUrl": "/cards/details-charm",
+          "imageSrc": "https://riftdecks.com/img/cards/riftbound/OGN/ogn-043-298_full.png",
+          "type": "spell",
+          "rarity": "common",
+          "price": 0.63,
+          "runes": [
+            "calm"
+          ],
+          "decks": 1,
+          "inclusionRate": 1,
+          "avgCopies": 2
+        },
+        {
+          "name": "Diana, Lunari",
+          "cardUrl": "/cards/details-diana-lunari",
+          "imageSrc": "https://riftdecks.com/img/cards/riftbound/UNL/unl-079-219_full.png",
+          "type": "unit",
+          "rarity": "showcase",
+          "price": 0.14,
+          "runes": [
+            "mind"
+          ],
+          "decks": 1,
+          "inclusionRate": 1,
+          "avgCopies": 2
+        },
+        {
+          "name": "Disarming Rake",
+          "cardUrl": "/cards/details-disarming-rake",
+          "imageSrc": "https://riftdecks.com/img/cards/riftbound/SFD/sfd-032-221_full.png",
+          "type": "sideboard",
+          "rarity": "common",
+          "price": 0.15,
+          "runes": [
+            "calm"
+          ],
+          "decks": 1,
+          "inclusionRate": 1,
+          "avgCopies": 2
+        },
+        {
+          "name": "En Garde",
+          "cardUrl": "/cards/details-en-garde",
+          "imageSrc": "https://riftdecks.com/img/cards/riftbound/OGN/ogn-046-298_full.png",
+          "type": "spell",
+          "rarity": "common",
+          "price": 0.17,
+          "runes": [
+            "calm"
+          ],
+          "decks": 1,
+          "inclusionRate": 1,
+          "avgCopies": 2
+        },
+        {
+          "name": "Falling Comet",
+          "cardUrl": "/cards/details-falling-comet",
+          "imageSrc": "https://riftdecks.com/img/cards/riftbound/OGN/ogn-085-298_full.png",
+          "type": "sideboard",
+          "rarity": "common",
+          "price": 0.14,
+          "runes": [
+            "mind"
+          ],
+          "decks": 1,
+          "inclusionRate": 1,
+          "avgCopies": 2
+        },
+        {
+          "name": "Lonely Poro",
+          "cardUrl": "/cards/details-lonely-poro",
+          "imageSrc": "https://riftdecks.com/img/cards/riftbound/SFD/sfd-036-221_full.png",
+          "type": "unit",
+          "rarity": "showcase",
+          "price": 0.11,
+          "runes": [
+            "calm"
+          ],
+          "decks": 1,
+          "inclusionRate": 1,
+          "avgCopies": 2
+        },
+        {
+          "name": "Meditation",
+          "cardUrl": "/cards/details-meditation",
+          "imageSrc": "https://riftdecks.com/img/cards/riftbound/OGN/ogn-048-298_full.png",
+          "type": "spell",
+          "rarity": "common",
+          "price": 0.09,
+          "runes": [
+            "calm"
+          ],
+          "decks": 1,
+          "inclusionRate": 1,
+          "avgCopies": 2
+        },
+        {
+          "name": "Not So Fast",
+          "cardUrl": "/cards/details-not-so-fast",
+          "imageSrc": "https://riftdecks.com/img/cards/riftbound/SFD/sfd-045-221_full.png",
+          "type": "spell",
+          "rarity": "uncommon",
+          "price": 2.65,
+          "runes": [
+            "calm"
+          ],
+          "decks": 1,
+          "inclusionRate": 1,
+          "avgCopies": 2
+        },
+        {
+          "name": "Smoke Screen",
+          "cardUrl": "/cards/details-smoke-screen",
+          "imageSrc": "https://riftdecks.com/img/cards/riftbound/OGN/ogn-093-298_full.png",
+          "type": "spell",
+          "rarity": "common",
+          "price": 0.16,
+          "runes": [
+            "mind"
+          ],
+          "decks": 1,
+          "inclusionRate": 1,
+          "avgCopies": 2
+        },
+        {
+          "name": "Thousand-Tailed Watcher",
+          "cardUrl": "/cards/details-thousand-tailed-watcher",
+          "imageSrc": "https://riftdecks.com/img/cards/riftbound/OGN/ogn-116-298_full.png",
+          "type": "unit",
+          "rarity": "rare",
+          "price": 17.91,
+          "runes": [
+            "mind"
+          ],
+          "decks": 1,
+          "inclusionRate": 1,
+          "avgCopies": 2
+        },
+        {
+          "name": "Thwonk!",
+          "cardUrl": "/cards/details-thwonk",
+          "imageSrc": "https://riftdecks.com/img/cards/riftbound/SFD/sfd-040-221_full.png",
+          "type": "spell",
+          "rarity": "common",
+          "price": 0.1,
+          "runes": [
+            "calm"
+          ],
+          "decks": 1,
+          "inclusionRate": 1,
+          "avgCopies": 2
+        },
+        {
+          "name": "Ahri, Nine-Tailed Fox",
+          "cardUrl": "/cards/details-ahri-nine-tailed-fox",
+          "imageSrc": "https://riftdecks.com/img/cards/riftbound/OGN/ogn-303-298_full.png",
+          "type": "legend",
+          "rarity": "rare",
+          "price": 1.98,
+          "runes": [
+            "calm",
+            "mind"
+          ],
+          "decks": 1,
+          "inclusionRate": 1,
+          "avgCopies": 1
+        },
+        {
+          "name": "Fox-Fire",
+          "cardUrl": "/cards/details-fox-fire",
+          "imageSrc": "https://riftdecks.com/img/cards/riftbound/OGN/ogn-256-298_full.png",
+          "type": "spell",
+          "rarity": "epic",
+          "price": 2.78,
+          "runes": [
+            "calm",
+            "mind"
+          ],
+          "decks": 1,
+          "inclusionRate": 1,
+          "avgCopies": 1
+        }
+      ]
+    },
+    {
       "legendSlug": "darius-hand-of-noxus",
       "legendName": "Darius, Hand of Noxus",
       "legendTileUrl": "https://riftdecks.com/img/cards/riftbound//OGN/ogn-302-298_tile.png",
@@ -17640,353 +17931,6 @@
           ],
           "decks": 1,
           "inclusionRate": 0.5,
-          "avgCopies": 1
-        }
-      ]
-    },
-    {
-      "legendSlug": "ahri-nine-tailed-fox",
-      "legendName": "Ahri, Nine-Tailed Fox",
-      "legendTileUrl": "https://riftdecks.com/img/cards/riftbound//OGN/ogn-303-298_tile.png",
-      "decksSampled": 1,
-      "totalDecks": 24,
-      "cards": [
-        {
-          "name": "Calm Rune",
-          "cardUrl": "/cards/details-calm-rune",
-          "imageSrc": "https://riftdecks.com/img/cards/riftbound/OGN/ogn-042-298_full.png",
-          "type": "runes",
-          "rarity": "showcase",
-          "price": 0.11,
-          "runes": [
-            "calm"
-          ],
-          "decks": 1,
-          "inclusionRate": 1,
-          "avgCopies": 6
-        },
-        {
-          "name": "Mind Rune",
-          "cardUrl": "/cards/details-mind-rune",
-          "imageSrc": "https://riftdecks.com/img/cards/riftbound/OGN/ogn-089a-298_full.png",
-          "type": "runes",
-          "rarity": "common",
-          "price": 0.14,
-          "runes": [
-            "mind"
-          ],
-          "decks": 1,
-          "inclusionRate": 1,
-          "avgCopies": 6
-        },
-        {
-          "name": "Defy",
-          "cardUrl": "/cards/details-defy",
-          "imageSrc": "https://riftdecks.com/img/cards/riftbound/OGN/ogn-045-298_full.png",
-          "type": "spell",
-          "rarity": "common",
-          "price": 2.47,
-          "runes": [
-            "calm"
-          ],
-          "decks": 1,
-          "inclusionRate": 1,
-          "avgCopies": 3
-        },
-        {
-          "name": "Discipline",
-          "cardUrl": "/cards/details-discipline",
-          "imageSrc": "https://riftdecks.com/img/cards/riftbound/OGN/ogn-058-298_full.png",
-          "type": "spell",
-          "rarity": "uncommon",
-          "price": 1.88,
-          "runes": [
-            "calm"
-          ],
-          "decks": 1,
-          "inclusionRate": 1,
-          "avgCopies": 3
-        },
-        {
-          "name": "Eager Apprentice",
-          "cardUrl": "/cards/details-eager-apprentice",
-          "imageSrc": "https://riftdecks.com/img/cards/riftbound/OGN/ogn-084-298_full.png",
-          "type": "unit",
-          "rarity": "common",
-          "price": 0.07,
-          "runes": [
-            "mind"
-          ],
-          "decks": 1,
-          "inclusionRate": 1,
-          "avgCopies": 3
-        },
-        {
-          "name": "Ravenbloom Student",
-          "cardUrl": "/cards/details-ravenbloom-student",
-          "imageSrc": "https://riftdecks.com/img/cards/riftbound/OGN/ogn-103-298_full.png",
-          "type": "unit",
-          "rarity": "uncommon",
-          "price": 0.27,
-          "runes": [
-            "mind"
-          ],
-          "decks": 1,
-          "inclusionRate": 1,
-          "avgCopies": 3
-        },
-        {
-          "name": "Stalwart Poro",
-          "cardUrl": "/cards/details-stalwart-poro",
-          "imageSrc": "https://riftdecks.com/img/cards/riftbound/OGN/ogn-052-298_full.png",
-          "type": "unit",
-          "rarity": "common",
-          "price": 0.1,
-          "runes": [
-            "calm"
-          ],
-          "decks": 1,
-          "inclusionRate": 1,
-          "avgCopies": 3
-        },
-        {
-          "name": "Stupefy",
-          "cardUrl": "/cards/details-stupefy",
-          "imageSrc": "https://riftdecks.com/img/cards/riftbound/OGN/ogn-095-298_full.png",
-          "type": "spell",
-          "rarity": "common",
-          "price": 0.22,
-          "runes": [
-            "mind"
-          ],
-          "decks": 1,
-          "inclusionRate": 1,
-          "avgCopies": 3
-        },
-        {
-          "name": "Back Off",
-          "cardUrl": "/cards/details-back-off",
-          "imageSrc": "https://riftdecks.com/img/cards/riftbound/UNL/unl-042-219_full.png",
-          "type": "sideboard",
-          "rarity": "uncommon",
-          "price": 0.16,
-          "runes": [
-            "calm"
-          ],
-          "decks": 1,
-          "inclusionRate": 1,
-          "avgCopies": 2
-        },
-        {
-          "name": "Blitzcrank, Impassive",
-          "cardUrl": "/cards/details-blitzcrank-impassive",
-          "imageSrc": "https://riftdecks.com/img/cards/riftbound/OGN/ogn-067-298_full.png",
-          "type": "unit",
-          "rarity": "rare",
-          "price": 0.67,
-          "runes": [
-            "calm"
-          ],
-          "decks": 1,
-          "inclusionRate": 1,
-          "avgCopies": 2
-        },
-        {
-          "name": "Block",
-          "cardUrl": "/cards/details-block",
-          "imageSrc": "https://riftdecks.com/img/cards/riftbound/OGN/ogn-057-298_full.png",
-          "type": "spell",
-          "rarity": "uncommon",
-          "price": 0.18,
-          "runes": [
-            "calm"
-          ],
-          "decks": 1,
-          "inclusionRate": 1,
-          "avgCopies": 2
-        },
-        {
-          "name": "Charm",
-          "cardUrl": "/cards/details-charm",
-          "imageSrc": "https://riftdecks.com/img/cards/riftbound/OGN/ogn-043-298_full.png",
-          "type": "spell",
-          "rarity": "common",
-          "price": 0.63,
-          "runes": [
-            "calm"
-          ],
-          "decks": 1,
-          "inclusionRate": 1,
-          "avgCopies": 2
-        },
-        {
-          "name": "Diana, Lunari",
-          "cardUrl": "/cards/details-diana-lunari",
-          "imageSrc": "https://riftdecks.com/img/cards/riftbound/UNL/unl-079-219_full.png",
-          "type": "unit",
-          "rarity": "showcase",
-          "price": 0.14,
-          "runes": [
-            "mind"
-          ],
-          "decks": 1,
-          "inclusionRate": 1,
-          "avgCopies": 2
-        },
-        {
-          "name": "Disarming Rake",
-          "cardUrl": "/cards/details-disarming-rake",
-          "imageSrc": "https://riftdecks.com/img/cards/riftbound/SFD/sfd-032-221_full.png",
-          "type": "sideboard",
-          "rarity": "common",
-          "price": 0.15,
-          "runes": [
-            "calm"
-          ],
-          "decks": 1,
-          "inclusionRate": 1,
-          "avgCopies": 2
-        },
-        {
-          "name": "En Garde",
-          "cardUrl": "/cards/details-en-garde",
-          "imageSrc": "https://riftdecks.com/img/cards/riftbound/OGN/ogn-046-298_full.png",
-          "type": "spell",
-          "rarity": "common",
-          "price": 0.17,
-          "runes": [
-            "calm"
-          ],
-          "decks": 1,
-          "inclusionRate": 1,
-          "avgCopies": 2
-        },
-        {
-          "name": "Falling Comet",
-          "cardUrl": "/cards/details-falling-comet",
-          "imageSrc": "https://riftdecks.com/img/cards/riftbound/OGN/ogn-085-298_full.png",
-          "type": "sideboard",
-          "rarity": "common",
-          "price": 0.14,
-          "runes": [
-            "mind"
-          ],
-          "decks": 1,
-          "inclusionRate": 1,
-          "avgCopies": 2
-        },
-        {
-          "name": "Lonely Poro",
-          "cardUrl": "/cards/details-lonely-poro",
-          "imageSrc": "https://riftdecks.com/img/cards/riftbound/SFD/sfd-036-221_full.png",
-          "type": "unit",
-          "rarity": "showcase",
-          "price": 0.11,
-          "runes": [
-            "calm"
-          ],
-          "decks": 1,
-          "inclusionRate": 1,
-          "avgCopies": 2
-        },
-        {
-          "name": "Meditation",
-          "cardUrl": "/cards/details-meditation",
-          "imageSrc": "https://riftdecks.com/img/cards/riftbound/OGN/ogn-048-298_full.png",
-          "type": "spell",
-          "rarity": "common",
-          "price": 0.09,
-          "runes": [
-            "calm"
-          ],
-          "decks": 1,
-          "inclusionRate": 1,
-          "avgCopies": 2
-        },
-        {
-          "name": "Not So Fast",
-          "cardUrl": "/cards/details-not-so-fast",
-          "imageSrc": "https://riftdecks.com/img/cards/riftbound/SFD/sfd-045-221_full.png",
-          "type": "spell",
-          "rarity": "uncommon",
-          "price": 2.65,
-          "runes": [
-            "calm"
-          ],
-          "decks": 1,
-          "inclusionRate": 1,
-          "avgCopies": 2
-        },
-        {
-          "name": "Smoke Screen",
-          "cardUrl": "/cards/details-smoke-screen",
-          "imageSrc": "https://riftdecks.com/img/cards/riftbound/OGN/ogn-093-298_full.png",
-          "type": "spell",
-          "rarity": "common",
-          "price": 0.16,
-          "runes": [
-            "mind"
-          ],
-          "decks": 1,
-          "inclusionRate": 1,
-          "avgCopies": 2
-        },
-        {
-          "name": "Thousand-Tailed Watcher",
-          "cardUrl": "/cards/details-thousand-tailed-watcher",
-          "imageSrc": "https://riftdecks.com/img/cards/riftbound/OGN/ogn-116-298_full.png",
-          "type": "unit",
-          "rarity": "rare",
-          "price": 17.91,
-          "runes": [
-            "mind"
-          ],
-          "decks": 1,
-          "inclusionRate": 1,
-          "avgCopies": 2
-        },
-        {
-          "name": "Thwonk!",
-          "cardUrl": "/cards/details-thwonk",
-          "imageSrc": "https://riftdecks.com/img/cards/riftbound/SFD/sfd-040-221_full.png",
-          "type": "spell",
-          "rarity": "common",
-          "price": 0.1,
-          "runes": [
-            "calm"
-          ],
-          "decks": 1,
-          "inclusionRate": 1,
-          "avgCopies": 2
-        },
-        {
-          "name": "Ahri, Nine-Tailed Fox",
-          "cardUrl": "/cards/details-ahri-nine-tailed-fox",
-          "imageSrc": "https://riftdecks.com/img/cards/riftbound/OGN/ogn-303-298_full.png",
-          "type": "legend",
-          "rarity": "rare",
-          "price": 1.98,
-          "runes": [
-            "calm",
-            "mind"
-          ],
-          "decks": 1,
-          "inclusionRate": 1,
-          "avgCopies": 1
-        },
-        {
-          "name": "Fox-Fire",
-          "cardUrl": "/cards/details-fox-fire",
-          "imageSrc": "https://riftdecks.com/img/cards/riftbound/OGN/ogn-256-298_full.png",
-          "type": "spell",
-          "rarity": "epic",
-          "price": 2.78,
-          "runes": [
-            "calm",
-            "mind"
-          ],
-          "decks": 1,
-          "inclusionRate": 1,
           "avgCopies": 1
         }
       ]
