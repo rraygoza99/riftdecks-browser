@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-20T21:52:35.056Z",
+  "generatedAt": "2026-07-21T13:56:32.178Z",
   "cardsPerLegend": 8,
   "legendCount": 31,
   "legends": [
@@ -8,7 +8,7 @@
       "legendName": "Master Yi, Wuju Bladesman",
       "legendTileUrl": "https://riftdecks.com/img/cards/riftbound//OGS/ogs-019-024_tile.png",
       "decksSampled": 8,
-      "totalDecks": 590,
+      "totalDecks": 589,
       "cards": [
         {
           "name": "Body Rune",
@@ -4911,7 +4911,7 @@
       "legendName": "Reksai, Void Burrower",
       "legendTileUrl": "https://riftdecks.com/img/cards/riftbound//SFD/sfd-187-221_tile.png",
       "decksSampled": 6,
-      "totalDecks": 108,
+      "totalDecks": 109,
       "cards": [
         {
           "name": "Fury Rune",
