@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-21T21:51:24.036Z",
+  "generatedAt": "2026-07-22T13:59:20.926Z",
   "cardsPerLegend": 8,
   "legendCount": 29,
   "legends": [
@@ -1220,7 +1220,7 @@
       "legendName": "Irelia, Blade Dancer",
       "legendTileUrl": "https://riftdecks.com/img/cards/riftbound//SFD/sfd-195-221_tile.png",
       "decksSampled": 6,
-      "totalDecks": 321,
+      "totalDecks": 322,
       "cards": [
         {
           "name": "Calm Rune",
@@ -8409,7 +8409,7 @@
       "legendName": "Pyke, Bloodharbor Ripper",
       "legendTileUrl": "https://riftdecks.com/img/cards/riftbound//UNL/unl-185-219_tile.png",
       "decksSampled": 2,
-      "totalDecks": 78,
+      "totalDecks": 77,
       "cards": [
         {
           "name": "Chaos Rune",
