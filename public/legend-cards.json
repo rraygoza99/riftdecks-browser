@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-28T21:59:17.189Z",
+  "generatedAt": "2026-07-29T14:15:33.414Z",
   "cardsPerLegend": 8,
   "legendCount": 29,
   "legends": [
@@ -8,7 +8,7 @@
       "legendName": "Master Yi, Wuju Bladesman",
       "legendTileUrl": "https://riftdecks.com/img/cards/riftbound//OGS/ogs-019-024_tile.png",
       "decksSampled": 8,
-      "totalDecks": 574,
+      "totalDecks": 575,
       "cards": [
         {
           "name": "Body Rune",
@@ -579,7 +579,7 @@
       "legendName": "Diana, Scorn of the Moon",
       "legendTileUrl": "https://riftdecks.com/img/cards/riftbound//UNL/unl-234-219_tile.png",
       "decksSampled": 7,
-      "totalDecks": 367,
+      "totalDecks": 368,
       "cards": [
         {
           "name": "Chaos Rune",
@@ -1220,7 +1220,7 @@
       "legendName": "Irelia, Blade Dancer",
       "legendTileUrl": "https://riftdecks.com/img/cards/riftbound//SFD/sfd-195-221_tile.png",
       "decksSampled": 3,
-      "totalDecks": 311,
+      "totalDecks": 314,
       "cards": [
         {
           "name": "Calm Rune",
@@ -2208,7 +2208,7 @@
       "legendName": "Viktor, Herald of the Arcane",
       "legendTileUrl": "https://riftdecks.com/img/cards/riftbound//OGN/ogn-308-298_tile.png",
       "decksSampled": 5,
-      "totalDecks": 167,
+      "totalDecks": 169,
       "cards": [
         {
           "name": "Order Rune",
@@ -2820,7 +2820,7 @@
       "legendName": "Azir, Emperor of the Sands",
       "legendTileUrl": "https://riftdecks.com/img/cards/riftbound//SFD/sfd-197-221_tile.png",
       "decksSampled": 3,
-      "totalDecks": 166,
+      "totalDecks": 167,
       "cards": [
         {
           "name": "Calm Rune",
@@ -3279,7 +3279,7 @@
       "legendName": "Vex, Gloomist",
       "legendTileUrl": "https://riftdecks.com/img/cards/riftbound//UNL/unl-193-219_tile.png",
       "decksSampled": 6,
-      "totalDecks": 124,
+      "totalDecks": 123,
       "cards": [
         {
           "name": "Chaos Rune",
@@ -4214,7 +4214,7 @@
       "legendName": "Ezreal, Prodigal Explorer",
       "legendTileUrl": "https://riftdecks.com/img/cards/riftbound//SFD/sfd-248-221_tile.png",
       "decksSampled": 6,
-      "totalDecks": 118,
+      "totalDecks": 119,
       "cards": [
         {
           "name": "Chaos Rune",
@@ -4785,7 +4785,7 @@
       "legendName": "Reksai, Void Burrower",
       "legendTileUrl": "https://riftdecks.com/img/cards/riftbound//SFD/sfd-187-221_tile.png",
       "decksSampled": 5,
-      "totalDecks": 105,
+      "totalDecks": 106,
       "cards": [
         {
           "name": "Fury Rune",
@@ -5482,7 +5482,7 @@
       "legendName": "Rengar, Pridestalker",
       "legendTileUrl": "https://riftdecks.com/img/cards/riftbound//UNL/unl-183-219_tile.png",
       "decksSampled": 4,
-      "totalDecks": 96,
+      "totalDecks": 97,
       "cards": [
         {
           "name": "Body Rune",
@@ -6053,7 +6053,7 @@
       "legendName": "Annie, Dark Child",
       "legendTileUrl": "https://riftdecks.com/img/cards/riftbound//OGS/ogs-017-024_tile.png",
       "decksSampled": 3,
-      "totalDecks": 84,
+      "totalDecks": 85,
       "cards": [
         {
           "name": "Fury Rune",
@@ -9908,7 +9908,7 @@
       "legendName": "Lux, Lady of Luminosity",
       "legendTileUrl": "https://riftdecks.com/img/cards/riftbound//OGS/ogs-021-024_tile.png",
       "decksSampled": 5,
-      "totalDecks": 52,
+      "totalDecks": 53,
       "cards": [
         {
           "name": "Mind Rune",
@@ -14083,7 +14083,7 @@
       "legendName": "Lucian, Purifier",
       "legendTileUrl": "https://riftdecks.com/img/cards/riftbound//SFD/sfd-183-221_tile.png",
       "decksSampled": 1,
-      "totalDecks": 21,
+      "totalDecks": 20,
       "cards": [
         {
           "name": "Body Rune",
