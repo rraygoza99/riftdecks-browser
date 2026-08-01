@@ -27,6 +27,7 @@ export default function FilterBar({
   filters,
   onFilterChange,
   legendOptions,
+  metaOptions = [],
   maxPriceInData,
 }) {
   const priceMax = maxPriceInData || 2000
@@ -48,6 +49,28 @@ export default function FilterBar({
           ))}
         </div>
       </div>
+
+      {/* Meta / set */}
+      {metaOptions.length > 0 && (
+        <div className="filter-group">
+          <label className="filter-label" htmlFor="meta-select">
+            Meta
+          </label>
+          <select
+            id="meta-select"
+            className="filter-select"
+            value={filters.meta}
+            onChange={(e) => onFilterChange('meta', e.target.value)}
+          >
+            <option value="all">All metas</option>
+            {metaOptions.map((m) => (
+              <option key={m} value={m}>
+                {m}
+              </option>
+            ))}
+          </select>
+        </div>
+      )}
 
       {/* Legend filter */}
       <div className="filter-group">

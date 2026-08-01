@@ -328,10 +328,21 @@ async function main() {
         const url = row.getAttribute('data-href') || ''
         const nameEl = row.querySelector('td:nth-child(3) a')
         const dateEl = row.querySelector('td:first-child b')
+        // "Meta" column: e.g. "Vendetta Constructed" rendered as two badges —
+        // the set ("Vendetta"/"Unleashed") followed by the format ("Constructed").
+        const metaCell = row.querySelector('td:nth-child(2)')
+        const metaBadges = metaCell
+          ? [...metaCell.querySelectorAll('span')]
+              .map((s) => s.textContent.trim())
+              .filter(Boolean)
+          : []
         return {
           url,
           name: nameEl?.textContent.trim() || '',
           dateStr: dateEl?.textContent.trim() || '',
+          meta: metaCell?.textContent.replace(/\s+/g, ' ').trim() || '',
+          metaSet: metaBadges[0] || '',
+          metaFormat: metaBadges[1] || '',
         }
       })
     )
@@ -432,6 +443,9 @@ async function main() {
           totalPlayers,
           tournamentName: r.name || 'Unknown',
           tournamentDate: r.dateStr || null,
+          meta: r.meta || null,
+          metaSet: r.metaSet || null,
+          metaFormat: r.metaFormat || null,
         })
       }
     }

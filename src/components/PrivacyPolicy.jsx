@@ -41,30 +41,19 @@ export default function PrivacyPolicy({ onBack }) {
 
       <h2>Cookies and advertising</h2>
       <p>
-        This site uses <strong>Google AdSense</strong> to display ads. Third-party
-        vendors, including Google, use cookies to serve ads based on your prior visits
-        to this and other websites.
+        This site uses <strong>Adsterra</strong>, a third-party advertising network, to
+        display ads. Adsterra and its partners may use cookies and similar technologies
+        to serve and measure ads based on your prior visits to this and other websites.
       </p>
       <ul>
         <li>
-          Google’s use of advertising cookies enables it and its partners to serve ads
+          The use of advertising cookies enables Adsterra and its partners to serve ads
           to you based on your visit to this site and/or other sites on the Internet.
         </li>
         <li>
-          You may opt out of personalised advertising by visiting{' '}
-          <a href="https://www.google.com/settings/ads" target="_blank" rel="noopener noreferrer">
-            Google Ads Settings
-          </a>
-          .
-        </li>
-        <li>
-          For more information about how Google uses data, see{' '}
-          <a
-            href="https://policies.google.com/technologies/partner-sites"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            How Google uses information from sites or apps that use our services
+          For more information about how Adsterra handles data, see the{' '}
+          <a href="https://adsterra.com/privacy-policy/" target="_blank" rel="noopener noreferrer">
+            Adsterra Privacy Policy
           </a>
           .
         </li>

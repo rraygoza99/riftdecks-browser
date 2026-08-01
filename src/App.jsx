@@ -59,6 +59,7 @@ export default function App() {
 
   const [filters, setFilters] = useState({
     legends: [],
+    meta: 'Vendetta',
     dateRange: '30d',
     maxPlacement: 0,
     maxPrice: 0,
@@ -118,12 +119,37 @@ export default function App() {
     [allDecks]
   )
 
+  // Unique meta/set options (e.g. "Vendetta", "Unleashed") from loaded data
+  const metaOptions = useMemo(() => {
+    const seen = new Set()
+    for (const d of allDecks) {
+      if (d.metaSet) seen.add(d.metaSet)
+    }
+    return [...seen].sort((a, b) => a.localeCompare(b))
+  }, [allDecks])
+
+  // Preselect the current set (Vendetta) once data loads. Falls back to "all"
+  // if the preferred set isn't present, and keeps any valid user choice.
+  useEffect(() => {
+    if (!metaOptions.length) return
+    setFilters((prev) => {
+      if (prev.meta !== 'all' && metaOptions.includes(prev.meta)) return prev
+      const preferred = metaOptions.includes('Vendetta') ? 'Vendetta' : 'all'
+      return prev.meta === preferred ? prev : { ...prev, meta: preferred }
+    })
+  }, [metaOptions])
+
   // Filtered + sorted deck list
   const filteredDecks = useMemo(() => {
     let result = [...allDecks]
 
     if (filters.legends.length) {
       result = result.filter((d) => filters.legends.includes(d.legendName))
+    }
+
+    // Meta/set filter — only applied when the dataset carries meta info.
+    if (metaOptions.length && filters.meta && filters.meta !== 'all') {
+      result = result.filter((d) => d.metaSet === filters.meta)
     }
 
     if (filters.dateRange !== 'all') {
@@ -175,7 +201,7 @@ export default function App() {
     }
 
     return result
-  }, [allDecks, filters])
+  }, [allDecks, filters, metaOptions])
 
   // Reset to the first page whenever the filters or page size change
   useEffect(() => {
@@ -340,6 +366,7 @@ export default function App() {
               filters={filters}
               onFilterChange={handleFilterChange}
               legendOptions={legendOptions}
+              metaOptions={metaOptions}
               maxPriceInData={maxPriceInData}
             />
           )}
@@ -357,7 +384,7 @@ export default function App() {
               )}
 
               {filteredDecks.length > 0 && (
-                <AdSlot slot={import.meta.env.VITE_ADSENSE_SLOT_TOP} />
+                <AdSlot />
               )}
 
               <DeckGrid
@@ -377,7 +404,7 @@ export default function App() {
               )}
 
               {filteredDecks.length > 0 && (
-                <AdSlot slot={import.meta.env.VITE_ADSENSE_SLOT_BOTTOM} />
+                <AdSlot variant="banner" />
               )}
 
               {!filteredDecks.length && (
