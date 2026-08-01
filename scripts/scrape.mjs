@@ -23,6 +23,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const OUTPUT = path.join(__dirname, '../public/decks.json')
 const LEGEND_CARDS_OUTPUT = path.join(__dirname, '../public/legend-cards.json')
 const CARDS_CACHE = path.join(__dirname, '../data/deck-cards.json')
+const TOURNAMENTS_CACHE = path.join(__dirname, '../data/tournament-decks.json')
 const BASE = 'https://riftdecks.com'
 
 // --- CLI args ----------------------------------------------------------
@@ -45,6 +46,15 @@ const CARDS_PER_LEGEND = parseInt(getArg('--cards-per-legend', '8'), 10)
 // Global cap on how many *new* deck pages to fetch for cards in one run
 // (cached decks don't count). Keeps each run's runtime bounded.
 const MAX_CARD_DECKS = parseInt(getArg('--max-card-decks', '400'), 10)
+// How many deck pages to fetch in parallel during card analysis. The single
+// biggest lever on run time — raise it to go faster (bounded by the site and
+// your bandwidth), lower it if you hit rate-limits/Cloudflare challenges.
+const CARD_CONCURRENCY = Math.max(1, parseInt(getArg('--concurrency', '6'), 10))
+// Tournaments from the last N days are always re-scraped (their standings/decks
+// may still be changing); older tournaments are final and served from the
+// tournament-decks cache so the list crawl skips re-visiting them every run.
+// Set to 0 to always re-scrape every tournament (ignores the cache).
+const RESCRAPE_DAYS = parseInt(getArg('--rescrape-days', '3'), 10)
 
 // --- Helpers -----------------------------------------------------------
 function legendSlugFromDeckUrl(deckUrl) {
@@ -87,6 +97,36 @@ function pruneOldDecks(decks, maxAgeDays) {
     const date = new Date(`${d.tournamentDate}T00:00:00Z`)
     return !Number.isNaN(date.getTime()) && date >= cutoff
   })
+}
+
+// --- Tournament deck-list cache ---------------------------------------
+// Finished tournaments never change, so we cache their scraped deck lists by
+// tournament id and skip re-visiting them on later runs (see RESCRAPE_DAYS).
+async function loadTournamentCache() {
+  try {
+    return JSON.parse(await fs.readFile(TOURNAMENTS_CACHE, 'utf-8'))
+  } catch {
+    return {}
+  }
+}
+
+function tournamentIdFromUrl(url) {
+  const m = (url || '').match(/(\d+)\/?$/)
+  return m ? m[1] : ''
+}
+
+// Drop cached tournaments whose date is older than `days` so the file stays
+// lean (undated entries are kept — we can't judge their age).
+function pruneTournamentCache(cache, days = MAX_AGE_DAYS) {
+  if (!days || days <= 0) return cache
+  const cutoff = Date.now() - days * 86_400_000
+  for (const [id, entry] of Object.entries(cache)) {
+    const dateStr = entry?.dateStr
+    if (!dateStr) continue
+    const t = new Date(`${dateStr}T00:00:00Z`).getTime()
+    if (!Number.isNaN(t) && t < cutoff) delete cache[id]
+  }
+  return cache
 }
 
 // --- Card analysis helpers --------------------------------------------
@@ -153,14 +193,39 @@ async function extractCards(page) {
     .catch(() => [])
 }
 
-// Load a deck detail page and return its cards (waiting past Cloudflare).
+// Load a deck detail page and return its cards. The context already holds
+// Cloudflare clearance cookies (set during pre-warm), so deck pages almost
+// never re-challenge — try the fast path first and only pay the interstitial
+// wait if the card table doesn't show up.
 async function fetchDeckCards(page, deckUrl) {
   await page.goto(deckUrl, { waitUntil: 'domcontentloaded', timeout: 30000 })
-  await page
-    .waitForFunction(() => !document.title.toLowerCase().includes('moment'), { timeout: 20000 })
-    .catch(() => {})
-  await page.waitForSelector('tr.card-list-item', { timeout: 10000 }).catch(() => {})
+  const ok = await page
+    .waitForSelector('tr.card-list-item', { timeout: 12000 })
+    .then(() => true)
+    .catch(() => false)
+  if (!ok) {
+    // Rare Cloudflare interstitial — wait for it to clear, then retry once.
+    await page
+      .waitForFunction(() => !document.title.toLowerCase().includes('moment'), { timeout: 15000 })
+      .catch(() => {})
+    await page.waitForSelector('tr.card-list-item', { timeout: 8000 }).catch(() => {})
+  }
   return extractCards(page)
+}
+
+// Run `worker(item, resource)` over `items`, keeping `resources.length` tasks
+// in flight — each concurrent runner owns one dedicated resource (a Page), so
+// the same page is never used by two tasks at once.
+async function runPoolWithResources(items, resources, worker) {
+  let next = 0
+  const runners = resources.map(async (resource) => {
+    while (true) {
+      const i = next++
+      if (i >= items.length) break
+      await worker(items[i], resource, i)
+    }
+  })
+  await Promise.all(runners)
 }
 
 // Aggregate the sampled decks of one legend into per-card inclusion stats.
@@ -223,9 +288,16 @@ function aggregateLegendCards(legendName, group, chosen) {
 }
 
 // Build the per-legend card analysis by sampling deck pages (cache-backed).
-// `saveCache` (optional) is awaited after every newly-fetched deck so that an
-// interrupted run keeps its progress and the next run resumes from the cache.
-async function buildLegendCardAnalysis(page, decks, cache, saveCache) {
+//
+// Works in three phases so deck pages can be fetched in parallel:
+//   1. Plan   — pick each legend's top-8 sample candidates and list the
+//               uncached deck pages we need, popular legends first, up to the
+//               global fetch budget.
+//   2. Fetch  — pull those pages concurrently across the `pages` pool, writing
+//               results into the cache (persisted periodically so an
+//               interrupted run resumes from where it left off).
+//   3. Aggregate — build per-card inclusion stats for each legend from cache.
+async function buildLegendCardAnalysis(pages, decks, cache, saveCache) {
   const groups = new Map()
   for (const d of decks) {
     const key = d.legendName || slugToTitle(d.legendSlug) || 'Unknown'
@@ -236,14 +308,10 @@ async function buildLegendCardAnalysis(page, decks, cache, saveCache) {
   // Popular legends first so they get priority on the fetch budget.
   const ordered = [...groups.entries()].sort((a, b) => b[1].length - a[1].length)
 
-  let fetchBudget = MAX_CARD_DECKS
-  let fetched = 0
-  let fromCache = 0
-  const legends = []
-
+  // Only analyse top-8 finishers so the card lists reflect competitive,
+  // complete decks. Prefer the best-placed, most recent as samples.
+  const legendCandidates = new Map()
   for (const [legendName, group] of ordered) {
-    // Only analyse top-8 finishers so the card lists reflect competitive,
-    // complete decks. Prefer the best-placed, most recent as samples.
     const candidates = [...group]
       .filter((d) => d.standing <= 8)
       .sort((a, b) => {
@@ -252,34 +320,89 @@ async function buildLegendCardAnalysis(page, decks, cache, saveCache) {
         const db = b.tournamentDate ? Date.parse(b.tournamentDate) : 0
         return db - da
       })
+    legendCandidates.set(legendName, candidates)
+  }
 
-    const chosen = []
+  // --- Phase 1: plan which uncached deck pages to fetch --------------------
+  // Reuse cached samples first. A legend only needs *new* fetches when it has
+  // fewer than CARDS_PER_LEGEND decks already in the cache. Without this, the
+  // sampler walks candidates newest-first and re-fetches a fresh batch of the
+  // latest (always-uncached) decks every run, ignoring the still-valid cached
+  // samples that slipped to positions 9+. That made each run re-scan hundreds
+  // of decks instead of only the genuinely new ones.
+  let budget = MAX_CARD_DECKS
+  const toFetch = []
+  const queued = new Set()
+  for (const [legendName] of ordered) {
+    const candidates = legendCandidates.get(legendName)
+    const cachedCount = candidates.filter((d) => cache[d.deckId]?.cards?.length).length
+    let need = CARDS_PER_LEGEND - cachedCount
+    if (need <= 0) continue // already have a full sample from cache — no fetch
     for (const d of candidates) {
-      if (chosen.length >= CARDS_PER_LEGEND) break
-      let entry = cache[d.deckId]
-      if (!entry) {
-        if (fetchBudget <= 0) continue
-        const cards = await fetchDeckCards(page, `${BASE}${d.deckUrl}`)
-        if (!cards || !cards.length) continue
-        entry = { cards, fetchedAt: new Date().toISOString() }
-        cache[d.deckId] = entry
-        fetchBudget -= 1
-        fetched += 1
-        // Persist after each fetch so progress survives interruption/crash.
-        if (saveCache) await saveCache()
-      } else {
-        fromCache += 1
+      if (need <= 0) break
+      if (cache[d.deckId]?.cards?.length) continue
+      if (budget <= 0) break
+      if (!queued.has(d.deckId)) {
+        queued.add(d.deckId)
+        toFetch.push(d)
+        budget--
       }
-      chosen.push({ deck: d, cards: entry.cards })
+      need--
     }
+  }
 
+  // --- Phase 2: fetch the planned pages in parallel ------------------------
+  let fetched = 0
+  let failed = 0
+  // Serialize cache writes so parallel workers never clobber the file.
+  let saveChain = Promise.resolve()
+  const scheduleSave = () => {
+    if (saveCache) saveChain = saveChain.then(() => saveCache()).catch(() => {})
+  }
+
+  if (toFetch.length) {
+    console.log(`  Fetching ${toFetch.length} new deck page(s) with concurrency ${pages.length}…`)
+    await runPoolWithResources(toFetch, pages, async (d, page) => {
+      const cards = await fetchDeckCards(page, `${BASE}${d.deckUrl}`).catch(() => null)
+      if (cards && cards.length) {
+        cache[d.deckId] = { cards, fetchedAt: new Date().toISOString() }
+        fetched++
+        // Persist every so often so progress survives an interruption/crash.
+        if (fetched % 10 === 0) scheduleSave()
+      } else {
+        failed++
+      }
+      const done = fetched + failed
+      if (done % 25 === 0 || done === toFetch.length) {
+        console.log(`    …${done}/${toFetch.length} fetched (${failed} empty)`)
+      }
+    })
+    await saveChain
+  }
+
+  // --- Phase 3: aggregate per-legend stats from the cache ------------------
+  let usedCache = 0
+  let usedFetched = 0
+  const legends = []
+  for (const [legendName, group] of ordered) {
+    const chosen = []
+    for (const d of legendCandidates.get(legendName)) {
+      if (chosen.length >= CARDS_PER_LEGEND) break
+      const entry = cache[d.deckId]
+      if (!entry?.cards?.length) continue
+      chosen.push({ deck: d, cards: entry.cards })
+      if (queued.has(d.deckId)) usedFetched++
+      else usedCache++
+    }
     if (chosen.length) {
       legends.push(aggregateLegendCards(legendName, group, chosen))
     }
   }
 
   legends.sort((a, b) => b.totalDecks - a.totalDecks)
-  console.log(`  Card analysis: ${fetched} deck(s) fetched, ${fromCache} from cache, ${legends.length} legends.`)
+  console.log(
+    `  Card analysis: ${fetched} deck(s) fetched (${failed} empty), ${usedCache} reused from cache, ${legends.length} legends.`
+  )
   return legends
 }
 
@@ -295,6 +418,16 @@ async function main() {
     locale: 'en-US',
     viewport: { width: 1280, height: 800 },
   })
+
+  // Skip heavy resources we never read (images, media, fonts). We only extract
+  // text and element attributes, so aborting these dramatically speeds up every
+  // page load — especially the image-heavy deck detail pages.
+  await context.route('**/*', (route) => {
+    const type = route.request().resourceType()
+    if (type === 'image' || type === 'media' || type === 'font') return route.abort()
+    return route.continue()
+  })
+
   const page = await context.newPage()
 
   // Pre-warm: visit homepage so Cloudflare sets clearance cookies
@@ -310,6 +443,18 @@ async function main() {
 
   const allDecks = []
   let pageNum = 1
+
+  // Load the tournament deck-list cache so finished tournaments are reused
+  // instead of re-scraped every run. Persist it as we go so an interrupted run
+  // keeps its progress.
+  const tournamentCache = pruneTournamentCache(await loadTournamentCache())
+  await fs.mkdir(path.dirname(TOURNAMENTS_CACHE), { recursive: true })
+  const saveTournamentCache = () =>
+    fs.writeFile(TOURNAMENTS_CACHE, JSON.stringify(tournamentCache), 'utf-8')
+  const rescrapeCutoff =
+    RESCRAPE_DAYS > 0 ? Date.now() - RESCRAPE_DAYS * 86_400_000 : Infinity
+  let scrapedTournaments = 0
+  let reusedTournaments = 0
 
   while (pageNum <= MAX_PAGES) {
     const listUrl = `${BASE}/riftbound-tournaments?relevance=${RELEVANCE}&page=${pageNum}`
@@ -368,64 +513,91 @@ async function main() {
     for (const r of tournamentRows) {
       if (!r.url) continue
       const tournUrl = r.url.startsWith('http') ? r.url : `${BASE}${r.url}`
-      console.log(`    → ${(r.name || '(no name)').slice(0, 60)}`)
+      const tournId = tournamentIdFromUrl(r.url)
+      const tDate = r.dateStr ? new Date(`${r.dateStr}T00:00:00Z`).getTime() : NaN
+      // Recent (or undated) tournaments may still be changing — always re-scrape
+      // them. Older, finished tournaments are served from cache when present.
+      const isRecent = Number.isNaN(tDate) || tDate >= rescrapeCutoff
+      const cached = tournId ? tournamentCache[tournId] : null
 
-      await page.goto(tournUrl, { waitUntil: 'domcontentloaded', timeout: 30000 })
-      // Wait for Cloudflare challenge to resolve
-      await page.waitForFunction(
-        () => !document.title.toLowerCase().includes('moment'),
-        { timeout: 20000 }
-      ).catch(() => {})
-      await sleep(500)
+      let rawDecks
+      let totalPlayers
+      if (cached && !isRecent) {
+        rawDecks = cached.decks || []
+        totalPlayers = cached.totalPlayers ?? null
+        reusedTournaments++
+      } else {
+        console.log(`    → ${(r.name || '(no name)').slice(0, 60)}`)
+        await page.goto(tournUrl, { waitUntil: 'domcontentloaded', timeout: 30000 })
+        // Wait for Cloudflare challenge to resolve
+        await page.waitForFunction(
+          () => !document.title.toLowerCase().includes('moment'),
+          { timeout: 20000 }
+        ).catch(() => {})
+        await sleep(500)
 
-      // Extract total player count from the pagination summary text
-      // e.g. "Page 1 of 1, showing 44 record(s) out of 44 total"
-      const totalPlayers = await page.evaluate(() => {
-        const allEls = [...document.querySelectorAll('*')]
-        const el = allEls.find(e => /showing\s+\d+\s+record/i.test(e.textContent) && e.children.length === 0)
-        if (el) {
-          const m = el.textContent.match(/out of (\d+) total/i)
-          if (m) return parseInt(m[1], 10)
+        // Extract total player count from the pagination summary text
+        // e.g. "Page 1 of 1, showing 44 record(s) out of 44 total"
+        totalPlayers = await page.evaluate(() => {
+          const allEls = [...document.querySelectorAll('*')]
+          const el = allEls.find(e => /showing\s+\d+\s+record/i.test(e.textContent) && e.children.length === 0)
+          if (el) {
+            const m = el.textContent.match(/out of (\d+) total/i)
+            if (m) return parseInt(m[1], 10)
+          }
+          // Fallback: count desktop deck rows
+          const rows = document.querySelectorAll('tr[id^="desktop-deck-"]')
+          return rows.length || null
+        }).catch(() => null)
+
+        rawDecks = await page.$$eval(
+          'tr[id^="desktop-deck-"]',
+          (rows, base) =>
+            rows.map((row) => {
+              const deckUrl = row.getAttribute('data-href') || ''
+              const rankEl = row.querySelector('td:first-child strong')
+              const deckLinkEl = row.querySelector('td:nth-child(3) a')
+              const avatarEl = row.querySelector('td:nth-child(2) span.avatar[title]')
+              const priceEl = row.querySelector('td.text-end span.text-green')
+                           || row.querySelector('span.text-green')
+
+              const rankText = rankEl?.textContent.trim() || '99'
+              const standing = parseInt(rankText.replace(/\D/g, ''), 10) || 99
+              const deckName = deckLinkEl?.textContent.trim() || 'Unknown'
+              const legendName = avatarEl?.getAttribute('title')?.trim() || null
+
+              const style = avatarEl?.getAttribute('style') || ''
+              const bgMatch = style.match(/url\(['"']?([^'"')]+)['"']?\)/)
+              const legendTileUrl = bgMatch ? `${base}${bgMatch[1]}` : ''
+
+              const priceText = (priceEl?.textContent.trim() || '').replace(/[^\d.]/g, '')
+              const price = priceText ? parseFloat(priceText) : null
+
+              const fullDeckUrl = deckUrl.startsWith('http') ? deckUrl : `${base}${deckUrl}`
+              return { deckUrl: fullDeckUrl, standing, deckName, legendName, legendTileUrl, price }
+            }),
+          BASE
+        )
+
+        if (rawDecks.length > 0) {
+          console.log(`      ${rawDecks.length} decks found`)
         }
-        // Fallback: count desktop deck rows
-        const rows = document.querySelectorAll('tr[id^="desktop-deck-"]')
-        return rows.length || null
-      }).catch(() => null)
 
-      const decks = await page.$$eval(
-        'tr[id^="desktop-deck-"]',
-        (rows, base) =>
-          rows.map((row) => {
-            const deckUrl = row.getAttribute('data-href') || ''
-            const rankEl = row.querySelector('td:first-child strong')
-            const deckLinkEl = row.querySelector('td:nth-child(3) a')
-            const avatarEl = row.querySelector('td:nth-child(2) span.avatar[title]')
-            const priceEl = row.querySelector('td.text-end span.text-green')
-                         || row.querySelector('span.text-green')
-
-            const rankText = rankEl?.textContent.trim() || '99'
-            const standing = parseInt(rankText.replace(/\D/g, ''), 10) || 99
-            const deckName = deckLinkEl?.textContent.trim() || 'Unknown'
-            const legendName = avatarEl?.getAttribute('title')?.trim() || null
-
-            const style = avatarEl?.getAttribute('style') || ''
-            const bgMatch = style.match(/url\(['"']?([^'"')]+)['"']?\)/)
-            const legendTileUrl = bgMatch ? `${base}${bgMatch[1]}` : ''
-
-            const priceText = (priceEl?.textContent.trim() || '').replace(/[^\d.]/g, '')
-            const price = priceText ? parseFloat(priceText) : null
-
-            const fullDeckUrl = deckUrl.startsWith('http') ? deckUrl : `${base}${deckUrl}`
-            return { deckUrl: fullDeckUrl, standing, deckName, legendName, legendTileUrl, price }
-          }),
-        BASE
-      )
-
-      if (decks.length > 0) {
-        console.log(`      ${decks.length} decks found`)
+        // Cache finished/complete tournaments so later runs skip them.
+        if (tournId && rawDecks.length) {
+          tournamentCache[tournId] = {
+            decks: rawDecks,
+            totalPlayers,
+            name: r.name || '',
+            dateStr: r.dateStr || null,
+            scrapedAt: new Date().toISOString(),
+          }
+          scrapedTournaments++
+          if (scrapedTournaments % 20 === 0) await saveTournamentCache().catch(() => {})
+        }
       }
 
-      for (const d of decks) {
+      for (const d of rawDecks) {
         if (!d.deckUrl) continue
         const deckId = deckIdFromUrl(d.deckUrl)
         if (!deckId || allDecks.some((x) => x.id === deckId)) continue // deduplicate
@@ -458,6 +630,12 @@ async function main() {
     pageNum++
   }
 
+  // Persist the tournament deck-list cache for the next run.
+  await saveTournamentCache().catch(() => {})
+  console.log(
+    `\nTournaments: ${scrapedTournaments} scraped, ${reusedTournaments} reused from cache.`
+  )
+
   // Drop stale decks so decks.json stays lean
   const dated = pruneOldDecks(allDecks, MAX_AGE_DAYS)
   const agePruned = allDecks.length - dated.length
@@ -476,11 +654,17 @@ async function main() {
   // Per-legend card analysis (visits individual deck pages, cache-backed)
   let legendCards = null
   if (SCRAPE_CARDS && decks.length) {
-    console.log(`\nBuilding per-legend card analysis (≤${CARDS_PER_LEGEND}/legend, budget ${MAX_CARD_DECKS})…`)
+    console.log(
+      `\nBuilding per-legend card analysis (≤${CARDS_PER_LEGEND}/legend, budget ${MAX_CARD_DECKS}, concurrency ${CARD_CONCURRENCY})…`
+    )
     const cache = pruneCardCache(await loadDeckCardCache())
     await fs.mkdir(path.dirname(CARDS_CACHE), { recursive: true })
     const saveCache = () => fs.writeFile(CARDS_CACHE, JSON.stringify(cache), 'utf-8')
-    legendCards = await buildLegendCardAnalysis(page, decks, cache, saveCache)
+    // Open a pool of pages (reusing the main one) to fetch deck pages in parallel.
+    const pages = [page]
+    for (let i = 1; i < CARD_CONCURRENCY; i++) pages.push(await context.newPage())
+    legendCards = await buildLegendCardAnalysis(pages, decks, cache, saveCache)
+    for (let i = 1; i < pages.length; i++) await pages[i].close()
     await saveCache()
   }
 

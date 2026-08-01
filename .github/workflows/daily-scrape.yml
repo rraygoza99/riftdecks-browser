@@ -45,6 +45,6 @@ jobs:
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add public/decks.json public/legend-cards.json data/deck-cards.json
+          git add public/decks.json public/legend-cards.json data/deck-cards.json data/tournament-decks.json
           git diff --staged --quiet && echo "No changes — skipping commit." || \
             (git commit -m "chore: daily deck data update" && git push)
