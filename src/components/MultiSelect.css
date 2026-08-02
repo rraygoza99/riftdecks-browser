@@ -90,3 +90,30 @@
   accent-color: var(--accent);
   cursor: pointer;
 }
+
+.multiselect-group {
+  border-top: 1px solid var(--border);
+  padding-top: 2px;
+  margin-top: 2px;
+}
+
+.multiselect-group:first-of-type {
+  border-top: none;
+  padding-top: 0;
+  margin-top: 0;
+}
+
+.multiselect-group-header {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.multiselect-option--nested {
+  padding-left: 26px;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.multiselect-option--nested:hover {
+  color: var(--text-primary);
+}

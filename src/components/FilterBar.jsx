@@ -23,6 +23,23 @@ const SORT_OPTIONS = [
   { value: 'price', label: 'Lowest price' },
 ]
 
+// Group legend variants under their champion, e.g. "Master Yi, Wuju Bladesman"
+// and "Master Yi, Wuju Master" both fall under the "Master Yi" group.
+function groupLegends(legendOptions) {
+  const map = new Map()
+  for (const { name } of legendOptions) {
+    const champion = name.split(',')[0].trim() || name
+    if (!map.has(champion)) map.set(champion, [])
+    map.get(champion).push(name)
+  }
+  return [...map.entries()]
+    .sort((a, b) => a[0].localeCompare(b[0]))
+    .map(([label, options]) => ({
+      label,
+      options: options.sort((x, y) => x.localeCompare(y)),
+    }))
+}
+
 export default function FilterBar({
   filters,
   onFilterChange,
@@ -76,7 +93,7 @@ export default function FilterBar({
       <div className="filter-group">
         <label className="filter-label">Legend</label>
         <MultiSelect
-          options={legendOptions.map((opt) => opt.name)}
+          groups={groupLegends(legendOptions)}
           selected={filters.legends}
           onChange={(values) => onFilterChange('legends', values)}
           placeholder="All legends"
