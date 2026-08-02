@@ -42,8 +42,62 @@ function StarIcon({ filled, onClick, title }) {
   )
 }
 
-export default function DeckGrid({ decks, isFavourite, onToggleFavourite }) {
+export default function DeckGrid({ decks, isFavourite, onToggleFavourite, groupByLegend = false }) {
   if (!decks.length) return null
+
+  const renderRow = (deck) => {
+    const colorClass = STANDING_COLORS[deck.standing] ?? 'default'
+    const url = `https://riftdecks.com${deck.deckUrl}`
+    return (
+      <tr key={deck.id} className="deck-row">
+        <td className="col-fav">
+          <StarIcon
+            filled={isFavourite(deck.deckUrl)}
+            onClick={() => onToggleFavourite(deck.deckUrl)}
+            title={isFavourite(deck.deckUrl) ? 'Remove from favourites' : 'Add to favourites'}
+          />
+        </td>
+        <td className="col-standing">
+          <span className={`standing-badge standing-badge--${colorClass}`}>
+            {standingLabel(deck.standing)}
+          </span>
+        </td>
+        <td className="col-legend">{deck.legendName}</td>
+        <td className="col-tournament" title={deck.tournamentName}>
+          {deck.tournamentName}
+        </td>
+        <td className="col-players">
+          {deck.totalPlayers != null ? deck.totalPlayers : '—'}
+        </td>
+        <td className="col-date">{formatDate(deck.tournamentDate)}</td>
+        <td className="col-price">
+          {deck.price != null ? `$${deck.price.toFixed(2)}` : '—'}
+        </td>
+        <td className="col-link">
+          <a
+            href={url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="deck-link-btn"
+          >
+            View ↗
+          </a>
+        </td>
+      </tr>
+    )
+  }
+
+  // Group consecutive decks by legend (the list is already clustered by legend
+  // upstream) so each legend renders under its own header row.
+  const groups = []
+  if (groupByLegend) {
+    for (const deck of decks) {
+      const key = deck.legendName || 'Unknown'
+      const last = groups[groups.length - 1]
+      if (last && last.legend === key) last.decks.push(deck)
+      else groups.push({ legend: key, decks: [deck] })
+    }
+  }
 
   return (
     <div className="deck-list-wrap">
@@ -60,49 +114,23 @@ export default function DeckGrid({ decks, isFavourite, onToggleFavourite }) {
             <th className="col-link"></th>
           </tr>
         </thead>
-        <tbody>
-          {decks.map((deck) => {
-            const colorClass = STANDING_COLORS[deck.standing] ?? 'default'
-            const url = `https://riftdecks.com${deck.deckUrl}`
-            return (
-              <tr key={deck.id} className="deck-row">
-                <td className="col-fav">
-                  <StarIcon
-                    filled={isFavourite(deck.deckUrl)}
-                    onClick={() => onToggleFavourite(deck.deckUrl)}
-                    title={isFavourite(deck.deckUrl) ? 'Remove from favourites' : 'Add to favourites'}
-                  />
-                </td>
-                <td className="col-standing">
-                  <span className={`standing-badge standing-badge--${colorClass}`}>
-                    {standingLabel(deck.standing)}
+        {groupByLegend ? (
+          groups.map((g) => (
+            <tbody key={g.legend} className="deck-legend-group">
+              <tr className="deck-group-row">
+                <td className="deck-group-header" colSpan={8}>
+                  {g.legend}
+                  <span className="deck-group-count">
+                    {g.decks.length} deck{g.decks.length !== 1 ? 's' : ''}
                   </span>
                 </td>
-                <td className="col-legend">{deck.legendName}</td>
-                <td className="col-tournament" title={deck.tournamentName}>
-                  {deck.tournamentName}
-                </td>
-                <td className="col-players">
-                  {deck.totalPlayers != null ? deck.totalPlayers : '—'}
-                </td>
-                <td className="col-date">{formatDate(deck.tournamentDate)}</td>
-                <td className="col-price">
-                  {deck.price != null ? `$${deck.price.toFixed(2)}` : '—'}
-                </td>
-                <td className="col-link">
-                  <a
-                    href={url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="deck-link-btn"
-                  >
-                    View ↗
-                  </a>
-                </td>
               </tr>
-            )
-          })}
-        </tbody>
+              {g.decks.map(renderRow)}
+            </tbody>
+          ))
+        ) : (
+          <tbody>{decks.map(renderRow)}</tbody>
+        )}
       </table>
     </div>
   )

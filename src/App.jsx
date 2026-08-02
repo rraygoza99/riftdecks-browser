@@ -200,6 +200,13 @@ export default function App() {
       result.sort((a, b) => (a.price ?? Infinity) - (b.price ?? Infinity))
     }
 
+    // When specific legends are selected via the multiselect, cluster the decks
+    // by legend so the list reads as grouped sections. Array.sort is stable, so
+    // the chosen sort order is preserved within each legend group.
+    if (filters.legends.length) {
+      result.sort((a, b) => (a.legendName || '').localeCompare(b.legendName || ''))
+    }
+
     return result
   }, [allDecks, filters, metaOptions])
 
@@ -389,6 +396,7 @@ export default function App() {
 
               <DeckGrid
                 decks={paginatedDecks}
+                groupByLegend={filters.legends.length > 0}
                 isFavourite={isFavourite}
                 onToggleFavourite={toggleFavourite}
               />

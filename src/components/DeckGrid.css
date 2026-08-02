@@ -61,6 +61,28 @@
   background: rgba(255,255,255,0.04);
 }
 
+/* Legend group header (shown when filtering by legend) */
+.deck-group-header {
+  padding: 10px 12px 8px;
+  background: var(--bg-secondary);
+  border-bottom: 1px solid var(--border);
+  border-top: 2px solid var(--accent);
+  color: var(--text-primary);
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.deck-legend-group:first-of-type .deck-group-header {
+  border-top: none;
+}
+
+.deck-group-count {
+  margin-left: 10px;
+  font-weight: 500;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
 .deck-row td {
   padding: 10px 12px;
   vertical-align: middle;
