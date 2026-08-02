@@ -55,6 +55,10 @@ const CARD_CONCURRENCY = Math.max(1, parseInt(getArg('--concurrency', '6'), 10))
 // tournament-decks cache so the list crawl skips re-visiting them every run.
 // Set to 0 to always re-scrape every tournament (ignores the cache).
 const RESCRAPE_DAYS = parseInt(getArg('--rescrape-days', '3'), 10)
+// Chinese tournaments are included regardless of relevance via a second crawl
+// over the `omni=china` listing. This controls how many of its pages to scan.
+// Set to 0 to disable the China pass.
+const CHINA_PAGES = parseInt(getArg('--china-pages', String(MAX_PAGES)), 10)
 
 // --- Helpers -----------------------------------------------------------
 function legendSlugFromDeckUrl(deckUrl) {
@@ -442,7 +446,6 @@ async function main() {
   console.log(`  title: ${await page.title()}\n`)
 
   const allDecks = []
-  let pageNum = 1
 
   // Load the tournament deck-list cache so finished tournaments are reused
   // instead of re-scraped every run. Persist it as we go so an interrupted run
@@ -453,187 +456,211 @@ async function main() {
     fs.writeFile(TOURNAMENTS_CACHE, JSON.stringify(tournamentCache), 'utf-8')
   const rescrapeCutoff =
     RESCRAPE_DAYS > 0 ? Date.now() - RESCRAPE_DAYS * 86_400_000 : Infinity
-  let scrapedTournaments = 0
-  let reusedTournaments = 0
+  const stats = { scraped: 0, reused: 0 }
 
-  while (pageNum <= MAX_PAGES) {
-    const listUrl = `${BASE}/riftbound-tournaments?relevance=${RELEVANCE}&page=${pageNum}`
-    console.log(`[${pageNum}/${MAX_PAGES}] Fetching tournament list: ${listUrl}`)
-    await page.goto(listUrl, { waitUntil: 'domcontentloaded', timeout: 30000 })
-    await page.waitForFunction(
-      () => !document.title.toLowerCase().includes('moment'),
-      { timeout: 15000 }
-    ).catch(() => {})
-    // Wait for tournament rows to appear (or timeout gracefully)
-    await page.waitForSelector('tr[data-href]', { timeout: 10000 }).catch(() => {})
+  // Crawl a tournament listing page-by-page, scraping each tournament's decks
+  // into `allDecks`. `listUrlFor(pageNum)` builds the listing URL so we can run
+  // the same crawl over different filters (e.g. relevance vs. the China list).
+  const crawlList = async (listUrlFor, maxPages, label) => {
+    let pageNum = 1
+    while (pageNum <= maxPages) {
+      const listUrl = listUrlFor(pageNum)
+      console.log(`[${label} ${pageNum}/${maxPages}] Fetching tournament list: ${listUrl}`)
+      await page.goto(listUrl, { waitUntil: 'domcontentloaded', timeout: 30000 })
+      await page.waitForFunction(
+        () => !document.title.toLowerCase().includes('moment'),
+        { timeout: 15000 }
+      ).catch(() => {})
+      // Wait for tournament rows to appear (or timeout gracefully)
+      await page.waitForSelector('tr[data-href]', { timeout: 10000 }).catch(() => {})
 
-    // Collect tournament rows — deduplicate by URL (page renders desktop+mobile duplicates)
-    const rawRows = await page.$$eval('tr[data-href]', (rows) =>
-      rows.map((row) => {
-        const url = row.getAttribute('data-href') || ''
-        const nameEl = row.querySelector('td:nth-child(3) a')
-        const dateEl = row.querySelector('td:first-child b')
-        // "Meta" column: e.g. "Vendetta Constructed" rendered as two badges —
-        // the set ("Vendetta"/"Unleashed") followed by the format ("Constructed").
-        const metaCell = row.querySelector('td:nth-child(2)')
-        const metaBadges = metaCell
-          ? [...metaCell.querySelectorAll('span')]
-              .map((s) => s.textContent.trim())
-              .filter(Boolean)
-          : []
-        return {
-          url,
-          name: nameEl?.textContent.trim() || '',
-          dateStr: dateEl?.textContent.trim() || '',
-          meta: metaCell?.textContent.replace(/\s+/g, ' ').trim() || '',
-          metaSet: metaBadges[0] || '',
-          metaFormat: metaBadges[1] || '',
-        }
-      })
-    )
-    // Keep first occurrence of each URL; prefer entries that have a name
-    const seen = new Map()
-    for (const r of rawRows) {
-      if (!r.url) continue
-      if (!seen.has(r.url) || (!seen.get(r.url).name && r.name)) {
-        seen.set(r.url, r)
-      }
-    }
-    const tournamentRows = Array.from(seen.values())
-
-    if (!tournamentRows.length) {
-      console.log('  No tournament rows found — stopping.')
-      break
-    }
-
-    // Check for a next-page link BEFORE navigating away from the list page
-    const hasNext = await page.$('li.page-item a[rel="next"]').then((el) => !!el)
-
-    // Fetch each tournament's deck list
-    for (const r of tournamentRows) {
-      if (!r.url) continue
-      const tournUrl = r.url.startsWith('http') ? r.url : `${BASE}${r.url}`
-      const tournId = tournamentIdFromUrl(r.url)
-      const tDate = r.dateStr ? new Date(`${r.dateStr}T00:00:00Z`).getTime() : NaN
-      // Recent (or undated) tournaments may still be changing — always re-scrape
-      // them. Older, finished tournaments are served from cache when present.
-      const isRecent = Number.isNaN(tDate) || tDate >= rescrapeCutoff
-      const cached = tournId ? tournamentCache[tournId] : null
-
-      let rawDecks
-      let totalPlayers
-      if (cached && !isRecent) {
-        rawDecks = cached.decks || []
-        totalPlayers = cached.totalPlayers ?? null
-        reusedTournaments++
-      } else {
-        console.log(`    → ${(r.name || '(no name)').slice(0, 60)}`)
-        await page.goto(tournUrl, { waitUntil: 'domcontentloaded', timeout: 30000 })
-        // Wait for Cloudflare challenge to resolve
-        await page.waitForFunction(
-          () => !document.title.toLowerCase().includes('moment'),
-          { timeout: 20000 }
-        ).catch(() => {})
-        await sleep(500)
-
-        // Extract total player count from the pagination summary text
-        // e.g. "Page 1 of 1, showing 44 record(s) out of 44 total"
-        totalPlayers = await page.evaluate(() => {
-          const allEls = [...document.querySelectorAll('*')]
-          const el = allEls.find(e => /showing\s+\d+\s+record/i.test(e.textContent) && e.children.length === 0)
-          if (el) {
-            const m = el.textContent.match(/out of (\d+) total/i)
-            if (m) return parseInt(m[1], 10)
+      // Collect tournament rows — deduplicate by URL (page renders desktop+mobile duplicates)
+      const rawRows = await page.$$eval('tr[data-href]', (rows) =>
+        rows.map((row) => {
+          const url = row.getAttribute('data-href') || ''
+          const nameEl = row.querySelector('td:nth-child(3) a')
+          const dateEl = row.querySelector('td:first-child b')
+          // "Meta" column: e.g. "Vendetta Constructed" rendered as two badges —
+          // the set ("Vendetta"/"Unleashed") followed by the format ("Constructed").
+          const metaCell = row.querySelector('td:nth-child(2)')
+          const metaBadges = metaCell
+            ? [...metaCell.querySelectorAll('span')]
+                .map((s) => s.textContent.trim())
+                .filter(Boolean)
+            : []
+          return {
+            url,
+            name: nameEl?.textContent.trim() || '',
+            dateStr: dateEl?.textContent.trim() || '',
+            meta: metaCell?.textContent.replace(/\s+/g, ' ').trim() || '',
+            metaSet: metaBadges[0] || '',
+            metaFormat: metaBadges[1] || '',
           }
-          // Fallback: count desktop deck rows
-          const rows = document.querySelectorAll('tr[id^="desktop-deck-"]')
-          return rows.length || null
-        }).catch(() => null)
-
-        rawDecks = await page.$$eval(
-          'tr[id^="desktop-deck-"]',
-          (rows, base) =>
-            rows.map((row) => {
-              const deckUrl = row.getAttribute('data-href') || ''
-              const rankEl = row.querySelector('td:first-child strong')
-              const deckLinkEl = row.querySelector('td:nth-child(3) a')
-              const avatarEl = row.querySelector('td:nth-child(2) span.avatar[title]')
-              const priceEl = row.querySelector('td.text-end span.text-green')
-                           || row.querySelector('span.text-green')
-
-              const rankText = rankEl?.textContent.trim() || '99'
-              const standing = parseInt(rankText.replace(/\D/g, ''), 10) || 99
-              const deckName = deckLinkEl?.textContent.trim() || 'Unknown'
-              const legendName = avatarEl?.getAttribute('title')?.trim() || null
-
-              const style = avatarEl?.getAttribute('style') || ''
-              const bgMatch = style.match(/url\(['"']?([^'"')]+)['"']?\)/)
-              const legendTileUrl = bgMatch ? `${base}${bgMatch[1]}` : ''
-
-              const priceText = (priceEl?.textContent.trim() || '').replace(/[^\d.]/g, '')
-              const price = priceText ? parseFloat(priceText) : null
-
-              const fullDeckUrl = deckUrl.startsWith('http') ? deckUrl : `${base}${deckUrl}`
-              return { deckUrl: fullDeckUrl, standing, deckName, legendName, legendTileUrl, price }
-            }),
-          BASE
-        )
-
-        if (rawDecks.length > 0) {
-          console.log(`      ${rawDecks.length} decks found`)
-        }
-
-        // Cache finished/complete tournaments so later runs skip them.
-        if (tournId && rawDecks.length) {
-          tournamentCache[tournId] = {
-            decks: rawDecks,
-            totalPlayers,
-            name: r.name || '',
-            dateStr: r.dateStr || null,
-            scrapedAt: new Date().toISOString(),
-          }
-          scrapedTournaments++
-          if (scrapedTournaments % 20 === 0) await saveTournamentCache().catch(() => {})
-        }
-      }
-
-      for (const d of rawDecks) {
-        if (!d.deckUrl) continue
-        const deckId = deckIdFromUrl(d.deckUrl)
-        if (!deckId || allDecks.some((x) => x.id === deckId)) continue // deduplicate
-        const slug = legendSlugFromDeckUrl(d.deckUrl)
-        allDecks.push({
-          id: deckId,
-          deckId,
-          deckName: d.deckName,
-          deckUrl: d.deckUrl.replace(BASE, ''),
-          legendSlug: slug,
-          legendName: d.legendName || slugToTitle(slug),
-          legendTileUrl: d.legendTileUrl,
-          price: d.price,
-          standing: d.standing,
-          totalPlayers,
-          tournamentName: r.name || 'Unknown',
-          tournamentDate: r.dateStr || null,
-          meta: r.meta || null,
-          metaSet: r.metaSet || null,
-          metaFormat: r.metaFormat || null,
         })
+      )
+      // Keep first occurrence of each URL; prefer entries that have a name
+      const seen = new Map()
+      for (const r of rawRows) {
+        if (!r.url) continue
+        if (!seen.has(r.url) || (!seen.get(r.url).name && r.name)) {
+          seen.set(r.url, r)
+        }
       }
-    }
+      const tournamentRows = Array.from(seen.values())
 
-    // Check for next page was done before navigating away from list page (see above)
-    if (!hasNext) {
-      console.log('  No more pages.')
-      break
+      if (!tournamentRows.length) {
+        console.log('  No tournament rows found — stopping.')
+        break
+      }
+
+      // Check for a next-page link BEFORE navigating away from the list page
+      const hasNext = await page.$('li.page-item a[rel="next"]').then((el) => !!el)
+
+      // Fetch each tournament's deck list
+      for (const r of tournamentRows) {
+        if (!r.url) continue
+        const tournUrl = r.url.startsWith('http') ? r.url : `${BASE}${r.url}`
+        const tournId = tournamentIdFromUrl(r.url)
+        const tDate = r.dateStr ? new Date(`${r.dateStr}T00:00:00Z`).getTime() : NaN
+        // Recent (or undated) tournaments may still be changing — always re-scrape
+        // them. Older, finished tournaments are served from cache when present.
+        const isRecent = Number.isNaN(tDate) || tDate >= rescrapeCutoff
+        const cached = tournId ? tournamentCache[tournId] : null
+
+        let rawDecks
+        let totalPlayers
+        if (cached && !isRecent) {
+          rawDecks = cached.decks || []
+          totalPlayers = cached.totalPlayers ?? null
+          stats.reused++
+        } else {
+          console.log(`    → ${(r.name || '(no name)').slice(0, 60)}`)
+          await page.goto(tournUrl, { waitUntil: 'domcontentloaded', timeout: 30000 })
+          // Wait for Cloudflare challenge to resolve
+          await page.waitForFunction(
+            () => !document.title.toLowerCase().includes('moment'),
+            { timeout: 20000 }
+          ).catch(() => {})
+          await sleep(500)
+
+          // Extract total player count from the pagination summary text
+          // e.g. "Page 1 of 1, showing 44 record(s) out of 44 total"
+          totalPlayers = await page.evaluate(() => {
+            const allEls = [...document.querySelectorAll('*')]
+            const el = allEls.find(e => /showing\s+\d+\s+record/i.test(e.textContent) && e.children.length === 0)
+            if (el) {
+              const m = el.textContent.match(/out of (\d+) total/i)
+              if (m) return parseInt(m[1], 10)
+            }
+            // Fallback: count desktop deck rows
+            const rows = document.querySelectorAll('tr[id^="desktop-deck-"]')
+            return rows.length || null
+          }).catch(() => null)
+
+          rawDecks = await page.$$eval(
+            'tr[id^="desktop-deck-"]',
+            (rows, base) =>
+              rows.map((row) => {
+                const deckUrl = row.getAttribute('data-href') || ''
+                const rankEl = row.querySelector('td:first-child strong')
+                const deckLinkEl = row.querySelector('td:nth-child(3) a')
+                const avatarEl = row.querySelector('td:nth-child(2) span.avatar[title]')
+                const priceEl = row.querySelector('td.text-end span.text-green')
+                             || row.querySelector('span.text-green')
+
+                const rankText = rankEl?.textContent.trim() || '99'
+                const standing = parseInt(rankText.replace(/\D/g, ''), 10) || 99
+                const deckName = deckLinkEl?.textContent.trim() || 'Unknown'
+                const legendName = avatarEl?.getAttribute('title')?.trim() || null
+
+                const style = avatarEl?.getAttribute('style') || ''
+                const bgMatch = style.match(/url\(['"']?([^'"')]+)['"']?\)/)
+                const legendTileUrl = bgMatch ? `${base}${bgMatch[1]}` : ''
+
+                const priceText = (priceEl?.textContent.trim() || '').replace(/[^\d.]/g, '')
+                const price = priceText ? parseFloat(priceText) : null
+
+                const fullDeckUrl = deckUrl.startsWith('http') ? deckUrl : `${base}${deckUrl}`
+                return { deckUrl: fullDeckUrl, standing, deckName, legendName, legendTileUrl, price }
+              }),
+            BASE
+          )
+
+          if (rawDecks.length > 0) {
+            console.log(`      ${rawDecks.length} decks found`)
+          }
+
+          // Cache finished/complete tournaments so later runs skip them.
+          if (tournId && rawDecks.length) {
+            tournamentCache[tournId] = {
+              decks: rawDecks,
+              totalPlayers,
+              name: r.name || '',
+              dateStr: r.dateStr || null,
+              scrapedAt: new Date().toISOString(),
+            }
+            stats.scraped++
+            if (stats.scraped % 20 === 0) await saveTournamentCache().catch(() => {})
+          }
+        }
+
+        for (const d of rawDecks) {
+          if (!d.deckUrl) continue
+          const deckId = deckIdFromUrl(d.deckUrl)
+          if (!deckId || allDecks.some((x) => x.id === deckId)) continue // deduplicate
+          const slug = legendSlugFromDeckUrl(d.deckUrl)
+          allDecks.push({
+            id: deckId,
+            deckId,
+            deckName: d.deckName,
+            deckUrl: d.deckUrl.replace(BASE, ''),
+            legendSlug: slug,
+            legendName: d.legendName || slugToTitle(slug),
+            legendTileUrl: d.legendTileUrl,
+            price: d.price,
+            standing: d.standing,
+            totalPlayers,
+            tournamentName: r.name || 'Unknown',
+            tournamentDate: r.dateStr || null,
+            meta: r.meta || null,
+            metaSet: r.metaSet || null,
+            metaFormat: r.metaFormat || null,
+          })
+        }
+      }
+
+      // Check for next page was done before navigating away from list page (see above)
+      if (!hasNext) {
+        console.log('  No more pages.')
+        break
+      }
+      pageNum++
     }
-    pageNum++
+  }
+
+  // Main pass: relevance-filtered tournaments.
+  await crawlList(
+    (n) => `${BASE}/riftbound-tournaments?relevance=${RELEVANCE}&page=${n}`,
+    MAX_PAGES,
+    'main'
+  )
+
+  // China pass: include Chinese tournaments regardless of relevance. Dedupe by
+  // deck id (handled above) means overlap with the main pass is skipped.
+  if (CHINA_PAGES > 0) {
+    const before = allDecks.length
+    await crawlList(
+      (n) => `${BASE}/riftbound-tournaments?omni=china&relevance=0&page=${n}`,
+      CHINA_PAGES,
+      'china'
+    )
+    console.log(`China pass added ${allDecks.length - before} new deck(s).`)
   }
 
   // Persist the tournament deck-list cache for the next run.
   await saveTournamentCache().catch(() => {})
   console.log(
-    `\nTournaments: ${scrapedTournaments} scraped, ${reusedTournaments} reused from cache.`
+    `\nTournaments: ${stats.scraped} scraped, ${stats.reused} reused from cache.`
   )
 
   // Drop stale decks so decks.json stays lean
