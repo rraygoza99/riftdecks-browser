@@ -565,8 +565,6 @@ async function main() {
                 const rankEl = row.querySelector('td:first-child strong')
                 const deckLinkEl = row.querySelector('td:nth-child(3) a')
                 const avatarEl = row.querySelector('td:nth-child(2) span.avatar[title]')
-                const priceEl = row.querySelector('td.text-end span.text-green')
-                             || row.querySelector('span.text-green')
 
                 const rankText = rankEl?.textContent.trim() || '99'
                 const standing = parseInt(rankText.replace(/\D/g, ''), 10) || 99
@@ -577,8 +575,14 @@ async function main() {
                 const bgMatch = style.match(/url\(['"']?([^'"')]+)['"']?\)/)
                 const legendTileUrl = bgMatch ? `${base}${bgMatch[1]}` : ''
 
-                const priceText = (priceEl?.textContent.trim() || '').replace(/[^\d.]/g, '')
-                const price = priceText ? parseFloat(priceText) : null
+                // Price lives in a green span like
+                // <span class="text-green small">$323.13</span>, but the meta badge
+                // (e.g. "Vendetta") is ALSO a green span — so match on the dollar
+                // amount rather than relying on the .text-green class or its position.
+                const priceText = [...row.querySelectorAll('span, td')]
+                  .map((el) => el.textContent.trim())
+                  .find((t) => /^\$[\d,]+(?:\.\d+)?$/.test(t)) || ''
+                const price = priceText ? parseFloat(priceText.replace(/[^\d.]/g, '')) : null
 
                 const fullDeckUrl = deckUrl.startsWith('http') ? deckUrl : `${base}${deckUrl}`
                 return { deckUrl: fullDeckUrl, standing, deckName, legendName, legendTileUrl, price }
