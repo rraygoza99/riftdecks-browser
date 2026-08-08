@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-08T12:23:33.542Z",
+  "generatedAt": "2026-08-08T18:48:51.310Z",
   "cardsPerLegend": 8,
   "legendCount": 31,
   "legends": [
@@ -8,7 +8,7 @@
       "legendName": "Master Yi, Wuju Bladesman",
       "legendTileUrl": "https://riftdecks.com/img/cards/riftbound//OGS/ogs-019-024_tile.png",
       "decksSampled": 6,
-      "totalDecks": 642,
+      "totalDecks": 643,
       "cards": [
         {
           "name": "Body Rune",
