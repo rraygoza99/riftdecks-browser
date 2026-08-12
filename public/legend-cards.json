@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-12T12:35:23.297Z",
+  "generatedAt": "2026-08-12T20:30:46.051Z",
   "cardsPerLegend": 8,
   "legendCount": 23,
   "legends": [
@@ -509,7 +509,7 @@
       "legendName": "Irelia, Blade Dancer",
       "legendTileUrl": "https://riftdecks.com/img/cards/riftbound//SFD/sfd-195-221_tile.png",
       "decksSampled": 3,
-      "totalDecks": 373,
+      "totalDecks": 374,
       "cards": [
         {
           "name": "Calm Rune",
@@ -2358,7 +2358,7 @@
       "legendName": "Leblanc, Deceiver",
       "legendTileUrl": "https://riftdecks.com/img/cards/riftbound//UNL/unl-199-219_tile.png",
       "decksSampled": 2,
-      "totalDecks": 165,
+      "totalDecks": 166,
       "cards": [
         {
           "name": "Order Rune",
@@ -5321,7 +5321,7 @@
       "legendName": "Rengar, Pridestalker",
       "legendTileUrl": "https://riftdecks.com/img/cards/riftbound//UNL/unl-183-219_tile.png",
       "decksSampled": 2,
-      "totalDecks": 97,
+      "totalDecks": 98,
       "cards": [
         {
           "name": "Body Rune",
@@ -6281,7 +6281,7 @@
       "legendName": "Khazix, Voidreaver",
       "legendTileUrl": "https://riftdecks.com/img/cards/riftbound//UNL/unl-236-219_tile.png",
       "decksSampled": 2,
-      "totalDecks": 79,
+      "totalDecks": 80,
       "cards": [
         {
           "name": "Body Rune",
@@ -7006,7 +7006,7 @@
       "legendName": "Lillia, Bashful Bloom",
       "legendTileUrl": "https://riftdecks.com/img/cards/riftbound//UNL/unl-230-219_tile.png",
       "decksSampled": 1,
-      "totalDecks": 73,
+      "totalDecks": 74,
       "cards": [
         {
           "name": "Calm Rune",
