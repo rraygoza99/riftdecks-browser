@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-14T12:36:17.149Z",
+  "generatedAt": "2026-08-14T20:27:06.762Z",
   "cardsPerLegend": 8,
   "legendCount": 13,
   "legends": [
@@ -8,7 +8,7 @@
       "legendName": "Master Yi, Wuju Bladesman",
       "legendTileUrl": "https://riftdecks.com/img/cards/riftbound//OGS/ogs-019-024_tile.png",
       "decksSampled": 1,
-      "totalDecks": 572,
+      "totalDecks": 573,
       "cards": [
         {
           "name": "Body Rune",
@@ -382,7 +382,7 @@
       "legendName": "Irelia, Blade Dancer",
       "legendTileUrl": "https://riftdecks.com/img/cards/riftbound//SFD/sfd-195-221_tile.png",
       "decksSampled": 2,
-      "totalDecks": 351,
+      "totalDecks": 352,
       "cards": [
         {
           "name": "Calm Rune",
@@ -827,7 +827,7 @@
       "legendName": "Diana, Scorn of the Moon",
       "legendTileUrl": "https://riftdecks.com/img/cards/riftbound//UNL/unl-234-219_tile.png",
       "decksSampled": 1,
-      "totalDecks": 323,
+      "totalDecks": 325,
       "cards": [
         {
           "name": "Chaos Rune",
@@ -1744,7 +1744,7 @@
       "legendName": "Reksai, Void Burrower",
       "legendTileUrl": "https://riftdecks.com/img/cards/riftbound//SFD/sfd-187-221_tile.png",
       "decksSampled": 1,
-      "totalDecks": 130,
+      "totalDecks": 129,
       "cards": [
         {
           "name": "Fury Rune",
@@ -2647,7 +2647,7 @@
       "legendName": "Draven, Glorious Executioner",
       "legendTileUrl": "https://riftdecks.com/img/cards/riftbound//SFD/sfd-185-221_tile.png",
       "decksSampled": 1,
-      "totalDecks": 102,
+      "totalDecks": 101,
       "cards": [
         {
           "name": "Chaos Rune",
