@@ -488,6 +488,12 @@ async function main() {
                 .map((s) => s.textContent.trim())
                 .filter(Boolean)
             : []
+          // Country column renders a flag whose class encodes the ISO code,
+          // e.g. <span class="flag flag-country-br">.
+          const flagEl = row.querySelector('[class*="flag-country-"]')
+          const country = flagEl
+            ? (flagEl.className.match(/flag-country-([a-z]+)/i)?.[1] || '').toUpperCase()
+            : ''
           return {
             url,
             name: nameEl?.textContent.trim() || '',
@@ -495,6 +501,7 @@ async function main() {
             meta: metaCell?.textContent.replace(/\s+/g, ' ').trim() || '',
             metaSet: metaBadges[0] || '',
             metaFormat: metaBadges[1] || '',
+            country,
           }
         })
       )
@@ -624,8 +631,10 @@ async function main() {
             price: d.price,
             standing: d.standing,
             totalPlayers,
+            tournamentId: tournId || null,
             tournamentName: r.name || 'Unknown',
             tournamentDate: r.dateStr || null,
+            tournamentCountry: r.country || null,
             meta: r.meta || null,
             metaSet: r.metaSet || null,
             metaFormat: r.metaFormat || null,

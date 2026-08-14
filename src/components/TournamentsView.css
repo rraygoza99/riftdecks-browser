@@ -1,0 +1,148 @@
+.tournaments-view {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1.5rem 1rem 3rem;
+}
+
+.tournaments-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.25rem;
+}
+
+.tournaments-title {
+  margin: 0 0 0.35rem;
+  font-size: 1.6rem;
+  color: var(--text-primary);
+}
+
+.tournaments-sub {
+  margin: 0;
+  max-width: 640px;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.tournaments-search {
+  padding: 0.55rem 0.85rem;
+  min-width: 220px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text-primary);
+  font-size: 0.9rem;
+}
+
+.tournaments-search:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-glow);
+}
+
+.tournaments-count {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  margin-bottom: 0.6rem;
+}
+
+.tournaments-table-wrap {
+  overflow-x: auto;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--bg-secondary);
+}
+
+.tournaments-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.tournaments-table thead th {
+  text-align: left;
+  padding: 0.7rem 0.85rem;
+  color: var(--text-muted);
+  font-weight: 600;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  border-bottom: 1px solid var(--border);
+  white-space: nowrap;
+}
+
+.tournament-row {
+  cursor: pointer;
+  transition: background 0.12s ease;
+}
+
+.tournament-row td {
+  padding: 0.7rem 0.85rem;
+  border-bottom: 1px solid var(--border);
+  color: var(--text-primary);
+  vertical-align: middle;
+}
+
+.tournament-row:last-child td {
+  border-bottom: none;
+}
+
+.tournament-row:hover,
+.tournament-row:focus-visible {
+  background: var(--bg-card-hover);
+  outline: none;
+}
+
+.col-t-name {
+  max-width: 420px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-weight: 500;
+}
+
+.tournament-meta-tag {
+  display: inline-block;
+  margin-left: 0.5rem;
+  padding: 0.05rem 0.4rem;
+  font-size: 0.68rem;
+  border-radius: 5px;
+  background: var(--accent-glow);
+  color: var(--accent-bright);
+  vertical-align: middle;
+}
+
+.col-t-players,
+.col-t-decks {
+  text-align: center;
+  color: var(--text-secondary);
+  width: 1%;
+  white-space: nowrap;
+}
+
+.col-t-country {
+  width: 1%;
+  white-space: nowrap;
+}
+
+.tournament-country {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--text-secondary);
+}
+
+.tournament-flag {
+  font-size: 1.1rem;
+  line-height: 1;
+}
+
+.col-t-arrow {
+  width: 1%;
+  text-align: right;
+  color: var(--text-muted);
+  font-size: 1.4rem;
+  line-height: 1;
+}
