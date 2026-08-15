@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-14T20:50:00.435Z",
+  "generatedAt": "2026-08-15T12:23:00.599Z",
   "cardsPerLegend": 8,
   "legendCount": 13,
   "legends": [
@@ -8,7 +8,7 @@
       "legendName": "Master Yi, Wuju Bladesman",
       "legendTileUrl": "https://riftdecks.com/img/cards/riftbound//OGS/ogs-019-024_tile.png",
       "decksSampled": 1,
-      "totalDecks": 573,
+      "totalDecks": 574,
       "cards": [
         {
           "name": "Body Rune",
@@ -827,7 +827,7 @@
       "legendName": "Diana, Scorn of the Moon",
       "legendTileUrl": "https://riftdecks.com/img/cards/riftbound//UNL/unl-234-219_tile.png",
       "decksSampled": 1,
-      "totalDecks": 325,
+      "totalDecks": 326,
       "cards": [
         {
           "name": "Chaos Rune",
@@ -1744,7 +1744,7 @@
       "legendName": "Reksai, Void Burrower",
       "legendTileUrl": "https://riftdecks.com/img/cards/riftbound//SFD/sfd-187-221_tile.png",
       "decksSampled": 1,
-      "totalDecks": 129,
+      "totalDecks": 130,
       "cards": [
         {
           "name": "Fury Rune",
@@ -2647,7 +2647,7 @@
       "legendName": "Draven, Glorious Executioner",
       "legendTileUrl": "https://riftdecks.com/img/cards/riftbound//SFD/sfd-185-221_tile.png",
       "decksSampled": 1,
-      "totalDecks": 101,
+      "totalDecks": 103,
       "cards": [
         {
           "name": "Chaos Rune",
@@ -5040,7 +5040,7 @@
       "legendName": "Ivern, Green Father",
       "legendTileUrl": "https://riftdecks.com/img/cards/riftbound//UNL/unl-233-219_tile.png",
       "decksSampled": 1,
-      "totalDecks": 31,
+      "totalDecks": 32,
       "cards": [
         {
           "name": "Calm Rune",
