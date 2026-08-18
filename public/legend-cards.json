@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-17T20:23:18.076Z",
+  "generatedAt": "2026-08-18T12:26:31.811Z",
   "cardsPerLegend": 8,
   "legendCount": 13,
   "legends": [
@@ -8,7 +8,7 @@
       "legendName": "Master Yi, Wuju Bladesman",
       "legendTileUrl": "https://riftdecks.com/img/cards/riftbound//OGS/ogs-019-024_tile.png",
       "decksSampled": 1,
-      "totalDecks": 643,
+      "totalDecks": 661,
       "cards": [
         {
           "name": "Body Rune",
@@ -382,7 +382,7 @@
       "legendName": "Irelia, Blade Dancer",
       "legendTileUrl": "https://riftdecks.com/img/cards/riftbound//SFD/sfd-195-221_tile.png",
       "decksSampled": 2,
-      "totalDecks": 415,
+      "totalDecks": 431,
       "cards": [
         {
           "name": "Calm Rune",
@@ -827,7 +827,7 @@
       "legendName": "Diana, Scorn of the Moon",
       "legendTileUrl": "https://riftdecks.com/img/cards/riftbound//UNL/unl-234-219_tile.png",
       "decksSampled": 1,
-      "totalDecks": 347,
+      "totalDecks": 354,
       "cards": [
         {
           "name": "Chaos Rune",
@@ -1272,7 +1272,7 @@
       "legendName": "Viktor, Herald of the Arcane",
       "legendTileUrl": "https://riftdecks.com/img/cards/riftbound//OGN/ogn-308-298_tile.png",
       "decksSampled": 2,
-      "totalDecks": 178,
+      "totalDecks": 188,
       "cards": [
         {
           "name": "Mind Rune",
@@ -1744,7 +1744,7 @@
       "legendName": "Reksai, Void Burrower",
       "legendTileUrl": "https://riftdecks.com/img/cards/riftbound//SFD/sfd-187-221_tile.png",
       "decksSampled": 1,
-      "totalDecks": 172,
+      "totalDecks": 186,
       "cards": [
         {
           "name": "Fury Rune",
@@ -2119,7 +2119,7 @@
       "legendName": "Draven, Glorious Executioner",
       "legendTileUrl": "https://riftdecks.com/img/cards/riftbound//SFD/sfd-185-221_tile.png",
       "decksSampled": 1,
-      "totalDecks": 153,
+      "totalDecks": 155,
       "cards": [
         {
           "name": "Chaos Rune",
@@ -2550,7 +2550,7 @@
       "legendName": "Rengar, Pridestalker",
       "legendTileUrl": "https://riftdecks.com/img/cards/riftbound//UNL/unl-183-219_tile.png",
       "decksSampled": 1,
-      "totalDecks": 135,
+      "totalDecks": 149,
       "cards": [
         {
           "name": "Body Rune",
@@ -3509,7 +3509,7 @@
       "legendName": "Khazix, Voidreaver",
       "legendTileUrl": "https://riftdecks.com/img/cards/riftbound//UNL/unl-236-219_tile.png",
       "decksSampled": 2,
-      "totalDecks": 93,
+      "totalDecks": 99,
       "cards": [
         {
           "name": "Body Rune",
@@ -4234,7 +4234,7 @@
       "legendName": "Lillia, Bashful Bloom",
       "legendTileUrl": "https://riftdecks.com/img/cards/riftbound//UNL/unl-230-219_tile.png",
       "decksSampled": 1,
-      "totalDecks": 88,
+      "totalDecks": 96,
       "cards": [
         {
           "name": "Calm Rune",
@@ -4623,7 +4623,7 @@
       "legendName": "Master Yi, Wuju Master",
       "legendTileUrl": "https://riftdecks.com/img/cards/riftbound//UNL/unl-191-219_tile.png",
       "decksSampled": 1,
-      "totalDecks": 40,
+      "totalDecks": 42,
       "cards": [
         {
           "name": "Body Rune",
@@ -5040,7 +5040,7 @@
       "legendName": "Ivern, Green Father",
       "legendTileUrl": "https://riftdecks.com/img/cards/riftbound//UNL/unl-233-219_tile.png",
       "decksSampled": 1,
-      "totalDecks": 34,
+      "totalDecks": 33,
       "cards": [
         {
           "name": "Calm Rune",
@@ -5415,7 +5415,7 @@
       "legendName": "Darius, Hand of Noxus",
       "legendTileUrl": "https://riftdecks.com/img/cards/riftbound//OGN/ogn-302-298_tile.png",
       "decksSampled": 1,
-      "totalDecks": 13,
+      "totalDecks": 12,
       "cards": [
         {
           "name": "Fury Rune",
