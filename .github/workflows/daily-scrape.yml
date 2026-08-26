@@ -39,7 +39,10 @@ jobs:
         run: npx playwright install-deps chromium
 
       - name: Run scraper
-        run: npm run scrape
+        # Card analysis fetches deck-detail pages, which Cloudflare blocks from
+        # Actions' datacenter IPs (every fetch returns empty). Skip it here and
+        # refresh legend-cards.json from an occasional local run instead.
+        run: npm run scrape -- --no-cards
 
       - name: Commit and push updated deck data
         run: |

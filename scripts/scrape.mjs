@@ -722,8 +722,10 @@ async function main() {
   await fs.writeFile(OUTPUT, JSON.stringify(output, null, 2), 'utf-8')
   console.log(`\nDone. Saved ${decks.length} decks → ${OUTPUT}`)
 
-  // Write legend card analysis
-  if (legendCards) {
+  // Write legend card analysis. Guard against a transient run that produced no
+  // legends (e.g. every deck-page fetch was blocked) from clobbering the last
+  // good file with an empty one — keep the previous analysis instead.
+  if (legendCards && legendCards.length) {
     const legendOutput = {
       generatedAt: new Date().toISOString(),
       cardsPerLegend: CARDS_PER_LEGEND,
@@ -732,6 +734,10 @@ async function main() {
     }
     await fs.writeFile(LEGEND_CARDS_OUTPUT, JSON.stringify(legendOutput, null, 2), 'utf-8')
     console.log(`Saved card analysis for ${legendCards.length} legends → ${LEGEND_CARDS_OUTPUT}`)
+  } else if (legendCards) {
+    console.warn(
+      `Card analysis produced 0 legends — keeping the previous ${LEGEND_CARDS_OUTPUT}.`
+    )
   }
 }
 
