@@ -39,42 +39,6 @@ export default function PrivacyPolicy({ onBack }) {
         browser (via <code>localStorage</code>) and never sent to us.
       </p>
 
-      <h2>Cookies and advertising</h2>
-      <p>
-        This site uses <strong>Adsterra</strong>, a third-party advertising network, to
-        display ads. Adsterra and its partners may use cookies and similar technologies
-        to serve and measure ads based on your prior visits to this and other websites.
-      </p>
-      <ul>
-        <li>
-          The use of advertising cookies enables Adsterra and its partners to serve ads
-          to you based on your visit to this site and/or other sites on the Internet.
-        </li>
-        <li>
-          For more information about how Adsterra handles data, see the{' '}
-          <a href="https://adsterra.com/privacy-policy/" target="_blank" rel="noopener noreferrer">
-            Adsterra Privacy Policy
-          </a>
-          .
-        </li>
-        <li>
-          You can opt out of third-party vendor cookies for personalised advertising
-          at{' '}
-          <a href="https://www.aboutads.info/choices/" target="_blank" rel="noopener noreferrer">
-            aboutads.info/choices
-          </a>
-          .
-        </li>
-      </ul>
-
-      <h2>Consent (EEA, UK, and Switzerland)</h2>
-      <p>
-        If you are visiting from the European Economic Area, the United Kingdom, or
-        Switzerland, you will be shown a consent message before personalised ads are
-        served. You can choose to consent, refuse, or manage your options at any time,
-        and your choice is respected by our advertising partners.
-      </p>
-
       <h2>Analytics</h2>
       <p>
         We may use aggregate, non-identifying traffic statistics to understand how the

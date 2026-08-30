@@ -15,7 +15,6 @@ import AboutView from './components/AboutView'
 import ContactView from './components/ContactView'
 import GuidesView from './components/GuidesView'
 import GuideArticle from './components/GuideArticle'
-import AdSlot from './components/AdSlot'
 import useFavourites from './hooks/useFavourites'
 import useTheme from './hooks/useTheme'
 
@@ -423,10 +422,6 @@ export default function App() {
                 </div>
               )}
 
-              {filteredDecks.length > 0 && (
-                <AdSlot />
-              )}
-
               <DeckGrid
                 decks={paginatedDecks}
                 groupByLegend={filters.legends.length > 0}
@@ -442,10 +437,6 @@ export default function App() {
                   onPageChange={setCurrentPage}
                   onPageSizeChange={setPageSize}
                 />
-              )}
-
-              {filteredDecks.length > 0 && (
-                <AdSlot variant="banner" />
               )}
 
               {!filteredDecks.length && (
