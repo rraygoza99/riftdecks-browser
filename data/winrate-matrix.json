@@ -1,0 +1,8087 @@
+{
+  "metagame": "Vendetta Metagame",
+  "matchesAnalyzed": 73727,
+  "legends": [
+    {
+      "name": "Kennen, Heart of the Tempest",
+      "overallWinrate": 57.78,
+      "matches": 7601
+    },
+    {
+      "name": "Master Yi, Wuju Bladesman",
+      "overallWinrate": 55.35,
+      "matches": 6970
+    },
+    {
+      "name": "Irelia, Blade Dancer",
+      "overallWinrate": 51.69,
+      "matches": 5674
+    },
+    {
+      "name": "Rengar, Pridestalker",
+      "overallWinrate": 56.46,
+      "matches": 3983
+    },
+    {
+      "name": "Azir, Emperor of the Sands",
+      "overallWinrate": 53.28,
+      "matches": 3645
+    },
+    {
+      "name": "Reksai, Void Burrower",
+      "overallWinrate": 52.57,
+      "matches": 3504
+    },
+    {
+      "name": "Diana, Scorn of the Moon",
+      "overallWinrate": 50.81,
+      "matches": 3153
+    },
+    {
+      "name": "Nasus, Curator of the Sands",
+      "overallWinrate": 46.95,
+      "matches": 2988
+    },
+    {
+      "name": "Draven, Glorious Executioner",
+      "overallWinrate": 51.17,
+      "matches": 2904
+    },
+    {
+      "name": "Leblanc, Deceiver",
+      "overallWinrate": 55.57,
+      "matches": 2532
+    },
+    {
+      "name": "Jayce, Defender of Tomorrow",
+      "overallWinrate": 51.55,
+      "matches": 2458
+    },
+    {
+      "name": "Khazix, Voidreaver",
+      "overallWinrate": 51.84,
+      "matches": 2284
+    },
+    {
+      "name": "Akali, Rogue Assassin",
+      "overallWinrate": 41.58,
+      "matches": 2244
+    },
+    {
+      "name": "Ezreal, Prodigal Explorer",
+      "overallWinrate": 51.61,
+      "matches": 2056
+    },
+    {
+      "name": "Lillia, Bashful Bloom",
+      "overallWinrate": 49.27,
+      "matches": 1841
+    },
+    {
+      "name": "Viktor, Herald of the Arcane",
+      "overallWinrate": 49.91,
+      "matches": 1603
+    },
+    {
+      "name": "Mel, Soul's Reflection",
+      "overallWinrate": 42.16,
+      "matches": 1537
+    },
+    {
+      "name": "Vex, Gloomist",
+      "overallWinrate": 45.37,
+      "matches": 1446
+    },
+    {
+      "name": "Fiora, Grand Duelist",
+      "overallWinrate": 45.28,
+      "matches": 1418
+    },
+    {
+      "name": "Ornn, Fire Below the Mountain",
+      "overallWinrate": 47.11,
+      "matches": 1401
+    },
+    {
+      "name": "Ambessa, Matriarch of War",
+      "overallWinrate": 36.6,
+      "matches": 1246
+    },
+    {
+      "name": "Kai'sa, Daughter of the Void",
+      "overallWinrate": 45.24,
+      "matches": 1209
+    },
+    {
+      "name": "Ivern, Green Father",
+      "overallWinrate": 36.65,
+      "matches": 805
+    },
+    {
+      "name": "Pyke, Bloodharbor Ripper",
+      "overallWinrate": 40.44,
+      "matches": 779
+    },
+    {
+      "name": "Zed, Master of Shadows",
+      "overallWinrate": 33.08,
+      "matches": 777
+    },
+    {
+      "name": "Vi, Piltover Enforcer",
+      "overallWinrate": 38.68,
+      "matches": 729
+    },
+    {
+      "name": "Lucian, Purifier",
+      "overallWinrate": 42.06,
+      "matches": 630
+    },
+    {
+      "name": "Jhin, Virtuoso",
+      "overallWinrate": 34.51,
+      "matches": 568
+    },
+    {
+      "name": "Rumble, Mechanized Menace",
+      "overallWinrate": 41.46,
+      "matches": 562
+    },
+    {
+      "name": "Shen, Eye of Twilight",
+      "overallWinrate": 33.81,
+      "matches": 559
+    },
+    {
+      "name": "Sivir, Battle Mistress",
+      "overallWinrate": 44.83,
+      "matches": 513
+    },
+    {
+      "name": "Annie, Dark Child",
+      "overallWinrate": 48.59,
+      "matches": 498
+    },
+    {
+      "name": "Master Yi, Wuju Master",
+      "overallWinrate": 41.01,
+      "matches": 495
+    },
+    {
+      "name": "Lux, Lady of Luminosity",
+      "overallWinrate": 50.21,
+      "matches": 468
+    },
+    {
+      "name": "Jax, Grandmaster at Arms",
+      "overallWinrate": 42.67,
+      "matches": 450
+    },
+    {
+      "name": "Renekton, Butcher of the Sands",
+      "overallWinrate": 41.75,
+      "matches": 412
+    },
+    {
+      "name": "Renata Glasc, Chem-Baroness",
+      "overallWinrate": 32.42,
+      "matches": 364
+    },
+    {
+      "name": "Poppy, Keeper of the Hammer",
+      "overallWinrate": 39.68,
+      "matches": 315
+    },
+    {
+      "name": "Sett, The Boss",
+      "overallWinrate": 41.2,
+      "matches": 250
+    },
+    {
+      "name": "Teemo, Swift Scout",
+      "overallWinrate": 37.5,
+      "matches": 184
+    },
+    {
+      "name": "Miss Fortune, Bounty Hunter",
+      "overallWinrate": 42.31,
+      "matches": 130
+    },
+    {
+      "name": "Volibear, Relentless Storm",
+      "overallWinrate": 47.97,
+      "matches": 123
+    },
+    {
+      "name": "Ahri, Nine-Tailed Fox",
+      "overallWinrate": 44.23,
+      "matches": 104
+    },
+    {
+      "name": "Leona, Radiant Dawn",
+      "overallWinrate": 31.76,
+      "matches": 85
+    },
+    {
+      "name": "Jinx, Loose Cannon",
+      "overallWinrate": 29.49,
+      "matches": 78
+    },
+    {
+      "name": "Yasuo, Unforgiven",
+      "overallWinrate": 32.39,
+      "matches": 71
+    },
+    {
+      "name": "Darius, Hand of Noxus",
+      "overallWinrate": 40,
+      "matches": 45
+    }
+  ],
+  "matrix": {
+    "Kennen, Heart of the Tempest": {
+      "Master Yi, Wuju Bladesman": {
+        "winrate": 50,
+        "matches": 969
+      },
+      "Irelia, Blade Dancer": {
+        "winrate": 55,
+        "matches": 691
+      },
+      "Rengar, Pridestalker": {
+        "winrate": 46,
+        "matches": 516
+      },
+      "Azir, Emperor of the Sands": {
+        "winrate": 51,
+        "matches": 440
+      },
+      "Reksai, Void Burrower": {
+        "winrate": 52,
+        "matches": 421
+      },
+      "Diana, Scorn of the Moon": {
+        "winrate": 55,
+        "matches": 378
+      },
+      "Nasus, Curator of the Sands": {
+        "winrate": 59,
+        "matches": 321
+      },
+      "Draven, Glorious Executioner": {
+        "winrate": 64,
+        "matches": 361
+      },
+      "Leblanc, Deceiver": {
+        "winrate": 53,
+        "matches": 279
+      },
+      "Jayce, Defender of Tomorrow": {
+        "winrate": 75,
+        "matches": 294
+      },
+      "Khazix, Voidreaver": {
+        "winrate": 55,
+        "matches": 271
+      },
+      "Akali, Rogue Assassin": {
+        "winrate": 69,
+        "matches": 254
+      },
+      "Ezreal, Prodigal Explorer": {
+        "winrate": 53,
+        "matches": 251
+      },
+      "Lillia, Bashful Bloom": {
+        "winrate": 55,
+        "matches": 196
+      },
+      "Viktor, Herald of the Arcane": {
+        "winrate": 47,
+        "matches": 195
+      },
+      "Mel, Soul's Reflection": {
+        "winrate": 60,
+        "matches": 149
+      },
+      "Vex, Gloomist": {
+        "winrate": 69,
+        "matches": 140
+      },
+      "Fiora, Grand Duelist": {
+        "winrate": 64,
+        "matches": 132
+      },
+      "Ornn, Fire Below the Mountain": {
+        "winrate": 62,
+        "matches": 156
+      },
+      "Ambessa, Matriarch of War": {
+        "winrate": 76,
+        "matches": 104
+      },
+      "Kai'sa, Daughter of the Void": {
+        "winrate": 55,
+        "matches": 143
+      },
+      "Ivern, Green Father": {
+        "winrate": 67,
+        "matches": 85
+      },
+      "Pyke, Bloodharbor Ripper": {
+        "winrate": 75,
+        "matches": 72
+      },
+      "Zed, Master of Shadows": {
+        "winrate": 75,
+        "matches": 71
+      },
+      "Vi, Piltover Enforcer": {
+        "winrate": 73,
+        "matches": 73
+      },
+      "Lucian, Purifier": {
+        "winrate": 74,
+        "matches": 50
+      },
+      "Jhin, Virtuoso": {
+        "winrate": 70,
+        "matches": 56
+      },
+      "Rumble, Mechanized Menace": {
+        "winrate": 79,
+        "matches": 43
+      },
+      "Shen, Eye of Twilight": {
+        "winrate": 66,
+        "matches": 44
+      },
+      "Sivir, Battle Mistress": {
+        "winrate": 75,
+        "matches": 61
+      },
+      "Annie, Dark Child": {
+        "winrate": 69,
+        "matches": 51
+      },
+      "Master Yi, Wuju Master": {
+        "winrate": 65,
+        "matches": 46
+      },
+      "Lux, Lady of Luminosity": {
+        "winrate": 71,
+        "matches": 55
+      },
+      "Jax, Grandmaster at Arms": {
+        "winrate": 78,
+        "matches": 40
+      },
+      "Renekton, Butcher of the Sands": {
+        "winrate": 50,
+        "matches": 38
+      },
+      "Renata Glasc, Chem-Baroness": {
+        "winrate": 72,
+        "matches": 18
+      },
+      "Poppy, Keeper of the Hammer": {
+        "winrate": 86,
+        "matches": 21
+      },
+      "Sett, The Boss": {
+        "winrate": 65,
+        "matches": 26
+      },
+      "Teemo, Swift Scout": {
+        "winrate": 71,
+        "matches": 21
+      },
+      "Miss Fortune, Bounty Hunter": {
+        "winrate": 86,
+        "matches": 14
+      },
+      "Volibear, Relentless Storm": {
+        "winrate": 70,
+        "matches": 10
+      },
+      "Ahri, Nine-Tailed Fox": {
+        "winrate": 83,
+        "matches": 6
+      },
+      "Leona, Radiant Dawn": {
+        "winrate": 80,
+        "matches": 5
+      },
+      "Jinx, Loose Cannon": {
+        "winrate": 73,
+        "matches": 11
+      },
+      "Yasuo, Unforgiven": {
+        "winrate": 67,
+        "matches": 6
+      },
+      "Darius, Hand of Noxus": {
+        "winrate": 44,
+        "matches": 9
+      }
+    },
+    "Master Yi, Wuju Bladesman": {
+      "Kennen, Heart of the Tempest": {
+        "winrate": 50,
+        "matches": 969
+      },
+      "Irelia, Blade Dancer": {
+        "winrate": 57,
+        "matches": 718
+      },
+      "Rengar, Pridestalker": {
+        "winrate": 46,
+        "matches": 472
+      },
+      "Azir, Emperor of the Sands": {
+        "winrate": 51,
+        "matches": 441
+      },
+      "Reksai, Void Burrower": {
+        "winrate": 57,
+        "matches": 417
+      },
+      "Diana, Scorn of the Moon": {
+        "winrate": 55,
+        "matches": 342
+      },
+      "Nasus, Curator of the Sands": {
+        "winrate": 56,
+        "matches": 291
+      },
+      "Draven, Glorious Executioner": {
+        "winrate": 52,
+        "matches": 306
+      },
+      "Leblanc, Deceiver": {
+        "winrate": 44,
+        "matches": 296
+      },
+      "Jayce, Defender of Tomorrow": {
+        "winrate": 40,
+        "matches": 272
+      },
+      "Khazix, Voidreaver": {
+        "winrate": 59,
+        "matches": 254
+      },
+      "Akali, Rogue Assassin": {
+        "winrate": 69,
+        "matches": 194
+      },
+      "Ezreal, Prodigal Explorer": {
+        "winrate": 59,
+        "matches": 232
+      },
+      "Lillia, Bashful Bloom": {
+        "winrate": 62,
+        "matches": 169
+      },
+      "Viktor, Herald of the Arcane": {
+        "winrate": 61,
+        "matches": 202
+      },
+      "Mel, Soul's Reflection": {
+        "winrate": 67,
+        "matches": 140
+      },
+      "Vex, Gloomist": {
+        "winrate": 60,
+        "matches": 113
+      },
+      "Fiora, Grand Duelist": {
+        "winrate": 46,
+        "matches": 100
+      },
+      "Ornn, Fire Below the Mountain": {
+        "winrate": 70,
+        "matches": 97
+      },
+      "Ambessa, Matriarch of War": {
+        "winrate": 76,
+        "matches": 84
+      },
+      "Kai'sa, Daughter of the Void": {
+        "winrate": 62,
+        "matches": 174
+      },
+      "Ivern, Green Father": {
+        "winrate": 64,
+        "matches": 56
+      },
+      "Pyke, Bloodharbor Ripper": {
+        "winrate": 79,
+        "matches": 58
+      },
+      "Zed, Master of Shadows": {
+        "winrate": 82,
+        "matches": 49
+      },
+      "Vi, Piltover Enforcer": {
+        "winrate": 68,
+        "matches": 44
+      },
+      "Lucian, Purifier": {
+        "winrate": 61,
+        "matches": 49
+      },
+      "Jhin, Virtuoso": {
+        "winrate": 76,
+        "matches": 29
+      },
+      "Rumble, Mechanized Menace": {
+        "winrate": 71,
+        "matches": 42
+      },
+      "Shen, Eye of Twilight": {
+        "winrate": 75,
+        "matches": 24
+      },
+      "Sivir, Battle Mistress": {
+        "winrate": 50,
+        "matches": 40
+      },
+      "Annie, Dark Child": {
+        "winrate": 57,
+        "matches": 47
+      },
+      "Master Yi, Wuju Master": {
+        "winrate": 59,
+        "matches": 27
+      },
+      "Lux, Lady of Luminosity": {
+        "winrate": 35,
+        "matches": 46
+      },
+      "Jax, Grandmaster at Arms": {
+        "winrate": 59,
+        "matches": 27
+      },
+      "Renekton, Butcher of the Sands": {
+        "winrate": 70,
+        "matches": 20
+      },
+      "Renata Glasc, Chem-Baroness": {
+        "winrate": 82,
+        "matches": 17
+      },
+      "Poppy, Keeper of the Hammer": {
+        "winrate": 73,
+        "matches": 15
+      },
+      "Sett, The Boss": {
+        "winrate": 55,
+        "matches": 29
+      },
+      "Teemo, Swift Scout": {
+        "winrate": 88,
+        "matches": 17
+      },
+      "Miss Fortune, Bounty Hunter": {
+        "winrate": 50,
+        "matches": 8
+      },
+      "Volibear, Relentless Storm": {
+        "winrate": 54,
+        "matches": 13
+      },
+      "Ahri, Nine-Tailed Fox": {
+        "winrate": 33,
+        "matches": 9
+      },
+      "Leona, Radiant Dawn": {
+        "winrate": 100,
+        "matches": 3
+      },
+      "Jinx, Loose Cannon": {
+        "winrate": 100,
+        "matches": 1
+      },
+      "Yasuo, Unforgiven": {
+        "winrate": 83,
+        "matches": 6
+      },
+      "Darius, Hand of Noxus": {
+        "winrate": 75,
+        "matches": 4
+      }
+    },
+    "Irelia, Blade Dancer": {
+      "Kennen, Heart of the Tempest": {
+        "winrate": 45,
+        "matches": 691
+      },
+      "Master Yi, Wuju Bladesman": {
+        "winrate": 43,
+        "matches": 718
+      },
+      "Rengar, Pridestalker": {
+        "winrate": 47,
+        "matches": 348
+      },
+      "Azir, Emperor of the Sands": {
+        "winrate": 49,
+        "matches": 322
+      },
+      "Reksai, Void Burrower": {
+        "winrate": 39,
+        "matches": 309
+      },
+      "Diana, Scorn of the Moon": {
+        "winrate": 45,
+        "matches": 262
+      },
+      "Nasus, Curator of the Sands": {
+        "winrate": 57,
+        "matches": 265
+      },
+      "Draven, Glorious Executioner": {
+        "winrate": 46,
+        "matches": 235
+      },
+      "Leblanc, Deceiver": {
+        "winrate": 52,
+        "matches": 223
+      },
+      "Jayce, Defender of Tomorrow": {
+        "winrate": 52,
+        "matches": 212
+      },
+      "Khazix, Voidreaver": {
+        "winrate": 44,
+        "matches": 174
+      },
+      "Akali, Rogue Assassin": {
+        "winrate": 55,
+        "matches": 159
+      },
+      "Ezreal, Prodigal Explorer": {
+        "winrate": 67,
+        "matches": 162
+      },
+      "Lillia, Bashful Bloom": {
+        "winrate": 61,
+        "matches": 128
+      },
+      "Viktor, Herald of the Arcane": {
+        "winrate": 46,
+        "matches": 141
+      },
+      "Mel, Soul's Reflection": {
+        "winrate": 71,
+        "matches": 126
+      },
+      "Vex, Gloomist": {
+        "winrate": 52,
+        "matches": 103
+      },
+      "Fiora, Grand Duelist": {
+        "winrate": 49,
+        "matches": 94
+      },
+      "Ornn, Fire Below the Mountain": {
+        "winrate": 60,
+        "matches": 87
+      },
+      "Ambessa, Matriarch of War": {
+        "winrate": 68,
+        "matches": 78
+      },
+      "Kai'sa, Daughter of the Void": {
+        "winrate": 68,
+        "matches": 121
+      },
+      "Ivern, Green Father": {
+        "winrate": 70,
+        "matches": 57
+      },
+      "Pyke, Bloodharbor Ripper": {
+        "winrate": 65,
+        "matches": 63
+      },
+      "Zed, Master of Shadows": {
+        "winrate": 67,
+        "matches": 58
+      },
+      "Vi, Piltover Enforcer": {
+        "winrate": 67,
+        "matches": 57
+      },
+      "Lucian, Purifier": {
+        "winrate": 64,
+        "matches": 53
+      },
+      "Jhin, Virtuoso": {
+        "winrate": 81,
+        "matches": 32
+      },
+      "Rumble, Mechanized Menace": {
+        "winrate": 68,
+        "matches": 38
+      },
+      "Shen, Eye of Twilight": {
+        "winrate": 76,
+        "matches": 29
+      },
+      "Sivir, Battle Mistress": {
+        "winrate": 54,
+        "matches": 35
+      },
+      "Annie, Dark Child": {
+        "winrate": 63,
+        "matches": 43
+      },
+      "Master Yi, Wuju Master": {
+        "winrate": 81,
+        "matches": 32
+      },
+      "Lux, Lady of Luminosity": {
+        "winrate": 61,
+        "matches": 49
+      },
+      "Jax, Grandmaster at Arms": {
+        "winrate": 55,
+        "matches": 31
+      },
+      "Renekton, Butcher of the Sands": {
+        "winrate": 77,
+        "matches": 22
+      },
+      "Renata Glasc, Chem-Baroness": {
+        "winrate": 76,
+        "matches": 21
+      },
+      "Poppy, Keeper of the Hammer": {
+        "winrate": 74,
+        "matches": 19
+      },
+      "Sett, The Boss": {
+        "winrate": 56,
+        "matches": 18
+      },
+      "Teemo, Swift Scout": {
+        "winrate": 64,
+        "matches": 14
+      },
+      "Miss Fortune, Bounty Hunter": {
+        "winrate": 67,
+        "matches": 9
+      },
+      "Volibear, Relentless Storm": {
+        "winrate": 75,
+        "matches": 8
+      },
+      "Ahri, Nine-Tailed Fox": {
+        "winrate": 60,
+        "matches": 5
+      },
+      "Leona, Radiant Dawn": {
+        "winrate": 67,
+        "matches": 6
+      },
+      "Jinx, Loose Cannon": {
+        "winrate": 75,
+        "matches": 4
+      },
+      "Yasuo, Unforgiven": {
+        "winrate": 80,
+        "matches": 5
+      },
+      "Darius, Hand of Noxus": {
+        "winrate": 60,
+        "matches": 5
+      }
+    },
+    "Rengar, Pridestalker": {
+      "Kennen, Heart of the Tempest": {
+        "winrate": 54,
+        "matches": 516
+      },
+      "Master Yi, Wuju Bladesman": {
+        "winrate": 54,
+        "matches": 472
+      },
+      "Irelia, Blade Dancer": {
+        "winrate": 53,
+        "matches": 348
+      },
+      "Azir, Emperor of the Sands": {
+        "winrate": 54,
+        "matches": 191
+      },
+      "Reksai, Void Burrower": {
+        "winrate": 60,
+        "matches": 221
+      },
+      "Diana, Scorn of the Moon": {
+        "winrate": 49,
+        "matches": 195
+      },
+      "Nasus, Curator of the Sands": {
+        "winrate": 57,
+        "matches": 173
+      },
+      "Draven, Glorious Executioner": {
+        "winrate": 55,
+        "matches": 176
+      },
+      "Leblanc, Deceiver": {
+        "winrate": 48,
+        "matches": 147
+      },
+      "Jayce, Defender of Tomorrow": {
+        "winrate": 41,
+        "matches": 158
+      },
+      "Khazix, Voidreaver": {
+        "winrate": 51,
+        "matches": 144
+      },
+      "Akali, Rogue Assassin": {
+        "winrate": 58,
+        "matches": 96
+      },
+      "Ezreal, Prodigal Explorer": {
+        "winrate": 55,
+        "matches": 109
+      },
+      "Lillia, Bashful Bloom": {
+        "winrate": 46,
+        "matches": 106
+      },
+      "Viktor, Herald of the Arcane": {
+        "winrate": 64,
+        "matches": 101
+      },
+      "Mel, Soul's Reflection": {
+        "winrate": 75,
+        "matches": 65
+      },
+      "Vex, Gloomist": {
+        "winrate": 59,
+        "matches": 69
+      },
+      "Fiora, Grand Duelist": {
+        "winrate": 69,
+        "matches": 68
+      },
+      "Ornn, Fire Below the Mountain": {
+        "winrate": 68,
+        "matches": 72
+      },
+      "Ambessa, Matriarch of War": {
+        "winrate": 80,
+        "matches": 55
+      },
+      "Kai'sa, Daughter of the Void": {
+        "winrate": 66,
+        "matches": 59
+      },
+      "Ivern, Green Father": {
+        "winrate": 78,
+        "matches": 32
+      },
+      "Pyke, Bloodharbor Ripper": {
+        "winrate": 58,
+        "matches": 31
+      },
+      "Zed, Master of Shadows": {
+        "winrate": 89,
+        "matches": 28
+      },
+      "Vi, Piltover Enforcer": {
+        "winrate": 38,
+        "matches": 21
+      },
+      "Lucian, Purifier": {
+        "winrate": 74,
+        "matches": 27
+      },
+      "Jhin, Virtuoso": {
+        "winrate": 75,
+        "matches": 24
+      },
+      "Rumble, Mechanized Menace": {
+        "winrate": 38,
+        "matches": 29
+      },
+      "Shen, Eye of Twilight": {
+        "winrate": 61,
+        "matches": 23
+      },
+      "Sivir, Battle Mistress": {
+        "winrate": 83,
+        "matches": 23
+      },
+      "Annie, Dark Child": {
+        "winrate": 39,
+        "matches": 31
+      },
+      "Master Yi, Wuju Master": {
+        "winrate": 79,
+        "matches": 24
+      },
+      "Lux, Lady of Luminosity": {
+        "winrate": 77,
+        "matches": 26
+      },
+      "Jax, Grandmaster at Arms": {
+        "winrate": 68,
+        "matches": 19
+      },
+      "Renekton, Butcher of the Sands": {
+        "winrate": 62,
+        "matches": 21
+      },
+      "Renata Glasc, Chem-Baroness": {
+        "winrate": 93,
+        "matches": 15
+      },
+      "Poppy, Keeper of the Hammer": {
+        "winrate": 63,
+        "matches": 16
+      },
+      "Sett, The Boss": {
+        "winrate": 50,
+        "matches": 6
+      },
+      "Teemo, Swift Scout": {
+        "winrate": 86,
+        "matches": 7
+      },
+      "Miss Fortune, Bounty Hunter": {
+        "winrate": 75,
+        "matches": 4
+      },
+      "Volibear, Relentless Storm": {
+        "winrate": 57,
+        "matches": 7
+      },
+      "Ahri, Nine-Tailed Fox": {
+        "winrate": 63,
+        "matches": 8
+      },
+      "Leona, Radiant Dawn": {
+        "winrate": 63,
+        "matches": 8
+      },
+      "Jinx, Loose Cannon": {
+        "winrate": 100,
+        "matches": 1
+      },
+      "Yasuo, Unforgiven": {
+        "winrate": 100,
+        "matches": 3
+      },
+      "Darius, Hand of Noxus": {
+        "winrate": 60,
+        "matches": 5
+      }
+    },
+    "Azir, Emperor of the Sands": {
+      "Kennen, Heart of the Tempest": {
+        "winrate": 49,
+        "matches": 440
+      },
+      "Master Yi, Wuju Bladesman": {
+        "winrate": 49,
+        "matches": 441
+      },
+      "Irelia, Blade Dancer": {
+        "winrate": 51,
+        "matches": 322
+      },
+      "Rengar, Pridestalker": {
+        "winrate": 46,
+        "matches": 191
+      },
+      "Reksai, Void Burrower": {
+        "winrate": 57,
+        "matches": 167
+      },
+      "Diana, Scorn of the Moon": {
+        "winrate": 52,
+        "matches": 164
+      },
+      "Nasus, Curator of the Sands": {
+        "winrate": 56,
+        "matches": 163
+      },
+      "Draven, Glorious Executioner": {
+        "winrate": 55,
+        "matches": 148
+      },
+      "Leblanc, Deceiver": {
+        "winrate": 43,
+        "matches": 137
+      },
+      "Jayce, Defender of Tomorrow": {
+        "winrate": 44,
+        "matches": 118
+      },
+      "Khazix, Voidreaver": {
+        "winrate": 53,
+        "matches": 121
+      },
+      "Akali, Rogue Assassin": {
+        "winrate": 66,
+        "matches": 109
+      },
+      "Ezreal, Prodigal Explorer": {
+        "winrate": 40,
+        "matches": 99
+      },
+      "Lillia, Bashful Bloom": {
+        "winrate": 44,
+        "matches": 84
+      },
+      "Viktor, Herald of the Arcane": {
+        "winrate": 60,
+        "matches": 81
+      },
+      "Mel, Soul's Reflection": {
+        "winrate": 75,
+        "matches": 61
+      },
+      "Vex, Gloomist": {
+        "winrate": 51,
+        "matches": 71
+      },
+      "Fiora, Grand Duelist": {
+        "winrate": 67,
+        "matches": 87
+      },
+      "Ornn, Fire Below the Mountain": {
+        "winrate": 41,
+        "matches": 59
+      },
+      "Ambessa, Matriarch of War": {
+        "winrate": 81,
+        "matches": 63
+      },
+      "Kai'sa, Daughter of the Void": {
+        "winrate": 59,
+        "matches": 56
+      },
+      "Ivern, Green Father": {
+        "winrate": 61,
+        "matches": 44
+      },
+      "Pyke, Bloodharbor Ripper": {
+        "winrate": 74,
+        "matches": 31
+      },
+      "Zed, Master of Shadows": {
+        "winrate": 71,
+        "matches": 35
+      },
+      "Vi, Piltover Enforcer": {
+        "winrate": 77,
+        "matches": 30
+      },
+      "Lucian, Purifier": {
+        "winrate": 48,
+        "matches": 29
+      },
+      "Jhin, Virtuoso": {
+        "winrate": 79,
+        "matches": 28
+      },
+      "Rumble, Mechanized Menace": {
+        "winrate": 67,
+        "matches": 21
+      },
+      "Shen, Eye of Twilight": {
+        "winrate": 79,
+        "matches": 19
+      },
+      "Sivir, Battle Mistress": {
+        "winrate": 52,
+        "matches": 21
+      },
+      "Annie, Dark Child": {
+        "winrate": 61,
+        "matches": 31
+      },
+      "Master Yi, Wuju Master": {
+        "winrate": 73,
+        "matches": 15
+      },
+      "Lux, Lady of Luminosity": {
+        "winrate": 33,
+        "matches": 30
+      },
+      "Jax, Grandmaster at Arms": {
+        "winrate": 55,
+        "matches": 22
+      },
+      "Renekton, Butcher of the Sands": {
+        "winrate": 53,
+        "matches": 19
+      },
+      "Renata Glasc, Chem-Baroness": {
+        "winrate": 82,
+        "matches": 11
+      },
+      "Poppy, Keeper of the Hammer": {
+        "winrate": 20,
+        "matches": 10
+      },
+      "Sett, The Boss": {
+        "winrate": 50,
+        "matches": 16
+      },
+      "Teemo, Swift Scout": {
+        "winrate": 70,
+        "matches": 10
+      },
+      "Miss Fortune, Bounty Hunter": {
+        "winrate": 67,
+        "matches": 9
+      },
+      "Volibear, Relentless Storm": {
+        "winrate": 63,
+        "matches": 8
+      },
+      "Ahri, Nine-Tailed Fox": {
+        "winrate": 50,
+        "matches": 6
+      },
+      "Leona, Radiant Dawn": {
+        "winrate": 33,
+        "matches": 3
+      },
+      "Jinx, Loose Cannon": {
+        "winrate": 80,
+        "matches": 5
+      },
+      "Yasuo, Unforgiven": {
+        "winrate": 57,
+        "matches": 7
+      },
+      "Darius, Hand of Noxus": {
+        "winrate": 100,
+        "matches": 2
+      }
+    },
+    "Reksai, Void Burrower": {
+      "Kennen, Heart of the Tempest": {
+        "winrate": 48,
+        "matches": 421
+      },
+      "Master Yi, Wuju Bladesman": {
+        "winrate": 43,
+        "matches": 417
+      },
+      "Irelia, Blade Dancer": {
+        "winrate": 61,
+        "matches": 309
+      },
+      "Rengar, Pridestalker": {
+        "winrate": 40,
+        "matches": 221
+      },
+      "Azir, Emperor of the Sands": {
+        "winrate": 43,
+        "matches": 167
+      },
+      "Diana, Scorn of the Moon": {
+        "winrate": 71,
+        "matches": 150
+      },
+      "Nasus, Curator of the Sands": {
+        "winrate": 42,
+        "matches": 146
+      },
+      "Draven, Glorious Executioner": {
+        "winrate": 44,
+        "matches": 140
+      },
+      "Leblanc, Deceiver": {
+        "winrate": 45,
+        "matches": 116
+      },
+      "Jayce, Defender of Tomorrow": {
+        "winrate": 58,
+        "matches": 123
+      },
+      "Khazix, Voidreaver": {
+        "winrate": 55,
+        "matches": 99
+      },
+      "Akali, Rogue Assassin": {
+        "winrate": 65,
+        "matches": 105
+      },
+      "Ezreal, Prodigal Explorer": {
+        "winrate": 43,
+        "matches": 107
+      },
+      "Lillia, Bashful Bloom": {
+        "winrate": 32,
+        "matches": 99
+      },
+      "Viktor, Herald of the Arcane": {
+        "winrate": 57,
+        "matches": 63
+      },
+      "Mel, Soul's Reflection": {
+        "winrate": 47,
+        "matches": 76
+      },
+      "Vex, Gloomist": {
+        "winrate": 67,
+        "matches": 49
+      },
+      "Fiora, Grand Duelist": {
+        "winrate": 69,
+        "matches": 67
+      },
+      "Ornn, Fire Below the Mountain": {
+        "winrate": 45,
+        "matches": 74
+      },
+      "Ambessa, Matriarch of War": {
+        "winrate": 79,
+        "matches": 61
+      },
+      "Kai'sa, Daughter of the Void": {
+        "winrate": 57,
+        "matches": 63
+      },
+      "Ivern, Green Father": {
+        "winrate": 55,
+        "matches": 20
+      },
+      "Pyke, Bloodharbor Ripper": {
+        "winrate": 73,
+        "matches": 41
+      },
+      "Zed, Master of Shadows": {
+        "winrate": 72,
+        "matches": 36
+      },
+      "Vi, Piltover Enforcer": {
+        "winrate": 68,
+        "matches": 34
+      },
+      "Lucian, Purifier": {
+        "winrate": 70,
+        "matches": 23
+      },
+      "Jhin, Virtuoso": {
+        "winrate": 52,
+        "matches": 21
+      },
+      "Rumble, Mechanized Menace": {
+        "winrate": 61,
+        "matches": 31
+      },
+      "Shen, Eye of Twilight": {
+        "winrate": 83,
+        "matches": 30
+      },
+      "Sivir, Battle Mistress": {
+        "winrate": 76,
+        "matches": 21
+      },
+      "Annie, Dark Child": {
+        "winrate": 25,
+        "matches": 16
+      },
+      "Master Yi, Wuju Master": {
+        "winrate": 64,
+        "matches": 22
+      },
+      "Lux, Lady of Luminosity": {
+        "winrate": 52,
+        "matches": 21
+      },
+      "Jax, Grandmaster at Arms": {
+        "winrate": 73,
+        "matches": 22
+      },
+      "Renekton, Butcher of the Sands": {
+        "winrate": 77,
+        "matches": 22
+      },
+      "Renata Glasc, Chem-Baroness": {
+        "winrate": 71,
+        "matches": 14
+      },
+      "Poppy, Keeper of the Hammer": {
+        "winrate": 77,
+        "matches": 13
+      },
+      "Sett, The Boss": {
+        "winrate": 58,
+        "matches": 12
+      },
+      "Teemo, Swift Scout": {
+        "winrate": 67,
+        "matches": 9
+      },
+      "Miss Fortune, Bounty Hunter": {
+        "winrate": 71,
+        "matches": 7
+      },
+      "Volibear, Relentless Storm": {
+        "winrate": 100,
+        "matches": 2
+      },
+      "Ahri, Nine-Tailed Fox": {
+        "winrate": 80,
+        "matches": 5
+      },
+      "Leona, Radiant Dawn": {
+        "winrate": 0,
+        "matches": 1
+      },
+      "Jinx, Loose Cannon": {
+        "winrate": 75,
+        "matches": 4
+      },
+      "Yasuo, Unforgiven": {
+        "winrate": 50,
+        "matches": 2
+      },
+      "Darius, Hand of Noxus": {
+        "winrate": 100,
+        "matches": 1
+      }
+    },
+    "Diana, Scorn of the Moon": {
+      "Kennen, Heart of the Tempest": {
+        "winrate": 45,
+        "matches": 378
+      },
+      "Master Yi, Wuju Bladesman": {
+        "winrate": 45,
+        "matches": 342
+      },
+      "Irelia, Blade Dancer": {
+        "winrate": 55,
+        "matches": 262
+      },
+      "Rengar, Pridestalker": {
+        "winrate": 51,
+        "matches": 195
+      },
+      "Azir, Emperor of the Sands": {
+        "winrate": 48,
+        "matches": 164
+      },
+      "Reksai, Void Burrower": {
+        "winrate": 29,
+        "matches": 150
+      },
+      "Nasus, Curator of the Sands": {
+        "winrate": 48,
+        "matches": 117
+      },
+      "Draven, Glorious Executioner": {
+        "winrate": 52,
+        "matches": 127
+      },
+      "Leblanc, Deceiver": {
+        "winrate": 51,
+        "matches": 112
+      },
+      "Jayce, Defender of Tomorrow": {
+        "winrate": 57,
+        "matches": 95
+      },
+      "Khazix, Voidreaver": {
+        "winrate": 65,
+        "matches": 111
+      },
+      "Akali, Rogue Assassin": {
+        "winrate": 45,
+        "matches": 93
+      },
+      "Ezreal, Prodigal Explorer": {
+        "winrate": 20,
+        "matches": 87
+      },
+      "Lillia, Bashful Bloom": {
+        "winrate": 63,
+        "matches": 67
+      },
+      "Viktor, Herald of the Arcane": {
+        "winrate": 39,
+        "matches": 92
+      },
+      "Mel, Soul's Reflection": {
+        "winrate": 39,
+        "matches": 77
+      },
+      "Vex, Gloomist": {
+        "winrate": 66,
+        "matches": 73
+      },
+      "Fiora, Grand Duelist": {
+        "winrate": 73,
+        "matches": 73
+      },
+      "Ornn, Fire Below the Mountain": {
+        "winrate": 59,
+        "matches": 44
+      },
+      "Ambessa, Matriarch of War": {
+        "winrate": 72,
+        "matches": 47
+      },
+      "Kai'sa, Daughter of the Void": {
+        "winrate": 27,
+        "matches": 45
+      },
+      "Ivern, Green Father": {
+        "winrate": 73,
+        "matches": 30
+      },
+      "Pyke, Bloodharbor Ripper": {
+        "winrate": 67,
+        "matches": 30
+      },
+      "Zed, Master of Shadows": {
+        "winrate": 68,
+        "matches": 28
+      },
+      "Vi, Piltover Enforcer": {
+        "winrate": 68,
+        "matches": 28
+      },
+      "Lucian, Purifier": {
+        "winrate": 66,
+        "matches": 32
+      },
+      "Jhin, Virtuoso": {
+        "winrate": 57,
+        "matches": 23
+      },
+      "Rumble, Mechanized Menace": {
+        "winrate": 35,
+        "matches": 20
+      },
+      "Shen, Eye of Twilight": {
+        "winrate": 82,
+        "matches": 22
+      },
+      "Sivir, Battle Mistress": {
+        "winrate": 61,
+        "matches": 18
+      },
+      "Annie, Dark Child": {
+        "winrate": 59,
+        "matches": 22
+      },
+      "Master Yi, Wuju Master": {
+        "winrate": 74,
+        "matches": 23
+      },
+      "Lux, Lady of Luminosity": {
+        "winrate": 74,
+        "matches": 19
+      },
+      "Jax, Grandmaster at Arms": {
+        "winrate": 55,
+        "matches": 20
+      },
+      "Renekton, Butcher of the Sands": {
+        "winrate": 71,
+        "matches": 14
+      },
+      "Renata Glasc, Chem-Baroness": {
+        "winrate": 92,
+        "matches": 13
+      },
+      "Poppy, Keeper of the Hammer": {
+        "winrate": 86,
+        "matches": 14
+      },
+      "Sett, The Boss": {
+        "winrate": 75,
+        "matches": 12
+      },
+      "Teemo, Swift Scout": {
+        "winrate": 67,
+        "matches": 6
+      },
+      "Miss Fortune, Bounty Hunter": {
+        "winrate": 50,
+        "matches": 4
+      },
+      "Volibear, Relentless Storm": {
+        "winrate": 60,
+        "matches": 5
+      },
+      "Ahri, Nine-Tailed Fox": {
+        "winrate": 50,
+        "matches": 2
+      },
+      "Leona, Radiant Dawn": {
+        "winrate": 86,
+        "matches": 7
+      },
+      "Jinx, Loose Cannon": {
+        "winrate": 0,
+        "matches": 3
+      },
+      "Yasuo, Unforgiven": {
+        "winrate": 60,
+        "matches": 5
+      },
+      "Darius, Hand of Noxus": {
+        "winrate": 0,
+        "matches": 1
+      }
+    },
+    "Nasus, Curator of the Sands": {
+      "Kennen, Heart of the Tempest": {
+        "winrate": 41,
+        "matches": 321
+      },
+      "Master Yi, Wuju Bladesman": {
+        "winrate": 44,
+        "matches": 291
+      },
+      "Irelia, Blade Dancer": {
+        "winrate": 43,
+        "matches": 265
+      },
+      "Rengar, Pridestalker": {
+        "winrate": 43,
+        "matches": 173
+      },
+      "Azir, Emperor of the Sands": {
+        "winrate": 44,
+        "matches": 163
+      },
+      "Reksai, Void Burrower": {
+        "winrate": 58,
+        "matches": 146
+      },
+      "Diana, Scorn of the Moon": {
+        "winrate": 52,
+        "matches": 117
+      },
+      "Draven, Glorious Executioner": {
+        "winrate": 36,
+        "matches": 124
+      },
+      "Leblanc, Deceiver": {
+        "winrate": 38,
+        "matches": 91
+      },
+      "Jayce, Defender of Tomorrow": {
+        "winrate": 25,
+        "matches": 118
+      },
+      "Khazix, Voidreaver": {
+        "winrate": 39,
+        "matches": 88
+      },
+      "Akali, Rogue Assassin": {
+        "winrate": 48,
+        "matches": 101
+      },
+      "Ezreal, Prodigal Explorer": {
+        "winrate": 68,
+        "matches": 81
+      },
+      "Lillia, Bashful Bloom": {
+        "winrate": 56,
+        "matches": 86
+      },
+      "Viktor, Herald of the Arcane": {
+        "winrate": 60,
+        "matches": 60
+      },
+      "Mel, Soul's Reflection": {
+        "winrate": 69,
+        "matches": 70
+      },
+      "Vex, Gloomist": {
+        "winrate": 50,
+        "matches": 62
+      },
+      "Fiora, Grand Duelist": {
+        "winrate": 38,
+        "matches": 58
+      },
+      "Ornn, Fire Below the Mountain": {
+        "winrate": 44,
+        "matches": 77
+      },
+      "Ambessa, Matriarch of War": {
+        "winrate": 50,
+        "matches": 56
+      },
+      "Kai'sa, Daughter of the Void": {
+        "winrate": 46,
+        "matches": 57
+      },
+      "Ivern, Green Father": {
+        "winrate": 71,
+        "matches": 28
+      },
+      "Pyke, Bloodharbor Ripper": {
+        "winrate": 55,
+        "matches": 29
+      },
+      "Zed, Master of Shadows": {
+        "winrate": 65,
+        "matches": 40
+      },
+      "Vi, Piltover Enforcer": {
+        "winrate": 29,
+        "matches": 21
+      },
+      "Lucian, Purifier": {
+        "winrate": 65,
+        "matches": 17
+      },
+      "Jhin, Virtuoso": {
+        "winrate": 81,
+        "matches": 26
+      },
+      "Rumble, Mechanized Menace": {
+        "winrate": 80,
+        "matches": 20
+      },
+      "Shen, Eye of Twilight": {
+        "winrate": 56,
+        "matches": 18
+      },
+      "Sivir, Battle Mistress": {
+        "winrate": 39,
+        "matches": 18
+      },
+      "Annie, Dark Child": {
+        "winrate": 53,
+        "matches": 19
+      },
+      "Master Yi, Wuju Master": {
+        "winrate": 59,
+        "matches": 27
+      },
+      "Lux, Lady of Luminosity": {
+        "winrate": 10,
+        "matches": 10
+      },
+      "Jax, Grandmaster at Arms": {
+        "winrate": 52,
+        "matches": 23
+      },
+      "Renekton, Butcher of the Sands": {
+        "winrate": 63,
+        "matches": 16
+      },
+      "Renata Glasc, Chem-Baroness": {
+        "winrate": 69,
+        "matches": 13
+      },
+      "Poppy, Keeper of the Hammer": {
+        "winrate": 27,
+        "matches": 11
+      },
+      "Sett, The Boss": {
+        "winrate": 50,
+        "matches": 8
+      },
+      "Teemo, Swift Scout": {
+        "winrate": 43,
+        "matches": 7
+      },
+      "Miss Fortune, Bounty Hunter": {
+        "winrate": 60,
+        "matches": 5
+      },
+      "Volibear, Relentless Storm": {
+        "winrate": 29,
+        "matches": 7
+      },
+      "Ahri, Nine-Tailed Fox": {
+        "winrate": 0,
+        "matches": 3
+      },
+      "Leona, Radiant Dawn": {
+        "winrate": 50,
+        "matches": 4
+      },
+      "Jinx, Loose Cannon": {
+        "winrate": 86,
+        "matches": 7
+      },
+      "Yasuo, Unforgiven": {
+        "winrate": 0,
+        "matches": 2
+      },
+      "Darius, Hand of Noxus": {
+        "winrate": 100,
+        "matches": 1
+      }
+    },
+    "Draven, Glorious Executioner": {
+      "Kennen, Heart of the Tempest": {
+        "winrate": 36,
+        "matches": 361
+      },
+      "Master Yi, Wuju Bladesman": {
+        "winrate": 48,
+        "matches": 306
+      },
+      "Irelia, Blade Dancer": {
+        "winrate": 54,
+        "matches": 235
+      },
+      "Rengar, Pridestalker": {
+        "winrate": 45,
+        "matches": 176
+      },
+      "Azir, Emperor of the Sands": {
+        "winrate": 45,
+        "matches": 148
+      },
+      "Reksai, Void Burrower": {
+        "winrate": 56,
+        "matches": 140
+      },
+      "Diana, Scorn of the Moon": {
+        "winrate": 48,
+        "matches": 127
+      },
+      "Nasus, Curator of the Sands": {
+        "winrate": 64,
+        "matches": 124
+      },
+      "Leblanc, Deceiver": {
+        "winrate": 48,
+        "matches": 99
+      },
+      "Jayce, Defender of Tomorrow": {
+        "winrate": 44,
+        "matches": 101
+      },
+      "Khazix, Voidreaver": {
+        "winrate": 44,
+        "matches": 107
+      },
+      "Akali, Rogue Assassin": {
+        "winrate": 78,
+        "matches": 90
+      },
+      "Ezreal, Prodigal Explorer": {
+        "winrate": 26,
+        "matches": 96
+      },
+      "Lillia, Bashful Bloom": {
+        "winrate": 69,
+        "matches": 72
+      },
+      "Viktor, Herald of the Arcane": {
+        "winrate": 50,
+        "matches": 68
+      },
+      "Mel, Soul's Reflection": {
+        "winrate": 63,
+        "matches": 62
+      },
+      "Vex, Gloomist": {
+        "winrate": 63,
+        "matches": 56
+      },
+      "Fiora, Grand Duelist": {
+        "winrate": 58,
+        "matches": 52
+      },
+      "Ornn, Fire Below the Mountain": {
+        "winrate": 64,
+        "matches": 44
+      },
+      "Ambessa, Matriarch of War": {
+        "winrate": 71,
+        "matches": 51
+      },
+      "Kai'sa, Daughter of the Void": {
+        "winrate": 56,
+        "matches": 36
+      },
+      "Ivern, Green Father": {
+        "winrate": 68,
+        "matches": 31
+      },
+      "Pyke, Bloodharbor Ripper": {
+        "winrate": 63,
+        "matches": 30
+      },
+      "Zed, Master of Shadows": {
+        "winrate": 64,
+        "matches": 25
+      },
+      "Vi, Piltover Enforcer": {
+        "winrate": 62,
+        "matches": 21
+      },
+      "Lucian, Purifier": {
+        "winrate": 48,
+        "matches": 23
+      },
+      "Jhin, Virtuoso": {
+        "winrate": 75,
+        "matches": 12
+      },
+      "Rumble, Mechanized Menace": {
+        "winrate": 80,
+        "matches": 25
+      },
+      "Shen, Eye of Twilight": {
+        "winrate": 63,
+        "matches": 24
+      },
+      "Sivir, Battle Mistress": {
+        "winrate": 45,
+        "matches": 20
+      },
+      "Annie, Dark Child": {
+        "winrate": 50,
+        "matches": 24
+      },
+      "Master Yi, Wuju Master": {
+        "winrate": 40,
+        "matches": 20
+      },
+      "Lux, Lady of Luminosity": {
+        "winrate": 57,
+        "matches": 21
+      },
+      "Jax, Grandmaster at Arms": {
+        "winrate": 64,
+        "matches": 14
+      },
+      "Renekton, Butcher of the Sands": {
+        "winrate": 50,
+        "matches": 6
+      },
+      "Renata Glasc, Chem-Baroness": {
+        "winrate": 89,
+        "matches": 9
+      },
+      "Poppy, Keeper of the Hammer": {
+        "winrate": 46,
+        "matches": 13
+      },
+      "Sett, The Boss": {
+        "winrate": 50,
+        "matches": 10
+      },
+      "Teemo, Swift Scout": {
+        "winrate": 40,
+        "matches": 5
+      },
+      "Miss Fortune, Bounty Hunter": {
+        "winrate": 67,
+        "matches": 3
+      },
+      "Volibear, Relentless Storm": {
+        "winrate": 75,
+        "matches": 4
+      },
+      "Ahri, Nine-Tailed Fox": {
+        "winrate": 67,
+        "matches": 3
+      },
+      "Leona, Radiant Dawn": {
+        "winrate": 67,
+        "matches": 3
+      },
+      "Jinx, Loose Cannon": {
+        "winrate": 100,
+        "matches": 2
+      },
+      "Yasuo, Unforgiven": {
+        "winrate": 100,
+        "matches": 2
+      },
+      "Darius, Hand of Noxus": {
+        "winrate": 50,
+        "matches": 2
+      }
+    },
+    "Leblanc, Deceiver": {
+      "Kennen, Heart of the Tempest": {
+        "winrate": 47,
+        "matches": 279
+      },
+      "Master Yi, Wuju Bladesman": {
+        "winrate": 56,
+        "matches": 296
+      },
+      "Irelia, Blade Dancer": {
+        "winrate": 48,
+        "matches": 223
+      },
+      "Rengar, Pridestalker": {
+        "winrate": 52,
+        "matches": 147
+      },
+      "Azir, Emperor of the Sands": {
+        "winrate": 57,
+        "matches": 137
+      },
+      "Reksai, Void Burrower": {
+        "winrate": 55,
+        "matches": 116
+      },
+      "Diana, Scorn of the Moon": {
+        "winrate": 49,
+        "matches": 112
+      },
+      "Nasus, Curator of the Sands": {
+        "winrate": 62,
+        "matches": 91
+      },
+      "Draven, Glorious Executioner": {
+        "winrate": 52,
+        "matches": 99
+      },
+      "Jayce, Defender of Tomorrow": {
+        "winrate": 58,
+        "matches": 74
+      },
+      "Khazix, Voidreaver": {
+        "winrate": 39,
+        "matches": 76
+      },
+      "Akali, Rogue Assassin": {
+        "winrate": 74,
+        "matches": 78
+      },
+      "Ezreal, Prodigal Explorer": {
+        "winrate": 54,
+        "matches": 69
+      },
+      "Lillia, Bashful Bloom": {
+        "winrate": 62,
+        "matches": 65
+      },
+      "Viktor, Herald of the Arcane": {
+        "winrate": 63,
+        "matches": 65
+      },
+      "Mel, Soul's Reflection": {
+        "winrate": 55,
+        "matches": 47
+      },
+      "Vex, Gloomist": {
+        "winrate": 48,
+        "matches": 56
+      },
+      "Fiora, Grand Duelist": {
+        "winrate": 71,
+        "matches": 51
+      },
+      "Ornn, Fire Below the Mountain": {
+        "winrate": 60,
+        "matches": 48
+      },
+      "Ambessa, Matriarch of War": {
+        "winrate": 56,
+        "matches": 36
+      },
+      "Kai'sa, Daughter of the Void": {
+        "winrate": 61,
+        "matches": 36
+      },
+      "Ivern, Green Father": {
+        "winrate": 74,
+        "matches": 27
+      },
+      "Pyke, Bloodharbor Ripper": {
+        "winrate": 54,
+        "matches": 26
+      },
+      "Zed, Master of Shadows": {
+        "winrate": 79,
+        "matches": 28
+      },
+      "Vi, Piltover Enforcer": {
+        "winrate": 72,
+        "matches": 18
+      },
+      "Lucian, Purifier": {
+        "winrate": 56,
+        "matches": 18
+      },
+      "Jhin, Virtuoso": {
+        "winrate": 53,
+        "matches": 15
+      },
+      "Rumble, Mechanized Menace": {
+        "winrate": 91,
+        "matches": 11
+      },
+      "Shen, Eye of Twilight": {
+        "winrate": 71,
+        "matches": 14
+      },
+      "Sivir, Battle Mistress": {
+        "winrate": 54,
+        "matches": 26
+      },
+      "Annie, Dark Child": {
+        "winrate": 58,
+        "matches": 19
+      },
+      "Master Yi, Wuju Master": {
+        "winrate": 59,
+        "matches": 17
+      },
+      "Lux, Lady of Luminosity": {
+        "winrate": 35,
+        "matches": 20
+      },
+      "Jax, Grandmaster at Arms": {
+        "winrate": 67,
+        "matches": 12
+      },
+      "Renekton, Butcher of the Sands": {
+        "winrate": 69,
+        "matches": 16
+      },
+      "Renata Glasc, Chem-Baroness": {
+        "winrate": 67,
+        "matches": 9
+      },
+      "Poppy, Keeper of the Hammer": {
+        "winrate": 75,
+        "matches": 12
+      },
+      "Sett, The Boss": {
+        "winrate": 71,
+        "matches": 14
+      },
+      "Teemo, Swift Scout": {
+        "winrate": 33,
+        "matches": 3
+      },
+      "Miss Fortune, Bounty Hunter": {
+        "winrate": 43,
+        "matches": 7
+      },
+      "Volibear, Relentless Storm": {
+        "winrate": 67,
+        "matches": 6
+      },
+      "Ahri, Nine-Tailed Fox": {
+        "winrate": 60,
+        "matches": 5
+      },
+      "Leona, Radiant Dawn": {
+        "winrate": 0,
+        "matches": 1
+      },
+      "Jinx, Loose Cannon": {
+        "winrate": 100,
+        "matches": 1
+      },
+      "Yasuo, Unforgiven": {
+        "winrate": 100,
+        "matches": 4
+      }
+    },
+    "Jayce, Defender of Tomorrow": {
+      "Kennen, Heart of the Tempest": {
+        "winrate": 25,
+        "matches": 294
+      },
+      "Master Yi, Wuju Bladesman": {
+        "winrate": 60,
+        "matches": 272
+      },
+      "Irelia, Blade Dancer": {
+        "winrate": 48,
+        "matches": 212
+      },
+      "Rengar, Pridestalker": {
+        "winrate": 59,
+        "matches": 158
+      },
+      "Azir, Emperor of the Sands": {
+        "winrate": 56,
+        "matches": 118
+      },
+      "Reksai, Void Burrower": {
+        "winrate": 42,
+        "matches": 123
+      },
+      "Diana, Scorn of the Moon": {
+        "winrate": 43,
+        "matches": 95
+      },
+      "Nasus, Curator of the Sands": {
+        "winrate": 75,
+        "matches": 118
+      },
+      "Draven, Glorious Executioner": {
+        "winrate": 56,
+        "matches": 101
+      },
+      "Leblanc, Deceiver": {
+        "winrate": 42,
+        "matches": 74
+      },
+      "Khazix, Voidreaver": {
+        "winrate": 48,
+        "matches": 83
+      },
+      "Akali, Rogue Assassin": {
+        "winrate": 69,
+        "matches": 71
+      },
+      "Ezreal, Prodigal Explorer": {
+        "winrate": 42,
+        "matches": 60
+      },
+      "Lillia, Bashful Bloom": {
+        "winrate": 55,
+        "matches": 60
+      },
+      "Viktor, Herald of the Arcane": {
+        "winrate": 38,
+        "matches": 50
+      },
+      "Mel, Soul's Reflection": {
+        "winrate": 44,
+        "matches": 50
+      },
+      "Vex, Gloomist": {
+        "winrate": 56,
+        "matches": 48
+      },
+      "Fiora, Grand Duelist": {
+        "winrate": 59,
+        "matches": 41
+      },
+      "Ornn, Fire Below the Mountain": {
+        "winrate": 57,
+        "matches": 44
+      },
+      "Ambessa, Matriarch of War": {
+        "winrate": 50,
+        "matches": 42
+      },
+      "Kai'sa, Daughter of the Void": {
+        "winrate": 56,
+        "matches": 39
+      },
+      "Ivern, Green Father": {
+        "winrate": 61,
+        "matches": 23
+      },
+      "Pyke, Bloodharbor Ripper": {
+        "winrate": 48,
+        "matches": 23
+      },
+      "Zed, Master of Shadows": {
+        "winrate": 52,
+        "matches": 21
+      },
+      "Vi, Piltover Enforcer": {
+        "winrate": 61,
+        "matches": 23
+      },
+      "Lucian, Purifier": {
+        "winrate": 69,
+        "matches": 29
+      },
+      "Jhin, Virtuoso": {
+        "winrate": 69,
+        "matches": 16
+      },
+      "Rumble, Mechanized Menace": {
+        "winrate": 71,
+        "matches": 17
+      },
+      "Shen, Eye of Twilight": {
+        "winrate": 81,
+        "matches": 21
+      },
+      "Sivir, Battle Mistress": {
+        "winrate": 67,
+        "matches": 18
+      },
+      "Annie, Dark Child": {
+        "winrate": 60,
+        "matches": 15
+      },
+      "Master Yi, Wuju Master": {
+        "winrate": 62,
+        "matches": 13
+      },
+      "Lux, Lady of Luminosity": {
+        "winrate": 22,
+        "matches": 18
+      },
+      "Jax, Grandmaster at Arms": {
+        "winrate": 50,
+        "matches": 8
+      },
+      "Renekton, Butcher of the Sands": {
+        "winrate": 45,
+        "matches": 11
+      },
+      "Renata Glasc, Chem-Baroness": {
+        "winrate": 40,
+        "matches": 5
+      },
+      "Poppy, Keeper of the Hammer": {
+        "winrate": 57,
+        "matches": 7
+      },
+      "Sett, The Boss": {
+        "winrate": 100,
+        "matches": 9
+      },
+      "Teemo, Swift Scout": {
+        "winrate": 50,
+        "matches": 4
+      },
+      "Miss Fortune, Bounty Hunter": {
+        "winrate": 71,
+        "matches": 7
+      },
+      "Volibear, Relentless Storm": {
+        "winrate": 100,
+        "matches": 3
+      },
+      "Ahri, Nine-Tailed Fox": {
+        "winrate": 100,
+        "matches": 5
+      },
+      "Leona, Radiant Dawn": {
+        "winrate": 100,
+        "matches": 2
+      },
+      "Jinx, Loose Cannon": {
+        "winrate": 100,
+        "matches": 5
+      }
+    },
+    "Khazix, Voidreaver": {
+      "Kennen, Heart of the Tempest": {
+        "winrate": 45,
+        "matches": 271
+      },
+      "Master Yi, Wuju Bladesman": {
+        "winrate": 41,
+        "matches": 254
+      },
+      "Irelia, Blade Dancer": {
+        "winrate": 56,
+        "matches": 174
+      },
+      "Rengar, Pridestalker": {
+        "winrate": 49,
+        "matches": 144
+      },
+      "Azir, Emperor of the Sands": {
+        "winrate": 47,
+        "matches": 121
+      },
+      "Reksai, Void Burrower": {
+        "winrate": 45,
+        "matches": 99
+      },
+      "Diana, Scorn of the Moon": {
+        "winrate": 35,
+        "matches": 111
+      },
+      "Nasus, Curator of the Sands": {
+        "winrate": 61,
+        "matches": 88
+      },
+      "Draven, Glorious Executioner": {
+        "winrate": 56,
+        "matches": 107
+      },
+      "Leblanc, Deceiver": {
+        "winrate": 61,
+        "matches": 76
+      },
+      "Jayce, Defender of Tomorrow": {
+        "winrate": 52,
+        "matches": 83
+      },
+      "Akali, Rogue Assassin": {
+        "winrate": 67,
+        "matches": 67
+      },
+      "Ezreal, Prodigal Explorer": {
+        "winrate": 37,
+        "matches": 60
+      },
+      "Lillia, Bashful Bloom": {
+        "winrate": 60,
+        "matches": 62
+      },
+      "Viktor, Herald of the Arcane": {
+        "winrate": 37,
+        "matches": 35
+      },
+      "Mel, Soul's Reflection": {
+        "winrate": 56,
+        "matches": 34
+      },
+      "Vex, Gloomist": {
+        "winrate": 34,
+        "matches": 47
+      },
+      "Fiora, Grand Duelist": {
+        "winrate": 64,
+        "matches": 44
+      },
+      "Ornn, Fire Below the Mountain": {
+        "winrate": 60,
+        "matches": 43
+      },
+      "Ambessa, Matriarch of War": {
+        "winrate": 61,
+        "matches": 38
+      },
+      "Kai'sa, Daughter of the Void": {
+        "winrate": 59,
+        "matches": 22
+      },
+      "Ivern, Green Father": {
+        "winrate": 59,
+        "matches": 27
+      },
+      "Pyke, Bloodharbor Ripper": {
+        "winrate": 57,
+        "matches": 28
+      },
+      "Zed, Master of Shadows": {
+        "winrate": 68,
+        "matches": 19
+      },
+      "Vi, Piltover Enforcer": {
+        "winrate": 94,
+        "matches": 18
+      },
+      "Lucian, Purifier": {
+        "winrate": 76,
+        "matches": 21
+      },
+      "Jhin, Virtuoso": {
+        "winrate": 65,
+        "matches": 17
+      },
+      "Rumble, Mechanized Menace": {
+        "winrate": 38,
+        "matches": 13
+      },
+      "Shen, Eye of Twilight": {
+        "winrate": 60,
+        "matches": 15
+      },
+      "Sivir, Battle Mistress": {
+        "winrate": 73,
+        "matches": 15
+      },
+      "Annie, Dark Child": {
+        "winrate": 54,
+        "matches": 13
+      },
+      "Master Yi, Wuju Master": {
+        "winrate": 56,
+        "matches": 16
+      },
+      "Lux, Lady of Luminosity": {
+        "winrate": 64,
+        "matches": 14
+      },
+      "Jax, Grandmaster at Arms": {
+        "winrate": 82,
+        "matches": 17
+      },
+      "Renekton, Butcher of the Sands": {
+        "winrate": 88,
+        "matches": 17
+      },
+      "Renata Glasc, Chem-Baroness": {
+        "winrate": 57,
+        "matches": 14
+      },
+      "Poppy, Keeper of the Hammer": {
+        "winrate": 78,
+        "matches": 9
+      },
+      "Sett, The Boss": {
+        "winrate": 67,
+        "matches": 6
+      },
+      "Teemo, Swift Scout": {
+        "winrate": 43,
+        "matches": 7
+      },
+      "Miss Fortune, Bounty Hunter": {
+        "winrate": 60,
+        "matches": 5
+      },
+      "Volibear, Relentless Storm": {
+        "winrate": 80,
+        "matches": 5
+      },
+      "Ahri, Nine-Tailed Fox": {
+        "winrate": 50,
+        "matches": 2
+      },
+      "Leona, Radiant Dawn": {
+        "winrate": 67,
+        "matches": 3
+      },
+      "Jinx, Loose Cannon": {
+        "winrate": 100,
+        "matches": 2
+      },
+      "Yasuo, Unforgiven": {
+        "winrate": 100,
+        "matches": 1
+      }
+    },
+    "Akali, Rogue Assassin": {
+      "Kennen, Heart of the Tempest": {
+        "winrate": 31,
+        "matches": 254
+      },
+      "Master Yi, Wuju Bladesman": {
+        "winrate": 31,
+        "matches": 194
+      },
+      "Irelia, Blade Dancer": {
+        "winrate": 45,
+        "matches": 159
+      },
+      "Rengar, Pridestalker": {
+        "winrate": 42,
+        "matches": 96
+      },
+      "Azir, Emperor of the Sands": {
+        "winrate": 34,
+        "matches": 109
+      },
+      "Reksai, Void Burrower": {
+        "winrate": 35,
+        "matches": 105
+      },
+      "Diana, Scorn of the Moon": {
+        "winrate": 55,
+        "matches": 93
+      },
+      "Nasus, Curator of the Sands": {
+        "winrate": 52,
+        "matches": 101
+      },
+      "Draven, Glorious Executioner": {
+        "winrate": 22,
+        "matches": 90
+      },
+      "Leblanc, Deceiver": {
+        "winrate": 26,
+        "matches": 78
+      },
+      "Jayce, Defender of Tomorrow": {
+        "winrate": 31,
+        "matches": 71
+      },
+      "Khazix, Voidreaver": {
+        "winrate": 33,
+        "matches": 67
+      },
+      "Ezreal, Prodigal Explorer": {
+        "winrate": 61,
+        "matches": 67
+      },
+      "Lillia, Bashful Bloom": {
+        "winrate": 48,
+        "matches": 65
+      },
+      "Viktor, Herald of the Arcane": {
+        "winrate": 34,
+        "matches": 50
+      },
+      "Mel, Soul's Reflection": {
+        "winrate": 53,
+        "matches": 58
+      },
+      "Vex, Gloomist": {
+        "winrate": 59,
+        "matches": 51
+      },
+      "Fiora, Grand Duelist": {
+        "winrate": 41,
+        "matches": 59
+      },
+      "Ornn, Fire Below the Mountain": {
+        "winrate": 37,
+        "matches": 46
+      },
+      "Ambessa, Matriarch of War": {
+        "winrate": 30,
+        "matches": 56
+      },
+      "Kai'sa, Daughter of the Void": {
+        "winrate": 52,
+        "matches": 25
+      },
+      "Ivern, Green Father": {
+        "winrate": 63,
+        "matches": 24
+      },
+      "Pyke, Bloodharbor Ripper": {
+        "winrate": 48,
+        "matches": 21
+      },
+      "Zed, Master of Shadows": {
+        "winrate": 66,
+        "matches": 29
+      },
+      "Vi, Piltover Enforcer": {
+        "winrate": 52,
+        "matches": 33
+      },
+      "Lucian, Purifier": {
+        "winrate": 38,
+        "matches": 21
+      },
+      "Jhin, Virtuoso": {
+        "winrate": 62,
+        "matches": 21
+      },
+      "Rumble, Mechanized Menace": {
+        "winrate": 47,
+        "matches": 19
+      },
+      "Shen, Eye of Twilight": {
+        "winrate": 79,
+        "matches": 19
+      },
+      "Sivir, Battle Mistress": {
+        "winrate": 40,
+        "matches": 15
+      },
+      "Annie, Dark Child": {
+        "winrate": 44,
+        "matches": 18
+      },
+      "Master Yi, Wuju Master": {
+        "winrate": 73,
+        "matches": 11
+      },
+      "Lux, Lady of Luminosity": {
+        "winrate": 47,
+        "matches": 15
+      },
+      "Jax, Grandmaster at Arms": {
+        "winrate": 55,
+        "matches": 20
+      },
+      "Renekton, Butcher of the Sands": {
+        "winrate": 41,
+        "matches": 17
+      },
+      "Renata Glasc, Chem-Baroness": {
+        "winrate": 81,
+        "matches": 16
+      },
+      "Poppy, Keeper of the Hammer": {
+        "winrate": 56,
+        "matches": 9
+      },
+      "Sett, The Boss": {
+        "winrate": 56,
+        "matches": 9
+      },
+      "Teemo, Swift Scout": {
+        "winrate": 67,
+        "matches": 6
+      },
+      "Miss Fortune, Bounty Hunter": {
+        "winrate": 40,
+        "matches": 5
+      },
+      "Volibear, Relentless Storm": {
+        "winrate": 33,
+        "matches": 6
+      },
+      "Ahri, Nine-Tailed Fox": {
+        "winrate": 50,
+        "matches": 2
+      },
+      "Leona, Radiant Dawn": {
+        "winrate": 100,
+        "matches": 5
+      },
+      "Jinx, Loose Cannon": {
+        "winrate": 67,
+        "matches": 3
+      },
+      "Yasuo, Unforgiven": {
+        "winrate": 100,
+        "matches": 2
+      },
+      "Darius, Hand of Noxus": {
+        "winrate": 100,
+        "matches": 4
+      }
+    },
+    "Ezreal, Prodigal Explorer": {
+      "Kennen, Heart of the Tempest": {
+        "winrate": 47,
+        "matches": 251
+      },
+      "Master Yi, Wuju Bladesman": {
+        "winrate": 41,
+        "matches": 232
+      },
+      "Irelia, Blade Dancer": {
+        "winrate": 33,
+        "matches": 162
+      },
+      "Rengar, Pridestalker": {
+        "winrate": 45,
+        "matches": 109
+      },
+      "Azir, Emperor of the Sands": {
+        "winrate": 60,
+        "matches": 99
+      },
+      "Reksai, Void Burrower": {
+        "winrate": 57,
+        "matches": 107
+      },
+      "Diana, Scorn of the Moon": {
+        "winrate": 80,
+        "matches": 87
+      },
+      "Nasus, Curator of the Sands": {
+        "winrate": 32,
+        "matches": 81
+      },
+      "Draven, Glorious Executioner": {
+        "winrate": 74,
+        "matches": 96
+      },
+      "Leblanc, Deceiver": {
+        "winrate": 46,
+        "matches": 69
+      },
+      "Jayce, Defender of Tomorrow": {
+        "winrate": 58,
+        "matches": 60
+      },
+      "Khazix, Voidreaver": {
+        "winrate": 63,
+        "matches": 60
+      },
+      "Akali, Rogue Assassin": {
+        "winrate": 39,
+        "matches": 67
+      },
+      "Lillia, Bashful Bloom": {
+        "winrate": 48,
+        "matches": 61
+      },
+      "Viktor, Herald of the Arcane": {
+        "winrate": 67,
+        "matches": 30
+      },
+      "Mel, Soul's Reflection": {
+        "winrate": 72,
+        "matches": 43
+      },
+      "Vex, Gloomist": {
+        "winrate": 56,
+        "matches": 59
+      },
+      "Fiora, Grand Duelist": {
+        "winrate": 77,
+        "matches": 30
+      },
+      "Ornn, Fire Below the Mountain": {
+        "winrate": 39,
+        "matches": 41
+      },
+      "Ambessa, Matriarch of War": {
+        "winrate": 67,
+        "matches": 30
+      },
+      "Kai'sa, Daughter of the Void": {
+        "winrate": 62,
+        "matches": 34
+      },
+      "Ivern, Green Father": {
+        "winrate": 58,
+        "matches": 19
+      },
+      "Pyke, Bloodharbor Ripper": {
+        "winrate": 59,
+        "matches": 27
+      },
+      "Zed, Master of Shadows": {
+        "winrate": 61,
+        "matches": 23
+      },
+      "Vi, Piltover Enforcer": {
+        "winrate": 53,
+        "matches": 17
+      },
+      "Lucian, Purifier": {
+        "winrate": 76,
+        "matches": 17
+      },
+      "Jhin, Virtuoso": {
+        "winrate": 32,
+        "matches": 19
+      },
+      "Rumble, Mechanized Menace": {
+        "winrate": 82,
+        "matches": 11
+      },
+      "Shen, Eye of Twilight": {
+        "winrate": 70,
+        "matches": 10
+      },
+      "Sivir, Battle Mistress": {
+        "winrate": 21,
+        "matches": 14
+      },
+      "Annie, Dark Child": {
+        "winrate": 30,
+        "matches": 10
+      },
+      "Master Yi, Wuju Master": {
+        "winrate": 55,
+        "matches": 11
+      },
+      "Lux, Lady of Luminosity": {
+        "winrate": 19,
+        "matches": 16
+      },
+      "Jax, Grandmaster at Arms": {
+        "winrate": 56,
+        "matches": 9
+      },
+      "Renekton, Butcher of the Sands": {
+        "winrate": 60,
+        "matches": 10
+      },
+      "Renata Glasc, Chem-Baroness": {
+        "winrate": 55,
+        "matches": 11
+      },
+      "Poppy, Keeper of the Hammer": {
+        "winrate": 67,
+        "matches": 6
+      },
+      "Sett, The Boss": {
+        "winrate": 100,
+        "matches": 2
+      },
+      "Teemo, Swift Scout": {
+        "winrate": 100,
+        "matches": 2
+      },
+      "Miss Fortune, Bounty Hunter": {
+        "winrate": 40,
+        "matches": 5
+      },
+      "Ahri, Nine-Tailed Fox": {
+        "winrate": 67,
+        "matches": 3
+      },
+      "Leona, Radiant Dawn": {
+        "winrate": 100,
+        "matches": 1
+      },
+      "Jinx, Loose Cannon": {
+        "winrate": 100,
+        "matches": 2
+      },
+      "Darius, Hand of Noxus": {
+        "winrate": 50,
+        "matches": 2
+      }
+    },
+    "Lillia, Bashful Bloom": {
+      "Kennen, Heart of the Tempest": {
+        "winrate": 45,
+        "matches": 196
+      },
+      "Master Yi, Wuju Bladesman": {
+        "winrate": 38,
+        "matches": 169
+      },
+      "Irelia, Blade Dancer": {
+        "winrate": 39,
+        "matches": 128
+      },
+      "Rengar, Pridestalker": {
+        "winrate": 54,
+        "matches": 106
+      },
+      "Azir, Emperor of the Sands": {
+        "winrate": 56,
+        "matches": 84
+      },
+      "Reksai, Void Burrower": {
+        "winrate": 68,
+        "matches": 99
+      },
+      "Diana, Scorn of the Moon": {
+        "winrate": 37,
+        "matches": 67
+      },
+      "Nasus, Curator of the Sands": {
+        "winrate": 44,
+        "matches": 86
+      },
+      "Draven, Glorious Executioner": {
+        "winrate": 31,
+        "matches": 72
+      },
+      "Leblanc, Deceiver": {
+        "winrate": 38,
+        "matches": 65
+      },
+      "Jayce, Defender of Tomorrow": {
+        "winrate": 45,
+        "matches": 60
+      },
+      "Khazix, Voidreaver": {
+        "winrate": 40,
+        "matches": 62
+      },
+      "Akali, Rogue Assassin": {
+        "winrate": 52,
+        "matches": 65
+      },
+      "Ezreal, Prodigal Explorer": {
+        "winrate": 52,
+        "matches": 61
+      },
+      "Viktor, Herald of the Arcane": {
+        "winrate": 82,
+        "matches": 28
+      },
+      "Mel, Soul's Reflection": {
+        "winrate": 70,
+        "matches": 33
+      },
+      "Vex, Gloomist": {
+        "winrate": 59,
+        "matches": 46
+      },
+      "Fiora, Grand Duelist": {
+        "winrate": 41,
+        "matches": 46
+      },
+      "Ornn, Fire Below the Mountain": {
+        "winrate": 48,
+        "matches": 31
+      },
+      "Ambessa, Matriarch of War": {
+        "winrate": 73,
+        "matches": 26
+      },
+      "Kai'sa, Daughter of the Void": {
+        "winrate": 75,
+        "matches": 32
+      },
+      "Ivern, Green Father": {
+        "winrate": 62,
+        "matches": 26
+      },
+      "Pyke, Bloodharbor Ripper": {
+        "winrate": 55,
+        "matches": 20
+      },
+      "Zed, Master of Shadows": {
+        "winrate": 76,
+        "matches": 21
+      },
+      "Vi, Piltover Enforcer": {
+        "winrate": 50,
+        "matches": 22
+      },
+      "Lucian, Purifier": {
+        "winrate": 45,
+        "matches": 20
+      },
+      "Jhin, Virtuoso": {
+        "winrate": 67,
+        "matches": 9
+      },
+      "Rumble, Mechanized Menace": {
+        "winrate": 47,
+        "matches": 19
+      },
+      "Shen, Eye of Twilight": {
+        "winrate": 53,
+        "matches": 19
+      },
+      "Sivir, Battle Mistress": {
+        "winrate": 31,
+        "matches": 13
+      },
+      "Annie, Dark Child": {
+        "winrate": 45,
+        "matches": 11
+      },
+      "Master Yi, Wuju Master": {
+        "winrate": 31,
+        "matches": 13
+      },
+      "Lux, Lady of Luminosity": {
+        "winrate": 60,
+        "matches": 10
+      },
+      "Jax, Grandmaster at Arms": {
+        "winrate": 30,
+        "matches": 10
+      },
+      "Renekton, Butcher of the Sands": {
+        "winrate": 69,
+        "matches": 16
+      },
+      "Renata Glasc, Chem-Baroness": {
+        "winrate": 73,
+        "matches": 15
+      },
+      "Poppy, Keeper of the Hammer": {
+        "winrate": 69,
+        "matches": 16
+      },
+      "Sett, The Boss": {
+        "winrate": 50,
+        "matches": 2
+      },
+      "Teemo, Swift Scout": {
+        "winrate": 100,
+        "matches": 1
+      },
+      "Miss Fortune, Bounty Hunter": {
+        "winrate": 25,
+        "matches": 4
+      },
+      "Volibear, Relentless Storm": {
+        "winrate": 50,
+        "matches": 2
+      },
+      "Ahri, Nine-Tailed Fox": {
+        "winrate": 67,
+        "matches": 3
+      },
+      "Leona, Radiant Dawn": {
+        "winrate": 100,
+        "matches": 1
+      },
+      "Jinx, Loose Cannon": {
+        "winrate": 67,
+        "matches": 3
+      },
+      "Yasuo, Unforgiven": {
+        "winrate": 100,
+        "matches": 1
+      }
+    },
+    "Viktor, Herald of the Arcane": {
+      "Kennen, Heart of the Tempest": {
+        "winrate": 53,
+        "matches": 195
+      },
+      "Master Yi, Wuju Bladesman": {
+        "winrate": 39,
+        "matches": 202
+      },
+      "Irelia, Blade Dancer": {
+        "winrate": 54,
+        "matches": 141
+      },
+      "Rengar, Pridestalker": {
+        "winrate": 36,
+        "matches": 101
+      },
+      "Azir, Emperor of the Sands": {
+        "winrate": 40,
+        "matches": 81
+      },
+      "Reksai, Void Burrower": {
+        "winrate": 43,
+        "matches": 63
+      },
+      "Diana, Scorn of the Moon": {
+        "winrate": 61,
+        "matches": 92
+      },
+      "Nasus, Curator of the Sands": {
+        "winrate": 40,
+        "matches": 60
+      },
+      "Draven, Glorious Executioner": {
+        "winrate": 50,
+        "matches": 68
+      },
+      "Leblanc, Deceiver": {
+        "winrate": 37,
+        "matches": 65
+      },
+      "Jayce, Defender of Tomorrow": {
+        "winrate": 62,
+        "matches": 50
+      },
+      "Khazix, Voidreaver": {
+        "winrate": 63,
+        "matches": 35
+      },
+      "Akali, Rogue Assassin": {
+        "winrate": 66,
+        "matches": 50
+      },
+      "Ezreal, Prodigal Explorer": {
+        "winrate": 33,
+        "matches": 30
+      },
+      "Lillia, Bashful Bloom": {
+        "winrate": 18,
+        "matches": 28
+      },
+      "Mel, Soul's Reflection": {
+        "winrate": 59,
+        "matches": 32
+      },
+      "Vex, Gloomist": {
+        "winrate": 56,
+        "matches": 32
+      },
+      "Fiora, Grand Duelist": {
+        "winrate": 52,
+        "matches": 23
+      },
+      "Ornn, Fire Below the Mountain": {
+        "winrate": 64,
+        "matches": 25
+      },
+      "Ambessa, Matriarch of War": {
+        "winrate": 78,
+        "matches": 27
+      },
+      "Kai'sa, Daughter of the Void": {
+        "winrate": 43,
+        "matches": 35
+      },
+      "Ivern, Green Father": {
+        "winrate": 60,
+        "matches": 15
+      },
+      "Pyke, Bloodharbor Ripper": {
+        "winrate": 85,
+        "matches": 20
+      },
+      "Zed, Master of Shadows": {
+        "winrate": 60,
+        "matches": 5
+      },
+      "Vi, Piltover Enforcer": {
+        "winrate": 60,
+        "matches": 5
+      },
+      "Lucian, Purifier": {
+        "winrate": 63,
+        "matches": 8
+      },
+      "Jhin, Virtuoso": {
+        "winrate": 70,
+        "matches": 10
+      },
+      "Rumble, Mechanized Menace": {
+        "winrate": 50,
+        "matches": 8
+      },
+      "Shen, Eye of Twilight": {
+        "winrate": 83,
+        "matches": 12
+      },
+      "Sivir, Battle Mistress": {
+        "winrate": 89,
+        "matches": 9
+      },
+      "Annie, Dark Child": {
+        "winrate": 47,
+        "matches": 17
+      },
+      "Master Yi, Wuju Master": {
+        "winrate": 100,
+        "matches": 2
+      },
+      "Lux, Lady of Luminosity": {
+        "winrate": 60,
+        "matches": 5
+      },
+      "Jax, Grandmaster at Arms": {
+        "winrate": 50,
+        "matches": 2
+      },
+      "Renekton, Butcher of the Sands": {
+        "winrate": 100,
+        "matches": 2
+      },
+      "Renata Glasc, Chem-Baroness": {
+        "winrate": 56,
+        "matches": 9
+      },
+      "Poppy, Keeper of the Hammer": {
+        "winrate": 33,
+        "matches": 3
+      },
+      "Sett, The Boss": {
+        "winrate": 60,
+        "matches": 10
+      },
+      "Teemo, Swift Scout": {
+        "winrate": 50,
+        "matches": 6
+      },
+      "Miss Fortune, Bounty Hunter": {
+        "winrate": 100,
+        "matches": 1
+      },
+      "Volibear, Relentless Storm": {
+        "winrate": 17,
+        "matches": 6
+      },
+      "Ahri, Nine-Tailed Fox": {
+        "winrate": 50,
+        "matches": 6
+      },
+      "Leona, Radiant Dawn": {
+        "winrate": 100,
+        "matches": 1
+      },
+      "Jinx, Loose Cannon": {
+        "winrate": 100,
+        "matches": 2
+      },
+      "Yasuo, Unforgiven": {
+        "winrate": 33,
+        "matches": 3
+      },
+      "Darius, Hand of Noxus": {
+        "winrate": 100,
+        "matches": 1
+      }
+    },
+    "Mel, Soul's Reflection": {
+      "Kennen, Heart of the Tempest": {
+        "winrate": 40,
+        "matches": 149
+      },
+      "Master Yi, Wuju Bladesman": {
+        "winrate": 33,
+        "matches": 140
+      },
+      "Irelia, Blade Dancer": {
+        "winrate": 29,
+        "matches": 126
+      },
+      "Rengar, Pridestalker": {
+        "winrate": 25,
+        "matches": 65
+      },
+      "Azir, Emperor of the Sands": {
+        "winrate": 25,
+        "matches": 61
+      },
+      "Reksai, Void Burrower": {
+        "winrate": 53,
+        "matches": 76
+      },
+      "Diana, Scorn of the Moon": {
+        "winrate": 61,
+        "matches": 77
+      },
+      "Nasus, Curator of the Sands": {
+        "winrate": 31,
+        "matches": 70
+      },
+      "Draven, Glorious Executioner": {
+        "winrate": 37,
+        "matches": 62
+      },
+      "Leblanc, Deceiver": {
+        "winrate": 45,
+        "matches": 47
+      },
+      "Jayce, Defender of Tomorrow": {
+        "winrate": 56,
+        "matches": 50
+      },
+      "Khazix, Voidreaver": {
+        "winrate": 44,
+        "matches": 34
+      },
+      "Akali, Rogue Assassin": {
+        "winrate": 47,
+        "matches": 58
+      },
+      "Ezreal, Prodigal Explorer": {
+        "winrate": 28,
+        "matches": 43
+      },
+      "Lillia, Bashful Bloom": {
+        "winrate": 30,
+        "matches": 33
+      },
+      "Viktor, Herald of the Arcane": {
+        "winrate": 41,
+        "matches": 32
+      },
+      "Vex, Gloomist": {
+        "winrate": 53,
+        "matches": 32
+      },
+      "Fiora, Grand Duelist": {
+        "winrate": 53,
+        "matches": 36
+      },
+      "Ornn, Fire Below the Mountain": {
+        "winrate": 33,
+        "matches": 49
+      },
+      "Ambessa, Matriarch of War": {
+        "winrate": 58,
+        "matches": 38
+      },
+      "Kai'sa, Daughter of the Void": {
+        "winrate": 44,
+        "matches": 18
+      },
+      "Ivern, Green Father": {
+        "winrate": 76,
+        "matches": 21
+      },
+      "Pyke, Bloodharbor Ripper": {
+        "winrate": 48,
+        "matches": 21
+      },
+      "Zed, Master of Shadows": {
+        "winrate": 69,
+        "matches": 29
+      },
+      "Vi, Piltover Enforcer": {
+        "winrate": 60,
+        "matches": 20
+      },
+      "Lucian, Purifier": {
+        "winrate": 56,
+        "matches": 18
+      },
+      "Jhin, Virtuoso": {
+        "winrate": 71,
+        "matches": 7
+      },
+      "Rumble, Mechanized Menace": {
+        "winrate": 56,
+        "matches": 9
+      },
+      "Shen, Eye of Twilight": {
+        "winrate": 50,
+        "matches": 14
+      },
+      "Sivir, Battle Mistress": {
+        "winrate": 29,
+        "matches": 17
+      },
+      "Annie, Dark Child": {
+        "winrate": 50,
+        "matches": 12
+      },
+      "Master Yi, Wuju Master": {
+        "winrate": 30,
+        "matches": 10
+      },
+      "Lux, Lady of Luminosity": {
+        "winrate": 43,
+        "matches": 7
+      },
+      "Jax, Grandmaster at Arms": {
+        "winrate": 75,
+        "matches": 8
+      },
+      "Renekton, Butcher of the Sands": {
+        "winrate": 33,
+        "matches": 9
+      },
+      "Renata Glasc, Chem-Baroness": {
+        "winrate": 67,
+        "matches": 15
+      },
+      "Poppy, Keeper of the Hammer": {
+        "winrate": 75,
+        "matches": 4
+      },
+      "Sett, The Boss": {
+        "winrate": 33,
+        "matches": 3
+      },
+      "Teemo, Swift Scout": {
+        "winrate": 75,
+        "matches": 4
+      },
+      "Miss Fortune, Bounty Hunter": {
+        "winrate": 50,
+        "matches": 2
+      },
+      "Volibear, Relentless Storm": {
+        "winrate": 33,
+        "matches": 3
+      },
+      "Ahri, Nine-Tailed Fox": {
+        "winrate": 33,
+        "matches": 3
+      },
+      "Leona, Radiant Dawn": {
+        "winrate": 50,
+        "matches": 2
+      },
+      "Yasuo, Unforgiven": {
+        "winrate": 100,
+        "matches": 3
+      }
+    },
+    "Vex, Gloomist": {
+      "Kennen, Heart of the Tempest": {
+        "winrate": 31,
+        "matches": 140
+      },
+      "Master Yi, Wuju Bladesman": {
+        "winrate": 40,
+        "matches": 113
+      },
+      "Irelia, Blade Dancer": {
+        "winrate": 48,
+        "matches": 103
+      },
+      "Rengar, Pridestalker": {
+        "winrate": 41,
+        "matches": 69
+      },
+      "Azir, Emperor of the Sands": {
+        "winrate": 49,
+        "matches": 71
+      },
+      "Reksai, Void Burrower": {
+        "winrate": 33,
+        "matches": 49
+      },
+      "Diana, Scorn of the Moon": {
+        "winrate": 34,
+        "matches": 73
+      },
+      "Nasus, Curator of the Sands": {
+        "winrate": 50,
+        "matches": 62
+      },
+      "Draven, Glorious Executioner": {
+        "winrate": 38,
+        "matches": 56
+      },
+      "Leblanc, Deceiver": {
+        "winrate": 52,
+        "matches": 56
+      },
+      "Jayce, Defender of Tomorrow": {
+        "winrate": 44,
+        "matches": 48
+      },
+      "Khazix, Voidreaver": {
+        "winrate": 66,
+        "matches": 47
+      },
+      "Akali, Rogue Assassin": {
+        "winrate": 41,
+        "matches": 51
+      },
+      "Ezreal, Prodigal Explorer": {
+        "winrate": 44,
+        "matches": 59
+      },
+      "Lillia, Bashful Bloom": {
+        "winrate": 41,
+        "matches": 46
+      },
+      "Viktor, Herald of the Arcane": {
+        "winrate": 44,
+        "matches": 32
+      },
+      "Mel, Soul's Reflection": {
+        "winrate": 47,
+        "matches": 32
+      },
+      "Fiora, Grand Duelist": {
+        "winrate": 29,
+        "matches": 31
+      },
+      "Ornn, Fire Below the Mountain": {
+        "winrate": 53,
+        "matches": 30
+      },
+      "Ambessa, Matriarch of War": {
+        "winrate": 70,
+        "matches": 27
+      },
+      "Kai'sa, Daughter of the Void": {
+        "winrate": 33,
+        "matches": 21
+      },
+      "Ivern, Green Father": {
+        "winrate": 59,
+        "matches": 17
+      },
+      "Pyke, Bloodharbor Ripper": {
+        "winrate": 35,
+        "matches": 17
+      },
+      "Zed, Master of Shadows": {
+        "winrate": 61,
+        "matches": 18
+      },
+      "Vi, Piltover Enforcer": {
+        "winrate": 64,
+        "matches": 11
+      },
+      "Lucian, Purifier": {
+        "winrate": 54,
+        "matches": 13
+      },
+      "Jhin, Virtuoso": {
+        "winrate": 60,
+        "matches": 15
+      },
+      "Rumble, Mechanized Menace": {
+        "winrate": 69,
+        "matches": 13
+      },
+      "Shen, Eye of Twilight": {
+        "winrate": 67,
+        "matches": 15
+      },
+      "Sivir, Battle Mistress": {
+        "winrate": 44,
+        "matches": 9
+      },
+      "Annie, Dark Child": {
+        "winrate": 82,
+        "matches": 11
+      },
+      "Master Yi, Wuju Master": {
+        "winrate": 73,
+        "matches": 11
+      },
+      "Lux, Lady of Luminosity": {
+        "winrate": 50,
+        "matches": 10
+      },
+      "Jax, Grandmaster at Arms": {
+        "winrate": 60,
+        "matches": 15
+      },
+      "Renekton, Butcher of the Sands": {
+        "winrate": 67,
+        "matches": 6
+      },
+      "Renata Glasc, Chem-Baroness": {
+        "winrate": 40,
+        "matches": 15
+      },
+      "Poppy, Keeper of the Hammer": {
+        "winrate": 67,
+        "matches": 6
+      },
+      "Sett, The Boss": {
+        "winrate": 50,
+        "matches": 2
+      },
+      "Teemo, Swift Scout": {
+        "winrate": 60,
+        "matches": 10
+      },
+      "Miss Fortune, Bounty Hunter": {
+        "winrate": 67,
+        "matches": 3
+      },
+      "Volibear, Relentless Storm": {
+        "winrate": 40,
+        "matches": 5
+      },
+      "Ahri, Nine-Tailed Fox": {
+        "winrate": 50,
+        "matches": 2
+      },
+      "Leona, Radiant Dawn": {
+        "winrate": 100,
+        "matches": 2
+      },
+      "Jinx, Loose Cannon": {
+        "winrate": 100,
+        "matches": 4
+      }
+    },
+    "Fiora, Grand Duelist": {
+      "Kennen, Heart of the Tempest": {
+        "winrate": 36,
+        "matches": 132
+      },
+      "Master Yi, Wuju Bladesman": {
+        "winrate": 54,
+        "matches": 100
+      },
+      "Irelia, Blade Dancer": {
+        "winrate": 51,
+        "matches": 94
+      },
+      "Rengar, Pridestalker": {
+        "winrate": 31,
+        "matches": 68
+      },
+      "Azir, Emperor of the Sands": {
+        "winrate": 33,
+        "matches": 87
+      },
+      "Reksai, Void Burrower": {
+        "winrate": 31,
+        "matches": 67
+      },
+      "Diana, Scorn of the Moon": {
+        "winrate": 27,
+        "matches": 73
+      },
+      "Nasus, Curator of the Sands": {
+        "winrate": 62,
+        "matches": 58
+      },
+      "Draven, Glorious Executioner": {
+        "winrate": 42,
+        "matches": 52
+      },
+      "Leblanc, Deceiver": {
+        "winrate": 29,
+        "matches": 51
+      },
+      "Jayce, Defender of Tomorrow": {
+        "winrate": 41,
+        "matches": 41
+      },
+      "Khazix, Voidreaver": {
+        "winrate": 36,
+        "matches": 44
+      },
+      "Akali, Rogue Assassin": {
+        "winrate": 59,
+        "matches": 59
+      },
+      "Ezreal, Prodigal Explorer": {
+        "winrate": 23,
+        "matches": 30
+      },
+      "Lillia, Bashful Bloom": {
+        "winrate": 59,
+        "matches": 46
+      },
+      "Viktor, Herald of the Arcane": {
+        "winrate": 48,
+        "matches": 23
+      },
+      "Mel, Soul's Reflection": {
+        "winrate": 47,
+        "matches": 36
+      },
+      "Vex, Gloomist": {
+        "winrate": 71,
+        "matches": 31
+      },
+      "Ornn, Fire Below the Mountain": {
+        "winrate": 46,
+        "matches": 26
+      },
+      "Ambessa, Matriarch of War": {
+        "winrate": 60,
+        "matches": 25
+      },
+      "Kai'sa, Daughter of the Void": {
+        "winrate": 45,
+        "matches": 22
+      },
+      "Ivern, Green Father": {
+        "winrate": 50,
+        "matches": 20
+      },
+      "Pyke, Bloodharbor Ripper": {
+        "winrate": 50,
+        "matches": 14
+      },
+      "Zed, Master of Shadows": {
+        "winrate": 65,
+        "matches": 17
+      },
+      "Vi, Piltover Enforcer": {
+        "winrate": 67,
+        "matches": 18
+      },
+      "Lucian, Purifier": {
+        "winrate": 50,
+        "matches": 22
+      },
+      "Jhin, Virtuoso": {
+        "winrate": 50,
+        "matches": 12
+      },
+      "Rumble, Mechanized Menace": {
+        "winrate": 46,
+        "matches": 13
+      },
+      "Shen, Eye of Twilight": {
+        "winrate": 67,
+        "matches": 12
+      },
+      "Sivir, Battle Mistress": {
+        "winrate": 55,
+        "matches": 11
+      },
+      "Annie, Dark Child": {
+        "winrate": 60,
+        "matches": 10
+      },
+      "Master Yi, Wuju Master": {
+        "winrate": 64,
+        "matches": 22
+      },
+      "Lux, Lady of Luminosity": {
+        "winrate": 55,
+        "matches": 11
+      },
+      "Jax, Grandmaster at Arms": {
+        "winrate": 50,
+        "matches": 10
+      },
+      "Renekton, Butcher of the Sands": {
+        "winrate": 50,
+        "matches": 12
+      },
+      "Renata Glasc, Chem-Baroness": {
+        "winrate": 89,
+        "matches": 9
+      },
+      "Poppy, Keeper of the Hammer": {
+        "winrate": 38,
+        "matches": 13
+      },
+      "Sett, The Boss": {
+        "winrate": 50,
+        "matches": 6
+      },
+      "Teemo, Swift Scout": {
+        "winrate": 50,
+        "matches": 6
+      },
+      "Miss Fortune, Bounty Hunter": {
+        "winrate": 75,
+        "matches": 4
+      },
+      "Volibear, Relentless Storm": {
+        "winrate": 0,
+        "matches": 3
+      },
+      "Ahri, Nine-Tailed Fox": {
+        "winrate": 50,
+        "matches": 2
+      },
+      "Leona, Radiant Dawn": {
+        "winrate": 100,
+        "matches": 1
+      },
+      "Darius, Hand of Noxus": {
+        "winrate": 0,
+        "matches": 1
+      }
+    },
+    "Ornn, Fire Below the Mountain": {
+      "Kennen, Heart of the Tempest": {
+        "winrate": 38,
+        "matches": 156
+      },
+      "Master Yi, Wuju Bladesman": {
+        "winrate": 30,
+        "matches": 97
+      },
+      "Irelia, Blade Dancer": {
+        "winrate": 40,
+        "matches": 87
+      },
+      "Rengar, Pridestalker": {
+        "winrate": 32,
+        "matches": 72
+      },
+      "Azir, Emperor of the Sands": {
+        "winrate": 59,
+        "matches": 59
+      },
+      "Reksai, Void Burrower": {
+        "winrate": 55,
+        "matches": 74
+      },
+      "Diana, Scorn of the Moon": {
+        "winrate": 41,
+        "matches": 44
+      },
+      "Nasus, Curator of the Sands": {
+        "winrate": 56,
+        "matches": 77
+      },
+      "Draven, Glorious Executioner": {
+        "winrate": 36,
+        "matches": 44
+      },
+      "Leblanc, Deceiver": {
+        "winrate": 40,
+        "matches": 48
+      },
+      "Jayce, Defender of Tomorrow": {
+        "winrate": 43,
+        "matches": 44
+      },
+      "Khazix, Voidreaver": {
+        "winrate": 40,
+        "matches": 43
+      },
+      "Akali, Rogue Assassin": {
+        "winrate": 63,
+        "matches": 46
+      },
+      "Ezreal, Prodigal Explorer": {
+        "winrate": 61,
+        "matches": 41
+      },
+      "Lillia, Bashful Bloom": {
+        "winrate": 52,
+        "matches": 31
+      },
+      "Viktor, Herald of the Arcane": {
+        "winrate": 36,
+        "matches": 25
+      },
+      "Mel, Soul's Reflection": {
+        "winrate": 67,
+        "matches": 49
+      },
+      "Vex, Gloomist": {
+        "winrate": 47,
+        "matches": 30
+      },
+      "Fiora, Grand Duelist": {
+        "winrate": 54,
+        "matches": 26
+      },
+      "Ambessa, Matriarch of War": {
+        "winrate": 55,
+        "matches": 44
+      },
+      "Kai'sa, Daughter of the Void": {
+        "winrate": 52,
+        "matches": 25
+      },
+      "Ivern, Green Father": {
+        "winrate": 75,
+        "matches": 20
+      },
+      "Pyke, Bloodharbor Ripper": {
+        "winrate": 38,
+        "matches": 16
+      },
+      "Zed, Master of Shadows": {
+        "winrate": 50,
+        "matches": 16
+      },
+      "Vi, Piltover Enforcer": {
+        "winrate": 52,
+        "matches": 21
+      },
+      "Lucian, Purifier": {
+        "winrate": 58,
+        "matches": 12
+      },
+      "Jhin, Virtuoso": {
+        "winrate": 80,
+        "matches": 15
+      },
+      "Rumble, Mechanized Menace": {
+        "winrate": 45,
+        "matches": 20
+      },
+      "Shen, Eye of Twilight": {
+        "winrate": 81,
+        "matches": 16
+      },
+      "Sivir, Battle Mistress": {
+        "winrate": 14,
+        "matches": 7
+      },
+      "Annie, Dark Child": {
+        "winrate": 40,
+        "matches": 5
+      },
+      "Master Yi, Wuju Master": {
+        "winrate": 45,
+        "matches": 11
+      },
+      "Lux, Lady of Luminosity": {
+        "winrate": 20,
+        "matches": 10
+      },
+      "Jax, Grandmaster at Arms": {
+        "winrate": 36,
+        "matches": 22
+      },
+      "Renekton, Butcher of the Sands": {
+        "winrate": 78,
+        "matches": 9
+      },
+      "Renata Glasc, Chem-Baroness": {
+        "winrate": 67,
+        "matches": 9
+      },
+      "Poppy, Keeper of the Hammer": {
+        "winrate": 50,
+        "matches": 6
+      },
+      "Sett, The Boss": {
+        "winrate": 75,
+        "matches": 4
+      },
+      "Teemo, Swift Scout": {
+        "winrate": 50,
+        "matches": 4
+      },
+      "Miss Fortune, Bounty Hunter": {
+        "winrate": 50,
+        "matches": 2
+      },
+      "Volibear, Relentless Storm": {
+        "winrate": 0,
+        "matches": 2
+      },
+      "Ahri, Nine-Tailed Fox": {
+        "winrate": 67,
+        "matches": 3
+      },
+      "Leona, Radiant Dawn": {
+        "winrate": 50,
+        "matches": 2
+      },
+      "Jinx, Loose Cannon": {
+        "winrate": 67,
+        "matches": 3
+      },
+      "Yasuo, Unforgiven": {
+        "winrate": 0,
+        "matches": 1
+      },
+      "Darius, Hand of Noxus": {
+        "winrate": 100,
+        "matches": 1
+      }
+    },
+    "Ambessa, Matriarch of War": {
+      "Kennen, Heart of the Tempest": {
+        "winrate": 24,
+        "matches": 104
+      },
+      "Master Yi, Wuju Bladesman": {
+        "winrate": 24,
+        "matches": 84
+      },
+      "Irelia, Blade Dancer": {
+        "winrate": 32,
+        "matches": 78
+      },
+      "Rengar, Pridestalker": {
+        "winrate": 20,
+        "matches": 55
+      },
+      "Azir, Emperor of the Sands": {
+        "winrate": 19,
+        "matches": 63
+      },
+      "Reksai, Void Burrower": {
+        "winrate": 21,
+        "matches": 61
+      },
+      "Diana, Scorn of the Moon": {
+        "winrate": 28,
+        "matches": 47
+      },
+      "Nasus, Curator of the Sands": {
+        "winrate": 50,
+        "matches": 56
+      },
+      "Draven, Glorious Executioner": {
+        "winrate": 29,
+        "matches": 51
+      },
+      "Leblanc, Deceiver": {
+        "winrate": 44,
+        "matches": 36
+      },
+      "Jayce, Defender of Tomorrow": {
+        "winrate": 50,
+        "matches": 42
+      },
+      "Khazix, Voidreaver": {
+        "winrate": 39,
+        "matches": 38
+      },
+      "Akali, Rogue Assassin": {
+        "winrate": 70,
+        "matches": 56
+      },
+      "Ezreal, Prodigal Explorer": {
+        "winrate": 33,
+        "matches": 30
+      },
+      "Lillia, Bashful Bloom": {
+        "winrate": 27,
+        "matches": 26
+      },
+      "Viktor, Herald of the Arcane": {
+        "winrate": 22,
+        "matches": 27
+      },
+      "Mel, Soul's Reflection": {
+        "winrate": 42,
+        "matches": 38
+      },
+      "Vex, Gloomist": {
+        "winrate": 30,
+        "matches": 27
+      },
+      "Fiora, Grand Duelist": {
+        "winrate": 40,
+        "matches": 25
+      },
+      "Ornn, Fire Below the Mountain": {
+        "winrate": 45,
+        "matches": 44
+      },
+      "Kai'sa, Daughter of the Void": {
+        "winrate": 31,
+        "matches": 16
+      },
+      "Ivern, Green Father": {
+        "winrate": 28,
+        "matches": 18
+      },
+      "Pyke, Bloodharbor Ripper": {
+        "winrate": 32,
+        "matches": 19
+      },
+      "Zed, Master of Shadows": {
+        "winrate": 71,
+        "matches": 28
+      },
+      "Vi, Piltover Enforcer": {
+        "winrate": 61,
+        "matches": 18
+      },
+      "Lucian, Purifier": {
+        "winrate": 37,
+        "matches": 19
+      },
+      "Jhin, Virtuoso": {
+        "winrate": 52,
+        "matches": 21
+      },
+      "Rumble, Mechanized Menace": {
+        "winrate": 22,
+        "matches": 9
+      },
+      "Shen, Eye of Twilight": {
+        "winrate": 67,
+        "matches": 18
+      },
+      "Sivir, Battle Mistress": {
+        "winrate": 58,
+        "matches": 12
+      },
+      "Annie, Dark Child": {
+        "winrate": 17,
+        "matches": 6
+      },
+      "Master Yi, Wuju Master": {
+        "winrate": 79,
+        "matches": 14
+      },
+      "Lux, Lady of Luminosity": {
+        "winrate": 67,
+        "matches": 3
+      },
+      "Jax, Grandmaster at Arms": {
+        "winrate": 25,
+        "matches": 8
+      },
+      "Renekton, Butcher of the Sands": {
+        "winrate": 55,
+        "matches": 11
+      },
+      "Renata Glasc, Chem-Baroness": {
+        "winrate": 38,
+        "matches": 8
+      },
+      "Poppy, Keeper of the Hammer": {
+        "winrate": 43,
+        "matches": 7
+      },
+      "Sett, The Boss": {
+        "winrate": 50,
+        "matches": 4
+      },
+      "Teemo, Swift Scout": {
+        "winrate": 67,
+        "matches": 3
+      },
+      "Miss Fortune, Bounty Hunter": {
+        "winrate": 100,
+        "matches": 1
+      },
+      "Volibear, Relentless Storm": {
+        "winrate": 40,
+        "matches": 5
+      },
+      "Ahri, Nine-Tailed Fox": {
+        "winrate": 0,
+        "matches": 1
+      },
+      "Leona, Radiant Dawn": {
+        "winrate": 50,
+        "matches": 4
+      },
+      "Jinx, Loose Cannon": {
+        "winrate": 50,
+        "matches": 2
+      },
+      "Yasuo, Unforgiven": {
+        "winrate": 100,
+        "matches": 2
+      }
+    },
+    "Kai'sa, Daughter of the Void": {
+      "Kennen, Heart of the Tempest": {
+        "winrate": 45,
+        "matches": 143
+      },
+      "Master Yi, Wuju Bladesman": {
+        "winrate": 38,
+        "matches": 174
+      },
+      "Irelia, Blade Dancer": {
+        "winrate": 32,
+        "matches": 121
+      },
+      "Rengar, Pridestalker": {
+        "winrate": 34,
+        "matches": 59
+      },
+      "Azir, Emperor of the Sands": {
+        "winrate": 41,
+        "matches": 56
+      },
+      "Reksai, Void Burrower": {
+        "winrate": 43,
+        "matches": 63
+      },
+      "Diana, Scorn of the Moon": {
+        "winrate": 73,
+        "matches": 45
+      },
+      "Nasus, Curator of the Sands": {
+        "winrate": 54,
+        "matches": 57
+      },
+      "Draven, Glorious Executioner": {
+        "winrate": 44,
+        "matches": 36
+      },
+      "Leblanc, Deceiver": {
+        "winrate": 39,
+        "matches": 36
+      },
+      "Jayce, Defender of Tomorrow": {
+        "winrate": 44,
+        "matches": 39
+      },
+      "Khazix, Voidreaver": {
+        "winrate": 41,
+        "matches": 22
+      },
+      "Akali, Rogue Assassin": {
+        "winrate": 48,
+        "matches": 25
+      },
+      "Ezreal, Prodigal Explorer": {
+        "winrate": 38,
+        "matches": 34
+      },
+      "Lillia, Bashful Bloom": {
+        "winrate": 25,
+        "matches": 32
+      },
+      "Viktor, Herald of the Arcane": {
+        "winrate": 57,
+        "matches": 35
+      },
+      "Mel, Soul's Reflection": {
+        "winrate": 56,
+        "matches": 18
+      },
+      "Vex, Gloomist": {
+        "winrate": 67,
+        "matches": 21
+      },
+      "Fiora, Grand Duelist": {
+        "winrate": 55,
+        "matches": 22
+      },
+      "Ornn, Fire Below the Mountain": {
+        "winrate": 48,
+        "matches": 25
+      },
+      "Ambessa, Matriarch of War": {
+        "winrate": 69,
+        "matches": 16
+      },
+      "Ivern, Green Father": {
+        "winrate": 89,
+        "matches": 9
+      },
+      "Pyke, Bloodharbor Ripper": {
+        "winrate": 67,
+        "matches": 9
+      },
+      "Zed, Master of Shadows": {
+        "winrate": 50,
+        "matches": 10
+      },
+      "Vi, Piltover Enforcer": {
+        "winrate": 25,
+        "matches": 4
+      },
+      "Lucian, Purifier": {
+        "winrate": 67,
+        "matches": 3
+      },
+      "Jhin, Virtuoso": {
+        "winrate": 67,
+        "matches": 6
+      },
+      "Rumble, Mechanized Menace": {
+        "winrate": 78,
+        "matches": 9
+      },
+      "Shen, Eye of Twilight": {
+        "winrate": 60,
+        "matches": 5
+      },
+      "Sivir, Battle Mistress": {
+        "winrate": 30,
+        "matches": 10
+      },
+      "Annie, Dark Child": {
+        "winrate": 22,
+        "matches": 9
+      },
+      "Master Yi, Wuju Master": {
+        "winrate": 50,
+        "matches": 4
+      },
+      "Lux, Lady of Luminosity": {
+        "winrate": 57,
+        "matches": 7
+      },
+      "Jax, Grandmaster at Arms": {
+        "winrate": 33,
+        "matches": 3
+      },
+      "Renekton, Butcher of the Sands": {
+        "winrate": 80,
+        "matches": 5
+      },
+      "Renata Glasc, Chem-Baroness": {
+        "winrate": 100,
+        "matches": 6
+      },
+      "Poppy, Keeper of the Hammer": {
+        "winrate": 75,
+        "matches": 4
+      },
+      "Sett, The Boss": {
+        "winrate": 40,
+        "matches": 5
+      },
+      "Teemo, Swift Scout": {
+        "winrate": 80,
+        "matches": 5
+      },
+      "Miss Fortune, Bounty Hunter": {
+        "winrate": 67,
+        "matches": 3
+      },
+      "Volibear, Relentless Storm": {
+        "winrate": 0,
+        "matches": 1
+      },
+      "Ahri, Nine-Tailed Fox": {
+        "winrate": 50,
+        "matches": 2
+      },
+      "Leona, Radiant Dawn": {
+        "winrate": 100,
+        "matches": 2
+      },
+      "Jinx, Loose Cannon": {
+        "winrate": 50,
+        "matches": 2
+      },
+      "Yasuo, Unforgiven": {
+        "winrate": 50,
+        "matches": 6
+      },
+      "Darius, Hand of Noxus": {
+        "winrate": 0,
+        "matches": 1
+      }
+    },
+    "Ivern, Green Father": {
+      "Kennen, Heart of the Tempest": {
+        "winrate": 33,
+        "matches": 85
+      },
+      "Master Yi, Wuju Bladesman": {
+        "winrate": 36,
+        "matches": 56
+      },
+      "Irelia, Blade Dancer": {
+        "winrate": 30,
+        "matches": 57
+      },
+      "Rengar, Pridestalker": {
+        "winrate": 22,
+        "matches": 32
+      },
+      "Azir, Emperor of the Sands": {
+        "winrate": 39,
+        "matches": 44
+      },
+      "Reksai, Void Burrower": {
+        "winrate": 45,
+        "matches": 20
+      },
+      "Diana, Scorn of the Moon": {
+        "winrate": 27,
+        "matches": 30
+      },
+      "Nasus, Curator of the Sands": {
+        "winrate": 29,
+        "matches": 28
+      },
+      "Draven, Glorious Executioner": {
+        "winrate": 32,
+        "matches": 31
+      },
+      "Leblanc, Deceiver": {
+        "winrate": 26,
+        "matches": 27
+      },
+      "Jayce, Defender of Tomorrow": {
+        "winrate": 39,
+        "matches": 23
+      },
+      "Khazix, Voidreaver": {
+        "winrate": 41,
+        "matches": 27
+      },
+      "Akali, Rogue Assassin": {
+        "winrate": 38,
+        "matches": 24
+      },
+      "Ezreal, Prodigal Explorer": {
+        "winrate": 42,
+        "matches": 19
+      },
+      "Lillia, Bashful Bloom": {
+        "winrate": 38,
+        "matches": 26
+      },
+      "Viktor, Herald of the Arcane": {
+        "winrate": 40,
+        "matches": 15
+      },
+      "Mel, Soul's Reflection": {
+        "winrate": 24,
+        "matches": 21
+      },
+      "Vex, Gloomist": {
+        "winrate": 41,
+        "matches": 17
+      },
+      "Fiora, Grand Duelist": {
+        "winrate": 50,
+        "matches": 20
+      },
+      "Ornn, Fire Below the Mountain": {
+        "winrate": 25,
+        "matches": 20
+      },
+      "Ambessa, Matriarch of War": {
+        "winrate": 72,
+        "matches": 18
+      },
+      "Kai'sa, Daughter of the Void": {
+        "winrate": 11,
+        "matches": 9
+      },
+      "Pyke, Bloodharbor Ripper": {
+        "winrate": 64,
+        "matches": 11
+      },
+      "Zed, Master of Shadows": {
+        "winrate": 46,
+        "matches": 13
+      },
+      "Vi, Piltover Enforcer": {
+        "winrate": 47,
+        "matches": 17
+      },
+      "Lucian, Purifier": {
+        "winrate": 78,
+        "matches": 9
+      },
+      "Jhin, Virtuoso": {
+        "winrate": 60,
+        "matches": 15
+      },
+      "Rumble, Mechanized Menace": {
+        "winrate": 0,
+        "matches": 6
+      },
+      "Shen, Eye of Twilight": {
+        "winrate": 46,
+        "matches": 13
+      },
+      "Sivir, Battle Mistress": {
+        "winrate": 36,
+        "matches": 11
+      },
+      "Annie, Dark Child": {
+        "winrate": 80,
+        "matches": 5
+      },
+      "Master Yi, Wuju Master": {
+        "winrate": 38,
+        "matches": 13
+      },
+      "Lux, Lady of Luminosity": {
+        "winrate": 25,
+        "matches": 4
+      },
+      "Jax, Grandmaster at Arms": {
+        "winrate": 25,
+        "matches": 8
+      },
+      "Renekton, Butcher of the Sands": {
+        "winrate": 0,
+        "matches": 4
+      },
+      "Renata Glasc, Chem-Baroness": {
+        "winrate": 0,
+        "matches": 7
+      },
+      "Poppy, Keeper of the Hammer": {
+        "winrate": 33,
+        "matches": 9
+      },
+      "Sett, The Boss": {
+        "winrate": 50,
+        "matches": 2
+      },
+      "Teemo, Swift Scout": {
+        "winrate": 67,
+        "matches": 3
+      },
+      "Miss Fortune, Bounty Hunter": {
+        "winrate": 100,
+        "matches": 1
+      },
+      "Ahri, Nine-Tailed Fox": {
+        "winrate": 0,
+        "matches": 1
+      },
+      "Leona, Radiant Dawn": {
+        "winrate": 100,
+        "matches": 4
+      }
+    },
+    "Pyke, Bloodharbor Ripper": {
+      "Kennen, Heart of the Tempest": {
+        "winrate": 25,
+        "matches": 72
+      },
+      "Master Yi, Wuju Bladesman": {
+        "winrate": 21,
+        "matches": 58
+      },
+      "Irelia, Blade Dancer": {
+        "winrate": 35,
+        "matches": 63
+      },
+      "Rengar, Pridestalker": {
+        "winrate": 42,
+        "matches": 31
+      },
+      "Azir, Emperor of the Sands": {
+        "winrate": 26,
+        "matches": 31
+      },
+      "Reksai, Void Burrower": {
+        "winrate": 27,
+        "matches": 41
+      },
+      "Diana, Scorn of the Moon": {
+        "winrate": 33,
+        "matches": 30
+      },
+      "Nasus, Curator of the Sands": {
+        "winrate": 45,
+        "matches": 29
+      },
+      "Draven, Glorious Executioner": {
+        "winrate": 37,
+        "matches": 30
+      },
+      "Leblanc, Deceiver": {
+        "winrate": 46,
+        "matches": 26
+      },
+      "Jayce, Defender of Tomorrow": {
+        "winrate": 52,
+        "matches": 23
+      },
+      "Khazix, Voidreaver": {
+        "winrate": 43,
+        "matches": 28
+      },
+      "Akali, Rogue Assassin": {
+        "winrate": 52,
+        "matches": 21
+      },
+      "Ezreal, Prodigal Explorer": {
+        "winrate": 41,
+        "matches": 27
+      },
+      "Lillia, Bashful Bloom": {
+        "winrate": 45,
+        "matches": 20
+      },
+      "Viktor, Herald of the Arcane": {
+        "winrate": 15,
+        "matches": 20
+      },
+      "Mel, Soul's Reflection": {
+        "winrate": 52,
+        "matches": 21
+      },
+      "Vex, Gloomist": {
+        "winrate": 65,
+        "matches": 17
+      },
+      "Fiora, Grand Duelist": {
+        "winrate": 50,
+        "matches": 14
+      },
+      "Ornn, Fire Below the Mountain": {
+        "winrate": 63,
+        "matches": 16
+      },
+      "Ambessa, Matriarch of War": {
+        "winrate": 68,
+        "matches": 19
+      },
+      "Kai'sa, Daughter of the Void": {
+        "winrate": 33,
+        "matches": 9
+      },
+      "Ivern, Green Father": {
+        "winrate": 36,
+        "matches": 11
+      },
+      "Zed, Master of Shadows": {
+        "winrate": 38,
+        "matches": 13
+      },
+      "Vi, Piltover Enforcer": {
+        "winrate": 67,
+        "matches": 18
+      },
+      "Lucian, Purifier": {
+        "winrate": 50,
+        "matches": 8
+      },
+      "Jhin, Virtuoso": {
+        "winrate": 40,
+        "matches": 5
+      },
+      "Rumble, Mechanized Menace": {
+        "winrate": 60,
+        "matches": 15
+      },
+      "Shen, Eye of Twilight": {
+        "winrate": 75,
+        "matches": 12
+      },
+      "Sivir, Battle Mistress": {
+        "winrate": 50,
+        "matches": 4
+      },
+      "Annie, Dark Child": {
+        "winrate": 33,
+        "matches": 6
+      },
+      "Master Yi, Wuju Master": {
+        "winrate": 50,
+        "matches": 4
+      },
+      "Lux, Lady of Luminosity": {
+        "winrate": 100,
+        "matches": 1
+      },
+      "Jax, Grandmaster at Arms": {
+        "winrate": 67,
+        "matches": 3
+      },
+      "Renekton, Butcher of the Sands": {
+        "winrate": 40,
+        "matches": 5
+      },
+      "Renata Glasc, Chem-Baroness": {
+        "winrate": 63,
+        "matches": 8
+      },
+      "Poppy, Keeper of the Hammer": {
+        "winrate": 57,
+        "matches": 7
+      },
+      "Sett, The Boss": {
+        "winrate": 50,
+        "matches": 4
+      },
+      "Teemo, Swift Scout": {
+        "winrate": 50,
+        "matches": 2
+      },
+      "Miss Fortune, Bounty Hunter": {
+        "winrate": 0,
+        "matches": 1
+      },
+      "Volibear, Relentless Storm": {
+        "winrate": 50,
+        "matches": 2
+      },
+      "Ahri, Nine-Tailed Fox": {
+        "winrate": 50,
+        "matches": 2
+      },
+      "Leona, Radiant Dawn": {
+        "winrate": 100,
+        "matches": 1
+      },
+      "Darius, Hand of Noxus": {
+        "winrate": 100,
+        "matches": 1
+      }
+    },
+    "Zed, Master of Shadows": {
+      "Kennen, Heart of the Tempest": {
+        "winrate": 25,
+        "matches": 71
+      },
+      "Master Yi, Wuju Bladesman": {
+        "winrate": 18,
+        "matches": 49
+      },
+      "Irelia, Blade Dancer": {
+        "winrate": 33,
+        "matches": 58
+      },
+      "Rengar, Pridestalker": {
+        "winrate": 11,
+        "matches": 28
+      },
+      "Azir, Emperor of the Sands": {
+        "winrate": 29,
+        "matches": 35
+      },
+      "Reksai, Void Burrower": {
+        "winrate": 28,
+        "matches": 36
+      },
+      "Diana, Scorn of the Moon": {
+        "winrate": 32,
+        "matches": 28
+      },
+      "Nasus, Curator of the Sands": {
+        "winrate": 35,
+        "matches": 40
+      },
+      "Draven, Glorious Executioner": {
+        "winrate": 36,
+        "matches": 25
+      },
+      "Leblanc, Deceiver": {
+        "winrate": 21,
+        "matches": 28
+      },
+      "Jayce, Defender of Tomorrow": {
+        "winrate": 48,
+        "matches": 21
+      },
+      "Khazix, Voidreaver": {
+        "winrate": 32,
+        "matches": 19
+      },
+      "Akali, Rogue Assassin": {
+        "winrate": 34,
+        "matches": 29
+      },
+      "Ezreal, Prodigal Explorer": {
+        "winrate": 39,
+        "matches": 23
+      },
+      "Lillia, Bashful Bloom": {
+        "winrate": 24,
+        "matches": 21
+      },
+      "Viktor, Herald of the Arcane": {
+        "winrate": 40,
+        "matches": 5
+      },
+      "Mel, Soul's Reflection": {
+        "winrate": 31,
+        "matches": 29
+      },
+      "Vex, Gloomist": {
+        "winrate": 39,
+        "matches": 18
+      },
+      "Fiora, Grand Duelist": {
+        "winrate": 35,
+        "matches": 17
+      },
+      "Ornn, Fire Below the Mountain": {
+        "winrate": 50,
+        "matches": 16
+      },
+      "Ambessa, Matriarch of War": {
+        "winrate": 29,
+        "matches": 28
+      },
+      "Kai'sa, Daughter of the Void": {
+        "winrate": 50,
+        "matches": 10
+      },
+      "Ivern, Green Father": {
+        "winrate": 54,
+        "matches": 13
+      },
+      "Pyke, Bloodharbor Ripper": {
+        "winrate": 62,
+        "matches": 13
+      },
+      "Vi, Piltover Enforcer": {
+        "winrate": 53,
+        "matches": 15
+      },
+      "Lucian, Purifier": {
+        "winrate": 67,
+        "matches": 3
+      },
+      "Jhin, Virtuoso": {
+        "winrate": 56,
+        "matches": 9
+      },
+      "Rumble, Mechanized Menace": {
+        "winrate": 50,
+        "matches": 4
+      },
+      "Shen, Eye of Twilight": {
+        "winrate": 31,
+        "matches": 13
+      },
+      "Sivir, Battle Mistress": {
+        "winrate": 40,
+        "matches": 5
+      },
+      "Annie, Dark Child": {
+        "winrate": 14,
+        "matches": 7
+      },
+      "Master Yi, Wuju Master": {
+        "winrate": 33,
+        "matches": 6
+      },
+      "Lux, Lady of Luminosity": {
+        "winrate": 33,
+        "matches": 3
+      },
+      "Jax, Grandmaster at Arms": {
+        "winrate": 60,
+        "matches": 10
+      },
+      "Renekton, Butcher of the Sands": {
+        "winrate": 30,
+        "matches": 10
+      },
+      "Renata Glasc, Chem-Baroness": {
+        "winrate": 50,
+        "matches": 10
+      },
+      "Poppy, Keeper of the Hammer": {
+        "winrate": 50,
+        "matches": 6
+      },
+      "Sett, The Boss": {
+        "winrate": 0,
+        "matches": 1
+      },
+      "Teemo, Swift Scout": {
+        "winrate": 60,
+        "matches": 5
+      },
+      "Miss Fortune, Bounty Hunter": {
+        "winrate": 25,
+        "matches": 4
+      },
+      "Volibear, Relentless Storm": {
+        "winrate": 0,
+        "matches": 1
+      },
+      "Ahri, Nine-Tailed Fox": {
+        "winrate": 0,
+        "matches": 1
+      },
+      "Leona, Radiant Dawn": {
+        "winrate": 50,
+        "matches": 2
+      },
+      "Yasuo, Unforgiven": {
+        "winrate": 50,
+        "matches": 2
+      }
+    },
+    "Vi, Piltover Enforcer": {
+      "Kennen, Heart of the Tempest": {
+        "winrate": 27,
+        "matches": 73
+      },
+      "Master Yi, Wuju Bladesman": {
+        "winrate": 32,
+        "matches": 44
+      },
+      "Irelia, Blade Dancer": {
+        "winrate": 33,
+        "matches": 57
+      },
+      "Rengar, Pridestalker": {
+        "winrate": 62,
+        "matches": 21
+      },
+      "Azir, Emperor of the Sands": {
+        "winrate": 23,
+        "matches": 30
+      },
+      "Reksai, Void Burrower": {
+        "winrate": 32,
+        "matches": 34
+      },
+      "Diana, Scorn of the Moon": {
+        "winrate": 32,
+        "matches": 28
+      },
+      "Nasus, Curator of the Sands": {
+        "winrate": 71,
+        "matches": 21
+      },
+      "Draven, Glorious Executioner": {
+        "winrate": 38,
+        "matches": 21
+      },
+      "Leblanc, Deceiver": {
+        "winrate": 28,
+        "matches": 18
+      },
+      "Jayce, Defender of Tomorrow": {
+        "winrate": 39,
+        "matches": 23
+      },
+      "Khazix, Voidreaver": {
+        "winrate": 6,
+        "matches": 18
+      },
+      "Akali, Rogue Assassin": {
+        "winrate": 48,
+        "matches": 33
+      },
+      "Ezreal, Prodigal Explorer": {
+        "winrate": 47,
+        "matches": 17
+      },
+      "Lillia, Bashful Bloom": {
+        "winrate": 50,
+        "matches": 22
+      },
+      "Viktor, Herald of the Arcane": {
+        "winrate": 40,
+        "matches": 5
+      },
+      "Mel, Soul's Reflection": {
+        "winrate": 40,
+        "matches": 20
+      },
+      "Vex, Gloomist": {
+        "winrate": 36,
+        "matches": 11
+      },
+      "Fiora, Grand Duelist": {
+        "winrate": 33,
+        "matches": 18
+      },
+      "Ornn, Fire Below the Mountain": {
+        "winrate": 48,
+        "matches": 21
+      },
+      "Ambessa, Matriarch of War": {
+        "winrate": 39,
+        "matches": 18
+      },
+      "Kai'sa, Daughter of the Void": {
+        "winrate": 75,
+        "matches": 4
+      },
+      "Ivern, Green Father": {
+        "winrate": 53,
+        "matches": 17
+      },
+      "Pyke, Bloodharbor Ripper": {
+        "winrate": 33,
+        "matches": 18
+      },
+      "Zed, Master of Shadows": {
+        "winrate": 47,
+        "matches": 15
+      },
+      "Lucian, Purifier": {
+        "winrate": 38,
+        "matches": 16
+      },
+      "Jhin, Virtuoso": {
+        "winrate": 64,
+        "matches": 14
+      },
+      "Rumble, Mechanized Menace": {
+        "winrate": 69,
+        "matches": 13
+      },
+      "Shen, Eye of Twilight": {
+        "winrate": 50,
+        "matches": 14
+      },
+      "Sivir, Battle Mistress": {
+        "winrate": 33,
+        "matches": 6
+      },
+      "Annie, Dark Child": {
+        "winrate": 25,
+        "matches": 4
+      },
+      "Master Yi, Wuju Master": {
+        "winrate": 42,
+        "matches": 12
+      },
+      "Lux, Lady of Luminosity": {
+        "winrate": 0,
+        "matches": 3
+      },
+      "Jax, Grandmaster at Arms": {
+        "winrate": 0,
+        "matches": 7
+      },
+      "Renekton, Butcher of the Sands": {
+        "winrate": 38,
+        "matches": 8
+      },
+      "Renata Glasc, Chem-Baroness": {
+        "winrate": 46,
+        "matches": 13
+      },
+      "Poppy, Keeper of the Hammer": {
+        "winrate": 50,
+        "matches": 4
+      },
+      "Sett, The Boss": {
+        "winrate": 67,
+        "matches": 3
+      },
+      "Teemo, Swift Scout": {
+        "winrate": 100,
+        "matches": 1
+      },
+      "Volibear, Relentless Storm": {
+        "winrate": 50,
+        "matches": 2
+      },
+      "Ahri, Nine-Tailed Fox": {
+        "winrate": 0,
+        "matches": 1
+      },
+      "Leona, Radiant Dawn": {
+        "winrate": 0,
+        "matches": 1
+      }
+    },
+    "Lucian, Purifier": {
+      "Kennen, Heart of the Tempest": {
+        "winrate": 26,
+        "matches": 50
+      },
+      "Master Yi, Wuju Bladesman": {
+        "winrate": 39,
+        "matches": 49
+      },
+      "Irelia, Blade Dancer": {
+        "winrate": 36,
+        "matches": 53
+      },
+      "Rengar, Pridestalker": {
+        "winrate": 26,
+        "matches": 27
+      },
+      "Azir, Emperor of the Sands": {
+        "winrate": 52,
+        "matches": 29
+      },
+      "Reksai, Void Burrower": {
+        "winrate": 30,
+        "matches": 23
+      },
+      "Diana, Scorn of the Moon": {
+        "winrate": 34,
+        "matches": 32
+      },
+      "Nasus, Curator of the Sands": {
+        "winrate": 35,
+        "matches": 17
+      },
+      "Draven, Glorious Executioner": {
+        "winrate": 52,
+        "matches": 23
+      },
+      "Leblanc, Deceiver": {
+        "winrate": 44,
+        "matches": 18
+      },
+      "Jayce, Defender of Tomorrow": {
+        "winrate": 31,
+        "matches": 29
+      },
+      "Khazix, Voidreaver": {
+        "winrate": 24,
+        "matches": 21
+      },
+      "Akali, Rogue Assassin": {
+        "winrate": 62,
+        "matches": 21
+      },
+      "Ezreal, Prodigal Explorer": {
+        "winrate": 24,
+        "matches": 17
+      },
+      "Lillia, Bashful Bloom": {
+        "winrate": 55,
+        "matches": 20
+      },
+      "Viktor, Herald of the Arcane": {
+        "winrate": 38,
+        "matches": 8
+      },
+      "Mel, Soul's Reflection": {
+        "winrate": 44,
+        "matches": 18
+      },
+      "Vex, Gloomist": {
+        "winrate": 46,
+        "matches": 13
+      },
+      "Fiora, Grand Duelist": {
+        "winrate": 50,
+        "matches": 22
+      },
+      "Ornn, Fire Below the Mountain": {
+        "winrate": 42,
+        "matches": 12
+      },
+      "Ambessa, Matriarch of War": {
+        "winrate": 63,
+        "matches": 19
+      },
+      "Kai'sa, Daughter of the Void": {
+        "winrate": 33,
+        "matches": 3
+      },
+      "Ivern, Green Father": {
+        "winrate": 22,
+        "matches": 9
+      },
+      "Pyke, Bloodharbor Ripper": {
+        "winrate": 50,
+        "matches": 8
+      },
+      "Zed, Master of Shadows": {
+        "winrate": 33,
+        "matches": 3
+      },
+      "Vi, Piltover Enforcer": {
+        "winrate": 63,
+        "matches": 16
+      },
+      "Jhin, Virtuoso": {
+        "winrate": 88,
+        "matches": 8
+      },
+      "Rumble, Mechanized Menace": {
+        "winrate": 22,
+        "matches": 9
+      },
+      "Shen, Eye of Twilight": {
+        "winrate": 50,
+        "matches": 10
+      },
+      "Sivir, Battle Mistress": {
+        "winrate": 33,
+        "matches": 6
+      },
+      "Annie, Dark Child": {
+        "winrate": 100,
+        "matches": 2
+      },
+      "Master Yi, Wuju Master": {
+        "winrate": 67,
+        "matches": 6
+      },
+      "Lux, Lady of Luminosity": {
+        "winrate": 50,
+        "matches": 2
+      },
+      "Jax, Grandmaster at Arms": {
+        "winrate": 100,
+        "matches": 5
+      },
+      "Renekton, Butcher of the Sands": {
+        "winrate": 33,
+        "matches": 3
+      },
+      "Renata Glasc, Chem-Baroness": {
+        "winrate": 80,
+        "matches": 5
+      },
+      "Poppy, Keeper of the Hammer": {
+        "winrate": 100,
+        "matches": 5
+      },
+      "Sett, The Boss": {
+        "winrate": 100,
+        "matches": 2
+      },
+      "Teemo, Swift Scout": {
+        "winrate": 100,
+        "matches": 1
+      },
+      "Miss Fortune, Bounty Hunter": {
+        "winrate": 0,
+        "matches": 1
+      },
+      "Ahri, Nine-Tailed Fox": {
+        "winrate": 100,
+        "matches": 1
+      },
+      "Leona, Radiant Dawn": {
+        "winrate": 0,
+        "matches": 1
+      },
+      "Jinx, Loose Cannon": {
+        "winrate": 0,
+        "matches": 1
+      },
+      "Yasuo, Unforgiven": {
+        "winrate": 100,
+        "matches": 1
+      },
+      "Darius, Hand of Noxus": {
+        "winrate": 0,
+        "matches": 1
+      }
+    },
+    "Jhin, Virtuoso": {
+      "Kennen, Heart of the Tempest": {
+        "winrate": 30,
+        "matches": 56
+      },
+      "Master Yi, Wuju Bladesman": {
+        "winrate": 24,
+        "matches": 29
+      },
+      "Irelia, Blade Dancer": {
+        "winrate": 19,
+        "matches": 32
+      },
+      "Rengar, Pridestalker": {
+        "winrate": 25,
+        "matches": 24
+      },
+      "Azir, Emperor of the Sands": {
+        "winrate": 21,
+        "matches": 28
+      },
+      "Reksai, Void Burrower": {
+        "winrate": 48,
+        "matches": 21
+      },
+      "Diana, Scorn of the Moon": {
+        "winrate": 43,
+        "matches": 23
+      },
+      "Nasus, Curator of the Sands": {
+        "winrate": 19,
+        "matches": 26
+      },
+      "Draven, Glorious Executioner": {
+        "winrate": 25,
+        "matches": 12
+      },
+      "Leblanc, Deceiver": {
+        "winrate": 47,
+        "matches": 15
+      },
+      "Jayce, Defender of Tomorrow": {
+        "winrate": 31,
+        "matches": 16
+      },
+      "Khazix, Voidreaver": {
+        "winrate": 35,
+        "matches": 17
+      },
+      "Akali, Rogue Assassin": {
+        "winrate": 38,
+        "matches": 21
+      },
+      "Ezreal, Prodigal Explorer": {
+        "winrate": 68,
+        "matches": 19
+      },
+      "Lillia, Bashful Bloom": {
+        "winrate": 33,
+        "matches": 9
+      },
+      "Viktor, Herald of the Arcane": {
+        "winrate": 30,
+        "matches": 10
+      },
+      "Mel, Soul's Reflection": {
+        "winrate": 29,
+        "matches": 7
+      },
+      "Vex, Gloomist": {
+        "winrate": 40,
+        "matches": 15
+      },
+      "Fiora, Grand Duelist": {
+        "winrate": 50,
+        "matches": 12
+      },
+      "Ornn, Fire Below the Mountain": {
+        "winrate": 20,
+        "matches": 15
+      },
+      "Ambessa, Matriarch of War": {
+        "winrate": 48,
+        "matches": 21
+      },
+      "Kai'sa, Daughter of the Void": {
+        "winrate": 33,
+        "matches": 6
+      },
+      "Ivern, Green Father": {
+        "winrate": 40,
+        "matches": 15
+      },
+      "Pyke, Bloodharbor Ripper": {
+        "winrate": 60,
+        "matches": 5
+      },
+      "Zed, Master of Shadows": {
+        "winrate": 44,
+        "matches": 9
+      },
+      "Vi, Piltover Enforcer": {
+        "winrate": 36,
+        "matches": 14
+      },
+      "Lucian, Purifier": {
+        "winrate": 13,
+        "matches": 8
+      },
+      "Rumble, Mechanized Menace": {
+        "winrate": 50,
+        "matches": 4
+      },
+      "Shen, Eye of Twilight": {
+        "winrate": 40,
+        "matches": 10
+      },
+      "Sivir, Battle Mistress": {
+        "winrate": 33,
+        "matches": 6
+      },
+      "Annie, Dark Child": {
+        "winrate": 14,
+        "matches": 7
+      },
+      "Master Yi, Wuju Master": {
+        "winrate": 20,
+        "matches": 10
+      },
+      "Lux, Lady of Luminosity": {
+        "winrate": 67,
+        "matches": 3
+      },
+      "Jax, Grandmaster at Arms": {
+        "winrate": 18,
+        "matches": 11
+      },
+      "Renekton, Butcher of the Sands": {
+        "winrate": 50,
+        "matches": 6
+      },
+      "Renata Glasc, Chem-Baroness": {
+        "winrate": 75,
+        "matches": 8
+      },
+      "Poppy, Keeper of the Hammer": {
+        "winrate": 86,
+        "matches": 7
+      },
+      "Sett, The Boss": {
+        "winrate": 50,
+        "matches": 2
+      },
+      "Teemo, Swift Scout": {
+        "winrate": 0,
+        "matches": 3
+      },
+      "Miss Fortune, Bounty Hunter": {
+        "winrate": 50,
+        "matches": 2
+      },
+      "Volibear, Relentless Storm": {
+        "winrate": 0,
+        "matches": 1
+      },
+      "Jinx, Loose Cannon": {
+        "winrate": 0,
+        "matches": 2
+      },
+      "Yasuo, Unforgiven": {
+        "winrate": 100,
+        "matches": 1
+      }
+    },
+    "Rumble, Mechanized Menace": {
+      "Kennen, Heart of the Tempest": {
+        "winrate": 21,
+        "matches": 43
+      },
+      "Master Yi, Wuju Bladesman": {
+        "winrate": 29,
+        "matches": 42
+      },
+      "Irelia, Blade Dancer": {
+        "winrate": 32,
+        "matches": 38
+      },
+      "Rengar, Pridestalker": {
+        "winrate": 62,
+        "matches": 29
+      },
+      "Azir, Emperor of the Sands": {
+        "winrate": 33,
+        "matches": 21
+      },
+      "Reksai, Void Burrower": {
+        "winrate": 39,
+        "matches": 31
+      },
+      "Diana, Scorn of the Moon": {
+        "winrate": 65,
+        "matches": 20
+      },
+      "Nasus, Curator of the Sands": {
+        "winrate": 20,
+        "matches": 20
+      },
+      "Draven, Glorious Executioner": {
+        "winrate": 20,
+        "matches": 25
+      },
+      "Leblanc, Deceiver": {
+        "winrate": 9,
+        "matches": 11
+      },
+      "Jayce, Defender of Tomorrow": {
+        "winrate": 29,
+        "matches": 17
+      },
+      "Khazix, Voidreaver": {
+        "winrate": 62,
+        "matches": 13
+      },
+      "Akali, Rogue Assassin": {
+        "winrate": 53,
+        "matches": 19
+      },
+      "Ezreal, Prodigal Explorer": {
+        "winrate": 18,
+        "matches": 11
+      },
+      "Lillia, Bashful Bloom": {
+        "winrate": 53,
+        "matches": 19
+      },
+      "Viktor, Herald of the Arcane": {
+        "winrate": 50,
+        "matches": 8
+      },
+      "Mel, Soul's Reflection": {
+        "winrate": 44,
+        "matches": 9
+      },
+      "Vex, Gloomist": {
+        "winrate": 31,
+        "matches": 13
+      },
+      "Fiora, Grand Duelist": {
+        "winrate": 54,
+        "matches": 13
+      },
+      "Ornn, Fire Below the Mountain": {
+        "winrate": 55,
+        "matches": 20
+      },
+      "Ambessa, Matriarch of War": {
+        "winrate": 78,
+        "matches": 9
+      },
+      "Kai'sa, Daughter of the Void": {
+        "winrate": 22,
+        "matches": 9
+      },
+      "Ivern, Green Father": {
+        "winrate": 100,
+        "matches": 6
+      },
+      "Pyke, Bloodharbor Ripper": {
+        "winrate": 40,
+        "matches": 15
+      },
+      "Zed, Master of Shadows": {
+        "winrate": 50,
+        "matches": 4
+      },
+      "Vi, Piltover Enforcer": {
+        "winrate": 31,
+        "matches": 13
+      },
+      "Lucian, Purifier": {
+        "winrate": 78,
+        "matches": 9
+      },
+      "Jhin, Virtuoso": {
+        "winrate": 50,
+        "matches": 4
+      },
+      "Shen, Eye of Twilight": {
+        "winrate": 73,
+        "matches": 11
+      },
+      "Sivir, Battle Mistress": {
+        "winrate": 67,
+        "matches": 6
+      },
+      "Annie, Dark Child": {
+        "winrate": 0,
+        "matches": 2
+      },
+      "Master Yi, Wuju Master": {
+        "winrate": 44,
+        "matches": 9
+      },
+      "Lux, Lady of Luminosity": {
+        "winrate": 20,
+        "matches": 5
+      },
+      "Jax, Grandmaster at Arms": {
+        "winrate": 80,
+        "matches": 5
+      },
+      "Renekton, Butcher of the Sands": {
+        "winrate": 57,
+        "matches": 14
+      },
+      "Renata Glasc, Chem-Baroness": {
+        "winrate": 25,
+        "matches": 4
+      },
+      "Poppy, Keeper of the Hammer": {
+        "winrate": 63,
+        "matches": 8
+      },
+      "Sett, The Boss": {
+        "winrate": 100,
+        "matches": 1
+      },
+      "Miss Fortune, Bounty Hunter": {
+        "winrate": 0,
+        "matches": 1
+      },
+      "Ahri, Nine-Tailed Fox": {
+        "winrate": 100,
+        "matches": 1
+      },
+      "Leona, Radiant Dawn": {
+        "winrate": 100,
+        "matches": 1
+      },
+      "Jinx, Loose Cannon": {
+        "winrate": 0,
+        "matches": 1
+      },
+      "Yasuo, Unforgiven": {
+        "winrate": 100,
+        "matches": 1
+      }
+    },
+    "Shen, Eye of Twilight": {
+      "Kennen, Heart of the Tempest": {
+        "winrate": 34,
+        "matches": 44
+      },
+      "Master Yi, Wuju Bladesman": {
+        "winrate": 25,
+        "matches": 24
+      },
+      "Irelia, Blade Dancer": {
+        "winrate": 24,
+        "matches": 29
+      },
+      "Rengar, Pridestalker": {
+        "winrate": 39,
+        "matches": 23
+      },
+      "Azir, Emperor of the Sands": {
+        "winrate": 21,
+        "matches": 19
+      },
+      "Reksai, Void Burrower": {
+        "winrate": 17,
+        "matches": 30
+      },
+      "Diana, Scorn of the Moon": {
+        "winrate": 18,
+        "matches": 22
+      },
+      "Nasus, Curator of the Sands": {
+        "winrate": 44,
+        "matches": 18
+      },
+      "Draven, Glorious Executioner": {
+        "winrate": 38,
+        "matches": 24
+      },
+      "Leblanc, Deceiver": {
+        "winrate": 29,
+        "matches": 14
+      },
+      "Jayce, Defender of Tomorrow": {
+        "winrate": 19,
+        "matches": 21
+      },
+      "Khazix, Voidreaver": {
+        "winrate": 40,
+        "matches": 15
+      },
+      "Akali, Rogue Assassin": {
+        "winrate": 21,
+        "matches": 19
+      },
+      "Ezreal, Prodigal Explorer": {
+        "winrate": 30,
+        "matches": 10
+      },
+      "Lillia, Bashful Bloom": {
+        "winrate": 47,
+        "matches": 19
+      },
+      "Viktor, Herald of the Arcane": {
+        "winrate": 17,
+        "matches": 12
+      },
+      "Mel, Soul's Reflection": {
+        "winrate": 50,
+        "matches": 14
+      },
+      "Vex, Gloomist": {
+        "winrate": 33,
+        "matches": 15
+      },
+      "Fiora, Grand Duelist": {
+        "winrate": 33,
+        "matches": 12
+      },
+      "Ornn, Fire Below the Mountain": {
+        "winrate": 19,
+        "matches": 16
+      },
+      "Ambessa, Matriarch of War": {
+        "winrate": 33,
+        "matches": 18
+      },
+      "Kai'sa, Daughter of the Void": {
+        "winrate": 40,
+        "matches": 5
+      },
+      "Ivern, Green Father": {
+        "winrate": 54,
+        "matches": 13
+      },
+      "Pyke, Bloodharbor Ripper": {
+        "winrate": 25,
+        "matches": 12
+      },
+      "Zed, Master of Shadows": {
+        "winrate": 69,
+        "matches": 13
+      },
+      "Vi, Piltover Enforcer": {
+        "winrate": 50,
+        "matches": 14
+      },
+      "Lucian, Purifier": {
+        "winrate": 50,
+        "matches": 10
+      },
+      "Jhin, Virtuoso": {
+        "winrate": 60,
+        "matches": 10
+      },
+      "Rumble, Mechanized Menace": {
+        "winrate": 27,
+        "matches": 11
+      },
+      "Sivir, Battle Mistress": {
+        "winrate": 50,
+        "matches": 6
+      },
+      "Annie, Dark Child": {
+        "winrate": 50,
+        "matches": 4
+      },
+      "Master Yi, Wuju Master": {
+        "winrate": 25,
+        "matches": 4
+      },
+      "Lux, Lady of Luminosity": {
+        "winrate": 0,
+        "matches": 3
+      },
+      "Jax, Grandmaster at Arms": {
+        "winrate": 71,
+        "matches": 7
+      },
+      "Renekton, Butcher of the Sands": {
+        "winrate": 33,
+        "matches": 3
+      },
+      "Renata Glasc, Chem-Baroness": {
+        "winrate": 100,
+        "matches": 5
+      },
+      "Poppy, Keeper of the Hammer": {
+        "winrate": 50,
+        "matches": 4
+      },
+      "Sett, The Boss": {
+        "winrate": 60,
+        "matches": 5
+      },
+      "Teemo, Swift Scout": {
+        "winrate": 0,
+        "matches": 5
+      },
+      "Miss Fortune, Bounty Hunter": {
+        "winrate": 0,
+        "matches": 1
+      },
+      "Ahri, Nine-Tailed Fox": {
+        "winrate": 0,
+        "matches": 2
+      },
+      "Leona, Radiant Dawn": {
+        "winrate": 0,
+        "matches": 3
+      }
+    },
+    "Sivir, Battle Mistress": {
+      "Kennen, Heart of the Tempest": {
+        "winrate": 25,
+        "matches": 61
+      },
+      "Master Yi, Wuju Bladesman": {
+        "winrate": 50,
+        "matches": 40
+      },
+      "Irelia, Blade Dancer": {
+        "winrate": 46,
+        "matches": 35
+      },
+      "Rengar, Pridestalker": {
+        "winrate": 17,
+        "matches": 23
+      },
+      "Azir, Emperor of the Sands": {
+        "winrate": 48,
+        "matches": 21
+      },
+      "Reksai, Void Burrower": {
+        "winrate": 24,
+        "matches": 21
+      },
+      "Diana, Scorn of the Moon": {
+        "winrate": 39,
+        "matches": 18
+      },
+      "Nasus, Curator of the Sands": {
+        "winrate": 61,
+        "matches": 18
+      },
+      "Draven, Glorious Executioner": {
+        "winrate": 55,
+        "matches": 20
+      },
+      "Leblanc, Deceiver": {
+        "winrate": 46,
+        "matches": 26
+      },
+      "Jayce, Defender of Tomorrow": {
+        "winrate": 33,
+        "matches": 18
+      },
+      "Khazix, Voidreaver": {
+        "winrate": 27,
+        "matches": 15
+      },
+      "Akali, Rogue Assassin": {
+        "winrate": 60,
+        "matches": 15
+      },
+      "Ezreal, Prodigal Explorer": {
+        "winrate": 79,
+        "matches": 14
+      },
+      "Lillia, Bashful Bloom": {
+        "winrate": 69,
+        "matches": 13
+      },
+      "Viktor, Herald of the Arcane": {
+        "winrate": 11,
+        "matches": 9
+      },
+      "Mel, Soul's Reflection": {
+        "winrate": 71,
+        "matches": 17
+      },
+      "Vex, Gloomist": {
+        "winrate": 56,
+        "matches": 9
+      },
+      "Fiora, Grand Duelist": {
+        "winrate": 45,
+        "matches": 11
+      },
+      "Ornn, Fire Below the Mountain": {
+        "winrate": 86,
+        "matches": 7
+      },
+      "Ambessa, Matriarch of War": {
+        "winrate": 42,
+        "matches": 12
+      },
+      "Kai'sa, Daughter of the Void": {
+        "winrate": 70,
+        "matches": 10
+      },
+      "Ivern, Green Father": {
+        "winrate": 64,
+        "matches": 11
+      },
+      "Pyke, Bloodharbor Ripper": {
+        "winrate": 50,
+        "matches": 4
+      },
+      "Zed, Master of Shadows": {
+        "winrate": 60,
+        "matches": 5
+      },
+      "Vi, Piltover Enforcer": {
+        "winrate": 67,
+        "matches": 6
+      },
+      "Lucian, Purifier": {
+        "winrate": 67,
+        "matches": 6
+      },
+      "Jhin, Virtuoso": {
+        "winrate": 67,
+        "matches": 6
+      },
+      "Rumble, Mechanized Menace": {
+        "winrate": 33,
+        "matches": 6
+      },
+      "Shen, Eye of Twilight": {
+        "winrate": 50,
+        "matches": 6
+      },
+      "Annie, Dark Child": {
+        "winrate": 0,
+        "matches": 2
+      },
+      "Master Yi, Wuju Master": {
+        "winrate": 33,
+        "matches": 3
+      },
+      "Jax, Grandmaster at Arms": {
+        "winrate": 67,
+        "matches": 3
+      },
+      "Renekton, Butcher of the Sands": {
+        "winrate": 0,
+        "matches": 5
+      },
+      "Renata Glasc, Chem-Baroness": {
+        "winrate": 60,
+        "matches": 5
+      },
+      "Poppy, Keeper of the Hammer": {
+        "winrate": 33,
+        "matches": 3
+      },
+      "Sett, The Boss": {
+        "winrate": 33,
+        "matches": 3
+      },
+      "Miss Fortune, Bounty Hunter": {
+        "winrate": 0,
+        "matches": 3
+      },
+      "Volibear, Relentless Storm": {
+        "winrate": 100,
+        "matches": 1
+      },
+      "Ahri, Nine-Tailed Fox": {
+        "winrate": 100,
+        "matches": 1
+      },
+      "Darius, Hand of Noxus": {
+        "winrate": 0,
+        "matches": 1
+      }
+    },
+    "Annie, Dark Child": {
+      "Kennen, Heart of the Tempest": {
+        "winrate": 31,
+        "matches": 51
+      },
+      "Master Yi, Wuju Bladesman": {
+        "winrate": 43,
+        "matches": 47
+      },
+      "Irelia, Blade Dancer": {
+        "winrate": 37,
+        "matches": 43
+      },
+      "Rengar, Pridestalker": {
+        "winrate": 61,
+        "matches": 31
+      },
+      "Azir, Emperor of the Sands": {
+        "winrate": 39,
+        "matches": 31
+      },
+      "Reksai, Void Burrower": {
+        "winrate": 75,
+        "matches": 16
+      },
+      "Diana, Scorn of the Moon": {
+        "winrate": 41,
+        "matches": 22
+      },
+      "Nasus, Curator of the Sands": {
+        "winrate": 47,
+        "matches": 19
+      },
+      "Draven, Glorious Executioner": {
+        "winrate": 50,
+        "matches": 24
+      },
+      "Leblanc, Deceiver": {
+        "winrate": 42,
+        "matches": 19
+      },
+      "Jayce, Defender of Tomorrow": {
+        "winrate": 40,
+        "matches": 15
+      },
+      "Khazix, Voidreaver": {
+        "winrate": 46,
+        "matches": 13
+      },
+      "Akali, Rogue Assassin": {
+        "winrate": 56,
+        "matches": 18
+      },
+      "Ezreal, Prodigal Explorer": {
+        "winrate": 70,
+        "matches": 10
+      },
+      "Lillia, Bashful Bloom": {
+        "winrate": 55,
+        "matches": 11
+      },
+      "Viktor, Herald of the Arcane": {
+        "winrate": 53,
+        "matches": 17
+      },
+      "Mel, Soul's Reflection": {
+        "winrate": 50,
+        "matches": 12
+      },
+      "Vex, Gloomist": {
+        "winrate": 18,
+        "matches": 11
+      },
+      "Fiora, Grand Duelist": {
+        "winrate": 40,
+        "matches": 10
+      },
+      "Ornn, Fire Below the Mountain": {
+        "winrate": 60,
+        "matches": 5
+      },
+      "Ambessa, Matriarch of War": {
+        "winrate": 83,
+        "matches": 6
+      },
+      "Kai'sa, Daughter of the Void": {
+        "winrate": 78,
+        "matches": 9
+      },
+      "Ivern, Green Father": {
+        "winrate": 20,
+        "matches": 5
+      },
+      "Pyke, Bloodharbor Ripper": {
+        "winrate": 67,
+        "matches": 6
+      },
+      "Zed, Master of Shadows": {
+        "winrate": 86,
+        "matches": 7
+      },
+      "Vi, Piltover Enforcer": {
+        "winrate": 75,
+        "matches": 4
+      },
+      "Lucian, Purifier": {
+        "winrate": 0,
+        "matches": 2
+      },
+      "Jhin, Virtuoso": {
+        "winrate": 86,
+        "matches": 7
+      },
+      "Rumble, Mechanized Menace": {
+        "winrate": 100,
+        "matches": 2
+      },
+      "Shen, Eye of Twilight": {
+        "winrate": 50,
+        "matches": 4
+      },
+      "Sivir, Battle Mistress": {
+        "winrate": 100,
+        "matches": 2
+      },
+      "Master Yi, Wuju Master": {
+        "winrate": 100,
+        "matches": 1
+      },
+      "Lux, Lady of Luminosity": {
+        "winrate": 60,
+        "matches": 5
+      },
+      "Jax, Grandmaster at Arms": {
+        "winrate": 100,
+        "matches": 4
+      },
+      "Renekton, Butcher of the Sands": {
+        "winrate": 100,
+        "matches": 1
+      },
+      "Renata Glasc, Chem-Baroness": {
+        "winrate": 50,
+        "matches": 2
+      },
+      "Sett, The Boss": {
+        "winrate": 100,
+        "matches": 1
+      },
+      "Teemo, Swift Scout": {
+        "winrate": 0,
+        "matches": 2
+      },
+      "Leona, Radiant Dawn": {
+        "winrate": 33,
+        "matches": 3
+      }
+    },
+    "Master Yi, Wuju Master": {
+      "Kennen, Heart of the Tempest": {
+        "winrate": 35,
+        "matches": 46
+      },
+      "Master Yi, Wuju Bladesman": {
+        "winrate": 41,
+        "matches": 27
+      },
+      "Irelia, Blade Dancer": {
+        "winrate": 19,
+        "matches": 32
+      },
+      "Rengar, Pridestalker": {
+        "winrate": 21,
+        "matches": 24
+      },
+      "Azir, Emperor of the Sands": {
+        "winrate": 27,
+        "matches": 15
+      },
+      "Reksai, Void Burrower": {
+        "winrate": 36,
+        "matches": 22
+      },
+      "Diana, Scorn of the Moon": {
+        "winrate": 26,
+        "matches": 23
+      },
+      "Nasus, Curator of the Sands": {
+        "winrate": 41,
+        "matches": 27
+      },
+      "Draven, Glorious Executioner": {
+        "winrate": 60,
+        "matches": 20
+      },
+      "Leblanc, Deceiver": {
+        "winrate": 41,
+        "matches": 17
+      },
+      "Jayce, Defender of Tomorrow": {
+        "winrate": 38,
+        "matches": 13
+      },
+      "Khazix, Voidreaver": {
+        "winrate": 44,
+        "matches": 16
+      },
+      "Akali, Rogue Assassin": {
+        "winrate": 27,
+        "matches": 11
+      },
+      "Ezreal, Prodigal Explorer": {
+        "winrate": 45,
+        "matches": 11
+      },
+      "Lillia, Bashful Bloom": {
+        "winrate": 69,
+        "matches": 13
+      },
+      "Viktor, Herald of the Arcane": {
+        "winrate": 0,
+        "matches": 2
+      },
+      "Mel, Soul's Reflection": {
+        "winrate": 70,
+        "matches": 10
+      },
+      "Vex, Gloomist": {
+        "winrate": 27,
+        "matches": 11
+      },
+      "Fiora, Grand Duelist": {
+        "winrate": 36,
+        "matches": 22
+      },
+      "Ornn, Fire Below the Mountain": {
+        "winrate": 55,
+        "matches": 11
+      },
+      "Ambessa, Matriarch of War": {
+        "winrate": 21,
+        "matches": 14
+      },
+      "Kai'sa, Daughter of the Void": {
+        "winrate": 50,
+        "matches": 4
+      },
+      "Ivern, Green Father": {
+        "winrate": 62,
+        "matches": 13
+      },
+      "Pyke, Bloodharbor Ripper": {
+        "winrate": 50,
+        "matches": 4
+      },
+      "Zed, Master of Shadows": {
+        "winrate": 67,
+        "matches": 6
+      },
+      "Vi, Piltover Enforcer": {
+        "winrate": 58,
+        "matches": 12
+      },
+      "Lucian, Purifier": {
+        "winrate": 33,
+        "matches": 6
+      },
+      "Jhin, Virtuoso": {
+        "winrate": 80,
+        "matches": 10
+      },
+      "Rumble, Mechanized Menace": {
+        "winrate": 56,
+        "matches": 9
+      },
+      "Shen, Eye of Twilight": {
+        "winrate": 75,
+        "matches": 4
+      },
+      "Sivir, Battle Mistress": {
+        "winrate": 67,
+        "matches": 3
+      },
+      "Annie, Dark Child": {
+        "winrate": 0,
+        "matches": 1
+      },
+      "Lux, Lady of Luminosity": {
+        "winrate": 50,
+        "matches": 2
+      },
+      "Jax, Grandmaster at Arms": {
+        "winrate": 43,
+        "matches": 7
+      },
+      "Renekton, Butcher of the Sands": {
+        "winrate": 43,
+        "matches": 7
+      },
+      "Renata Glasc, Chem-Baroness": {
+        "winrate": 86,
+        "matches": 7
+      },
+      "Poppy, Keeper of the Hammer": {
+        "winrate": 50,
+        "matches": 10
+      },
+      "Sett, The Boss": {
+        "winrate": 0,
+        "matches": 1
+      },
+      "Ahri, Nine-Tailed Fox": {
+        "winrate": 0,
+        "matches": 1
+      },
+      "Yasuo, Unforgiven": {
+        "winrate": 0,
+        "matches": 1
+      }
+    },
+    "Lux, Lady of Luminosity": {
+      "Kennen, Heart of the Tempest": {
+        "winrate": 29,
+        "matches": 55
+      },
+      "Master Yi, Wuju Bladesman": {
+        "winrate": 65,
+        "matches": 46
+      },
+      "Irelia, Blade Dancer": {
+        "winrate": 39,
+        "matches": 49
+      },
+      "Rengar, Pridestalker": {
+        "winrate": 23,
+        "matches": 26
+      },
+      "Azir, Emperor of the Sands": {
+        "winrate": 67,
+        "matches": 30
+      },
+      "Reksai, Void Burrower": {
+        "winrate": 48,
+        "matches": 21
+      },
+      "Diana, Scorn of the Moon": {
+        "winrate": 26,
+        "matches": 19
+      },
+      "Nasus, Curator of the Sands": {
+        "winrate": 90,
+        "matches": 10
+      },
+      "Draven, Glorious Executioner": {
+        "winrate": 43,
+        "matches": 21
+      },
+      "Leblanc, Deceiver": {
+        "winrate": 65,
+        "matches": 20
+      },
+      "Jayce, Defender of Tomorrow": {
+        "winrate": 78,
+        "matches": 18
+      },
+      "Khazix, Voidreaver": {
+        "winrate": 36,
+        "matches": 14
+      },
+      "Akali, Rogue Assassin": {
+        "winrate": 53,
+        "matches": 15
+      },
+      "Ezreal, Prodigal Explorer": {
+        "winrate": 81,
+        "matches": 16
+      },
+      "Lillia, Bashful Bloom": {
+        "winrate": 40,
+        "matches": 10
+      },
+      "Viktor, Herald of the Arcane": {
+        "winrate": 40,
+        "matches": 5
+      },
+      "Mel, Soul's Reflection": {
+        "winrate": 57,
+        "matches": 7
+      },
+      "Vex, Gloomist": {
+        "winrate": 50,
+        "matches": 10
+      },
+      "Fiora, Grand Duelist": {
+        "winrate": 45,
+        "matches": 11
+      },
+      "Ornn, Fire Below the Mountain": {
+        "winrate": 80,
+        "matches": 10
+      },
+      "Ambessa, Matriarch of War": {
+        "winrate": 33,
+        "matches": 3
+      },
+      "Kai'sa, Daughter of the Void": {
+        "winrate": 43,
+        "matches": 7
+      },
+      "Ivern, Green Father": {
+        "winrate": 75,
+        "matches": 4
+      },
+      "Pyke, Bloodharbor Ripper": {
+        "winrate": 0,
+        "matches": 1
+      },
+      "Zed, Master of Shadows": {
+        "winrate": 67,
+        "matches": 3
+      },
+      "Vi, Piltover Enforcer": {
+        "winrate": 100,
+        "matches": 3
+      },
+      "Lucian, Purifier": {
+        "winrate": 50,
+        "matches": 2
+      },
+      "Jhin, Virtuoso": {
+        "winrate": 33,
+        "matches": 3
+      },
+      "Rumble, Mechanized Menace": {
+        "winrate": 80,
+        "matches": 5
+      },
+      "Shen, Eye of Twilight": {
+        "winrate": 100,
+        "matches": 3
+      },
+      "Annie, Dark Child": {
+        "winrate": 40,
+        "matches": 5
+      },
+      "Master Yi, Wuju Master": {
+        "winrate": 50,
+        "matches": 2
+      },
+      "Jax, Grandmaster at Arms": {
+        "winrate": 50,
+        "matches": 2
+      },
+      "Renekton, Butcher of the Sands": {
+        "winrate": 33,
+        "matches": 3
+      },
+      "Renata Glasc, Chem-Baroness": {
+        "winrate": 100,
+        "matches": 1
+      },
+      "Poppy, Keeper of the Hammer": {
+        "winrate": 0,
+        "matches": 1
+      },
+      "Teemo, Swift Scout": {
+        "winrate": 0,
+        "matches": 1
+      },
+      "Volibear, Relentless Storm": {
+        "winrate": 100,
+        "matches": 1
+      },
+      "Jinx, Loose Cannon": {
+        "winrate": 67,
+        "matches": 3
+      },
+      "Yasuo, Unforgiven": {
+        "winrate": 0,
+        "matches": 2
+      }
+    },
+    "Jax, Grandmaster at Arms": {
+      "Kennen, Heart of the Tempest": {
+        "winrate": 23,
+        "matches": 40
+      },
+      "Master Yi, Wuju Bladesman": {
+        "winrate": 41,
+        "matches": 27
+      },
+      "Irelia, Blade Dancer": {
+        "winrate": 45,
+        "matches": 31
+      },
+      "Rengar, Pridestalker": {
+        "winrate": 32,
+        "matches": 19
+      },
+      "Azir, Emperor of the Sands": {
+        "winrate": 45,
+        "matches": 22
+      },
+      "Reksai, Void Burrower": {
+        "winrate": 27,
+        "matches": 22
+      },
+      "Diana, Scorn of the Moon": {
+        "winrate": 45,
+        "matches": 20
+      },
+      "Nasus, Curator of the Sands": {
+        "winrate": 48,
+        "matches": 23
+      },
+      "Draven, Glorious Executioner": {
+        "winrate": 36,
+        "matches": 14
+      },
+      "Leblanc, Deceiver": {
+        "winrate": 33,
+        "matches": 12
+      },
+      "Jayce, Defender of Tomorrow": {
+        "winrate": 50,
+        "matches": 8
+      },
+      "Khazix, Voidreaver": {
+        "winrate": 18,
+        "matches": 17
+      },
+      "Akali, Rogue Assassin": {
+        "winrate": 45,
+        "matches": 20
+      },
+      "Ezreal, Prodigal Explorer": {
+        "winrate": 44,
+        "matches": 9
+      },
+      "Lillia, Bashful Bloom": {
+        "winrate": 70,
+        "matches": 10
+      },
+      "Viktor, Herald of the Arcane": {
+        "winrate": 50,
+        "matches": 2
+      },
+      "Mel, Soul's Reflection": {
+        "winrate": 25,
+        "matches": 8
+      },
+      "Vex, Gloomist": {
+        "winrate": 40,
+        "matches": 15
+      },
+      "Fiora, Grand Duelist": {
+        "winrate": 50,
+        "matches": 10
+      },
+      "Ornn, Fire Below the Mountain": {
+        "winrate": 64,
+        "matches": 22
+      },
+      "Ambessa, Matriarch of War": {
+        "winrate": 75,
+        "matches": 8
+      },
+      "Kai'sa, Daughter of the Void": {
+        "winrate": 67,
+        "matches": 3
+      },
+      "Ivern, Green Father": {
+        "winrate": 75,
+        "matches": 8
+      },
+      "Pyke, Bloodharbor Ripper": {
+        "winrate": 33,
+        "matches": 3
+      },
+      "Zed, Master of Shadows": {
+        "winrate": 40,
+        "matches": 10
+      },
+      "Vi, Piltover Enforcer": {
+        "winrate": 100,
+        "matches": 7
+      },
+      "Lucian, Purifier": {
+        "winrate": 0,
+        "matches": 5
+      },
+      "Jhin, Virtuoso": {
+        "winrate": 82,
+        "matches": 11
+      },
+      "Rumble, Mechanized Menace": {
+        "winrate": 20,
+        "matches": 5
+      },
+      "Shen, Eye of Twilight": {
+        "winrate": 29,
+        "matches": 7
+      },
+      "Sivir, Battle Mistress": {
+        "winrate": 33,
+        "matches": 3
+      },
+      "Annie, Dark Child": {
+        "winrate": 0,
+        "matches": 4
+      },
+      "Master Yi, Wuju Master": {
+        "winrate": 57,
+        "matches": 7
+      },
+      "Lux, Lady of Luminosity": {
+        "winrate": 50,
+        "matches": 2
+      },
+      "Renekton, Butcher of the Sands": {
+        "winrate": 60,
+        "matches": 5
+      },
+      "Renata Glasc, Chem-Baroness": {
+        "winrate": 0,
+        "matches": 2
+      },
+      "Poppy, Keeper of the Hammer": {
+        "winrate": 50,
+        "matches": 6
+      },
+      "Sett, The Boss": {
+        "winrate": 67,
+        "matches": 3
+      }
+    },
+    "Renekton, Butcher of the Sands": {
+      "Kennen, Heart of the Tempest": {
+        "winrate": 50,
+        "matches": 38
+      },
+      "Master Yi, Wuju Bladesman": {
+        "winrate": 30,
+        "matches": 20
+      },
+      "Irelia, Blade Dancer": {
+        "winrate": 23,
+        "matches": 22
+      },
+      "Rengar, Pridestalker": {
+        "winrate": 38,
+        "matches": 21
+      },
+      "Azir, Emperor of the Sands": {
+        "winrate": 47,
+        "matches": 19
+      },
+      "Reksai, Void Burrower": {
+        "winrate": 23,
+        "matches": 22
+      },
+      "Diana, Scorn of the Moon": {
+        "winrate": 29,
+        "matches": 14
+      },
+      "Nasus, Curator of the Sands": {
+        "winrate": 38,
+        "matches": 16
+      },
+      "Draven, Glorious Executioner": {
+        "winrate": 50,
+        "matches": 6
+      },
+      "Leblanc, Deceiver": {
+        "winrate": 31,
+        "matches": 16
+      },
+      "Jayce, Defender of Tomorrow": {
+        "winrate": 55,
+        "matches": 11
+      },
+      "Khazix, Voidreaver": {
+        "winrate": 12,
+        "matches": 17
+      },
+      "Akali, Rogue Assassin": {
+        "winrate": 59,
+        "matches": 17
+      },
+      "Ezreal, Prodigal Explorer": {
+        "winrate": 40,
+        "matches": 10
+      },
+      "Lillia, Bashful Bloom": {
+        "winrate": 31,
+        "matches": 16
+      },
+      "Viktor, Herald of the Arcane": {
+        "winrate": 0,
+        "matches": 2
+      },
+      "Mel, Soul's Reflection": {
+        "winrate": 67,
+        "matches": 9
+      },
+      "Vex, Gloomist": {
+        "winrate": 33,
+        "matches": 6
+      },
+      "Fiora, Grand Duelist": {
+        "winrate": 50,
+        "matches": 12
+      },
+      "Ornn, Fire Below the Mountain": {
+        "winrate": 22,
+        "matches": 9
+      },
+      "Ambessa, Matriarch of War": {
+        "winrate": 45,
+        "matches": 11
+      },
+      "Kai'sa, Daughter of the Void": {
+        "winrate": 20,
+        "matches": 5
+      },
+      "Ivern, Green Father": {
+        "winrate": 100,
+        "matches": 4
+      },
+      "Pyke, Bloodharbor Ripper": {
+        "winrate": 60,
+        "matches": 5
+      },
+      "Zed, Master of Shadows": {
+        "winrate": 70,
+        "matches": 10
+      },
+      "Vi, Piltover Enforcer": {
+        "winrate": 63,
+        "matches": 8
+      },
+      "Lucian, Purifier": {
+        "winrate": 67,
+        "matches": 3
+      },
+      "Jhin, Virtuoso": {
+        "winrate": 50,
+        "matches": 6
+      },
+      "Rumble, Mechanized Menace": {
+        "winrate": 43,
+        "matches": 14
+      },
+      "Shen, Eye of Twilight": {
+        "winrate": 67,
+        "matches": 3
+      },
+      "Sivir, Battle Mistress": {
+        "winrate": 100,
+        "matches": 5
+      },
+      "Annie, Dark Child": {
+        "winrate": 0,
+        "matches": 1
+      },
+      "Master Yi, Wuju Master": {
+        "winrate": 57,
+        "matches": 7
+      },
+      "Lux, Lady of Luminosity": {
+        "winrate": 67,
+        "matches": 3
+      },
+      "Jax, Grandmaster at Arms": {
+        "winrate": 40,
+        "matches": 5
+      },
+      "Renata Glasc, Chem-Baroness": {
+        "winrate": 50,
+        "matches": 10
+      },
+      "Poppy, Keeper of the Hammer": {
+        "winrate": 0,
+        "matches": 5
+      },
+      "Sett, The Boss": {
+        "winrate": 100,
+        "matches": 1
+      },
+      "Teemo, Swift Scout": {
+        "winrate": 100,
+        "matches": 1
+      },
+      "Jinx, Loose Cannon": {
+        "winrate": 50,
+        "matches": 2
+      }
+    },
+    "Renata Glasc, Chem-Baroness": {
+      "Kennen, Heart of the Tempest": {
+        "winrate": 28,
+        "matches": 18
+      },
+      "Master Yi, Wuju Bladesman": {
+        "winrate": 18,
+        "matches": 17
+      },
+      "Irelia, Blade Dancer": {
+        "winrate": 24,
+        "matches": 21
+      },
+      "Rengar, Pridestalker": {
+        "winrate": 7,
+        "matches": 15
+      },
+      "Azir, Emperor of the Sands": {
+        "winrate": 18,
+        "matches": 11
+      },
+      "Reksai, Void Burrower": {
+        "winrate": 29,
+        "matches": 14
+      },
+      "Diana, Scorn of the Moon": {
+        "winrate": 8,
+        "matches": 13
+      },
+      "Nasus, Curator of the Sands": {
+        "winrate": 31,
+        "matches": 13
+      },
+      "Draven, Glorious Executioner": {
+        "winrate": 11,
+        "matches": 9
+      },
+      "Leblanc, Deceiver": {
+        "winrate": 33,
+        "matches": 9
+      },
+      "Jayce, Defender of Tomorrow": {
+        "winrate": 60,
+        "matches": 5
+      },
+      "Khazix, Voidreaver": {
+        "winrate": 43,
+        "matches": 14
+      },
+      "Akali, Rogue Assassin": {
+        "winrate": 19,
+        "matches": 16
+      },
+      "Ezreal, Prodigal Explorer": {
+        "winrate": 45,
+        "matches": 11
+      },
+      "Lillia, Bashful Bloom": {
+        "winrate": 27,
+        "matches": 15
+      },
+      "Viktor, Herald of the Arcane": {
+        "winrate": 44,
+        "matches": 9
+      },
+      "Mel, Soul's Reflection": {
+        "winrate": 33,
+        "matches": 15
+      },
+      "Vex, Gloomist": {
+        "winrate": 60,
+        "matches": 15
+      },
+      "Fiora, Grand Duelist": {
+        "winrate": 11,
+        "matches": 9
+      },
+      "Ornn, Fire Below the Mountain": {
+        "winrate": 33,
+        "matches": 9
+      },
+      "Ambessa, Matriarch of War": {
+        "winrate": 63,
+        "matches": 8
+      },
+      "Kai'sa, Daughter of the Void": {
+        "winrate": 0,
+        "matches": 6
+      },
+      "Ivern, Green Father": {
+        "winrate": 100,
+        "matches": 7
+      },
+      "Pyke, Bloodharbor Ripper": {
+        "winrate": 38,
+        "matches": 8
+      },
+      "Zed, Master of Shadows": {
+        "winrate": 50,
+        "matches": 10
+      },
+      "Vi, Piltover Enforcer": {
+        "winrate": 54,
+        "matches": 13
+      },
+      "Lucian, Purifier": {
+        "winrate": 20,
+        "matches": 5
+      },
+      "Jhin, Virtuoso": {
+        "winrate": 25,
+        "matches": 8
+      },
+      "Rumble, Mechanized Menace": {
+        "winrate": 75,
+        "matches": 4
+      },
+      "Shen, Eye of Twilight": {
+        "winrate": 0,
+        "matches": 5
+      },
+      "Sivir, Battle Mistress": {
+        "winrate": 40,
+        "matches": 5
+      },
+      "Annie, Dark Child": {
+        "winrate": 50,
+        "matches": 2
+      },
+      "Master Yi, Wuju Master": {
+        "winrate": 14,
+        "matches": 7
+      },
+      "Lux, Lady of Luminosity": {
+        "winrate": 0,
+        "matches": 1
+      },
+      "Jax, Grandmaster at Arms": {
+        "winrate": 100,
+        "matches": 2
+      },
+      "Renekton, Butcher of the Sands": {
+        "winrate": 50,
+        "matches": 10
+      },
+      "Poppy, Keeper of the Hammer": {
+        "winrate": 50,
+        "matches": 4
+      },
+      "Jinx, Loose Cannon": {
+        "winrate": 0,
+        "matches": 1
+      }
+    },
+    "Poppy, Keeper of the Hammer": {
+      "Kennen, Heart of the Tempest": {
+        "winrate": 14,
+        "matches": 21
+      },
+      "Master Yi, Wuju Bladesman": {
+        "winrate": 27,
+        "matches": 15
+      },
+      "Irelia, Blade Dancer": {
+        "winrate": 26,
+        "matches": 19
+      },
+      "Rengar, Pridestalker": {
+        "winrate": 38,
+        "matches": 16
+      },
+      "Azir, Emperor of the Sands": {
+        "winrate": 80,
+        "matches": 10
+      },
+      "Reksai, Void Burrower": {
+        "winrate": 23,
+        "matches": 13
+      },
+      "Diana, Scorn of the Moon": {
+        "winrate": 14,
+        "matches": 14
+      },
+      "Nasus, Curator of the Sands": {
+        "winrate": 73,
+        "matches": 11
+      },
+      "Draven, Glorious Executioner": {
+        "winrate": 54,
+        "matches": 13
+      },
+      "Leblanc, Deceiver": {
+        "winrate": 25,
+        "matches": 12
+      },
+      "Jayce, Defender of Tomorrow": {
+        "winrate": 43,
+        "matches": 7
+      },
+      "Khazix, Voidreaver": {
+        "winrate": 22,
+        "matches": 9
+      },
+      "Akali, Rogue Assassin": {
+        "winrate": 44,
+        "matches": 9
+      },
+      "Ezreal, Prodigal Explorer": {
+        "winrate": 33,
+        "matches": 6
+      },
+      "Lillia, Bashful Bloom": {
+        "winrate": 31,
+        "matches": 16
+      },
+      "Viktor, Herald of the Arcane": {
+        "winrate": 67,
+        "matches": 3
+      },
+      "Mel, Soul's Reflection": {
+        "winrate": 25,
+        "matches": 4
+      },
+      "Vex, Gloomist": {
+        "winrate": 33,
+        "matches": 6
+      },
+      "Fiora, Grand Duelist": {
+        "winrate": 62,
+        "matches": 13
+      },
+      "Ornn, Fire Below the Mountain": {
+        "winrate": 50,
+        "matches": 6
+      },
+      "Ambessa, Matriarch of War": {
+        "winrate": 57,
+        "matches": 7
+      },
+      "Kai'sa, Daughter of the Void": {
+        "winrate": 25,
+        "matches": 4
+      },
+      "Ivern, Green Father": {
+        "winrate": 67,
+        "matches": 9
+      },
+      "Pyke, Bloodharbor Ripper": {
+        "winrate": 43,
+        "matches": 7
+      },
+      "Zed, Master of Shadows": {
+        "winrate": 50,
+        "matches": 6
+      },
+      "Vi, Piltover Enforcer": {
+        "winrate": 50,
+        "matches": 4
+      },
+      "Lucian, Purifier": {
+        "winrate": 0,
+        "matches": 5
+      },
+      "Jhin, Virtuoso": {
+        "winrate": 14,
+        "matches": 7
+      },
+      "Rumble, Mechanized Menace": {
+        "winrate": 38,
+        "matches": 8
+      },
+      "Shen, Eye of Twilight": {
+        "winrate": 50,
+        "matches": 4
+      },
+      "Sivir, Battle Mistress": {
+        "winrate": 67,
+        "matches": 3
+      },
+      "Master Yi, Wuju Master": {
+        "winrate": 50,
+        "matches": 10
+      },
+      "Lux, Lady of Luminosity": {
+        "winrate": 100,
+        "matches": 1
+      },
+      "Jax, Grandmaster at Arms": {
+        "winrate": 50,
+        "matches": 6
+      },
+      "Renekton, Butcher of the Sands": {
+        "winrate": 100,
+        "matches": 5
+      },
+      "Renata Glasc, Chem-Baroness": {
+        "winrate": 50,
+        "matches": 4
+      },
+      "Sett, The Boss": {
+        "winrate": 0,
+        "matches": 1
+      },
+      "Teemo, Swift Scout": {
+        "winrate": 100,
+        "matches": 1
+      }
+    },
+    "Sett, The Boss": {
+      "Kennen, Heart of the Tempest": {
+        "winrate": 35,
+        "matches": 26
+      },
+      "Master Yi, Wuju Bladesman": {
+        "winrate": 45,
+        "matches": 29
+      },
+      "Irelia, Blade Dancer": {
+        "winrate": 44,
+        "matches": 18
+      },
+      "Rengar, Pridestalker": {
+        "winrate": 50,
+        "matches": 6
+      },
+      "Azir, Emperor of the Sands": {
+        "winrate": 50,
+        "matches": 16
+      },
+      "Reksai, Void Burrower": {
+        "winrate": 42,
+        "matches": 12
+      },
+      "Diana, Scorn of the Moon": {
+        "winrate": 25,
+        "matches": 12
+      },
+      "Nasus, Curator of the Sands": {
+        "winrate": 50,
+        "matches": 8
+      },
+      "Draven, Glorious Executioner": {
+        "winrate": 50,
+        "matches": 10
+      },
+      "Leblanc, Deceiver": {
+        "winrate": 29,
+        "matches": 14
+      },
+      "Jayce, Defender of Tomorrow": {
+        "winrate": 0,
+        "matches": 9
+      },
+      "Khazix, Voidreaver": {
+        "winrate": 33,
+        "matches": 6
+      },
+      "Akali, Rogue Assassin": {
+        "winrate": 44,
+        "matches": 9
+      },
+      "Ezreal, Prodigal Explorer": {
+        "winrate": 0,
+        "matches": 2
+      },
+      "Lillia, Bashful Bloom": {
+        "winrate": 50,
+        "matches": 2
+      },
+      "Viktor, Herald of the Arcane": {
+        "winrate": 40,
+        "matches": 10
+      },
+      "Mel, Soul's Reflection": {
+        "winrate": 67,
+        "matches": 3
+      },
+      "Vex, Gloomist": {
+        "winrate": 50,
+        "matches": 2
+      },
+      "Fiora, Grand Duelist": {
+        "winrate": 50,
+        "matches": 6
+      },
+      "Ornn, Fire Below the Mountain": {
+        "winrate": 25,
+        "matches": 4
+      },
+      "Ambessa, Matriarch of War": {
+        "winrate": 50,
+        "matches": 4
+      },
+      "Kai'sa, Daughter of the Void": {
+        "winrate": 60,
+        "matches": 5
+      },
+      "Ivern, Green Father": {
+        "winrate": 50,
+        "matches": 2
+      },
+      "Pyke, Bloodharbor Ripper": {
+        "winrate": 50,
+        "matches": 4
+      },
+      "Zed, Master of Shadows": {
+        "winrate": 100,
+        "matches": 1
+      },
+      "Vi, Piltover Enforcer": {
+        "winrate": 33,
+        "matches": 3
+      },
+      "Lucian, Purifier": {
+        "winrate": 0,
+        "matches": 2
+      },
+      "Jhin, Virtuoso": {
+        "winrate": 50,
+        "matches": 2
+      },
+      "Rumble, Mechanized Menace": {
+        "winrate": 0,
+        "matches": 1
+      },
+      "Shen, Eye of Twilight": {
+        "winrate": 40,
+        "matches": 5
+      },
+      "Sivir, Battle Mistress": {
+        "winrate": 67,
+        "matches": 3
+      },
+      "Annie, Dark Child": {
+        "winrate": 0,
+        "matches": 1
+      },
+      "Master Yi, Wuju Master": {
+        "winrate": 100,
+        "matches": 1
+      },
+      "Jax, Grandmaster at Arms": {
+        "winrate": 33,
+        "matches": 3
+      },
+      "Renekton, Butcher of the Sands": {
+        "winrate": 0,
+        "matches": 1
+      },
+      "Poppy, Keeper of the Hammer": {
+        "winrate": 100,
+        "matches": 1
+      },
+      "Miss Fortune, Bounty Hunter": {
+        "winrate": 100,
+        "matches": 2
+      },
+      "Volibear, Relentless Storm": {
+        "winrate": 0,
+        "matches": 1
+      },
+      "Ahri, Nine-Tailed Fox": {
+        "winrate": 100,
+        "matches": 2
+      },
+      "Darius, Hand of Noxus": {
+        "winrate": 100,
+        "matches": 1
+      }
+    },
+    "Teemo, Swift Scout": {
+      "Kennen, Heart of the Tempest": {
+        "winrate": 29,
+        "matches": 21
+      },
+      "Master Yi, Wuju Bladesman": {
+        "winrate": 12,
+        "matches": 17
+      },
+      "Irelia, Blade Dancer": {
+        "winrate": 36,
+        "matches": 14
+      },
+      "Rengar, Pridestalker": {
+        "winrate": 14,
+        "matches": 7
+      },
+      "Azir, Emperor of the Sands": {
+        "winrate": 30,
+        "matches": 10
+      },
+      "Reksai, Void Burrower": {
+        "winrate": 33,
+        "matches": 9
+      },
+      "Diana, Scorn of the Moon": {
+        "winrate": 33,
+        "matches": 6
+      },
+      "Nasus, Curator of the Sands": {
+        "winrate": 57,
+        "matches": 7
+      },
+      "Draven, Glorious Executioner": {
+        "winrate": 60,
+        "matches": 5
+      },
+      "Leblanc, Deceiver": {
+        "winrate": 67,
+        "matches": 3
+      },
+      "Jayce, Defender of Tomorrow": {
+        "winrate": 50,
+        "matches": 4
+      },
+      "Khazix, Voidreaver": {
+        "winrate": 57,
+        "matches": 7
+      },
+      "Akali, Rogue Assassin": {
+        "winrate": 33,
+        "matches": 6
+      },
+      "Ezreal, Prodigal Explorer": {
+        "winrate": 0,
+        "matches": 2
+      },
+      "Lillia, Bashful Bloom": {
+        "winrate": 0,
+        "matches": 1
+      },
+      "Viktor, Herald of the Arcane": {
+        "winrate": 50,
+        "matches": 6
+      },
+      "Mel, Soul's Reflection": {
+        "winrate": 25,
+        "matches": 4
+      },
+      "Vex, Gloomist": {
+        "winrate": 40,
+        "matches": 10
+      },
+      "Fiora, Grand Duelist": {
+        "winrate": 50,
+        "matches": 6
+      },
+      "Ornn, Fire Below the Mountain": {
+        "winrate": 50,
+        "matches": 4
+      },
+      "Ambessa, Matriarch of War": {
+        "winrate": 33,
+        "matches": 3
+      },
+      "Kai'sa, Daughter of the Void": {
+        "winrate": 20,
+        "matches": 5
+      },
+      "Ivern, Green Father": {
+        "winrate": 33,
+        "matches": 3
+      },
+      "Pyke, Bloodharbor Ripper": {
+        "winrate": 50,
+        "matches": 2
+      },
+      "Zed, Master of Shadows": {
+        "winrate": 40,
+        "matches": 5
+      },
+      "Vi, Piltover Enforcer": {
+        "winrate": 0,
+        "matches": 1
+      },
+      "Lucian, Purifier": {
+        "winrate": 0,
+        "matches": 1
+      },
+      "Jhin, Virtuoso": {
+        "winrate": 100,
+        "matches": 3
+      },
+      "Shen, Eye of Twilight": {
+        "winrate": 100,
+        "matches": 5
+      },
+      "Annie, Dark Child": {
+        "winrate": 100,
+        "matches": 2
+      },
+      "Lux, Lady of Luminosity": {
+        "winrate": 100,
+        "matches": 1
+      },
+      "Renekton, Butcher of the Sands": {
+        "winrate": 0,
+        "matches": 1
+      },
+      "Poppy, Keeper of the Hammer": {
+        "winrate": 0,
+        "matches": 1
+      },
+      "Ahri, Nine-Tailed Fox": {
+        "winrate": 0,
+        "matches": 1
+      },
+      "Yasuo, Unforgiven": {
+        "winrate": 0,
+        "matches": 1
+      }
+    },
+    "Miss Fortune, Bounty Hunter": {
+      "Kennen, Heart of the Tempest": {
+        "winrate": 14,
+        "matches": 14
+      },
+      "Master Yi, Wuju Bladesman": {
+        "winrate": 50,
+        "matches": 8
+      },
+      "Irelia, Blade Dancer": {
+        "winrate": 33,
+        "matches": 9
+      },
+      "Rengar, Pridestalker": {
+        "winrate": 25,
+        "matches": 4
+      },
+      "Azir, Emperor of the Sands": {
+        "winrate": 33,
+        "matches": 9
+      },
+      "Reksai, Void Burrower": {
+        "winrate": 29,
+        "matches": 7
+      },
+      "Diana, Scorn of the Moon": {
+        "winrate": 50,
+        "matches": 4
+      },
+      "Nasus, Curator of the Sands": {
+        "winrate": 40,
+        "matches": 5
+      },
+      "Draven, Glorious Executioner": {
+        "winrate": 33,
+        "matches": 3
+      },
+      "Leblanc, Deceiver": {
+        "winrate": 57,
+        "matches": 7
+      },
+      "Jayce, Defender of Tomorrow": {
+        "winrate": 29,
+        "matches": 7
+      },
+      "Khazix, Voidreaver": {
+        "winrate": 40,
+        "matches": 5
+      },
+      "Akali, Rogue Assassin": {
+        "winrate": 60,
+        "matches": 5
+      },
+      "Ezreal, Prodigal Explorer": {
+        "winrate": 60,
+        "matches": 5
+      },
+      "Lillia, Bashful Bloom": {
+        "winrate": 75,
+        "matches": 4
+      },
+      "Viktor, Herald of the Arcane": {
+        "winrate": 0,
+        "matches": 1
+      },
+      "Mel, Soul's Reflection": {
+        "winrate": 50,
+        "matches": 2
+      },
+      "Vex, Gloomist": {
+        "winrate": 33,
+        "matches": 3
+      },
+      "Fiora, Grand Duelist": {
+        "winrate": 25,
+        "matches": 4
+      },
+      "Ornn, Fire Below the Mountain": {
+        "winrate": 50,
+        "matches": 2
+      },
+      "Ambessa, Matriarch of War": {
+        "winrate": 0,
+        "matches": 1
+      },
+      "Kai'sa, Daughter of the Void": {
+        "winrate": 33,
+        "matches": 3
+      },
+      "Ivern, Green Father": {
+        "winrate": 0,
+        "matches": 1
+      },
+      "Pyke, Bloodharbor Ripper": {
+        "winrate": 100,
+        "matches": 1
+      },
+      "Zed, Master of Shadows": {
+        "winrate": 75,
+        "matches": 4
+      },
+      "Lucian, Purifier": {
+        "winrate": 100,
+        "matches": 1
+      },
+      "Jhin, Virtuoso": {
+        "winrate": 50,
+        "matches": 2
+      },
+      "Rumble, Mechanized Menace": {
+        "winrate": 100,
+        "matches": 1
+      },
+      "Shen, Eye of Twilight": {
+        "winrate": 100,
+        "matches": 1
+      },
+      "Sivir, Battle Mistress": {
+        "winrate": 100,
+        "matches": 3
+      },
+      "Sett, The Boss": {
+        "winrate": 0,
+        "matches": 2
+      },
+      "Ahri, Nine-Tailed Fox": {
+        "winrate": 100,
+        "matches": 1
+      },
+      "Leona, Radiant Dawn": {
+        "winrate": 100,
+        "matches": 1
+      }
+    },
+    "Volibear, Relentless Storm": {
+      "Kennen, Heart of the Tempest": {
+        "winrate": 30,
+        "matches": 10
+      },
+      "Master Yi, Wuju Bladesman": {
+        "winrate": 46,
+        "matches": 13
+      },
+      "Irelia, Blade Dancer": {
+        "winrate": 25,
+        "matches": 8
+      },
+      "Rengar, Pridestalker": {
+        "winrate": 43,
+        "matches": 7
+      },
+      "Azir, Emperor of the Sands": {
+        "winrate": 38,
+        "matches": 8
+      },
+      "Reksai, Void Burrower": {
+        "winrate": 0,
+        "matches": 2
+      },
+      "Diana, Scorn of the Moon": {
+        "winrate": 40,
+        "matches": 5
+      },
+      "Nasus, Curator of the Sands": {
+        "winrate": 71,
+        "matches": 7
+      },
+      "Draven, Glorious Executioner": {
+        "winrate": 25,
+        "matches": 4
+      },
+      "Leblanc, Deceiver": {
+        "winrate": 33,
+        "matches": 6
+      },
+      "Jayce, Defender of Tomorrow": {
+        "winrate": 0,
+        "matches": 3
+      },
+      "Khazix, Voidreaver": {
+        "winrate": 20,
+        "matches": 5
+      },
+      "Akali, Rogue Assassin": {
+        "winrate": 67,
+        "matches": 6
+      },
+      "Lillia, Bashful Bloom": {
+        "winrate": 50,
+        "matches": 2
+      },
+      "Viktor, Herald of the Arcane": {
+        "winrate": 83,
+        "matches": 6
+      },
+      "Mel, Soul's Reflection": {
+        "winrate": 67,
+        "matches": 3
+      },
+      "Vex, Gloomist": {
+        "winrate": 60,
+        "matches": 5
+      },
+      "Fiora, Grand Duelist": {
+        "winrate": 100,
+        "matches": 3
+      },
+      "Ornn, Fire Below the Mountain": {
+        "winrate": 100,
+        "matches": 2
+      },
+      "Ambessa, Matriarch of War": {
+        "winrate": 60,
+        "matches": 5
+      },
+      "Kai'sa, Daughter of the Void": {
+        "winrate": 100,
+        "matches": 1
+      },
+      "Pyke, Bloodharbor Ripper": {
+        "winrate": 50,
+        "matches": 2
+      },
+      "Zed, Master of Shadows": {
+        "winrate": 100,
+        "matches": 1
+      },
+      "Vi, Piltover Enforcer": {
+        "winrate": 50,
+        "matches": 2
+      },
+      "Jhin, Virtuoso": {
+        "winrate": 100,
+        "matches": 1
+      },
+      "Sivir, Battle Mistress": {
+        "winrate": 0,
+        "matches": 1
+      },
+      "Lux, Lady of Luminosity": {
+        "winrate": 0,
+        "matches": 1
+      },
+      "Sett, The Boss": {
+        "winrate": 100,
+        "matches": 1
+      },
+      "Ahri, Nine-Tailed Fox": {
+        "winrate": 100,
+        "matches": 2
+      },
+      "Jinx, Loose Cannon": {
+        "winrate": 0,
+        "matches": 1
+      }
+    },
+    "Ahri, Nine-Tailed Fox": {
+      "Kennen, Heart of the Tempest": {
+        "winrate": 17,
+        "matches": 6
+      },
+      "Master Yi, Wuju Bladesman": {
+        "winrate": 67,
+        "matches": 9
+      },
+      "Irelia, Blade Dancer": {
+        "winrate": 40,
+        "matches": 5
+      },
+      "Rengar, Pridestalker": {
+        "winrate": 38,
+        "matches": 8
+      },
+      "Azir, Emperor of the Sands": {
+        "winrate": 50,
+        "matches": 6
+      },
+      "Reksai, Void Burrower": {
+        "winrate": 20,
+        "matches": 5
+      },
+      "Diana, Scorn of the Moon": {
+        "winrate": 50,
+        "matches": 2
+      },
+      "Nasus, Curator of the Sands": {
+        "winrate": 100,
+        "matches": 3
+      },
+      "Draven, Glorious Executioner": {
+        "winrate": 33,
+        "matches": 3
+      },
+      "Leblanc, Deceiver": {
+        "winrate": 40,
+        "matches": 5
+      },
+      "Jayce, Defender of Tomorrow": {
+        "winrate": 0,
+        "matches": 5
+      },
+      "Khazix, Voidreaver": {
+        "winrate": 50,
+        "matches": 2
+      },
+      "Akali, Rogue Assassin": {
+        "winrate": 50,
+        "matches": 2
+      },
+      "Ezreal, Prodigal Explorer": {
+        "winrate": 33,
+        "matches": 3
+      },
+      "Lillia, Bashful Bloom": {
+        "winrate": 33,
+        "matches": 3
+      },
+      "Viktor, Herald of the Arcane": {
+        "winrate": 50,
+        "matches": 6
+      },
+      "Mel, Soul's Reflection": {
+        "winrate": 67,
+        "matches": 3
+      },
+      "Vex, Gloomist": {
+        "winrate": 50,
+        "matches": 2
+      },
+      "Fiora, Grand Duelist": {
+        "winrate": 50,
+        "matches": 2
+      },
+      "Ornn, Fire Below the Mountain": {
+        "winrate": 33,
+        "matches": 3
+      },
+      "Ambessa, Matriarch of War": {
+        "winrate": 100,
+        "matches": 1
+      },
+      "Kai'sa, Daughter of the Void": {
+        "winrate": 50,
+        "matches": 2
+      },
+      "Ivern, Green Father": {
+        "winrate": 100,
+        "matches": 1
+      },
+      "Pyke, Bloodharbor Ripper": {
+        "winrate": 50,
+        "matches": 2
+      },
+      "Zed, Master of Shadows": {
+        "winrate": 100,
+        "matches": 1
+      },
+      "Vi, Piltover Enforcer": {
+        "winrate": 100,
+        "matches": 1
+      },
+      "Lucian, Purifier": {
+        "winrate": 0,
+        "matches": 1
+      },
+      "Rumble, Mechanized Menace": {
+        "winrate": 0,
+        "matches": 1
+      },
+      "Shen, Eye of Twilight": {
+        "winrate": 100,
+        "matches": 2
+      },
+      "Sivir, Battle Mistress": {
+        "winrate": 0,
+        "matches": 1
+      },
+      "Master Yi, Wuju Master": {
+        "winrate": 100,
+        "matches": 1
+      },
+      "Sett, The Boss": {
+        "winrate": 0,
+        "matches": 2
+      },
+      "Teemo, Swift Scout": {
+        "winrate": 100,
+        "matches": 1
+      },
+      "Miss Fortune, Bounty Hunter": {
+        "winrate": 0,
+        "matches": 1
+      },
+      "Volibear, Relentless Storm": {
+        "winrate": 0,
+        "matches": 2
+      },
+      "Yasuo, Unforgiven": {
+        "winrate": 100,
+        "matches": 1
+      }
+    },
+    "Leona, Radiant Dawn": {
+      "Kennen, Heart of the Tempest": {
+        "winrate": 20,
+        "matches": 5
+      },
+      "Master Yi, Wuju Bladesman": {
+        "winrate": 0,
+        "matches": 3
+      },
+      "Irelia, Blade Dancer": {
+        "winrate": 33,
+        "matches": 6
+      },
+      "Rengar, Pridestalker": {
+        "winrate": 38,
+        "matches": 8
+      },
+      "Azir, Emperor of the Sands": {
+        "winrate": 67,
+        "matches": 3
+      },
+      "Reksai, Void Burrower": {
+        "winrate": 100,
+        "matches": 1
+      },
+      "Diana, Scorn of the Moon": {
+        "winrate": 14,
+        "matches": 7
+      },
+      "Nasus, Curator of the Sands": {
+        "winrate": 50,
+        "matches": 4
+      },
+      "Draven, Glorious Executioner": {
+        "winrate": 33,
+        "matches": 3
+      },
+      "Leblanc, Deceiver": {
+        "winrate": 100,
+        "matches": 1
+      },
+      "Jayce, Defender of Tomorrow": {
+        "winrate": 0,
+        "matches": 2
+      },
+      "Khazix, Voidreaver": {
+        "winrate": 33,
+        "matches": 3
+      },
+      "Akali, Rogue Assassin": {
+        "winrate": 0,
+        "matches": 5
+      },
+      "Ezreal, Prodigal Explorer": {
+        "winrate": 0,
+        "matches": 1
+      },
+      "Lillia, Bashful Bloom": {
+        "winrate": 0,
+        "matches": 1
+      },
+      "Viktor, Herald of the Arcane": {
+        "winrate": 0,
+        "matches": 1
+      },
+      "Mel, Soul's Reflection": {
+        "winrate": 50,
+        "matches": 2
+      },
+      "Vex, Gloomist": {
+        "winrate": 0,
+        "matches": 2
+      },
+      "Fiora, Grand Duelist": {
+        "winrate": 0,
+        "matches": 1
+      },
+      "Ornn, Fire Below the Mountain": {
+        "winrate": 50,
+        "matches": 2
+      },
+      "Ambessa, Matriarch of War": {
+        "winrate": 50,
+        "matches": 4
+      },
+      "Kai'sa, Daughter of the Void": {
+        "winrate": 0,
+        "matches": 2
+      },
+      "Ivern, Green Father": {
+        "winrate": 0,
+        "matches": 4
+      },
+      "Pyke, Bloodharbor Ripper": {
+        "winrate": 0,
+        "matches": 1
+      },
+      "Zed, Master of Shadows": {
+        "winrate": 50,
+        "matches": 2
+      },
+      "Vi, Piltover Enforcer": {
+        "winrate": 100,
+        "matches": 1
+      },
+      "Lucian, Purifier": {
+        "winrate": 100,
+        "matches": 1
+      },
+      "Rumble, Mechanized Menace": {
+        "winrate": 0,
+        "matches": 1
+      },
+      "Shen, Eye of Twilight": {
+        "winrate": 100,
+        "matches": 3
+      },
+      "Annie, Dark Child": {
+        "winrate": 67,
+        "matches": 3
+      },
+      "Miss Fortune, Bounty Hunter": {
+        "winrate": 0,
+        "matches": 1
+      },
+      "Darius, Hand of Noxus": {
+        "winrate": 0,
+        "matches": 1
+      }
+    },
+    "Jinx, Loose Cannon": {
+      "Kennen, Heart of the Tempest": {
+        "winrate": 27,
+        "matches": 11
+      },
+      "Master Yi, Wuju Bladesman": {
+        "winrate": 0,
+        "matches": 1
+      },
+      "Irelia, Blade Dancer": {
+        "winrate": 25,
+        "matches": 4
+      },
+      "Rengar, Pridestalker": {
+        "winrate": 0,
+        "matches": 1
+      },
+      "Azir, Emperor of the Sands": {
+        "winrate": 20,
+        "matches": 5
+      },
+      "Reksai, Void Burrower": {
+        "winrate": 25,
+        "matches": 4
+      },
+      "Diana, Scorn of the Moon": {
+        "winrate": 100,
+        "matches": 3
+      },
+      "Nasus, Curator of the Sands": {
+        "winrate": 14,
+        "matches": 7
+      },
+      "Draven, Glorious Executioner": {
+        "winrate": 0,
+        "matches": 2
+      },
+      "Leblanc, Deceiver": {
+        "winrate": 0,
+        "matches": 1
+      },
+      "Jayce, Defender of Tomorrow": {
+        "winrate": 0,
+        "matches": 5
+      },
+      "Khazix, Voidreaver": {
+        "winrate": 0,
+        "matches": 2
+      },
+      "Akali, Rogue Assassin": {
+        "winrate": 33,
+        "matches": 3
+      },
+      "Ezreal, Prodigal Explorer": {
+        "winrate": 0,
+        "matches": 2
+      },
+      "Lillia, Bashful Bloom": {
+        "winrate": 33,
+        "matches": 3
+      },
+      "Viktor, Herald of the Arcane": {
+        "winrate": 0,
+        "matches": 2
+      },
+      "Vex, Gloomist": {
+        "winrate": 0,
+        "matches": 4
+      },
+      "Ornn, Fire Below the Mountain": {
+        "winrate": 33,
+        "matches": 3
+      },
+      "Ambessa, Matriarch of War": {
+        "winrate": 50,
+        "matches": 2
+      },
+      "Kai'sa, Daughter of the Void": {
+        "winrate": 50,
+        "matches": 2
+      },
+      "Lucian, Purifier": {
+        "winrate": 100,
+        "matches": 1
+      },
+      "Jhin, Virtuoso": {
+        "winrate": 100,
+        "matches": 2
+      },
+      "Rumble, Mechanized Menace": {
+        "winrate": 100,
+        "matches": 1
+      },
+      "Lux, Lady of Luminosity": {
+        "winrate": 33,
+        "matches": 3
+      },
+      "Renekton, Butcher of the Sands": {
+        "winrate": 50,
+        "matches": 2
+      },
+      "Renata Glasc, Chem-Baroness": {
+        "winrate": 100,
+        "matches": 1
+      },
+      "Volibear, Relentless Storm": {
+        "winrate": 100,
+        "matches": 1
+      }
+    },
+    "Yasuo, Unforgiven": {
+      "Kennen, Heart of the Tempest": {
+        "winrate": 33,
+        "matches": 6
+      },
+      "Master Yi, Wuju Bladesman": {
+        "winrate": 17,
+        "matches": 6
+      },
+      "Irelia, Blade Dancer": {
+        "winrate": 20,
+        "matches": 5
+      },
+      "Rengar, Pridestalker": {
+        "winrate": 0,
+        "matches": 3
+      },
+      "Azir, Emperor of the Sands": {
+        "winrate": 43,
+        "matches": 7
+      },
+      "Reksai, Void Burrower": {
+        "winrate": 50,
+        "matches": 2
+      },
+      "Diana, Scorn of the Moon": {
+        "winrate": 40,
+        "matches": 5
+      },
+      "Nasus, Curator of the Sands": {
+        "winrate": 100,
+        "matches": 2
+      },
+      "Draven, Glorious Executioner": {
+        "winrate": 0,
+        "matches": 2
+      },
+      "Leblanc, Deceiver": {
+        "winrate": 0,
+        "matches": 4
+      },
+      "Khazix, Voidreaver": {
+        "winrate": 0,
+        "matches": 1
+      },
+      "Akali, Rogue Assassin": {
+        "winrate": 0,
+        "matches": 2
+      },
+      "Lillia, Bashful Bloom": {
+        "winrate": 0,
+        "matches": 1
+      },
+      "Viktor, Herald of the Arcane": {
+        "winrate": 67,
+        "matches": 3
+      },
+      "Mel, Soul's Reflection": {
+        "winrate": 0,
+        "matches": 3
+      },
+      "Ornn, Fire Below the Mountain": {
+        "winrate": 100,
+        "matches": 1
+      },
+      "Ambessa, Matriarch of War": {
+        "winrate": 0,
+        "matches": 2
+      },
+      "Kai'sa, Daughter of the Void": {
+        "winrate": 50,
+        "matches": 6
+      },
+      "Zed, Master of Shadows": {
+        "winrate": 50,
+        "matches": 2
+      },
+      "Lucian, Purifier": {
+        "winrate": 0,
+        "matches": 1
+      },
+      "Jhin, Virtuoso": {
+        "winrate": 0,
+        "matches": 1
+      },
+      "Rumble, Mechanized Menace": {
+        "winrate": 0,
+        "matches": 1
+      },
+      "Master Yi, Wuju Master": {
+        "winrate": 100,
+        "matches": 1
+      },
+      "Lux, Lady of Luminosity": {
+        "winrate": 100,
+        "matches": 2
+      },
+      "Teemo, Swift Scout": {
+        "winrate": 100,
+        "matches": 1
+      },
+      "Ahri, Nine-Tailed Fox": {
+        "winrate": 0,
+        "matches": 1
+      }
+    },
+    "Darius, Hand of Noxus": {
+      "Kennen, Heart of the Tempest": {
+        "winrate": 56,
+        "matches": 9
+      },
+      "Master Yi, Wuju Bladesman": {
+        "winrate": 25,
+        "matches": 4
+      },
+      "Irelia, Blade Dancer": {
+        "winrate": 40,
+        "matches": 5
+      },
+      "Rengar, Pridestalker": {
+        "winrate": 40,
+        "matches": 5
+      },
+      "Azir, Emperor of the Sands": {
+        "winrate": 0,
+        "matches": 2
+      },
+      "Reksai, Void Burrower": {
+        "winrate": 0,
+        "matches": 1
+      },
+      "Diana, Scorn of the Moon": {
+        "winrate": 100,
+        "matches": 1
+      },
+      "Nasus, Curator of the Sands": {
+        "winrate": 0,
+        "matches": 1
+      },
+      "Draven, Glorious Executioner": {
+        "winrate": 50,
+        "matches": 2
+      },
+      "Akali, Rogue Assassin": {
+        "winrate": 0,
+        "matches": 4
+      },
+      "Ezreal, Prodigal Explorer": {
+        "winrate": 50,
+        "matches": 2
+      },
+      "Viktor, Herald of the Arcane": {
+        "winrate": 0,
+        "matches": 1
+      },
+      "Fiora, Grand Duelist": {
+        "winrate": 100,
+        "matches": 1
+      },
+      "Ornn, Fire Below the Mountain": {
+        "winrate": 0,
+        "matches": 1
+      },
+      "Kai'sa, Daughter of the Void": {
+        "winrate": 100,
+        "matches": 1
+      },
+      "Pyke, Bloodharbor Ripper": {
+        "winrate": 0,
+        "matches": 1
+      },
+      "Lucian, Purifier": {
+        "winrate": 100,
+        "matches": 1
+      },
+      "Sivir, Battle Mistress": {
+        "winrate": 100,
+        "matches": 1
+      },
+      "Sett, The Boss": {
+        "winrate": 0,
+        "matches": 1
+      },
+      "Leona, Radiant Dawn": {
+        "winrate": 100,
+        "matches": 1
+      }
+    }
+  },
+  "source": {
+    "metagame": "4",
+    "relevance": "2",
+    "dateRange": "last_six_months",
+    "scrapedAt": "2026-08-31T05:12:57.824Z"
+  }
+}

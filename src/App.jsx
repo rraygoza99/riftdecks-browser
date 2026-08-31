@@ -7,6 +7,10 @@ import Pagination from './components/Pagination'
 import FavouritesView from './components/FavouritesView'
 import PrivacyPolicy from './components/PrivacyPolicy'
 import MetaView from './components/MetaView'
+import ConversionView from './components/ConversionView'
+import MetaTargetView from './components/MetaTargetView'
+import DrawOddsView from './components/DrawOddsView'
+import GoldfishView from './components/GoldfishView'
 import LegendsView from './components/LegendsView'
 import LegendAnalysis from './components/LegendAnalysis'
 import TournamentsView from './components/TournamentsView'
@@ -25,6 +29,10 @@ const DATE_RANGES = { '7d': 7, '30d': 30, '90d': 90, all: null }
 const PATH_TO_VIEW = {
   '/': 'main',
   '/meta': 'meta',
+  '/conversion': 'conversion',
+  '/meta-target': 'metatarget',
+  '/draws': 'draws',
+  '/goldfish': 'goldfish',
   '/legends': 'legends',
   '/tournaments': 'tournaments',
   '/guides': 'guides',
@@ -33,6 +41,94 @@ const PATH_TO_VIEW = {
   '/about': 'about',
   '/contact': 'contact',
 }
+
+// Left-drawer navigation. `match` marks the item active for related sub-views
+// (e.g. a single legend page keeps "Legends" highlighted).
+const NAV_ITEMS = [
+  {
+    key: 'main',
+    label: 'Home',
+    match: (v) => v === 'main',
+    icon: (
+      <path d="M8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4.5a.5.5 0 0 0 .5-.5v-4h2v4a.5.5 0 0 0 .5.5H14a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146z" />
+    ),
+  },
+  {
+    key: 'meta',
+    label: 'Meta',
+    match: (v) => v === 'meta',
+    icon: (
+      <path d="M0 0h1v15h15v1H0V0zm14.817 3.113a.5.5 0 0 1 .07.704l-4.5 5.5a.5.5 0 0 1-.74.037L7.06 6.767l-3.656 5.027a.5.5 0 0 1-.808-.588l4-5.5a.5.5 0 0 1 .758-.06l2.609 2.61 4.15-5.073a.5.5 0 0 1 .704-.07z" />
+    ),
+  },
+  {
+    key: 'conversion',
+    label: 'Conversion',
+    match: (v) => v === 'conversion',
+    icon: (
+      <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm.5 2a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-1 0v-9a.5.5 0 0 1 .5-.5zm2 3a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0v-6a.5.5 0 0 1 .5-.5zm2-2a.5.5 0 0 1 .5.5v8a.5.5 0 0 1-1 0v-8a.5.5 0 0 1 .5-.5zm2 4a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-1 0v-4a.5.5 0 0 1 .5-.5zm2-3a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zm2 2a.5.5 0 0 1 .5.5v5a.5.5 0 0 1-1 0v-5a.5.5 0 0 1 .5-.5z" />
+    ),
+  },
+  {
+    key: 'metatarget',
+    label: 'Meta Targeting',
+    match: (v) => v === 'metatarget',
+    icon: (
+      <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.5-11.5a.5.5 0 0 0-1 0v3.793L5.354 7.146a.5.5 0 1 0-.708.708l2.5 2.5a.5.5 0 0 0 .708 0l2.5-2.5a.5.5 0 0 0-.708-.708L8.5 8.293V4.5zM8 6a2 2 0 1 0 0 4 2 2 0 0 0 0-4z" />
+    ),
+  },
+  {
+    key: 'draws',
+    label: 'Draw Odds',
+    match: (v) => v === 'draws',
+    icon: (
+      <>
+        <path d="M12 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h8zM4 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H4z" />
+        <path d="M4 2.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5h-7a.5.5 0 0 1-.5-.5v-2zM4.5 7a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1zm.5 2a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zM4.5 11a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1zM7 6.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zM7 9a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zm-.5 2a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1zM9 6.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zm2.5.5a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1zM9 9a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zm.5 2a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1z" />
+      </>
+    ),
+  },
+  {
+    key: 'goldfish',
+    label: 'Consistency',
+    match: (v) => v === 'goldfish',
+    icon: (
+      <path d="M5 1a2 2 0 0 0-2 2v1.5a.5.5 0 0 0 .146.354l2.5 2.5a.5.5 0 0 1 0 .708l-2.5 2.5A.5.5 0 0 0 3 11.5V13a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-1.5a.5.5 0 0 0-.146-.354l-2.5-2.5a.5.5 0 0 1 0-.708l2.5-2.5A.5.5 0 0 0 13 4.5V3a2 2 0 0 0-2-2H5zm6 1a1 1 0 0 1 1 1v1.293l-2.354 2.353a1.5 1.5 0 0 0 0 2.122L12 11.207V13a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-1.793l2.354-2.353a1.5 1.5 0 0 0 0-2.122L4 4.293V3a1 1 0 0 1 1-1h6z" />
+    ),
+  },
+  {
+    key: 'legends',
+    label: 'Legends',
+    match: (v) => v === 'legends' || v === 'legend',
+    icon: (
+      <path d="M3.5 2A1.5 1.5 0 0 0 2 3.5v9A1.5 1.5 0 0 0 3.5 14h9a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 12.5 2h-9zM3 3.5a.5.5 0 0 1 .5-.5H8v10H3.5a.5.5 0 0 1-.5-.5v-9zM9 13V3h3.5a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5H9z" />
+    ),
+  },
+  {
+    key: 'tournaments',
+    label: 'Tournaments',
+    match: (v) => v === 'tournaments' || v === 'tournament',
+    icon: (
+      <path d="M2.5.5A.5.5 0 0 1 3 0h10a.5.5 0 0 1 .5.5c0 .538-.012 1.05-.034 1.536a3 3 0 1 1-1.133 5.89c-.79 1.865-1.878 2.777-2.833 3.011v2.173l1.425.356c.194.048.377.135.537.255L13.3 15.1a.5.5 0 0 1-.3.9H3a.5.5 0 0 1-.3-.9l1.838-1.379c.16-.12.343-.207.537-.255L6.5 13.11v-2.173c-.955-.234-2.043-1.146-2.833-3.012a3 3 0 1 1-1.132-5.89A33.076 33.076 0 0 1 2.5.5zm.099 2.54a2 2 0 0 0 .72 3.935c-.333-1.05-.588-2.346-.72-3.935zm10.083 3.935a2 2 0 0 0 .72-3.935c-.133 1.59-.388 2.885-.72 3.935z" />
+    ),
+  },
+  {
+    key: 'guides',
+    label: 'Guides',
+    match: (v) => v === 'guides' || v === 'guide',
+    icon: (
+      <path d="M1 2.828c.885-.37 2.154-.769 3.388-.893 1.33-.134 2.458.063 3.112.752v9.746c-.935-.53-2.12-.603-3.213-.493-1.18.12-2.37.461-3.287.811V2.828zm7.5-.141c.654-.689 1.782-.886 3.112-.752 1.234.124 2.503.523 3.388.893v9.923c-.918-.35-2.107-.692-3.287-.81-1.094-.111-2.278-.039-3.213.492V2.687zM8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783z" />
+    ),
+  },
+  {
+    key: 'favourites',
+    label: 'Favourites',
+    match: (v) => v === 'favourites',
+    icon: (
+      <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+    ),
+  },
+]
 
 export default function App() {
   const navigate = useNavigate()
@@ -76,6 +172,7 @@ export default function App() {
 
   const [pageSize, setPageSize] = useState(20)
   const [currentPage, setCurrentPage] = useState(1)
+  const [menuOpen, setMenuOpen] = useState(false)
 
   // Load static JSON produced by the scrape script
   useEffect(() => {
@@ -241,6 +338,18 @@ export default function App() {
       <header className="app-header">
         <button
           type="button"
+          className="app-menu-btn"
+          onClick={() => setMenuOpen(true)}
+          title="Open menu"
+          aria-label="Open navigation menu"
+          aria-expanded={menuOpen}
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+            <path fillRule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
+          </svg>
+        </button>
+        <button
+          type="button"
           className="app-brand"
           onClick={() => goTo('main')}
           title="Back to home"
@@ -262,77 +371,6 @@ export default function App() {
           </div>
         </button>
         <div className="app-header-actions">
-          {view !== 'main' && (
-            <button
-              className="fav-nav-btn"
-              onClick={() => goTo('main')}
-              title="Back to home"
-              type="button"
-            >
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" style={{marginRight: '6px', verticalAlign: '-2px'}}>
-                <path d="M8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4.5a.5.5 0 0 0 .5-.5v-4h2v4a.5.5 0 0 0 .5.5H14a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146z"/>
-              </svg>
-              Home
-            </button>
-          )}
-          <button
-            className={`fav-nav-btn${view === 'meta' ? ' fav-nav-btn--active' : ''}`}
-            onClick={() => goTo(view === 'meta' ? 'main' : 'meta')}
-            title="Meta dashboard"
-            type="button"
-          >
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" style={{marginRight: '6px', verticalAlign: '-2px'}}>
-              <path d="M0 0h1v15h15v1H0V0zm14.817 3.113a.5.5 0 0 1 .07.704l-4.5 5.5a.5.5 0 0 1-.74.037L7.06 6.767l-3.656 5.027a.5.5 0 0 1-.808-.588l4-5.5a.5.5 0 0 1 .758-.06l2.609 2.61 4.15-5.073a.5.5 0 0 1 .704-.07z"/>
-            </svg>
-            Meta
-          </button>
-          <button
-            className={`fav-nav-btn${view === 'legends' || view === 'legend' ? ' fav-nav-btn--active' : ''}`}
-            onClick={() => goTo(view === 'legends' || view === 'legend' ? 'main' : 'legends')}
-            title="Legend card analysis"
-            type="button"
-          >
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" style={{marginRight: '6px', verticalAlign: '-2px'}}>
-              <path d="M3.5 2A1.5 1.5 0 0 0 2 3.5v9A1.5 1.5 0 0 0 3.5 14h9a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 12.5 2h-9zM3 3.5a.5.5 0 0 1 .5-.5H8v10H3.5a.5.5 0 0 1-.5-.5v-9zM9 13V3h3.5a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5H9z"/>
-            </svg>
-            Legends
-          </button>
-          <button
-            className={`fav-nav-btn${view === 'tournaments' || view === 'tournament' ? ' fav-nav-btn--active' : ''}`}
-            onClick={() => goTo(view === 'tournaments' || view === 'tournament' ? 'main' : 'tournaments')}
-            title="Tournaments"
-            type="button"
-          >
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" style={{marginRight: '6px', verticalAlign: '-2px'}}>
-              <path d="M2.5.5A.5.5 0 0 1 3 0h10a.5.5 0 0 1 .5.5c0 .538-.012 1.05-.034 1.536a3 3 0 1 1-1.133 5.89c-.79 1.865-1.878 2.777-2.833 3.011v2.173l1.425.356c.194.048.377.135.537.255L13.3 15.1a.5.5 0 0 1-.3.9H3a.5.5 0 0 1-.3-.9l1.838-1.379c.16-.12.343-.207.537-.255L6.5 13.11v-2.173c-.955-.234-2.043-1.146-2.833-3.012a3 3 0 1 1-1.132-5.89A33.076 33.076 0 0 1 2.5.5zm.099 2.54a2 2 0 0 0 .72 3.935c-.333-1.05-.588-2.346-.72-3.935zm10.083 3.935a2 2 0 0 0 .72-3.935c-.133 1.59-.388 2.885-.72 3.935z"/>
-            </svg>
-            Tournaments
-          </button>
-          <button
-            className={`fav-nav-btn${view === 'guides' || view === 'guide' ? ' fav-nav-btn--active' : ''}`}
-            onClick={() => goTo(view === 'guides' || view === 'guide' ? 'main' : 'guides')}
-            title="Guides & meta reports"
-            type="button"
-          >
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" style={{marginRight: '6px', verticalAlign: '-2px'}}>
-              <path d="M1 2.828c.885-.37 2.154-.769 3.388-.893 1.33-.134 2.458.063 3.112.752v9.746c-.935-.53-2.12-.603-3.213-.493-1.18.12-2.37.461-3.287.811V2.828zm7.5-.141c.654-.689 1.782-.886 3.112-.752 1.234.124 2.503.523 3.388.893v9.923c-.918-.35-2.107-.692-3.287-.81-1.094-.111-2.278-.039-3.213.492V2.687zM8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783z"/>
-            </svg>
-            Guides
-          </button>
-          <button
-            className={`fav-nav-btn${view === 'favourites' ? ' fav-nav-btn--active' : ''}`}
-            onClick={() => goTo(view === 'favourites' ? 'main' : 'favourites')}
-            title="Favourite decks"
-            type="button"
-          >
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" style={{marginRight: '6px', verticalAlign: '-2px'}}>
-              <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
-            </svg>
-            Favourites
-            {favourites.size > 0 && (
-              <span className="fav-nav-badge">{favourites.size}</span>
-            )}
-          </button>
           <button
             className="theme-toggle-btn"
             onClick={toggleTheme}
@@ -353,6 +391,49 @@ export default function App() {
         </div>
       </header>
 
+      <div
+        className={`side-drawer-backdrop${menuOpen ? ' side-drawer-backdrop--open' : ''}`}
+        onClick={() => setMenuOpen(false)}
+        aria-hidden="true"
+      />
+      <nav className={`side-drawer${menuOpen ? ' side-drawer--open' : ''}`} aria-hidden={!menuOpen}>
+        <div className="side-drawer-head">
+          <span className="side-drawer-title">Navigation</span>
+          <button
+            type="button"
+            className="side-drawer-close"
+            onClick={() => setMenuOpen(false)}
+            aria-label="Close menu"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 16 16">
+              <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
+            </svg>
+          </button>
+        </div>
+        <ul className="side-drawer-list">
+          {NAV_ITEMS.map((item) => (
+            <li key={item.key}>
+              <button
+                type="button"
+                className={`drawer-nav-btn${item.match(view) ? ' drawer-nav-btn--active' : ''}`}
+                onClick={() => {
+                  goTo(item.key)
+                  setMenuOpen(false)
+                }}
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                  {item.icon}
+                </svg>
+                <span>{item.label}</span>
+                {item.key === 'favourites' && favourites.size > 0 && (
+                  <span className="fav-nav-badge">{favourites.size}</span>
+                )}
+              </button>
+            </li>
+          ))}
+        </ul>
+      </nav>
+
       {view === 'favourites' ? (
         <FavouritesView
           allDecks={allDecks}
@@ -362,6 +443,14 @@ export default function App() {
         />
       ) : view === 'meta' ? (
         <MetaView allDecks={allDecks} />
+      ) : view === 'conversion' ? (
+        <ConversionView allDecks={allDecks} />
+      ) : view === 'metatarget' ? (
+        <MetaTargetView />
+      ) : view === 'draws' ? (
+        <DrawOddsView />
+      ) : view === 'goldfish' ? (
+        <GoldfishView />
       ) : view === 'legends' ? (
         <LegendsView onOpen={(slug) => goTo(`legend/${slug}`)} />
       ) : view === 'legend' ? (

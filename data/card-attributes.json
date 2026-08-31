@@ -1,0 +1,734 @@
+{
+  "UNL-002": {
+    "id": "69bc5bead308c64675ca8962",
+    "name": "Inferna",
+    "riftbound_id": "unl-002-219",
+    "tcgplayer_id": "684213",
+    "collector_number": 2,
+    "attributes": {
+      "energy": 2,
+      "might": 1,
+      "power": null
+    },
+    "classification": {
+      "type": "Unit",
+      "supertype": null,
+      "rarity": "Common",
+      "domain": [
+        "Fury"
+      ]
+    },
+    "text": {
+      "rich": "<p>[Ambush] (You may play me as a [Reaction] to a battlefield where you have units.)<br />[Assault 2] (+2 :rb_might: while I'm an attacker.)</p>",
+      "plain": "[Ambush] (You may play me as a [Reaction] to a battlefield where you have units.)[Assault 2] (+2 :rb_might: while I'm an attacker.)",
+      "flavour": "Ironic, isn't it? Water all around us, but your boat's still gonna burn."
+    },
+    "set": {
+      "set_id": "UNL",
+      "label": "Unleashed"
+    },
+    "media": {
+      "image_url": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/5db9d66fc22887e8686a13ffdfe480106cbd3b35-744x1039.png?accountingTag=RB",
+      "artist": "Kudos Productions",
+      "accessibility_text": "Riftbound Unit: Inferna. [Ambush] (You may play me as a [Reaction] to a battlefield where you have units.)\n[Assault 2] (+2 [S] while I'm an attacker.)"
+    },
+    "tags": [
+      "Bilgewater"
+    ],
+    "orientation": "portrait",
+    "metadata": {
+      "clean_name": "Inferna",
+      "updated_on": "2026-07-10T22:45:00.925200+00:00",
+      "alternate_art": false,
+      "overnumbered": false,
+      "signature": false
+    },
+    "new": false
+  },
+  "SFD-155": {
+    "id": "69bc5bddd308c64675ca8864",
+    "name": "Honest Broker",
+    "riftbound_id": "sfd-155-221",
+    "tcgplayer_id": "664946",
+    "collector_number": 155,
+    "attributes": {
+      "energy": 2,
+      "might": 2,
+      "power": null
+    },
+    "classification": {
+      "type": "Unit",
+      "supertype": null,
+      "rarity": "Common",
+      "domain": [
+        "Order"
+      ]
+    },
+    "text": {
+      "rich": "<p>[Deathknell] — Play a Gold gear token exhausted. (When I die, get the effect.)</p>",
+      "plain": "[Deathknell] — Play a Gold gear token exhausted. (When I die, get the effect.)",
+      "flavour": "Among criminals, gangsters, and thieves, she trades in the most valuable currency: trust."
+    },
+    "set": {
+      "set_id": "SFD",
+      "label": "Spiritforged"
+    },
+    "media": {
+      "image_url": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/b3cc9bb93888f6f276f674baa16a0e53c724ae99-744x1039.png?accountingTag=RB",
+      "artist": "Kudos Productions",
+      "accessibility_text": "Riftbound Unit: Honest Broker. [Deathknell] — Play a Gold gear token exhausted. (When I die, get the effect.)"
+    },
+    "tags": [
+      "Ionia"
+    ],
+    "orientation": "portrait",
+    "metadata": {
+      "clean_name": "Honest Broker",
+      "updated_on": "2026-07-10T22:44:46.454668+00:00",
+      "alternate_art": false,
+      "overnumbered": false,
+      "signature": false
+    },
+    "new": false
+  },
+  "OGN-211": {
+    "id": "69bc5bd2d308c64675ca879f",
+    "name": "Faithful Manufactor",
+    "riftbound_id": "ogn-211-298",
+    "tcgplayer_id": "653004",
+    "collector_number": 211,
+    "attributes": {
+      "energy": 3,
+      "might": 2,
+      "power": null
+    },
+    "classification": {
+      "type": "Unit",
+      "supertype": null,
+      "rarity": "Common",
+      "domain": [
+        "Order"
+      ]
+    },
+    "text": {
+      "rich": "<p>When you play me, play a 1 :rb_might: Recruit unit token here.</p>",
+      "plain": "When you play me, play a 1 :rb_might: Recruit unit token here.",
+      "flavour": "Hard work is its own reward."
+    },
+    "set": {
+      "set_id": "OGN",
+      "label": "Origins"
+    },
+    "media": {
+      "image_url": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/b41107b7456a2a38d203983b1e504e3789d6b6ea-744x1039.png?accountingTag=RB",
+      "artist": "Kudos Productions",
+      "accessibility_text": "Riftbound Unit: Faithful Manufactor. When you play me, play a 1 [S] Recruit unit token here."
+    },
+    "tags": [
+      "Piltover"
+    ],
+    "orientation": "portrait",
+    "metadata": {
+      "clean_name": "Faithful Manufactor",
+      "updated_on": "2026-07-10T22:44:35.281348+00:00",
+      "alternate_art": false,
+      "overnumbered": false,
+      "signature": false
+    },
+    "new": false
+  },
+  "SFD-029": {
+    "id": "69bc5be2d308c64675ca88c5",
+    "name": "Rek'Sai - Breacher",
+    "riftbound_id": "sfd-029-221",
+    "tcgplayer_id": "666493",
+    "collector_number": 29,
+    "attributes": {
+      "energy": 3,
+      "might": 3,
+      "power": null
+    },
+    "classification": {
+      "type": "Unit",
+      "supertype": "Champion",
+      "rarity": "Epic",
+      "domain": [
+        "Fury"
+      ]
+    },
+    "text": {
+      "rich": "<p>[Accelerate] (You may pay :rb_energy_1::rb_rune_fury: as an additional cost to have me enter ready.)<br />[Assault] (+1 :rb_might: while I'm an attacker.)<br />Friendly units played from anywhere other than a player's hand have [Accelerate].</p>",
+      "plain": "[Accelerate] (You may pay :rb_energy_1::rb_rune_fury: as an additional cost to have me enter ready.)[Assault] (+1 :rb_might: while I'm an attacker.)Friendly units played from anywhere other than a player's hand have [Accelerate].",
+      "flavour": null
+    },
+    "set": {
+      "set_id": "SFD",
+      "label": "Spiritforged"
+    },
+    "media": {
+      "image_url": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/999e2d25ea32da971e7b99b6e75558286c17949e-744x1039.png?accountingTag=RB",
+      "artist": "Six More Vodka",
+      "accessibility_text": "Riftbound Unit: Rek'Sai, Breacher. [Accelerate] (You may pay [1][C] as an additional cost to have me enter ready.)\n[Assault] (+1 [S] while I'm an attacker.)\nFriendly units played from anywhere other than a player's hand have [Accelerate]."
+    },
+    "tags": [
+      "Rek'Sai",
+      "The Void"
+    ],
+    "orientation": "portrait",
+    "metadata": {
+      "clean_name": "RekSai Breacher",
+      "updated_on": "2026-07-10T22:44:51.841837+00:00",
+      "alternate_art": false,
+      "overnumbered": false,
+      "signature": false
+    },
+    "new": false
+  },
+  "UNL-006": {
+    "id": "69bff35558d0fbca04e9371b",
+    "name": "Sharkling",
+    "riftbound_id": "unl-006-219",
+    "tcgplayer_id": "685002",
+    "collector_number": 6,
+    "attributes": {
+      "energy": 3,
+      "might": 1,
+      "power": null
+    },
+    "classification": {
+      "type": "Unit",
+      "supertype": null,
+      "rarity": "Common",
+      "domain": [
+        "Fury"
+      ]
+    },
+    "text": {
+      "rich": "<p>[Accelerate] (You may pay :rb_energy_1::rb_rune_fury: as an additional cost to have me enter ready.)<br />[Assault 4] (+4 :rb_might: while I'm an attacker.)</p>",
+      "plain": "[Accelerate] (You may pay :rb_energy_1::rb_rune_fury: as an additional cost to have me enter ready.)[Assault 4] (+4 :rb_might: while I'm an attacker.)",
+      "flavour": "Don't worry, it's only a little one.\"\r\n \r\n- Common last words"
+    },
+    "set": {
+      "set_id": "UNL",
+      "label": "Unleashed"
+    },
+    "media": {
+      "image_url": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/f2aa213fe1e54d0d6f1507c7ed8829c8ba2bc610-744x1039.png?accountingTag=RB",
+      "artist": "Kudos Productions",
+      "accessibility_text": "Riftbound Unit: Sharkling. [Accelerate] (You may pay [1][C] as an additional cost to have me enter ready.)\n[Assault 4] (+4 [S] while I'm an attacker.)"
+    },
+    "tags": [
+      "Bilgewater"
+    ],
+    "orientation": "portrait",
+    "metadata": {
+      "clean_name": "Sharkling",
+      "updated_on": "2026-07-10T22:45:06.813248+00:00",
+      "alternate_art": false,
+      "overnumbered": false,
+      "signature": false
+    },
+    "new": false
+  },
+  "UNL-153": {
+    "id": "69c8378e2c3db56eb7d760d6",
+    "name": "Carrion Dredger",
+    "riftbound_id": "unl-153-219",
+    "tcgplayer_id": "686334",
+    "collector_number": 153,
+    "attributes": {
+      "energy": 2,
+      "might": 1,
+      "power": null
+    },
+    "classification": {
+      "type": "Unit",
+      "supertype": null,
+      "rarity": "Common",
+      "domain": [
+        "Order"
+      ]
+    },
+    "text": {
+      "rich": "<p>[Deathknell][&gt;] Play a 1 :rb_might: Bird unit token with [Deflect] to your base. (When I die, get the effect. Opponents must pay :rb_rune_rainbow: to choose a [Deflect] unit with a spell or ability.)</p>",
+      "plain": "[Deathknell][&gt;] Play a 1 :rb_might: Bird unit token with [Deflect] to your base. (When I die, get the effect. Opponents must pay :rb_rune_rainbow: to choose a [Deflect] unit with a spell or ability.)",
+      "flavour": "The automaton paused and stared in wonder. Amidst the detritus sat a single unbroken egg."
+    },
+    "set": {
+      "set_id": "UNL",
+      "label": "Unleashed"
+    },
+    "media": {
+      "image_url": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/84d8b6d7a9cab2b78a465a8e0caf597f3ef5a175-744x1039.png?accountingTag=RB",
+      "artist": "Six More Vodka",
+      "accessibility_text": "Riftbound Unit: Carrion Dredger. [Deathknell][>] Play a 1 [S] Bird unit token with [Deflect] to your base. (When I die, get the effect. Opponents must pay [A] to choose a [Deflect] unit with a spell or ability.)"
+    },
+    "tags": [
+      "Mech",
+      "Zaun"
+    ],
+    "orientation": "portrait",
+    "metadata": {
+      "clean_name": "Carrion Dredger",
+      "updated_on": "2026-07-10T22:45:15.742648+00:00",
+      "alternate_art": false,
+      "overnumbered": false,
+      "signature": false
+    },
+    "new": false
+  },
+  "OGN-012": {
+    "id": "69bc5bc7d308c64675ca86c2",
+    "name": "Noxus Hopeful",
+    "riftbound_id": "ogn-012-298",
+    "tcgplayer_id": "652783",
+    "collector_number": 12,
+    "attributes": {
+      "energy": 4,
+      "might": 4,
+      "power": null
+    },
+    "classification": {
+      "type": "Unit",
+      "supertype": null,
+      "rarity": "Common",
+      "domain": [
+        "Fury"
+      ]
+    },
+    "text": {
+      "rich": "<p>[Legion] — I cost :rb_energy_2: less. (Get the effect if you've played another card this turn.)</p>",
+      "plain": "[Legion] — I cost :rb_energy_2: less. (Get the effect if you've played another card this turn.)",
+      "flavour": "First to the front, first to glory."
+    },
+    "set": {
+      "set_id": "OGN",
+      "label": "Origins"
+    },
+    "media": {
+      "image_url": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/c3bb6f4cb58feeb50e396d12ec9865c5434025af-744x1039.png?accountingTag=RB",
+      "artist": "Six More Vodka",
+      "accessibility_text": "Riftbound Unit: Noxus Hopeful. [Legion] — I cost [2] less. (Get the effect if you've played another card this turn.)"
+    },
+    "tags": [
+      "Trifarian",
+      "Noxus"
+    ],
+    "orientation": "portrait",
+    "metadata": {
+      "clean_name": "Noxus Hopeful",
+      "updated_on": "2026-07-10T22:44:23.884048+00:00",
+      "alternate_art": false,
+      "overnumbered": false,
+      "signature": false
+    },
+    "new": false
+  },
+  "VEN-023": {
+    "id": "6a517609ad64d2d80a4f03d6",
+    "name": "Zed, From the Shadows",
+    "riftbound_id": "ven-023a-166",
+    "tcgplayer_id": null,
+    "collector_number": 23,
+    "attributes": {
+      "energy": 4,
+      "might": 4,
+      "power": 1
+    },
+    "classification": {
+      "type": "Unit",
+      "supertype": "Champion",
+      "rarity": "Epic",
+      "domain": [
+        "Fury"
+      ]
+    },
+    "text": {
+      "rich": "<p>You may discard 1 as an additional cost to play me.<br />When you play me, if you paid the additional cost, play a 0 :rb_might: Shadow Clone unit token.</p>",
+      "plain": "You may discard 1 as an additional cost to play me.When you play me, if you paid the additional cost, play a 0 :rb_might: Shadow Clone unit token.",
+      "flavour": null
+    },
+    "set": {
+      "set_id": "VEN",
+      "label": "Vendetta"
+    },
+    "media": {
+      "image_url": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/dcf031bd69c4880c33d68f73dde8e391a6059be7-744x1039.png?accountingTag=RB",
+      "artist": "League Splash Team",
+      "accessibility_text": "Riftbound Unit: Zed, From the Shadows. You may discard 1 as an additional cost to play me.\nWhen you play me, if you paid the additional cost, play a 0 [S] Shadow Clone unit token."
+    },
+    "tags": [
+      "Zed"
+    ],
+    "orientation": "portrait",
+    "metadata": {
+      "clean_name": null,
+      "updated_on": "2026-07-10T22:45:29.083230+00:00",
+      "alternate_art": false,
+      "overnumbered": false,
+      "signature": false
+    },
+    "new": true
+  },
+  "SFD-021": {
+    "id": "69bc5bdfd308c64675ca8897",
+    "name": "Ferrous Forerunner",
+    "riftbound_id": "sfd-021-221",
+    "tcgplayer_id": "666364",
+    "collector_number": 21,
+    "attributes": {
+      "energy": 6,
+      "might": 6,
+      "power": 1
+    },
+    "classification": {
+      "type": "Unit",
+      "supertype": null,
+      "rarity": "Rare",
+      "domain": [
+        "Fury"
+      ]
+    },
+    "text": {
+      "rich": "<p>[Deathknell] — Play two 3 :rb_might: Mech unit tokens to your base. (When I die, get the effect.)</p>",
+      "plain": "[Deathknell] — Play two 3 :rb_might: Mech unit tokens to your base. (When I die, get the effect.)",
+      "flavour": "You see a wreck waiting to happen. I just see parts that aren't spare yet."
+    },
+    "set": {
+      "set_id": "SFD",
+      "label": "Spiritforged"
+    },
+    "media": {
+      "image_url": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/b2873a352c0158a677255894cec458d1c17709f7-744x1039.png?accountingTag=RB",
+      "artist": "Envar Studio",
+      "accessibility_text": "Riftbound Unit: Ferrous Forerunner. [Deathknell] — Play two 3 [S] Mech unit tokens to your base. (When I die, get the effect.)"
+    },
+    "tags": [
+      "Mech",
+      "Yordle",
+      "Bandle City"
+    ],
+    "orientation": "portrait",
+    "metadata": {
+      "clean_name": "Ferrous Forerunner",
+      "updated_on": "2026-07-10T22:44:49.277846+00:00",
+      "alternate_art": false,
+      "overnumbered": false,
+      "signature": false
+    },
+    "new": false
+  },
+  "OGN-209": {
+    "id": "69bc5bd2d308c64675ca879d",
+    "name": "Cull the Weak",
+    "riftbound_id": "ogn-209-298",
+    "tcgplayer_id": "653002",
+    "collector_number": 209,
+    "attributes": {
+      "energy": 2,
+      "might": null,
+      "power": 1
+    },
+    "classification": {
+      "type": "Spell",
+      "supertype": null,
+      "rarity": "Common",
+      "domain": [
+        "Order"
+      ]
+    },
+    "text": {
+      "rich": "<p>Each player kills one of their units.</p>",
+      "plain": "Each player kills one of their units.",
+      "flavour": "What good is having a plank if nobody ever walks it?"
+    },
+    "set": {
+      "set_id": "OGN",
+      "label": "Origins"
+    },
+    "media": {
+      "image_url": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/49338a4b31727c6ef50e7dbc54e7004dcd2b6f4c-744x1039.png?accountingTag=RB",
+      "artist": "Kudos Productions",
+      "accessibility_text": "Riftbound Spell: Cull the Weak. Each player kills one of their units."
+    },
+    "tags": [],
+    "orientation": "portrait",
+    "metadata": {
+      "clean_name": "Cull the Weak",
+      "updated_on": "2026-07-10T22:44:35.159059+00:00",
+      "alternate_art": false,
+      "overnumbered": false,
+      "signature": false
+    },
+    "new": false
+  },
+  "OGN-004": {
+    "id": "69bc5bc6d308c64675ca86b9",
+    "name": "Cleave",
+    "riftbound_id": "ogn-004-298",
+    "tcgplayer_id": "652774",
+    "collector_number": 4,
+    "attributes": {
+      "energy": 1,
+      "might": null,
+      "power": null
+    },
+    "classification": {
+      "type": "Spell",
+      "supertype": null,
+      "rarity": "Common",
+      "domain": [
+        "Fury"
+      ]
+    },
+    "text": {
+      "rich": "<p>[Action] (Play on your turn or in showdowns.)<br />Give a unit [Assault 3] this turn. (+3 :rb_might: while it's an attacker.)</p>",
+      "plain": "[Action] (Play on your turn or in showdowns.)Give a unit [Assault 3] this turn. (+3 :rb_might: while it's an attacker.)",
+      "flavour": "Nobody ever won a war without attacking."
+    },
+    "set": {
+      "set_id": "OGN",
+      "label": "Origins"
+    },
+    "media": {
+      "image_url": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/95d476a1e88ff547fb846149619177bc7e3cea9f-744x1039.png?accountingTag=RB",
+      "artist": "Kudos Productions",
+      "accessibility_text": "Riftbound Spell: Cleave. [Action] (Play on your turn or in showdowns.)\nGive a unit [Assault 3] this turn. (+3 [S] while it's an attacker.)"
+    },
+    "tags": [],
+    "orientation": "portrait",
+    "metadata": {
+      "clean_name": "Cleave",
+      "updated_on": "2026-07-10T22:44:23.484005+00:00",
+      "alternate_art": false,
+      "overnumbered": false,
+      "signature": false
+    },
+    "new": false
+  },
+  "SFD-175": {
+    "id": "69bc5be1d308c64675ca88bc",
+    "name": "Undertitan",
+    "riftbound_id": "sfd-175-221",
+    "tcgplayer_id": "666484",
+    "collector_number": 175,
+    "attributes": {
+      "energy": 6,
+      "might": 5,
+      "power": 1
+    },
+    "classification": {
+      "type": "Unit",
+      "supertype": null,
+      "rarity": "Rare",
+      "domain": [
+        "Order"
+      ]
+    },
+    "text": {
+      "rich": "<p>When you play me, give your other units +2 :rb_might: this turn.<br />As I'm revealed from your deck, [Add] :rb_energy_2:.</p>",
+      "plain": "When you play me, give your other units +2 :rb_might: this turn.As I'm revealed from your deck, [Add] :rb_energy_2:.",
+      "flavour": "If it stayed under, it would be less of a problem."
+    },
+    "set": {
+      "set_id": "SFD",
+      "label": "Spiritforged"
+    },
+    "media": {
+      "image_url": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/aa3bd795a1fa015b42bf64a2d588f527342c2a15-744x1039.png?accountingTag=RB",
+      "artist": "Kudos Productions",
+      "accessibility_text": "Riftbound Unit: Undertitan. When you play me, give your other units +2 [S] this turn.\nAs I'm revealed from your deck, [Add] [2]."
+    },
+    "tags": [
+      "The Void"
+    ],
+    "orientation": "portrait",
+    "metadata": {
+      "clean_name": "Undertitan",
+      "updated_on": "2026-07-10T22:44:51.356980+00:00",
+      "alternate_art": false,
+      "overnumbered": false,
+      "signature": false
+    },
+    "new": false
+  },
+  "SFD-003": {
+    "id": "69bc5be4d308c64675ca88f0",
+    "name": "Blood Rush",
+    "riftbound_id": "sfd-003-221",
+    "tcgplayer_id": "666792",
+    "collector_number": 3,
+    "attributes": {
+      "energy": 1,
+      "might": null,
+      "power": null
+    },
+    "classification": {
+      "type": "Spell",
+      "supertype": null,
+      "rarity": "Common",
+      "domain": [
+        "Fury"
+      ]
+    },
+    "text": {
+      "rich": "<p>[Action] (Play on your turn or in showdowns.)<br />[Repeat] :rb_energy_1: (You may pay the additional cost to repeat this spell's effect.)<br />Give a unit [Assault 2]. (+2 :rb_might: while it's an attacker.)</p>",
+      "plain": "[Action] (Play on your turn or in showdowns.)[Repeat] :rb_energy_1: (You may pay the additional cost to repeat this spell's effect.)Give a unit [Assault 2]. (+2 :rb_might: while it's an attacker.)",
+      "flavour": null
+    },
+    "set": {
+      "set_id": "SFD",
+      "label": "Spiritforged"
+    },
+    "media": {
+      "image_url": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/931b77b9ab56c3abc85686be4d2452c450f9b3e0-744x1039.png?accountingTag=RB",
+      "artist": "Rafael Zanchetin",
+      "accessibility_text": "Riftbound Spell: Blood Rush. [Action] (Play on your turn or in showdowns.)\n[Repeat] [1] (You may pay the additional cost to repeat this spell's effect.)\nGive a unit [Assault 2]. (+2 [M] while it's an attacker.)"
+    },
+    "tags": [],
+    "orientation": "portrait",
+    "metadata": {
+      "clean_name": "Blood Rush",
+      "updated_on": "2026-07-10T22:44:54.373304+00:00",
+      "alternate_art": false,
+      "overnumbered": false,
+      "signature": false
+    },
+    "new": false
+  },
+  "OGN-029": {
+    "id": "69bc5bc8d308c64675ca86d4",
+    "name": "Falling Star",
+    "riftbound_id": "ogn-029-298",
+    "tcgplayer_id": "652801",
+    "collector_number": 29,
+    "attributes": {
+      "energy": 2,
+      "might": null,
+      "power": 2
+    },
+    "classification": {
+      "type": "Spell",
+      "supertype": null,
+      "rarity": "Rare",
+      "domain": [
+        "Fury"
+      ]
+    },
+    "text": {
+      "rich": "<p>Deal 3 to a unit.<br />Deal 3 to a unit.</p>",
+      "plain": "Deal 3 to a unit.Deal 3 to a unit.",
+      "flavour": null
+    },
+    "set": {
+      "set_id": "OGN",
+      "label": "Origins"
+    },
+    "media": {
+      "image_url": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/9cf2d2e59e1bf839cdf5c2a77e95f5d1e871788f-744x1039.png?accountingTag=RB",
+      "artist": "Kudos Productions",
+      "accessibility_text": "Riftbound Spell: Falling Star. Deal 3 to a unit.\nDeal 3 to a unit."
+    },
+    "tags": [],
+    "orientation": "portrait",
+    "metadata": {
+      "clean_name": "Falling Star",
+      "updated_on": "2026-07-10T22:44:24.819626+00:00",
+      "alternate_art": false,
+      "overnumbered": false,
+      "signature": false
+    },
+    "new": false
+  },
+  "UNL-165": {
+    "id": "69bff35758d0fbca04e93732",
+    "name": "Shadow's Call",
+    "riftbound_id": "unl-165-219",
+    "tcgplayer_id": "685253",
+    "collector_number": 165,
+    "attributes": {
+      "energy": 2,
+      "might": null,
+      "power": null
+    },
+    "classification": {
+      "type": "Spell",
+      "supertype": null,
+      "rarity": "Uncommon",
+      "domain": [
+        "Order"
+      ]
+    },
+    "text": {
+      "rich": "<p>Choose a friendly unit without [Temporary]. Give it [Temporary]. Draw 2. (Kill it at the start of its controller's Beginning Phase, before scoring.)</p>",
+      "plain": "Choose a friendly unit without [Temporary]. Give it [Temporary]. Draw 2. (Kill it at the start of its controller's Beginning Phase, before scoring.)",
+      "flavour": "You're a disappointment. A failure. Why fight it?"
+    },
+    "set": {
+      "set_id": "UNL",
+      "label": "Unleashed"
+    },
+    "media": {
+      "image_url": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/5a9a81d353131fc275313e737d55ca6e2661dce6-744x1039.png?accountingTag=RB",
+      "artist": "Kudos Productions",
+      "accessibility_text": "Riftbound Spell: Shadow's Call. Choose a friendly unit without [Temporary]. Give it [Temporary]. Draw 2. (Kill it at the start of its controller's Beginning Phase, before scoring.)"
+    },
+    "tags": [],
+    "orientation": "portrait",
+    "metadata": {
+      "clean_name": "Shadows Call",
+      "updated_on": "2026-07-10T22:45:08.140966+00:00",
+      "alternate_art": false,
+      "overnumbered": false,
+      "signature": false
+    },
+    "new": false
+  },
+  "SFD-188": {
+    "id": "69bc5bdcd308c64675ca8851",
+    "name": "Void Rush",
+    "riftbound_id": "sfd-188-221",
+    "tcgplayer_id": "664923",
+    "collector_number": 188,
+    "attributes": {
+      "energy": 2,
+      "might": null,
+      "power": 1
+    },
+    "classification": {
+      "type": "Spell",
+      "supertype": "Signature",
+      "rarity": "Epic",
+      "domain": [
+        "Fury",
+        "Order"
+      ]
+    },
+    "text": {
+      "rich": "<p>Reveal the top 2 cards of your Main Deck. You may play one of them, reducing its cost by :rb_energy_2:. Draw any you did not play this way.</p>",
+      "plain": "Reveal the top 2 cards of your Main Deck. You may play one of them, reducing its cost by :rb_energy_2:. Draw any you did not play this way.",
+      "flavour": null
+    },
+    "set": {
+      "set_id": "SFD",
+      "label": "Spiritforged"
+    },
+    "media": {
+      "image_url": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/ce606f096ae76485cd8dd3cc337629b510f0d1e7-744x1039.png?accountingTag=RB",
+      "artist": "Kudos Productions",
+      "accessibility_text": "Riftbound Spell: Void Rush. Reveal the top 2 cards of your Main Deck. You may play one of them, reducing its cost by [2]. Draw any you did not play this way."
+    },
+    "tags": [
+      "Rek'Sai"
+    ],
+    "orientation": "portrait",
+    "metadata": {
+      "clean_name": "Void Rush",
+      "updated_on": "2026-07-10T22:44:45.432746+00:00",
+      "alternate_art": false,
+      "overnumbered": false,
+      "signature": false
+    },
+    "new": false
+  }
+}

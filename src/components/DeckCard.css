@@ -223,6 +223,11 @@
   background: transparent;
 }
 
+.deck-card__btn--copy {
+  margin-left: auto;
+  cursor: pointer;
+}
+
 .deck-card__link {
   font-size: 0.8rem;
   color: var(--text-muted);

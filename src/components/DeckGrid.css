@@ -139,8 +139,9 @@
 }
 
 .col-link {
-  width: 80px;
+  width: 170px;
   text-align: right;
+  white-space: nowrap;
 }
 
 .deck-link-btn {
@@ -158,5 +159,24 @@
   background: var(--bg-card);
   border-color: var(--accent-bright, #7eb8f7);
   text-decoration: none;
+  color: var(--text-primary);
+}
+
+.deck-copy-btn {
+  display: inline-block;
+  margin-left: 6px;
+  padding: 4px 10px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+  background: transparent;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s, color 0.15s;
+}
+
+.deck-copy-btn:hover {
+  border-color: var(--accent-bright, #7eb8f7);
   color: var(--text-primary);
 }

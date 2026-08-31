@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import './DeckGrid.css'
 
 const STANDING_COLORS = { 1: 'gold', 2: 'silver', 3: 'bronze' }
@@ -17,6 +18,32 @@ function formatDate(date) {
     day: 'numeric',
     timeZone: 'UTC',
   })
+}
+
+function isoDate(date) {
+  if (!date) return null
+  if (date instanceof Date) return date.toISOString().slice(0, 10)
+  return String(date).slice(0, 10)
+}
+
+// Assemble a clean, portable JSON snapshot of a deck's known metadata.
+function buildDeckJson(deck) {
+  return {
+    id: deck.deckId ?? deck.id ?? null,
+    deckName: deck.deckName ?? null,
+    legendName: deck.legendName ?? null,
+    legendSlug: deck.legendSlug ?? null,
+    standing: deck.standing ?? null,
+    price: deck.price ?? null,
+    tournamentName: deck.tournamentName ?? null,
+    tournamentDate: isoDate(deck.tournamentDate),
+    tournamentCountry: deck.tournamentCountry ?? null,
+    totalPlayers: deck.totalPlayers ?? null,
+    meta: deck.meta ?? null,
+    metaSet: deck.metaSet ?? null,
+    legendTileUrl: deck.legendTileUrl ?? null,
+    deckUrl: deck.deckUrl ? `https://riftdecks.com${deck.deckUrl}` : null,
+  }
 }
 
 // Star icons as inline SVG (Bootstrap Icons: BsStar / BsStarFill)
@@ -43,7 +70,18 @@ function StarIcon({ filled, onClick, title }) {
 }
 
 export default function DeckGrid({ decks, isFavourite, onToggleFavourite, groupByLegend = false }) {
+  const [copiedId, setCopiedId] = useState(null)
   if (!decks.length) return null
+
+  const copyDeck = async (deck) => {
+    try {
+      await navigator.clipboard.writeText(JSON.stringify(buildDeckJson(deck), null, 2))
+      setCopiedId(deck.id)
+      setTimeout(() => setCopiedId((cur) => (cur === deck.id ? null : cur)), 1500)
+    } catch {
+      setCopiedId(null)
+    }
+  }
 
   const renderRow = (deck) => {
     const colorClass = STANDING_COLORS[deck.standing] ?? 'default'
@@ -82,6 +120,14 @@ export default function DeckGrid({ decks, isFavourite, onToggleFavourite, groupB
           >
             View ↗
           </a>
+          <button
+            type="button"
+            className="deck-copy-btn"
+            onClick={(e) => { e.stopPropagation(); copyDeck(deck) }}
+            title="Copy deck JSON to clipboard"
+          >
+            {copiedId === deck.id ? 'Copied!' : 'Copy JSON'}
+          </button>
         </td>
       </tr>
     )

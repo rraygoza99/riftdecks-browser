@@ -1,0 +1,72 @@
+{
+  "deck": {
+    "title": "魔救之奇迹",
+    "legendName": "Reksai, Void Burrower",
+    "mainDeckSize": 40,
+    "runeDeckSize": 12,
+    "distinctCards": 16,
+    "costSource": "api",
+    "curve": {
+      "1": 5,
+      "2": 20,
+      "3": 6,
+      "4": 5,
+      "6": 4
+    }
+  },
+  "config": {
+    "iterations": 10000,
+    "handSize": 5,
+    "turns": 4,
+    "powerPerTurn": 1,
+    "maxMulligans": 1,
+    "mulligan": {
+      "minEarlyCards": 1,
+      "earlyCostMin": 1,
+      "earlyCostMax": 2
+    }
+  },
+  "metrics": {
+    "brickRate": 0,
+    "curveEfficiency": 93.03,
+    "curveEfficiencyByTurn": {
+      "1": 51.16,
+      "2": 99.53,
+      "3": 93.68,
+      "4": 99.76
+    },
+    "turnWhiffRate": {
+      "1": 48.84,
+      "2": 0.32,
+      "3": 0.04,
+      "4": 0.01
+    },
+    "avgCardsPlayedByTurn": {
+      "1": 0.512,
+      "2": 1,
+      "3": 1.144,
+      "4": 1.467
+    },
+    "avgFloatByTurn": {
+      "1": 0.488,
+      "2": 0.009,
+      "3": 0.19,
+      "4": 0.01
+    },
+    "avgMulligans": 0.006,
+    "thresholds": {
+      "units_by_t3": {
+        "description": ">= 3 unit played by turn 3",
+        "probability": 0
+      },
+      "units_by_t4": {
+        "description": ">= 4 unit played by turn 4",
+        "probability": 2.69
+      }
+    }
+  },
+  "performance": {
+    "runtimeMs": 516,
+    "threadsUsed": 8
+  }
+}

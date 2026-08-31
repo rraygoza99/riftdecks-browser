@@ -1,0 +1,189 @@
+{
+  "meta": {
+    "title": "魔救之奇迹",
+    "legendName": "Reksai, Void Burrower",
+    "mainDeckSize": 40,
+    "runeDeckSize": 12,
+    "distinctCards": 16,
+    "costSource": "api"
+  },
+  "cards": [
+    {
+      "name": "Rek'Sai, Breacher",
+      "count": 1,
+      "cost": 3,
+      "type": "unit",
+      "tags": [
+        "Fury",
+        "Rek'Sai",
+        "The Void"
+      ],
+      "code": "SFD-029"
+    },
+    {
+      "name": "Carrion Dredger",
+      "count": 3,
+      "cost": 2,
+      "type": "unit",
+      "tags": [
+        "Order",
+        "Mech",
+        "Zaun"
+      ],
+      "code": "UNL-153"
+    },
+    {
+      "name": "Honest Broker",
+      "count": 3,
+      "cost": 2,
+      "type": "unit",
+      "tags": [
+        "Order",
+        "Ionia"
+      ],
+      "code": "SFD-155"
+    },
+    {
+      "name": "Inferna",
+      "count": 3,
+      "cost": 2,
+      "type": "unit",
+      "tags": [
+        "Fury",
+        "Bilgewater"
+      ],
+      "code": "UNL-002"
+    },
+    {
+      "name": "Faithful Manufactor",
+      "count": 3,
+      "cost": 3,
+      "type": "unit",
+      "tags": [
+        "Order",
+        "Piltover"
+      ],
+      "code": "OGN-211"
+    },
+    {
+      "name": "Sharkling",
+      "count": 2,
+      "cost": 3,
+      "type": "unit",
+      "tags": [
+        "Fury",
+        "Bilgewater"
+      ],
+      "code": "UNL-006"
+    },
+    {
+      "name": "Noxus Hopeful",
+      "count": 3,
+      "cost": 4,
+      "type": "unit",
+      "tags": [
+        "Fury",
+        "Trifarian",
+        "Noxus"
+      ],
+      "code": "OGN-012"
+    },
+    {
+      "name": "Zed, From the Shadows",
+      "count": 2,
+      "cost": 4,
+      "type": "unit",
+      "tags": [
+        "Fury",
+        "Zed"
+      ],
+      "code": "VEN-023"
+    },
+    {
+      "name": "Ferrous Forerunner",
+      "count": 2,
+      "cost": 6,
+      "type": "unit",
+      "tags": [
+        "Fury",
+        "Mech",
+        "Yordle",
+        "Bandle City"
+      ],
+      "code": "SFD-021"
+    },
+    {
+      "name": "Undertitan",
+      "count": 2,
+      "cost": 6,
+      "type": "unit",
+      "tags": [
+        "Order",
+        "The Void"
+      ],
+      "code": "SFD-175"
+    },
+    {
+      "name": "Blood Rush",
+      "count": 3,
+      "cost": 1,
+      "type": "spell",
+      "tags": [
+        "Fury"
+      ],
+      "code": "SFD-003"
+    },
+    {
+      "name": "Cleave",
+      "count": 2,
+      "cost": 1,
+      "type": "spell",
+      "tags": [
+        "Fury"
+      ],
+      "code": "OGN-004"
+    },
+    {
+      "name": "Cull the Weak",
+      "count": 3,
+      "cost": 2,
+      "type": "spell",
+      "tags": [
+        "Order"
+      ],
+      "code": "OGN-209"
+    },
+    {
+      "name": "Falling Star",
+      "count": 3,
+      "cost": 2,
+      "type": "spell",
+      "tags": [
+        "Fury"
+      ],
+      "code": "OGN-029"
+    },
+    {
+      "name": "Shadow's Call",
+      "count": 2,
+      "cost": 2,
+      "type": "spell",
+      "tags": [
+        "Order"
+      ],
+      "code": "UNL-165"
+    },
+    {
+      "name": "Void Rush",
+      "count": 3,
+      "cost": 2,
+      "type": "spell",
+      "tags": [
+        "Fury",
+        "Order",
+        "Rek'Sai"
+      ],
+      "code": "SFD-188"
+    }
+  ]
+}
