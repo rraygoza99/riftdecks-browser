@@ -66,7 +66,7 @@ export function bestSpend(costs, budget) {
 const DEFAULT_CONFIG = {
   handSize: 4,
   turns: 4,
-  powerPerTurn: 2, // two runes channeled per turn: pool on turn t = t * powerPerTurn
+  runesPerTurn: 2, // two runes channeled per turn: pool on turn t = t * runesPerTurn
   maxMulligans: 1,
   mulligan: { minEarlyCards: 1, earlyCostMin: 1, earlyCostMax: 2 },
   thresholds: [
@@ -118,7 +118,7 @@ export function simulateGame(deckCards, config, rng) {
 
   for (let t = 1; t <= T; t++) {
     if (t > 1 && idx < deck.length) hand.push(...draw(1))
-    const pool = t * cfg.powerPerTurn
+    const pool = t * cfg.runesPerTurn
     available[t - 1] = pool
 
     const { spent: used, indices } = bestSpend(
@@ -273,7 +273,7 @@ export function finalizeReport(agg, { deckMeta = {}, config, runtimeMs = null, t
       iterations: agg.n,
       handSize: cfg.handSize,
       turns: cfg.turns,
-      powerPerTurn: cfg.powerPerTurn,
+      runesPerTurn: cfg.runesPerTurn,
       maxMulligans: cfg.maxMulligans,
       mulligan: cfg.mulligan,
     },

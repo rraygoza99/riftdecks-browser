@@ -30,7 +30,7 @@ const PATH_TO_VIEW = {
   '/': 'main',
   '/meta': 'meta',
   '/conversion': 'conversion',
-  '/meta-target': 'metatarget',
+  '/metatarget': 'metatarget',
   '/draws': 'draws',
   '/goldfish': 'goldfish',
   '/legends': 'legends',

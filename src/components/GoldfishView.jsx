@@ -22,7 +22,7 @@ export default function GoldfishView() {
   const [iterations, setIterations] = useState(10000)
   const [turns, setTurns] = useState(4)
   const [handSize, setHandSize] = useState(4)
-  const [powerPerTurn, setPowerPerTurn] = useState(2)
+  const [runesPerTurn, setRunesPerTurn] = useState(2)
   const [minEarly, setMinEarly] = useState(1)
   const [t3Units, setT3Units] = useState(3)
   const [t4Units, setT4Units] = useState(4)
@@ -85,7 +85,7 @@ export default function GoldfishView() {
             iterations,
             turns,
             handSize,
-            powerPerTurn,
+            runesPerTurn,
             mulligan: { minEarlyCards: minEarly, earlyCostMin: 1, earlyCostMax: 2 },
             thresholds: [
               { name: 'units_by_t3', turn: 3, type: 'unit', count: t3Units },
@@ -164,8 +164,8 @@ export default function GoldfishView() {
               type="number"
               min="1"
               max="6"
-              value={powerPerTurn}
-              onChange={(e) => setPowerPerTurn(clampInt(e.target.value, 1, 6, 2))}
+              value={runesPerTurn}
+              onChange={(e) => setRunesPerTurn(clampInt(e.target.value, 1, 6, 2))}
             />
           </div>
           <div className="gf-field">
@@ -233,7 +233,7 @@ export default function GoldfishView() {
                     <th>Curve efficiency</th>
                     <th className="gf-num">Whiff %</th>
                     <th className="gf-num">Avg cards</th>
-                    <th className="gf-num">Avg float</th>
+                    <th className="gf-num">Avg unused runes</th>
                   </tr>
                 </thead>
                 <tbody>
