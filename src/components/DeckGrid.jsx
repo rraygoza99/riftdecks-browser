@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { placePercent, formatPlacePercent } from '../tournamentUtils'
 import './DeckGrid.css'
 
 const STANDING_COLORS = { 1: 'gold', 2: 'silver', 3: 'bronze' }
@@ -107,6 +108,16 @@ export default function DeckGrid({ decks, isFavourite, onToggleFavourite, groupB
         <td className="col-players">
           {deck.totalPlayers != null ? deck.totalPlayers : '—'}
         </td>
+        <td
+          className="col-placepct"
+          title={
+            deck.totalPlayers
+              ? `${standingLabel(deck.standing)} of ${deck.totalPlayers} players`
+              : 'Field size unknown'
+          }
+        >
+          {formatPlacePercent(placePercent(deck))}
+        </td>
         <td className="col-date">{formatDate(deck.tournamentDate)}</td>
         <td className="col-price">
           {deck.price != null ? `$${deck.price.toFixed(2)}` : '—'}
@@ -155,6 +166,7 @@ export default function DeckGrid({ decks, isFavourite, onToggleFavourite, groupB
             <th className="col-legend">Legend</th>
             <th className="col-tournament">Tournament</th>
             <th className="col-players">Players</th>
+            <th className="col-placepct" title="Placement as a percentile of the field">Top %</th>
             <th className="col-date">Date</th>
             <th className="col-price">Price</th>
             <th className="col-link"></th>
@@ -164,7 +176,7 @@ export default function DeckGrid({ decks, isFavourite, onToggleFavourite, groupB
           groups.map((g) => (
             <tbody key={g.legend} className="deck-legend-group">
               <tr className="deck-group-row">
-                <td className="deck-group-header" colSpan={8}>
+                <td className="deck-group-header" colSpan={9}>
                   {g.legend}
                   <span className="deck-group-count">
                     {g.decks.length} deck{g.decks.length !== 1 ? 's' : ''}

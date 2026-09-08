@@ -17,9 +17,19 @@ const PLACEMENT_OPTIONS = [
   { value: 32, label: 'Top 32' },
 ]
 
+const PLACE_PCT_OPTIONS = [
+  { value: 0, label: 'Any %' },
+  { value: 1, label: 'Top 1%' },
+  { value: 5, label: 'Top 5%' },
+  { value: 10, label: 'Top 10%' },
+  { value: 25, label: 'Top 25%' },
+  { value: 50, label: 'Top 50%' },
+]
+
 const SORT_OPTIONS = [
   { value: 'date', label: 'Most recent' },
   { value: 'placement', label: 'Best placement' },
+  { value: 'placePct', label: 'Best placement %' },
   { value: 'price', label: 'Lowest price' },
 ]
 
@@ -95,6 +105,25 @@ export default function FilterBar({
           onChange={(e) => onFilterChange('maxPlacement', Number(e.target.value))}
         >
           {PLACEMENT_OPTIONS.map((opt) => (
+            <option key={opt.value} value={opt.value}>
+              {opt.label}
+            </option>
+          ))}
+        </select>
+      </div>
+
+      {/* Placement percentile */}
+      <div className="filter-group">
+        <label className="filter-label" htmlFor="placepct-select">
+          Placement %
+        </label>
+        <select
+          id="placepct-select"
+          className="filter-select"
+          value={filters.maxPlacePct ?? 0}
+          onChange={(e) => onFilterChange('maxPlacePct', Number(e.target.value))}
+        >
+          {PLACE_PCT_OPTIONS.map((opt) => (
             <option key={opt.value} value={opt.value}>
               {opt.label}
             </option>

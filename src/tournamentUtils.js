@@ -57,3 +57,19 @@ export function countryFlagEmoji(code) {
   if (!/^[A-Z]{2}$/.test(cc)) return ''
   return String.fromCodePoint(...[...cc].map((c) => 0x1f1e6 + c.charCodeAt(0) - 65))
 }
+
+// Placement as a percentile of the tournament field (lower = better): 8th of
+// 200 => 4. Returns null when the field size or standing is unknown.
+export function placePercent(deck) {
+  const total = deck.totalPlayers
+  if (!total || !deck.standing) return null
+  return (deck.standing / total) * 100
+}
+
+// Human-readable placement percentile, e.g. "4%", "0.5%", or "—".
+export function formatPlacePercent(pct) {
+  if (pct == null) return '—'
+  if (pct < 1) return `${pct.toFixed(1).replace(/\.0$/, '')}%`
+  return pct < 10 ? `${pct.toFixed(1)}%` : `${Math.round(pct)}%`
+}
+

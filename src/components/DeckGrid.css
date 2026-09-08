@@ -127,6 +127,13 @@
   text-align: right;
 }
 
+.col-placepct {
+  white-space: nowrap;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  color: var(--text-primary);
+}
+
 .col-date {
   white-space: nowrap;
   color: var(--text-muted);

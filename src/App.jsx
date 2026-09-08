@@ -21,6 +21,7 @@ import GuidesView from './components/GuidesView'
 import GuideArticle from './components/GuideArticle'
 import useFavourites from './hooks/useFavourites'
 import useTheme from './hooks/useTheme'
+import { placePercent } from './tournamentUtils'
 
 const RELEVANCE_LABELS = { 0: 'All Events', 1: 'Local / Casual', 2: 'Competitive' }
 
@@ -165,6 +166,7 @@ export default function App() {
     meta: 'Vendetta',
     dateRange: '30d',
     maxPlacement: 0,
+    maxPlacePct: 0,
     maxPrice: 0,
     bestPerLegend: false,
     sortBy: 'date',
@@ -268,6 +270,13 @@ export default function App() {
       result = result.filter((d) => d.standing <= filters.maxPlacement)
     }
 
+    if (filters.maxPlacePct > 0) {
+      result = result.filter((d) => {
+        const pct = placePercent(d)
+        return pct != null && pct <= filters.maxPlacePct
+      })
+    }
+
     if (filters.maxPrice > 0) {
       result = result.filter((d) => d.price != null && d.price <= filters.maxPrice)
     }
@@ -298,6 +307,13 @@ export default function App() {
     } else if (filters.sortBy === 'placement') {
       result.sort((a, b) => {
         if (a.standing !== b.standing) return a.standing - b.standing
+        return (b.tournamentDate?.getTime() ?? 0) - (a.tournamentDate?.getTime() ?? 0)
+      })
+    } else if (filters.sortBy === 'placePct') {
+      result.sort((a, b) => {
+        const pa = placePercent(a) ?? Infinity
+        const pb = placePercent(b) ?? Infinity
+        if (pa !== pb) return pa - pb
         return (b.tournamentDate?.getTime() ?? 0) - (a.tournamentDate?.getTime() ?? 0)
       })
     } else if (filters.sortBy === 'price') {
