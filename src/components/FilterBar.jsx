@@ -27,10 +27,13 @@ const PLACE_PCT_OPTIONS = [
 ]
 
 const SORT_OPTIONS = [
-  { value: 'date', label: 'Most recent' },
-  { value: 'placement', label: 'Best placement' },
-  { value: 'placePct', label: 'Best placement %' },
-  { value: 'price', label: 'Lowest price' },
+  { value: 'date', label: 'Date' },
+  { value: 'legend', label: 'Legend' },
+  { value: 'tournament', label: 'Tournament' },
+  { value: 'players', label: 'Players' },
+  { value: 'placement', label: 'Placement' },
+  { value: 'placePct', label: 'Placement %' },
+  { value: 'price', label: 'Price' },
 ]
 
 export default function FilterBar({
@@ -153,18 +156,29 @@ export default function FilterBar({
         <label className="filter-label" htmlFor="sort-select">
           Sort by
         </label>
-        <select
-          id="sort-select"
-          className="filter-select"
-          value={filters.sortBy}
-          onChange={(e) => onFilterChange('sortBy', e.target.value)}
-        >
-          {SORT_OPTIONS.map((opt) => (
-            <option key={opt.value} value={opt.value}>
-              {opt.label}
-            </option>
-          ))}
-        </select>
+        <div className="filter-sort-row">
+          <select
+            id="sort-select"
+            className="filter-select"
+            value={filters.sortBy}
+            onChange={(e) => onFilterChange('sortBy', e.target.value)}
+          >
+            {SORT_OPTIONS.map((opt) => (
+              <option key={opt.value} value={opt.value}>
+                {opt.label}
+              </option>
+            ))}
+          </select>
+          <button
+            type="button"
+            className="filter-sort-dir"
+            title={filters.sortDir === 'asc' ? 'Ascending' : 'Descending'}
+            aria-label={filters.sortDir === 'asc' ? 'Ascending' : 'Descending'}
+            onClick={() => onFilterChange('sortDir', filters.sortDir === 'asc' ? 'desc' : 'asc')}
+          >
+            {filters.sortDir === 'asc' ? '▲' : '▼'}
+          </button>
+        </div>
       </div>
 
       {/* Best per legend */}

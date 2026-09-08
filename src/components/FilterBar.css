@@ -82,6 +82,28 @@
   background: var(--bg-secondary);
 }
 
+.filter-sort-row {
+  display: flex;
+  gap: 6px;
+  align-items: stretch;
+}
+
+.filter-sort-dir {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  color: var(--text-primary);
+  border-radius: 4px;
+  padding: 0 10px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: border-color 0.15s, color 0.15s;
+}
+
+.filter-sort-dir:hover {
+  border-color: var(--accent);
+  color: var(--accent-bright, #7eb8f7);
+}
+
 .filter-hint {
   font-size: 0.7rem;
   color: var(--text-muted);

@@ -25,6 +25,39 @@ import { placePercent } from './tournamentUtils'
 
 const RELEVANCE_LABELS = { 0: 'All Events', 1: 'Local / Casual', 2: 'Competitive' }
 
+// Direction a column defaults to the first time it's chosen as the sort key.
+const SORT_DEFAULT_DIR = {
+  date: 'desc',
+  legend: 'asc',
+  tournament: 'asc',
+  players: 'desc',
+  placement: 'asc',
+  placePct: 'asc',
+  price: 'asc',
+}
+
+// Ascending "natural" comparison for a given sort field. Unknowns sort last.
+function compareBySort(field, a, b) {
+  switch (field) {
+    case 'legend':
+      return (a.legendName || '').localeCompare(b.legendName || '')
+    case 'tournament':
+      return (a.tournamentName || '').localeCompare(b.tournamentName || '')
+    case 'players':
+      return (a.totalPlayers ?? Infinity) - (b.totalPlayers ?? Infinity)
+    case 'placement':
+      return (a.standing ?? Infinity) - (b.standing ?? Infinity)
+    case 'placePct':
+      return (placePercent(a) ?? Infinity) - (placePercent(b) ?? Infinity)
+    case 'price':
+      return (a.price ?? Infinity) - (b.price ?? Infinity)
+    case 'date':
+    default:
+      return (a.tournamentDate?.getTime() ?? 0) - (b.tournamentDate?.getTime() ?? 0)
+  }
+}
+
+
 const DATE_RANGES = { '7d': 7, '30d': 30, '90d': 90, all: null }
 
 const PATH_TO_VIEW = {
@@ -170,6 +203,7 @@ export default function App() {
     maxPrice: 0,
     bestPerLegend: false,
     sortBy: 'date',
+    sortDir: 'desc',
   })
 
   const [pageSize, setPageSize] = useState(20)
@@ -299,26 +333,13 @@ export default function App() {
       result = [...best.values()]
     }
 
-    if (filters.sortBy === 'date') {
-      result.sort((a, b) => {
-        const dt = (b.tournamentDate?.getTime() ?? 0) - (a.tournamentDate?.getTime() ?? 0)
-        return dt !== 0 ? dt : a.standing - b.standing
-      })
-    } else if (filters.sortBy === 'placement') {
-      result.sort((a, b) => {
-        if (a.standing !== b.standing) return a.standing - b.standing
-        return (b.tournamentDate?.getTime() ?? 0) - (a.tournamentDate?.getTime() ?? 0)
-      })
-    } else if (filters.sortBy === 'placePct') {
-      result.sort((a, b) => {
-        const pa = placePercent(a) ?? Infinity
-        const pb = placePercent(b) ?? Infinity
-        if (pa !== pb) return pa - pb
-        return (b.tournamentDate?.getTime() ?? 0) - (a.tournamentDate?.getTime() ?? 0)
-      })
-    } else if (filters.sortBy === 'price') {
-      result.sort((a, b) => (a.price ?? Infinity) - (b.price ?? Infinity))
-    }
+    const dir = filters.sortDir === 'asc' ? 1 : -1
+    result.sort((a, b) => {
+      const c = compareBySort(filters.sortBy, a, b)
+      if (c !== 0) return dir * c
+      // Tie-break: most recent first.
+      return (b.tournamentDate?.getTime() ?? 0) - (a.tournamentDate?.getTime() ?? 0)
+    })
 
     // When specific legends are selected via the multiselect, cluster the decks
     // by legend so the list reads as grouped sections. Array.sort is stable, so
@@ -343,6 +364,20 @@ export default function App() {
 
   const handleFilterChange = (key, value) => {
     setFilters((prev) => ({ ...prev, [key]: value }))
+  }
+
+  // Pick a sort column; clicking the active column flips its direction.
+  const handleSort = (field) => {
+    setFilters((prev) => ({
+      ...prev,
+      sortBy: field,
+      sortDir:
+        prev.sortBy === field
+          ? prev.sortDir === 'asc'
+            ? 'desc'
+            : 'asc'
+          : SORT_DEFAULT_DIR[field] ?? 'asc',
+    }))
   }
 
   const scrapedAtStr = scrapedAt
@@ -532,6 +567,9 @@ export default function App() {
                 groupByLegend={filters.legends.length > 0}
                 isFavourite={isFavourite}
                 onToggleFavourite={toggleFavourite}
+                sortBy={filters.sortBy}
+                sortDir={filters.sortDir}
+                onSort={handleSort}
               />
 
               {filteredDecks.length > 0 && (

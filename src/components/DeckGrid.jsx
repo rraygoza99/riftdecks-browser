@@ -4,6 +4,25 @@ import './DeckGrid.css'
 
 const STANDING_COLORS = { 1: 'gold', 2: 'silver', 3: 'bronze' }
 
+// Clickable column header: sets its field as the sort key, toggling direction
+// when already active. Shows an arrow for the active column.
+function SortHeader({ className, field, label, title, sortBy, sortDir, onSort }) {
+  const active = sortBy === field
+  const arrow = active ? (sortDir === 'asc' ? '▲' : '▼') : ''
+  return (
+    <th className={className} title={title} aria-sort={active ? (sortDir === 'asc' ? 'ascending' : 'descending') : 'none'}>
+      <button
+        type="button"
+        className={`deck-sort-btn${active ? ' deck-sort-btn--active' : ''}`}
+        onClick={() => onSort?.(field)}
+      >
+        {label}
+        <span className="deck-sort-arrow">{arrow}</span>
+      </button>
+    </th>
+  )
+}
+
 function standingLabel(n) {
   if (n === 1) return '1st'
   if (n === 2) return '2nd'
@@ -70,7 +89,15 @@ function StarIcon({ filled, onClick, title }) {
   )
 }
 
-export default function DeckGrid({ decks, isFavourite, onToggleFavourite, groupByLegend = false }) {
+export default function DeckGrid({
+  decks,
+  isFavourite,
+  onToggleFavourite,
+  groupByLegend = false,
+  sortBy,
+  sortDir,
+  onSort,
+}) {
   const [copiedId, setCopiedId] = useState(null)
   if (!decks.length) return null
 
@@ -162,13 +189,13 @@ export default function DeckGrid({ decks, isFavourite, onToggleFavourite, groupB
         <thead>
           <tr>
             <th className="col-fav"></th>
-            <th className="col-standing">Place</th>
-            <th className="col-legend">Legend</th>
-            <th className="col-tournament">Tournament</th>
-            <th className="col-players">Players</th>
-            <th className="col-placepct" title="Placement as a percentile of the field">Top %</th>
-            <th className="col-date">Date</th>
-            <th className="col-price">Price</th>
+            <SortHeader className="col-standing" field="placement" label="Place" sortBy={sortBy} sortDir={sortDir} onSort={onSort} />
+            <SortHeader className="col-legend" field="legend" label="Legend" sortBy={sortBy} sortDir={sortDir} onSort={onSort} />
+            <SortHeader className="col-tournament" field="tournament" label="Tournament" sortBy={sortBy} sortDir={sortDir} onSort={onSort} />
+            <SortHeader className="col-players" field="players" label="Players" sortBy={sortBy} sortDir={sortDir} onSort={onSort} />
+            <SortHeader className="col-placepct" field="placePct" label="Top %" title="Placement as a percentile of the field" sortBy={sortBy} sortDir={sortDir} onSort={onSort} />
+            <SortHeader className="col-date" field="date" label="Date" sortBy={sortBy} sortDir={sortDir} onSort={onSort} />
+            <SortHeader className="col-price" field="price" label="Price" sortBy={sortBy} sortDir={sortDir} onSort={onSort} />
             <th className="col-link"></th>
           </tr>
         </thead>
