@@ -77,3 +77,10 @@ button {
   background: var(--border);
   border-radius: 3px;
 }
+
+/* Flat, squared aesthetic — no rounded corners on any element.
+   Range-slider thumbs use ::-webkit-slider-thumb / ::-moz-range-thumb
+   pseudo-elements, which `*` does not match, so they stay circular. */
+*, *::before, *::after {
+  border-radius: 0 !important;
+}

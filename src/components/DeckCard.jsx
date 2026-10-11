@@ -120,7 +120,7 @@ export default function DeckCard({ deck }) {
           rel="noopener noreferrer"
           className="deck-card__link deck-card__link--primary"
         >
-          View on RiftDecks ↗
+          View on RiftDecks
         </a>
         <button
           type="button"

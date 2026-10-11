@@ -89,8 +89,7 @@ export default function MetaView({ allDecks }) {
           results. Use <strong>popularity</strong> to see what the field is bringing, the{' '}
           <strong>1st-place rate</strong> to see what is actually converting into wins, and the{' '}
           <strong>price trend</strong> to track where the format&apos;s cost is heading. These are
-          placement-based statistics, not head-to-head match results — for a full explanation of
-          how we build them, see our Guides.
+          placement-based statistics, not head-to-head match results.
         </p>
       </header>
 

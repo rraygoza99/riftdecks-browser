@@ -79,10 +79,6 @@ export default function AboutView({ onBack }) {
           single lucky result.
         </li>
       </ul>
-      <p>
-        For a deeper walk-through of the pipeline and how to read the numbers responsibly,
-        see our <strong>Guides</strong> section.
-      </p>
 
       <h2>Glossary of terms</h2>
       <dl className="about-glossary">

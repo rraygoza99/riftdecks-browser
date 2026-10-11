@@ -496,9 +496,9 @@
   background: none;
   color: var(--text-muted);
   cursor: pointer;
-  font-size: 0.9rem;
+  font-size: 0.78rem;
+  font-weight: 600;
   padding: 2px 6px;
-  border-radius: 4px;
 }
 
 .hist-remove:hover {

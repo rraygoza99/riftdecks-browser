@@ -102,7 +102,7 @@ export default function FavouritesView({ allDecks, favourites, onToggleFavourite
         {toolbar}
         <div className="fav-empty">
           <p>No favourite decks yet.</p>
-          <p className="fav-empty__hint">Click the ★ next to any deck to save it here, or import a saved list.</p>
+          <p className="fav-empty__hint">Click the star next to any deck to save it here, or import a saved list.</p>
         </div>
       </div>
     )
@@ -162,7 +162,7 @@ export default function FavouritesView({ allDecks, favourites, onToggleFavourite
                           rel="noopener noreferrer"
                           className="fav-deck-link"
                         >
-                          View ↗
+                          View
                         </a>
                       </td>
                     </tr>

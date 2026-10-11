@@ -303,7 +303,7 @@ function DeckDetail({ deck, legendNames, onBack, onEdit, onDelete, onAddMatch, o
                         title="Remove this result"
                         aria-label="Remove this result"
                       >
-                        ✕
+                        Remove
                       </button>
                     </td>
                   </tr>
@@ -400,7 +400,7 @@ function RecordResultBar({ decks, legendNames, onSave }) {
           ))}
         </datalist>
         <button type="submit" className="hist-btn hist-btn--primary hist-match-add">
-          {saved ? 'Saved ✓' : 'Save'}
+          {saved ? 'Saved' : 'Save'}
         </button>
       </form>
     </section>

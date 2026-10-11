@@ -156,7 +156,7 @@ export default function DeckGrid({
             rel="noopener noreferrer"
             className="deck-link-btn"
           >
-            View ↗
+            View
           </a>
           <button
             type="button"
