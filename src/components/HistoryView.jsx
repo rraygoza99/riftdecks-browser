@@ -407,17 +407,21 @@ function RecordResultBar({ decks, legendNames, onSave }) {
   )
 }
 
-export default function HistoryView() {
+export default function HistoryView({ allDecks = [] }) {
   const { decks, addDeck, updateDeck, removeDeck, addMatch, removeMatch } = useDeckHistory()
   const { data } = useLegendCards()
   const [selectedId, setSelectedId] = useState(null)
   const [mode, setMode] = useState('list') // 'list' | 'create' | 'edit'
   const [createLegend, setCreateLegend] = useState('')
 
-  const legendNames = useMemo(
-    () => (data?.legends || []).map((l) => l.legendName).sort((a, b) => a.localeCompare(b)),
-    [data]
-  )
+  // Suggestions merge the card-analysis legends with every legend seen in the
+  // tournament data, so newer legends (not yet in legend-cards.json) still show.
+  const legendNames = useMemo(() => {
+    const set = new Set()
+    for (const l of data?.legends || []) if (l.legendName) set.add(l.legendName)
+    for (const d of allDecks) if (d.legendName) set.add(d.legendName)
+    return [...set].sort((a, b) => a.localeCompare(b))
+  }, [data, allDecks])
 
   const selected = decks.find((d) => d.id === selectedId) || null
 

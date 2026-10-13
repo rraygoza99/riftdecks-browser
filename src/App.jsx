@@ -519,7 +519,7 @@ export default function App() {
           onBackToList={() => goTo('tournaments')}
         />
       ) : view === 'history' ? (
-        <HistoryView />
+        <HistoryView allDecks={allDecks} />
       ) : view === 'privacy' ? (
         <PrivacyPolicy onBack={() => goTo('main')} />
       ) : view === 'about' ? (
