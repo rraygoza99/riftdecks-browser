@@ -16,6 +16,7 @@ import StealthPlugin from 'puppeteer-extra-plugin-stealth'
 import fs from 'fs/promises'
 import path from 'path'
 import { fileURLToPath } from 'url'
+import { buildDeckCards } from './build-deck-cards.mjs'
 
 chromium.use(StealthPlugin())
 
@@ -42,7 +43,12 @@ const MAX_AGE_DAYS = parseInt(getArg('--max-age', '45'), 10)
 // aggregate them per legend into legend-cards.json. Disable with --no-cards.
 const SCRAPE_CARDS = !hasFlag('--no-cards')
 // How many decks to sample per legend when building the card analysis.
-const CARDS_PER_LEGEND = parseInt(getArg('--cards-per-legend', '8'), 10)
+// 0 = no per-legend cap (every candidate deck, bounded by --max-card-decks).
+const CARDS_PER_LEGEND_ARG = parseInt(getArg('--cards-per-legend', '8'), 10)
+const CARDS_PER_LEGEND = CARDS_PER_LEGEND_ARG > 0 ? CARDS_PER_LEGEND_ARG : Infinity
+// --cards-all: sample every placement, not only top-8 finishers. The app's
+// top-8-vs-rest analyses (card lift, copy counts, variants) need both groups.
+const CARDS_ALL_PLACEMENTS = hasFlag('--cards-all')
 // Global cap on how many *new* deck pages to fetch for cards in one run
 // (cached decks don't count). Keeps each run's runtime bounded.
 const MAX_CARD_DECKS = parseInt(getArg('--max-card-decks', '400'), 10)
@@ -317,7 +323,7 @@ async function buildLegendCardAnalysis(pages, decks, cache, saveCache) {
   const legendCandidates = new Map()
   for (const [legendName, group] of ordered) {
     const candidates = [...group]
-      .filter((d) => d.standing <= 8)
+      .filter((d) => CARDS_ALL_PLACEMENTS || d.standing <= 8)
       .sort((a, b) => {
         if (a.standing !== b.standing) return a.standing - b.standing
         const da = a.tournamentDate ? Date.parse(a.tournamentDate) : 0
@@ -728,7 +734,7 @@ async function main() {
   if (legendCards && legendCards.length) {
     const legendOutput = {
       generatedAt: new Date().toISOString(),
-      cardsPerLegend: CARDS_PER_LEGEND,
+      cardsPerLegend: CARDS_PER_LEGEND_ARG,
       legendCount: legendCards.length,
       legends: legendCards,
     }
@@ -739,6 +745,12 @@ async function main() {
       `Card analysis produced 0 legends — keeping the previous ${LEGEND_CARDS_OUTPUT}.`
     )
   }
+
+  // Per-deck card-list export for the app's card-level analyses. Runs even
+  // with --no-cards so it stays in sync with decks.json (cache-only lists).
+  await buildDeckCards({ useApi: !hasFlag('--no-api') }).catch((err) =>
+    console.warn(`Deck-cards export failed: ${err.message}`)
+  )
 }
 
 main().catch((err) => {

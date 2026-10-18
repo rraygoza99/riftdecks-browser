@@ -1,5 +1,7 @@
 import { useState } from 'react'
-import { placePercent, formatPlacePercent } from '../tournamentUtils'
+import { ordinal } from '../stats/stats'
+import { placePercent, formatPlacePercent, tournamentKey } from '../tournamentUtils'
+import { isLowCoverage, DEFAULT_MIN_COVERAGE } from '../stats/coverage'
 import './DeckGrid.css'
 
 const STANDING_COLORS = { 1: 'gold', 2: 'silver', 3: 'bronze' }
@@ -23,12 +25,8 @@ function SortHeader({ className, field, label, title, sortBy, sortDir, onSort })
   )
 }
 
-function standingLabel(n) {
-  if (n === 1) return '1st'
-  if (n === 2) return '2nd'
-  if (n === 3) return '3rd'
-  return `${n}th`
-}
+// Placement label with a correct ordinal suffix (1st, 2nd, 3rd, 11th, 22nd, 32nd…).
+const standingLabel = (n) => ordinal(n)
 
 function formatDate(date) {
   if (!date) return '—'
@@ -97,6 +95,8 @@ export default function DeckGrid({
   sortBy,
   sortDir,
   onSort,
+  coverage = null,
+  minCoverage = DEFAULT_MIN_COVERAGE,
 }) {
   const [copiedId, setCopiedId] = useState(null)
   if (!decks.length) return null
@@ -114,6 +114,9 @@ export default function DeckGrid({
   const renderRow = (deck) => {
     const colorClass = STANDING_COLORS[deck.standing] ?? 'default'
     const url = `https://riftdecks.com${deck.deckUrl}`
+    // Placement % is only approximate when the event recorded few of its decks.
+    const cov = coverage?.get(tournamentKey(deck))
+    const approx = isLowCoverage(cov, minCoverage || DEFAULT_MIN_COVERAGE)
     return (
       <tr key={deck.id} className="deck-row">
         <td className="col-fav">
@@ -139,10 +142,13 @@ export default function DeckGrid({
           className="col-placepct"
           title={
             deck.totalPlayers
-              ? `${standingLabel(deck.standing)} of ${deck.totalPlayers} players`
+              ? `${standingLabel(deck.standing)} of ${deck.totalPlayers} players${
+                  approx ? ` · approximate: only ${cov.decks} of ${cov.players} decks recorded for this event` : ''
+                }`
               : 'Field size unknown'
           }
         >
+          {approx && placePercent(deck) != null ? '≈' : ''}
           {formatPlacePercent(placePercent(deck))}
         </td>
         <td className="col-date">{formatDate(deck.tournamentDate)}</td>

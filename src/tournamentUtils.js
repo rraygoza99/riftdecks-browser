@@ -73,3 +73,14 @@ export function formatPlacePercent(pct) {
   return pct < 10 ? `${pct.toFixed(1)}%` : `${Math.round(pct)}%`
 }
 
+
+// URL slug for a legend name. Must match scripts/scrape.mjs slugify() so
+// existing /legend/<slug> links keep resolving.
+export function legendSlug(name) {
+  return (name || '')
+    .toLowerCase()
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/(^-|-$)/g, '')
+}

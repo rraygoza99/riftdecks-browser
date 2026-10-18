@@ -351,3 +351,25 @@
   font-size: 0.8rem;
   margin-bottom: 8px;
 }
+
+.variant-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 10px;
+  padding: 4px 6px 4px 12px;
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  background: var(--bg-card);
+  border: 1px solid var(--accent);
+  border-radius: 999px;
+}
+
+.variant-chip button {
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  font-size: 1rem;
+  line-height: 1;
+  padding: 0 6px;
+}

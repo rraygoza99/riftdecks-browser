@@ -11,6 +11,8 @@
 // Everything here is pure and framework-agnostic so it can run inside the
 // Vite app or from a Node script.
 
+import { wilsonInterval } from '../stats/stats.js'
+
 // Cut brackets ordered widest -> narrowest. A placement `p` reached bracket
 // `size` when `p <= size`.
 export const BRACKETS = [
@@ -92,7 +94,8 @@ function classify(row, thresholds) {
  * @param {Object} [options]
  * @param {Array}  [options.tournaments] - Tournament[]; enables format filtering.
  * @param {string} [options.format] - Only include placements from tournaments of this format.
- * @param {number} [options.minTopCut=1] - Ignore legends below this Top Cut sample size.
+ * @param {number} [options.minTopCut=1] - Legends below this Top Cut sample are kept but flagged
+ *   eligible: false, excluded from tier thresholds and ranked after eligible rows.
  * @param {Object} [options.thresholds] - Override { presence, firstPlaceRate, conversionRate }.
  * @returns {{ summary: Array, tiers: Object, thresholds: Object, table: string, json: string }}
  */
@@ -122,7 +125,8 @@ export function analyzeConversionRates(placements, options = {}) {
   for (const [legendName, placementList] of byLegend) {
     const reached = buildFunnel(placementList)
     const topCut = reached[TOP_CUT_SIZE]
-    if (topCut < minTopCut) continue
+    const ci = wilsonInterval(reached[CONVERSION_SIZE], topCut)
+    const firstCI = wilsonInterval(reached[1], topCut)
 
     rows.push({
       legendName,
@@ -134,31 +138,40 @@ export function analyzeConversionRates(placements, options = {}) {
       conversionRate: pct(reached[CONVERSION_SIZE], topCut),
       finalsRate: pct(reached[2], topCut),
       firstPlaceRate: pct(reached[1], topCut),
+      // Sample-size-aware ranking score: 95% Wilson lower bound of conversion.
+      conversionLow: round(ci.low * 100),
+      conversionHigh: round(ci.high * 100),
+      firstPlaceLow: round(firstCI.low * 100),
+      firstPlaceHigh: round(firstCI.high * 100),
+      eligible: topCut >= minTopCut,
       dropOff: findDropOff(reached),
       funnel: BRACKETS.map(({ size, label }) => ({ label, reached: reached[size] })),
     })
   }
 
-  // Dataset-relative thresholds (means), overridable by the caller.
+  // Dataset-relative thresholds (means over eligible rows), overridable.
+  const eligibleRows = rows.filter((r) => r.eligible)
   const thresholds = {
-    presence: mean(rows.map((r) => r.presence)),
-    firstPlaceRate: mean(rows.map((r) => r.firstPlaceRate)),
-    conversionRate: mean(rows.map((r) => r.conversionRate)),
+    presence: mean(eligibleRows.map((r) => r.presence)),
+    firstPlaceRate: mean(eligibleRows.map((r) => r.firstPlaceRate)),
+    conversionRate: mean(eligibleRows.map((r) => r.conversionRate)),
     ...thresholdOverrides,
   }
 
-  // Second pass: tier classification.
-  for (const row of rows) row.tier = classify(row, thresholds)
+  // Second pass: tier classification (small samples stay Unproven).
+  for (const row of rows) row.tier = row.eligible ? classify(row, thresholds) : 'Unproven'
 
-  // Sort by conversion rate, then finishing quality, then sample size.
+  // Rank by the Wilson lower bound of conversion (not the raw rate), eligible
+  // rows first, then by sample size.
   rows.sort(
     (a, b) =>
-      b.conversionRate - a.conversionRate ||
-      b.firstPlaceRate - a.firstPlaceRate ||
+      Number(b.eligible) - Number(a.eligible) ||
+      b.conversionLow - a.conversionLow ||
+      b.firstPlaceLow - a.firstPlaceLow ||
       b.topCutAppearances - a.topCutAppearances,
   )
 
-  const tiers = rows.reduce((acc, r) => {
+  const tiers = rows.filter((r) => r.eligible).reduce((acc, r) => {
     ;(acc[r.tier] ||= []).push(r.legendName)
     return acc
   }, {})
@@ -189,6 +202,7 @@ export function formatTable(rows) {
     return align === 'right' ? s.padStart(width) : s.padEnd(width)
   }
 
+  rows = rows.filter((r) => r.eligible !== false)
   const header = columns.map((c) => cell(c.header, c.width, c.align)).join('  ')
   const divider = columns.map((c) => '-'.repeat(c.width)).join('  ')
   const body = rows.map((r) => {

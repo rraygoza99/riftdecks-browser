@@ -33,6 +33,15 @@ function weightedWinrate(matrix, a, opponents, presence, minMatches) {
   return den > 0 ? num / den : null
 }
 
+function quantileOf(values, q) {
+  if (!values.length) return 0
+  const s = [...values].sort((x, y) => x - y)
+  const pos = (s.length - 1) * Math.min(1, Math.max(0, q))
+  const lo = Math.floor(pos)
+  const hi = Math.ceil(pos)
+  return s[lo] + (s[hi] - s[lo]) * (pos - lo)
+}
+
 function median(values) {
   if (!values.length) return 0
   const s = [...values].sort((x, y) => x - y)
@@ -57,9 +66,19 @@ function tierFor(presencePct, expWr, presenceMedianPct, hasData) {
  * @param {number} [options.minMatches=30] - ignore matchup cells below this sample size.
  * @param {number} [options.topMeta=8] - how many top-presence legends define "the meta".
  * @param {number} [options.worstN=4] - counters listed per vulnerable legend.
+ * @param {number} [options.underplayedPercentile=0.5] - a legend is "underplayed" when its
+ *   presence is at or below this percentile of all legends' presence (0.5 = median).
+ * @param {number} [options.antiMetaMinPresence=0.3] - presence floor (%) so anti-meta picks
+ *   still have a meaningful sample of games.
  */
 export function analyzeMetaTargeting(winrateData, options = {}) {
-  const { minMatches = 30, topMeta = 8, worstN = 4, antiMetaMinPresence = 1.0 } = options
+  const {
+    minMatches = 30,
+    topMeta = 8,
+    worstN = 4,
+    antiMetaMinPresence = 0.3,
+    underplayedPercentile = 0.5,
+  } = options
   const { legends = [], matrix = {}, metagame = '', matchesAnalyzed = 0 } = winrateData
 
   const names = legends.map((l) => l.name)
@@ -74,6 +93,7 @@ export function analyzeMetaTargeting(winrateData, options = {}) {
   // "The meta" = the most-played legends, by presence.
   const metaList = [...legends].sort((a, b) => b.matches - a.matches).slice(0, topMeta).map((l) => l.name)
   const presenceMedianPct = median(Object.values(presencePct))
+  const underplayedMaxPct = quantileOf(Object.values(presencePct), underplayedPercentile)
 
   // Core per-legend metrics. Winrates are null when no cell clears minMatches,
   // so rare legends don't masquerade as 50% coinflips against the field.
@@ -127,11 +147,18 @@ export function analyzeMetaTargeting(winrateData, options = {}) {
       }
     })
 
-  // Anti-meta recommendations: legends outside the top-presence meta that have
-  // real data and the best record against the popular field.
+  // Anti-meta recommendations: underplayed legends (presence at or below the
+  // configured percentile of the presence distribution, and outside the top
+  // meta) that have real data and the best record against the popular field.
   const metaSet = new Set(metaList)
   const antiMeta = [...field]
-    .filter((f) => !metaSet.has(f.legend) && f.hasData && f.presencePct >= antiMetaMinPresence)
+    .filter(
+      (f) =>
+        !metaSet.has(f.legend) &&
+        f.hasData &&
+        f.presencePct <= underplayedMaxPct &&
+        f.presencePct >= antiMetaMinPresence,
+    )
     .sort((a, b) => b.vsMetaWinratePct - a.vsMetaWinratePct)
     .slice(0, 8)
     .map((f) => {
@@ -173,6 +200,7 @@ export function analyzeMetaTargeting(winrateData, options = {}) {
     matchesAnalyzed,
     minMatches,
     metaLegends: metaList,
+    underplayed: { percentile: underplayedPercentile, maxPresencePct: round(underplayedMaxPct, 2), minPresencePct: antiMetaMinPresence },
     field: [...field].sort((a, b) => b.presencePct - a.presencePct),
     vulnerabilityMatrix,
     recommendations: {

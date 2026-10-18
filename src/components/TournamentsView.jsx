@@ -1,6 +1,9 @@
 import { useMemo, useState } from 'react'
 import { groupTournaments, countryFlagEmoji } from '../tournamentUtils'
+import { eventCoverage, isLowCoverage, formatCoverage } from '../stats/coverage'
+import DataSourceNote from './DataSourceNote'
 import './TournamentsView.css'
+import './Analytics.css'
 
 function formatDate(date) {
   if (!date) return '—'
@@ -14,8 +17,10 @@ function formatDate(date) {
   })
 }
 
-export default function TournamentsView({ allDecks, onOpen }) {
+export default function TournamentsView({ allDecks, onOpen, scope, onScopeChange, coverage: covProp }) {
   const [query, setQuery] = useState('')
+  const coverage = useMemo(() => covProp || eventCoverage(allDecks), [covProp, allDecks])
+  const minCoverage = scope?.minCoverage ?? 0
 
   const tournaments = useMemo(() => {
     const list = groupTournaments(allDecks)
@@ -40,7 +45,10 @@ export default function TournamentsView({ allDecks, onOpen }) {
           <h2 className="tournaments-title">Tournaments</h2>
           <p className="tournaments-sub">
             Every tracked tournament with its date, size and host country. Open one to
-            see its full deck lists and a top-8 conversion breakdown by legend.
+            see its full deck lists and a top-8 conversion breakdown by legend.{' '}
+            <strong>Coverage</strong> = decks recorded ÷ players: riftdecks lists at most 64 decks per
+            event and some events only publish their top cut. Events below the coverage threshold are
+            left out of share and conversion stats, and their placement % is shown as approximate.
           </p>
         </div>
         <input
@@ -51,6 +59,30 @@ export default function TournamentsView({ allDecks, onOpen }) {
           onChange={(e) => setQuery(e.target.value)}
         />
       </div>
+
+      {onScopeChange && (
+        <div className="an-row" style={{ marginBottom: 12 }}>
+          <label className="filter-group">
+            <span className="filter-label">Exclude events below (share &amp; conversion stats)</span>
+            <select
+              className="filter-select"
+              value={minCoverage}
+              onChange={(e) => onScopeChange('minCoverage', Number(e.target.value))}
+            >
+              {[0, 0.25, 0.5, 0.75, 0.95].map((c) => (
+                <option key={c} value={c}>
+                  {c === 0 ? 'No minimum' : `${Math.round(c * 100)}% coverage`}
+                </option>
+              ))}
+            </select>
+          </label>
+        </div>
+      )}
+      <DataSourceNote
+        dataset="placements"
+        filters="all tracked events (last 45 days)"
+        counts={`${tournaments.length} events · ${tournaments.filter((t) => isLowCoverage(coverage.get(t.key), minCoverage)).length} below ${Math.round(minCoverage * 100)}% coverage`}
+      />
 
       {tournaments.length === 0 ? (
         <div className="app-status">No tournaments match your search.</div>
@@ -68,6 +100,7 @@ export default function TournamentsView({ allDecks, onOpen }) {
                   <th className="col-t-players">Players</th>
                   <th className="col-t-country">Country</th>
                   <th className="col-t-decks">Decks</th>
+                  <th className="col-t-decks">Coverage</th>
                   <th className="col-t-arrow"></th>
                 </tr>
               </thead>
@@ -105,6 +138,24 @@ export default function TournamentsView({ allDecks, onOpen }) {
                       )}
                     </td>
                     <td className="col-t-decks">{t.decks.length}</td>
+                    <td className="col-t-decks">
+                      {(() => {
+                        const c = coverage.get(t.key)
+                        const low = isLowCoverage(c, minCoverage)
+                        return (
+                          <span
+                            className={low ? 'an-badge an-badge--warn' : ''}
+                            title={
+                              (c?.capped ? 'Deck list capped at 64 by the source. ' : '') +
+                              (low ? 'Excluded from share & conversion stats; placement % is approximate.' : '')
+                            }
+                          >
+                            {formatCoverage(c)}
+                            {c?.capped ? ' · cap' : ''}
+                          </span>
+                        )
+                      })()}
+                    </td>
                     <td className="col-t-arrow" aria-hidden="true">›</td>
                   </tr>
                 ))}

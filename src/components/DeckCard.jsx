@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { ordinal } from '../stats/stats'
 import './DeckCard.css'
 
 const STANDING_COLORS = {
@@ -7,12 +8,8 @@ const STANDING_COLORS = {
   3: 'bronze',
 }
 
-function standingLabel(n) {
-  if (n === 1) return '1st'
-  if (n === 2) return '2nd'
-  if (n === 3) return '3rd'
-  return `${n}th`
-}
+// Placement label with a correct ordinal suffix (1st, 2nd, 3rd, 11th, 22nd, 32nd…).
+const standingLabel = (n) => ordinal(n)
 
 function formatDate(date) {
   if (!date) return ''

@@ -18,9 +18,25 @@ import TournamentDetail from './components/TournamentDetail'
 import AboutView from './components/AboutView'
 import ContactView from './components/ContactView'
 import HistoryView from './components/HistoryView'
+import TrendsView from './components/TrendsView'
 import useFavourites from './hooks/useFavourites'
 import useTheme from './hooks/useTheme'
+import useDeckCards from './hooks/useDeckCards'
 import { placePercent } from './tournamentUtils'
+import { normalizeDeckLegend } from './data/legendNames'
+import { applyScope } from './data/scope'
+import { DEFAULT_MIN_COVERAGE, eventCoverage } from './stats/coverage'
+
+const SETTINGS_KEY = 'riftdecks_settings'
+
+function loadSettings() {
+  try {
+    const s = JSON.parse(localStorage.getItem(SETTINGS_KEY) || '{}')
+    return s && typeof s === 'object' ? s : {}
+  } catch {
+    return {}
+  }
+}
 
 const RELEVANCE_LABELS = { 0: 'All Events', 1: 'Local / Casual', 2: 'Competitive' }
 
@@ -57,13 +73,12 @@ function compareBySort(field, a, b) {
 }
 
 
-const DATE_RANGES = { '7d': 7, '30d': 30, '90d': 90, all: null }
-
 const PATH_TO_VIEW = {
   '/': 'main',
   '/meta': 'meta',
   '/conversion': 'conversion',
   '/metatarget': 'metatarget',
+  '/trends': 'trends',
   '/draws': 'draws',
   '/goldfish': 'goldfish',
   '/legends': 'legends',
@@ -108,6 +123,14 @@ const NAV_ITEMS = [
     match: (v) => v === 'metatarget',
     icon: (
       <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.5-11.5a.5.5 0 0 0-1 0v3.793L5.354 7.146a.5.5 0 1 0-.708.708l2.5 2.5a.5.5 0 0 0 .708 0l2.5-2.5a.5.5 0 0 0-.708-.708L8.5 8.293V4.5zM8 6a2 2 0 1 0 0 4 2 2 0 0 0 0-4z" />
+    ),
+  },
+  {
+    key: 'trends',
+    label: 'Trends',
+    match: (v) => v === 'trends',
+    icon: (
+      <path d="M0 0h1v15h15v1H0V0zm10 3.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-1 0V4.9l-3.613 4.417a.5.5 0 0 1-.74.037L7.06 6.767l-3.656 5.027a.5.5 0 0 1-.808-.588l4-5.5a.5.5 0 0 1 .758-.06l2.609 2.61L13.445 4H10.5a.5.5 0 0 1-.5-.5z" />
     ),
   },
   {
@@ -187,18 +210,36 @@ export default function App() {
 
   const { favourites, toggleFavourite, isFavourite, importFavourites } = useFavourites()
   const { theme, toggleTheme } = useTheme()
+  const deckCards = useDeckCards()
 
-  const [filters, setFilters] = useState({
-    legends: [],
-    meta: 'Vendetta',
-    dateRange: '30d',
-    maxPlacement: 0,
-    maxPlacePct: 0,
-    maxPrice: 0,
-    bestPerLegend: false,
-    sortBy: 'date',
-    sortDir: 'desc',
+  // One filter/scope object shared by the deck browser and analytics pages.
+  const [filters, setFilters] = useState(() => {
+    const saved = loadSettings()
+    return {
+      legends: [],
+      meta: 'Vendetta',
+      dateRange: '30d',
+      region: 'all',
+      maxPlacement: 0,
+      maxPlacePct: 0,
+      maxPrice: 0,
+      // Global setting: share/conversion stats skip events below this coverage.
+      minCoverage: typeof saved.minCoverage === 'number' ? saved.minCoverage : DEFAULT_MIN_COVERAGE,
+      bestPerLegend: false,
+      sortBy: 'date',
+      sortDir: 'desc',
+    }
   })
+  // Deck-browser filter by legend variant (set from a legend page).
+  const [variantFilter, setVariantFilter] = useState(null)
+
+  useEffect(() => {
+    try {
+      localStorage.setItem(SETTINGS_KEY, JSON.stringify({ ...loadSettings(), minCoverage: filters.minCoverage }))
+    } catch {
+      // Storage unavailable (private mode) — the setting just won't persist.
+    }
+  }, [filters.minCoverage])
 
   const [pageSize, setPageSize] = useState(20)
   const [currentPage, setCurrentPage] = useState(1)
@@ -215,11 +256,13 @@ export default function App() {
       })
       .then((data) => {
         // Parse tournament dates into Date objects
-        const decks = (data.decks || []).map((d) => ({
-          ...d,
-          tournamentDate: d.tournamentDate ? new Date(d.tournamentDate + 'T00:00:00Z') : null,
-          details: null,
-        }))
+        const decks = (data.decks || []).map((d) =>
+          normalizeDeckLegend({
+            ...d,
+            tournamentDate: d.tournamentDate ? new Date(d.tournamentDate + 'T00:00:00Z') : null,
+            details: null,
+          })
+        )
         setAllDecks(decks)
         setScrapedAt(data.scrapedAt ? new Date(data.scrapedAt) : null)
         setRelevanceLabel(RELEVANCE_LABELS[data.relevance] ?? '')
@@ -275,38 +318,14 @@ export default function App() {
 
   // Filtered + sorted deck list
   const filteredDecks = useMemo(() => {
-    let result = [...allDecks]
+    // Coverage is a stats setting, not a browsing filter: the deck browser
+    // still lists decks from low-coverage events.
+    let result = applyScope(allDecks, metaOptions.length ? filters : { ...filters, meta: 'all' }, {
+      skip: ['minCoverage'],
+    })
 
-    if (filters.legends.length) {
-      result = result.filter((d) => filters.legends.includes(d.legendName))
-    }
-
-    // Meta/set filter — only applied when the dataset carries meta info.
-    if (metaOptions.length && filters.meta && filters.meta !== 'all') {
-      result = result.filter((d) => d.metaSet === filters.meta)
-    }
-
-    if (filters.dateRange !== 'all') {
-      const days = DATE_RANGES[filters.dateRange]
-      if (days) {
-        const cutoff = new Date(Date.now() - days * 86_400_000)
-        result = result.filter((d) => d.tournamentDate && d.tournamentDate >= cutoff)
-      }
-    }
-
-    if (filters.maxPlacement > 0) {
-      result = result.filter((d) => d.standing <= filters.maxPlacement)
-    }
-
-    if (filters.maxPlacePct > 0) {
-      result = result.filter((d) => {
-        const pct = placePercent(d)
-        return pct != null && pct <= filters.maxPlacePct
-      })
-    }
-
-    if (filters.maxPrice > 0) {
-      result = result.filter((d) => d.price != null && d.price <= filters.maxPrice)
+    if (variantFilter) {
+      result = result.filter((d) => variantFilter.deckIds.has(String(d.deckId)))
     }
 
     // Keep only each legend's single best-placed deck (tie-break: most recent).
@@ -343,12 +362,40 @@ export default function App() {
     }
 
     return result
-  }, [allDecks, filters, metaOptions])
+  }, [allDecks, filters, metaOptions, variantFilter])
 
   // Reset to the first page whenever the filters or page size change
   useEffect(() => {
     setCurrentPage(1)
-  }, [filters, pageSize])
+  }, [filters, pageSize, variantFilter])
+
+  const coverage = useMemo(() => eventCoverage(allDecks), [allDecks])
+
+  // Most recent tournament date in the data (header "latest event").
+  const latestEvent = useMemo(() => {
+    let max = null
+    for (const d of allDecks) if (d.tournamentDate && (!max || d.tournamentDate > max)) max = d.tournamentDate
+    return max
+  }, [allDecks])
+
+  // Open the deck browser filtered to one legend variant.
+  const showVariantDecks = (legendName, variant) => {
+    setVariantFilter({ legendName, name: variant.name, deckIds: new Set(variant.deckIds) })
+    setFilters((prev) => ({ ...prev, legends: [legendName] }))
+    goTo('main')
+  }
+
+  // Open the Consistency simulator with a decklist preloaded.
+  const simulateDeck = (text, deckDef = null) => navigate('/goldfish', { state: { importText: text, deckDef } })
+
+  const analyticsProps = {
+    allDecks,
+    scope: filters,
+    onScopeChange: (key, value) => setFilters((prev) => ({ ...prev, [key]: value })),
+    legendOptions,
+    metaOptions,
+    coverage,
+  }
 
   // Current page slice
   const paginatedDecks = useMemo(
@@ -374,9 +421,15 @@ export default function App() {
     }))
   }
 
-  const scrapedAtStr = scrapedAt
-    ? scrapedAt.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })
-    : null
+  const fmtHeaderDate = (date, utc) =>
+    date.toLocaleDateString('en-US', {
+      month: 'short',
+      day: 'numeric',
+      year: 'numeric',
+      ...(utc ? { timeZone: 'UTC' } : {}),
+    })
+  const scrapedAtStr = scrapedAt ? fmtHeaderDate(scrapedAt, false) : null
+  const latestEventStr = latestEvent ? fmtHeaderDate(latestEvent, true) : null
 
   return (
     <div className="app">
@@ -410,7 +463,9 @@ export default function App() {
             <h1>RiftDecks Browser</h1>
             <div className="app-header-sub">
               {scrapedAtStr
-                ? `${relevanceLabel} tournaments · data from ${scrapedAtStr}`
+                ? `${relevanceLabel} tournaments · Updated ${scrapedAtStr}${
+                    latestEventStr ? ` · latest event ${latestEventStr}` : ''
+                  }`
                 : 'Top tournament decks from riftdecks.com'}
             </div>
           </div>
@@ -486,27 +541,35 @@ export default function App() {
           onToggleFavourite={toggleFavourite}
           onImport={importFavourites}
         />
+      ) : loading ? (
+        <div className="app-status">Loading data…</div>
       ) : view === 'meta' ? (
-        <MetaView allDecks={allDecks} />
+        <MetaView {...analyticsProps} />
       ) : view === 'conversion' ? (
-        <ConversionView allDecks={allDecks} />
+        <ConversionView {...analyticsProps} />
       ) : view === 'metatarget' ? (
-        <MetaTargetView />
+        <MetaTargetView {...analyticsProps} />
+      ) : view === 'trends' ? (
+        <TrendsView {...analyticsProps} deckCards={deckCards} />
       ) : view === 'draws' ? (
         <DrawOddsView />
       ) : view === 'goldfish' ? (
-        <GoldfishView />
+        <GoldfishView {...analyticsProps} deckCards={deckCards} />
       ) : view === 'legends' ? (
-        <LegendsView onOpen={(slug) => goTo(`legend/${slug}`)} />
+        <LegendsView {...analyticsProps} deckCards={deckCards} onOpen={(slug) => goTo(`legend/${slug}`)} />
       ) : view === 'legend' ? (
         <LegendAnalysis
+          {...analyticsProps}
+          deckCards={deckCards}
           slug={legendSlug}
           onBack={() => goTo('main')}
           onBackToList={() => goTo('legends')}
+          onShowVariant={showVariantDecks}
+          onSimulate={simulateDeck}
         />
       ) : view === 'tournaments' ? (
         <TournamentsView
-          allDecks={allDecks}
+          {...analyticsProps}
           onOpen={(key) => goTo(`tournament/${encodeURIComponent(key)}`)}
         />
       ) : view === 'tournament' ? (
@@ -543,6 +606,15 @@ export default function App() {
 
           {!loading && !error && (
             <>
+              {variantFilter && (
+                <div className="variant-chip">
+                  Variant: <strong>{variantFilter.name}</strong> ({variantFilter.legendName.split(',')[0]},{' '}
+                  {variantFilter.deckIds.size} decks)
+                  <button type="button" onClick={() => setVariantFilter(null)} aria-label="Clear variant filter">
+                    ×
+                  </button>
+                </div>
+              )}
               {filteredDecks.length > 0 && (
                 <div className="deck-count">
                   Showing {filteredDecks.length} deck{filteredDecks.length !== 1 ? 's' : ''}
@@ -558,6 +630,8 @@ export default function App() {
                 sortBy={filters.sortBy}
                 sortDir={filters.sortDir}
                 onSort={handleSort}
+                coverage={coverage}
+                minCoverage={filters.minCoverage}
               />
 
               {filteredDecks.length > 0 && (

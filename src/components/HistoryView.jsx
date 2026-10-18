@@ -1,6 +1,8 @@
 import { useEffect, useMemo, useState } from 'react'
 import useDeckHistory from '../hooks/useDeckHistory'
 import useLegendCards from '../hooks/useLegendCards'
+import { compareToGlobal } from '../analytics/personal'
+import winrateData from '../../data/winrate-matrix.json'
 import './HistoryView.css'
 
 // Common match scores (Best-of-3 first, then Best-of-1 and the 1-1 split).
@@ -185,6 +187,58 @@ function MatchForm({ legendNames, onAdd }) {
   )
 }
 
+const MATRIX_LEGENDS = (winrateData.legends || []).map((l) => l.name)
+
+// Your logged record per opponent vs the global riftDecks matchup winrate.
+function PersonalVsGlobal({ deck }) {
+  const res = useMemo(
+    () => compareToGlobal(deck.legend, deck.matches, winrateData.matrix, MATRIX_LEGENDS),
+    [deck.legend, deck.matches]
+  )
+  return (
+    <section className="hist-section">
+      <h3 className="hist-section-title">You vs the field</h3>
+      <p className="hist-detail-legend" style={{ fontSize: '0.8rem' }}>
+        {res.legend
+          ? `Your record with ${res.legend.split(',')[0]} against each opponent, next to the global riftDecks winrate for that matchup (shrunk toward 50% for thin samples). Flagged rows differ from the field by more than chance would explain (exact binomial test, p < 0.1, ≥ 3 decisive games). Draws are excluded from win rates.`
+          : `Set this deck's legend to one the global matrix knows (e.g. "${MATRIX_LEGENDS[0]}") to compare against field averages.`}
+      </p>
+      {res.legend && (
+        <div className="hist-table-wrap">
+          <table className="hist-table">
+            <thead>
+              <tr>
+                <th>Opponent</th>
+                <th>Your record</th>
+                <th>You</th>
+                <th>Field average</th>
+                <th>Gap</th>
+                <th />
+              </tr>
+            </thead>
+            <tbody>
+              {res.rows.map((r) => (
+                <tr key={r.opponent}>
+                  <td>{r.opponent}</td>
+                  <td className="hist-col-num">{recordLabel(r)}</td>
+                  <td className="hist-col-num">{r.personal == null ? '—' : `${Math.round(r.personal * 100)}%`}</td>
+                  <td className="hist-col-num" title={r.global == null ? 'Opponent not found in the matrix' : `${r.globalN} global matches`}>
+                    {r.global == null ? '—' : `${Math.round(r.global * 100)}% · n ${r.globalN}`}
+                  </td>
+                  <td className="hist-col-num">
+                    {r.gap == null ? '—' : `${r.gap >= 0 ? '+' : ''}${Math.round(r.gap * 100)} pts`}
+                  </td>
+                  <td>{r.flagged ? (r.gap < 0 ? '⚠ underperforming' : '★ outperforming') : ''}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      )}
+    </section>
+  )
+}
+
 function DeckDetail({ deck, legendNames, onBack, onEdit, onDelete, onAddMatch, onRemoveMatch }) {
   const record = useMemo(() => tally(deck.matches), [deck.matches])
   const rate = winRate(record)
@@ -265,6 +319,8 @@ function DeckDetail({ deck, legendNames, onBack, onEdit, onDelete, onAddMatch, o
           </div>
         </section>
       )}
+
+      {deck.matches.length > 0 && <PersonalVsGlobal deck={deck} />}
 
       <section className="hist-section">
         <h3 className="hist-section-title">Match log</h3>

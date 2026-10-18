@@ -8,7 +8,8 @@
     "build": "vite build",
     "preview": "vite preview",
     "scrape": "node scripts/scrape.mjs",
-    "scrape:all": "node scripts/scrape.mjs --relevance 0 --pages 10"
+    "scrape:all": "node scripts/scrape.mjs --relevance 0 --pages 10",
+    "test": "node --test \"src/**/*.test.js\""
   },
   "dependencies": {
     "playwright-extra": "^4.3.6",

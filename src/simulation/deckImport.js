@@ -25,6 +25,8 @@ const SECTION_ALIASES = {
   runes: 'rune',
   runedeck: 'rune',
   sideboard: 'side',
+  battlefields: 'battlefield',
+  battlefield: 'battlefield',
 }
 
 function normalizeType(apiType) {
@@ -46,10 +48,10 @@ function synthCost(name) {
 
 /**
  * Parse the plain-text decklist into sections.
- * @returns {{ legendName, mainDeck, runePool, sideboard }}
+ * @returns {{ legendName, mainDeck, runePool, sideboard, battlefields }}
  */
 export function parseDeckList(text) {
-  const out = { legendName: null, mainDeck: [], runePool: [], sideboard: [] }
+  const out = { legendName: null, mainDeck: [], runePool: [], sideboard: [], battlefields: [] }
   let section = null
   for (const raw of (text || '').split(/\r?\n/)) {
     const line = raw.trim()
@@ -77,6 +79,7 @@ function parseEntryInto(out, section, str) {
   else if (section === 'main') out.mainDeck.push(entry)
   else if (section === 'rune') out.runePool.push(entry)
   else if (section === 'side') out.sideboard.push(entry)
+  else if (section === 'battlefield') out.battlefields.push(entry)
 }
 
 // Resolve one card's attributes by exact name.

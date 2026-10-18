@@ -1,4 +1,6 @@
-import { useMemo, useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
+import { useLocation } from 'react-router-dom'
+import ConsistencyVsResults from './ConsistencyVsResults'
 import { runSimulation } from '../simulation/goldfish'
 import { parseDeckList, enrichDeckList } from '../simulation/deckImport'
 import exampleDeck from '../../data/example-deck.json'
@@ -18,7 +20,8 @@ function Bar({ pct }) {
   )
 }
 
-export default function GoldfishView() {
+export default function GoldfishView({ allDecks = [], scope, coverage, deckCards }) {
+  const location = useLocation()
   const [iterations, setIterations] = useState(10000)
   const [turns, setTurns] = useState(4)
   const [handSize, setHandSize] = useState(4)
@@ -35,8 +38,8 @@ export default function GoldfishView() {
   const [importing, setImporting] = useState(false)
   const [importStatus, setImportStatus] = useState(null)
 
-  const convertDeckList = async () => {
-    const parsed = parseDeckList(importText)
+  const convertDeckList = async (text = importText) => {
+    const parsed = parseDeckList(text)
     if (!parsed.mainDeck.length) {
       setImportStatus({ type: 'error', text: 'No MainDeck cards found. Check the section headings.' })
       return
@@ -61,6 +64,21 @@ export default function GoldfishView() {
       setImporting(false)
     }
   }
+
+  // "Simulate this deck" from a legend page arrives as router state: load it once.
+  const preloaded = useRef(null)
+  useEffect(() => {
+    const text = location.state?.importText
+    if (!text || preloaded.current === text) return
+    preloaded.current = text
+    setImportText(text)
+    const def = location.state?.deckDef
+    if (def) {
+      setDeckText(JSON.stringify(def, null, 2))
+      setImportStatus({ type: 'ok', text: `Loaded ${def.meta.mainDeckSize}-card consensus list with cached card costs. Hit Run.` })
+    } else convertDeckList(text)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [location.state])
 
   const deck = useMemo(() => {
     try {
@@ -292,7 +310,7 @@ export default function GoldfishView() {
           <button
             type="button"
             className="gf-run gf-import-btn"
-            onClick={convertDeckList}
+            onClick={() => convertDeckList()}
             disabled={importing || !importText.trim()}
           >
             {importing ? 'Converting…' : 'Convert & load'}
@@ -304,6 +322,23 @@ export default function GoldfishView() {
           )}
         </div>
       </details>
+
+      <ConsistencyVsResults
+        allDecks={allDecks}
+        scope={scope}
+        coverage={coverage}
+        deckCards={deckCards}
+        config={{
+          turns,
+          handSize,
+          runesPerTurn,
+          mulligan: { minEarlyCards: minEarly, earlyCostMin: 1, earlyCostMax: 2 },
+          thresholds: [
+            { name: 'units_by_t3', turn: 3, type: 'unit', count: t3Units },
+            { name: 'units_by_t4', turn: 4, type: 'unit', count: t4Units },
+          ],
+        }}
+      />
 
       <details className="gf-deck-editor">
         <summary>Deck definition (JSON)</summary>
