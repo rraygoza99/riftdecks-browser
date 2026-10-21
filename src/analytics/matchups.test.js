@@ -1,6 +1,6 @@
 import { test } from 'node:test'
 import assert from 'node:assert/strict'
-import { matchup, normalizeField, fieldFromMatrix, fieldFromDecks, expectedVsField, probabilityTable, simulateSwiss } from './matchups.js'
+import { matchup, normalizeField, fieldFromMatrix, fieldFromDecks, expectedVsField, probabilityTable, simulateSwiss, rankCandidates } from './matchups.js'
 import { analyzeMetaTargeting } from './metaTargeting.js'
 
 const close = (a, b, eps = 1e-6) => assert.ok(Math.abs(a - b) < eps, `${a} !~ ${b}`)
@@ -90,4 +90,23 @@ test('anti-meta: underplayed is relative to the presence distribution', () => {
   assert.ok(!picks.includes('L5'))
   assert.ok(picks.includes('L1'))
   assert.ok(res.underplayed.maxPresencePct > 0)
+})
+
+test('rankCandidates ranks the best answer to a chosen field', () => {
+  const m = {
+    Counter: { Popular: { winrate: 65, matches: 2000 }, Other: { winrate: 50, matches: 2000 } },
+    Popular: { Other: { winrate: 55, matches: 2000 } },
+  }
+  const field = new Map([['Popular', 3], ['Other', 1]])
+  const rows = rankCandidates(m, ['Counter', 'Popular', 'Other'], field, { event: { players: 16, rounds: 4, topCut: 4, sims: 300 } })
+  assert.equal(rows[0].legend, 'Counter')
+  close(rows[0].matchups.reduce((s, x) => s + x.share, 0), 1)
+  assert.equal(rows[0].matchups[0].opponent, 'Popular')
+  assert.equal(rows[0].best.opponent, 'Popular')
+  assert.equal(rows[0].worst.opponent, 'Other')
+  // Popular faces its own mirror 75% of the time: mirror excluded from worst/best.
+  const pop = rows.find((r) => r.legend === 'Popular')
+  assert.equal(pop.worst.opponent, 'Other')
+  assert.ok(rows[0].sim.topCut / 300 > pop.sim.topCut / 300)
+  assert.equal(rankCandidates(m, ['Counter'], new Map())[0].matchups.length, 0)
 })

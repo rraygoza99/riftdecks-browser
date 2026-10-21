@@ -198,3 +198,40 @@ function subtractChosen(byLegend, chosen, chosenStat) {
   }
   return byLegend
 }
+
+/**
+ * "What should I bring against these opponents?" For each candidate legend:
+ * expected winrate vs the expected field, its per-opponent matchups, and
+ * (optionally) Swiss-simulated chances of making the cut and winning when
+ * the tracked player pilots that candidate.
+ *
+ * @param {object} matrix       winrate matrix cells
+ * @param {string[]} candidates legends you could play
+ * @param {Map}    field        expected opponents: legend -> share (any scale)
+ * @param {object} [opts]       { priorStrength, event: { players, rounds, topCut, sims, seed } }
+ * @returns [{ legend, ewr, low, high, sd, coveredShare, matchups: [{ opponent, share, p, raw, n }],
+ *             worst, best, sim?: { topCut, wins, sims } }] sorted by ewr desc
+ */
+export function rankCandidates(matrix, candidates, field, { priorStrength = DEFAULT_PRIOR_MATCHES, event = null } = {}) {
+  const shares = normalizeField(field)
+  const rows = expectedVsField(matrix, candidates, shares, { priorStrength }).map((r) => {
+    const matchups = [...shares.entries()]
+      .map(([opponent, share]) => {
+        const m = matchup(matrix, r.legend, opponent, { priorStrength })
+        return { opponent, share, p: m.p, raw: m.raw, n: m.n, mirror: m.mirror }
+      })
+      .sort((a, b) => b.share - a.share || a.opponent.localeCompare(b.opponent))
+    const real = matchups.filter((m) => !m.mirror)
+    const byP = [...real].sort((a, b) => a.p - b.p)
+    return { ...r, matchups, worst: byP[0] || null, best: byP[byP.length - 1] || null }
+  })
+  if (event && shares.size) {
+    const legends = [...new Set([...candidates, ...shares.keys()])]
+    const table = probabilityTable(matrix, legends, { priorStrength })
+    for (const r of rows) {
+      const out = simulateSwiss({ ...event, field: shares, chosen: r.legend, table, seed: event.seed ?? 11 })
+      r.sim = out.chosen
+    }
+  }
+  return rows
+}

@@ -19,6 +19,7 @@ import AboutView from './components/AboutView'
 import ContactView from './components/ContactView'
 import HistoryView from './components/HistoryView'
 import TrendsView from './components/TrendsView'
+import FieldSimulatorView from './components/FieldSimulatorView'
 import useFavourites from './hooks/useFavourites'
 import useTheme from './hooks/useTheme'
 import useDeckCards from './hooks/useDeckCards'
@@ -79,6 +80,7 @@ const PATH_TO_VIEW = {
   '/conversion': 'conversion',
   '/metatarget': 'metatarget',
   '/trends': 'trends',
+  '/simulator': 'simulator',
   '/draws': 'draws',
   '/goldfish': 'goldfish',
   '/legends': 'legends',
@@ -123,6 +125,14 @@ const NAV_ITEMS = [
     match: (v) => v === 'metatarget',
     icon: (
       <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.5-11.5a.5.5 0 0 0-1 0v3.793L5.354 7.146a.5.5 0 1 0-.708.708l2.5 2.5a.5.5 0 0 0 .708 0l2.5-2.5a.5.5 0 0 0-.708-.708L8.5 8.293V4.5zM8 6a2 2 0 1 0 0 4 2 2 0 0 0 0-4z" />
+    ),
+  },
+  {
+    key: 'simulator',
+    label: 'Field Simulator',
+    match: (v) => v === 'simulator',
+    icon: (
+      <path d="M8 1a7 7 0 1 0 0 14A7 7 0 0 0 8 1zm0 1a6 6 0 1 1 0 12A6 6 0 0 1 8 2zm0 2a4 4 0 1 0 0 8 4 4 0 0 0 0-8zm0 1a3 3 0 1 1 0 6 3 3 0 0 1 0-6zm0 1.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3z" />
     ),
   },
   {
@@ -552,6 +562,8 @@ export default function App() {
         <ConversionView {...analyticsProps} />
       ) : view === 'metatarget' ? (
         <MetaTargetView {...analyticsProps} />
+      ) : view === 'simulator' ? (
+        <FieldSimulatorView />
       ) : view === 'trends' ? (
         <TrendsView {...analyticsProps} deckCards={deckCards} />
       ) : view === 'draws' ? (
