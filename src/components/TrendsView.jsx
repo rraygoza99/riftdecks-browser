@@ -2,7 +2,7 @@ import { useMemo, useState } from 'react'
 import AnalyticsBar, { MinSampleControl } from './AnalyticsBar'
 import DataSourceNote from './DataSourceNote'
 import MultiLineChart, { SERIES_VARS, MAX_SERIES } from './MultiLineChart'
-import { applyScope, describeScope, countEvents } from '../data/scope'
+import { applyScope, describeScope, countEvents, latestMetaSet } from '../data/scope'
 import { weeklyShares, momentum, weekStart, legendCounts } from '../analytics/metaStats'
 import { entriesFor, weeklyInclusion, earlyMovers, newSetAdoption, cardInfo } from '../analytics/cardAnalysis'
 import { formatPct, formatRateN, MIN_SAMPLE } from '../stats/stats'
@@ -211,17 +211,7 @@ function CardAdoption({ decks, lists, info, counts, loading }) {
 }
 
 function NewSetTracker({ allDecks, scope, coverage, lists, info }) {
-  // Newest set = the meta whose first event is most recent.
-  const sets = useMemo(() => {
-    const first = new Map()
-    for (const d of allDecks) {
-      if (!d.metaSet || !d.tournamentDate) continue
-      const t = d.tournamentDate.getTime()
-      if (!first.has(d.metaSet) || t < first.get(d.metaSet)) first.set(d.metaSet, t)
-    }
-    return [...first.entries()].sort((a, b) => b[1] - a[1]).map(([s]) => s)
-  }, [allDecks])
-  const newest = sets[0]
+  const newest = useMemo(() => latestMetaSet(allDecks), [allDecks])
 
   const data = useMemo(() => {
     if (!newest) return null

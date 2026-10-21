@@ -72,7 +72,7 @@ export default function FilterBar({
           <select
             id="meta-select"
             className="filter-select"
-            value={filters.meta}
+            value={filters.meta ?? 'all'}
             onChange={(e) => onFilterChange('meta', e.target.value)}
           >
             <option value="all">All metas</option>

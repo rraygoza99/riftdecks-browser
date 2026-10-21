@@ -77,6 +77,24 @@ export function describeScope(scope, { skip = [] } = {}) {
   return parts.join(' · ')
 }
 
+/**
+ * The newest set in the data: the metaSet whose first tournament is the most
+ * recent (so a new set wins as soon as its first events appear, even while
+ * the previous set still has more decks). Null when no deck carries a set.
+ */
+export function latestMetaSet(decks) {
+  const first = new Map()
+  for (const d of decks) {
+    if (!d.metaSet || !d.tournamentDate) continue
+    const t = toTime(d.tournamentDate)
+    if (Number.isNaN(t)) continue
+    if (!first.has(d.metaSet) || t < first.get(d.metaSet)) first.set(d.metaSet, t)
+  }
+  let best = null
+  for (const [set, t] of first) if (!best || t > best[1]) best = [set, t]
+  return best ? best[0] : null
+}
+
 /** Count distinct tournaments in a deck list. */
 export function countEvents(decks) {
   return new Set(decks.map((d) => tournamentKey(d))).size

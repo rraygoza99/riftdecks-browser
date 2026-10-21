@@ -24,7 +24,7 @@ import useTheme from './hooks/useTheme'
 import useDeckCards from './hooks/useDeckCards'
 import { placePercent } from './tournamentUtils'
 import { normalizeDeckLegend } from './data/legendNames'
-import { applyScope } from './data/scope'
+import { applyScope, latestMetaSet } from './data/scope'
 import { DEFAULT_MIN_COVERAGE, eventCoverage } from './stats/coverage'
 
 const SETTINGS_KEY = 'riftdecks_settings'
@@ -217,7 +217,7 @@ export default function App() {
     const saved = loadSettings()
     return {
       legends: [],
-      meta: 'Vendetta',
+      meta: null, // set to the newest set once data loads
       dateRange: '30d',
       region: 'all',
       maxPlacement: 0,
@@ -305,16 +305,19 @@ export default function App() {
     return [...seen].sort((a, b) => a.localeCompare(b))
   }, [allDecks])
 
-  // Preselect the current set (Vendetta) once data loads. Falls back to "all"
-  // if the preferred set isn't present, and keeps any valid user choice.
+  // Newest set in the data (e.g. Radiance as soon as its first events land).
+  const latestSet = useMemo(() => latestMetaSet(allDecks), [allDecks])
+
+  // Preselect the newest set once data loads. Falls back to "all" when the
+  // data carries no set info, and keeps any valid user choice.
   useEffect(() => {
     if (!metaOptions.length) return
     setFilters((prev) => {
-      if (prev.meta !== 'all' && metaOptions.includes(prev.meta)) return prev
-      const preferred = metaOptions.includes('Vendetta') ? 'Vendetta' : 'all'
+      if (prev.meta === 'all' || metaOptions.includes(prev.meta)) return prev
+      const preferred = latestSet && metaOptions.includes(latestSet) ? latestSet : 'all'
       return prev.meta === preferred ? prev : { ...prev, meta: preferred }
     })
-  }, [metaOptions])
+  }, [metaOptions, latestSet])
 
   // Filtered + sorted deck list
   const filteredDecks = useMemo(() => {

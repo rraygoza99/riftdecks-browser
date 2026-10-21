@@ -2,7 +2,7 @@ import { test } from 'node:test'
 import assert from 'node:assert/strict'
 import { regionOf } from './regions.js'
 import { normalizeLegendName, normalizeDeckLegend } from './legendNames.js'
-import { applyScope, describeScope, countEvents } from './scope.js'
+import { applyScope, describeScope, countEvents, latestMetaSet } from './scope.js'
 import { eventCoverage, filterByCoverage, isLowCoverage, formatCoverage } from '../stats/coverage.js'
 
 const mk = (o) => ({
@@ -70,6 +70,19 @@ test('applyScope filters; coverage is judged on the unfiltered event', () => {
   assert.equal(applyScope(decks, { minCoverage: 0.5 }, { now }).length, 3)
   assert.equal(applyScope(decks, { minCoverage: 0.8 }, { now }).length, 0)
   assert.equal(countEvents(decks), 2)
+})
+
+test('latestMetaSet picks the set whose first event is newest', () => {
+  const decks = [
+    ...Array.from({ length: 50 }, () => mk({ metaSet: 'Vendetta', tournamentDate: '2026-10-11' })),
+    mk({ metaSet: 'Vendetta', tournamentDate: '2026-08-28' }),
+    mk({ metaSet: 'Radiance', tournamentDate: '2026-10-04' }),
+    mk({ metaSet: 'Origins', tournamentDate: new Date('2026-07-01T00:00:00Z') }),
+    mk({ metaSet: null, tournamentDate: '2026-10-15' }),
+  ]
+  assert.equal(latestMetaSet(decks), 'Radiance')
+  assert.equal(latestMetaSet([mk({ metaSet: null })]), null)
+  assert.equal(latestMetaSet([]), null)
 })
 
 test('describeScope', () => {

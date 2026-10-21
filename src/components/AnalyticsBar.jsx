@@ -48,7 +48,7 @@ export default function AnalyticsBar({
       {has('meta') && metaOptions.length > 0 && (
         <label className="filter-group">
           <span className="filter-label">Meta</span>
-          <select className="filter-select" value={scope.meta} onChange={(e) => onScopeChange('meta', e.target.value)}>
+          <select className="filter-select" value={scope.meta ?? 'all'} onChange={(e) => onScopeChange('meta', e.target.value)}>
             <option value="all">All metas</option>
             {metaOptions.map((m) => (
               <option key={m} value={m}>
