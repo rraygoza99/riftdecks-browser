@@ -7,20 +7,28 @@
  * `tr.item` rows carrying data-name / data-winrate / data-matches, each with
  * `td.winrate-cell[data-winrate]` cells (or "--" for no data).
  *
+ * RiftDecks now requires a login for this page, so live mode opens a visible
+ * browser window. You log in there yourself the first time (the script never
+ * sees your password); the session is kept in a browser profile in your home
+ * folder, outside the repo, so later runs go straight to the matrix.
+ *
  * Usage:
- *   node scripts/scrape-winrate.mjs                       # live fetch (Vendetta, competitive, 6mo)
+ *   node scripts/scrape-winrate.mjs                       # live (Vendetta, competitive, 6mo)
  *   node scripts/scrape-winrate.mjs --metagame 4 --relevance 2 --date-range last_six_months
  *   node scripts/scrape-winrate.mjs --file winrate-page.html   # parse a saved page
  *   node scripts/scrape-winrate.mjs --out data/winrate-matrix.json
  */
 
 import fs from 'fs/promises'
+import os from 'os'
 import path from 'path'
 import { fileURLToPath } from 'url'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const DEFAULT_OUT = path.join(__dirname, '../data/winrate-matrix.json')
-const UA = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36'
+// Holds your RiftDecks session cookies: deliberately not in the (synced) repo.
+const PROFILE_DIR = path.join(os.homedir(), '.riftdecks-browser-profile')
+const LOGIN_TIMEOUT_MS = 10 * 60_000
 
 function decodeEntities(s) {
   return (s || '')
@@ -86,10 +94,49 @@ export function parseWinrateMatrix(html) {
   return { metagame, matchesAnalyzed, legends, matrix }
 }
 
-async function fetchMatrixHtml(url) {
-  const res = await fetch(url, { headers: { 'User-Agent': UA, Accept: 'text/html' } })
-  if (!res.ok) throw new Error(`HTTP ${res.status} fetching ${url}`)
-  return res.text()
+/** Throw instead of letting a login page or empty table overwrite good data. */
+export function assertHasMatrix(data) {
+  const cells = Object.values(data.matrix).reduce((n, row) => n + Object.keys(row).length, 0)
+  if (!data.legends.length || !cells) {
+    throw new Error(
+      `No winrate matrix found (${data.legends.length} legends, ${cells} matchups). ` +
+        'The page may be a login screen or RiftDecks may have changed its layout. Nothing was written.',
+    )
+  }
+}
+
+// Open the page in a visible browser and wait until the matrix is on screen,
+// giving you time to log in. Loaded lazily so --file mode needs no browser.
+async function fetchMatrixHtml(url, metagame) {
+  const { chromium } = await import('playwright')
+  const context = await chromium.launchPersistentContext(PROFILE_DIR, { headless: false })
+  try {
+    const page = context.pages()[0] || (await context.newPage())
+    await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 60_000 })
+    const deadline = Date.now() + LOGIN_TIMEOUT_MS
+    let prompted = false
+    while (Date.now() < deadline) {
+      // Evaluation throws while the page is navigating; just try again.
+      const ready = await page
+        .evaluate(
+          (id) =>
+            location.search.includes(`metagame_id=${id}`) &&
+            document.querySelectorAll('tr.item td.winrate-cell').length > 0,
+          metagame,
+        )
+        .catch(() => false)
+      if (ready) return await page.content()
+      if (!prompted) {
+        prompted = true
+        console.error('Log in to RiftDecks in the browser window. If it does not return you to the matrix, open this URL there:')
+        console.error(`  ${url}`)
+      }
+      await page.waitForTimeout(1000)
+    }
+    throw new Error(`Timed out after ${LOGIN_TIMEOUT_MS / 60_000} minutes waiting for the winrate matrix.`)
+  } finally {
+    await context.close()
+  }
 }
 
 async function main() {
@@ -109,11 +156,12 @@ async function main() {
     html = await fs.readFile(path.resolve(file), 'utf8')
   } else {
     const url = `https://riftdecks.com/stats/winrate?metagame_id=${metagame}&relevance=${relevance}&date_range=${dateRange}`
-    console.error(`Fetching ${url}`)
-    html = await fetchMatrixHtml(url)
+    console.error(`Opening ${url}`)
+    html = await fetchMatrixHtml(url, metagame)
   }
 
   const data = parseWinrateMatrix(html)
+  assertHasMatrix(data)
   data.source = { metagame, relevance, dateRange, scrapedAt: new Date().toISOString() }
   await fs.writeFile(path.resolve(out), JSON.stringify(data, null, 2))
   console.error(`Wrote ${out}`)
@@ -125,6 +173,7 @@ async function main() {
 if (process.argv[1] && process.argv[1].endsWith('scrape-winrate.mjs')) {
   main().catch((err) => {
     console.error(err)
-    process.exit(1)
+    // exitCode, not exit(): exiting mid-teardown crashes Node on Windows.
+    process.exitCode = 1
   })
 }

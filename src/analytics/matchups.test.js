@@ -110,3 +110,12 @@ test('rankCandidates ranks the best answer to a chosen field', () => {
   assert.ok(rows[0].sim.topCut / 300 > pop.sim.topCut / 300)
   assert.equal(rankCandidates(m, ['Counter'], new Map())[0].matchups.length, 0)
 })
+
+test('rankCandidates ranks legends without data last, even above-losing ones', () => {
+  const m = { Loser: { Popular: { winrate: 40, matches: 2000 } }, Popular: { Loser: { winrate: 60, matches: 2000 } } }
+  const rows = rankCandidates(m, ['NoData', 'Loser'], new Map([['Popular', 1]]))
+  assert.equal(rows[0].legend, 'Loser')
+  assert.equal(rows[1].legend, 'NoData')
+  close(rows[1].ewr, 0.5)
+  close(rows[1].coveredShare, 0)
+})

@@ -225,6 +225,9 @@ export function rankCandidates(matrix, candidates, field, { priorStrength = DEFA
     const byP = [...real].sort((a, b) => a.p - b.p)
     return { ...r, matchups, worst: byP[0] || null, best: byP[byP.length - 1] || null }
   })
+  // A candidate with almost no data sits near 50%, which would outrank real
+  // losing records, so legends covering under half the field rank last.
+  rows.sort((a, b) => Number(b.coveredShare >= 0.5) - Number(a.coveredShare >= 0.5) || b.ewr - a.ewr)
   if (event && shares.size) {
     const legends = [...new Set([...candidates, ...shares.keys()])]
     const table = probabilityTable(matrix, legends, { priorStrength })

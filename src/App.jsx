@@ -563,7 +563,7 @@ export default function App() {
       ) : view === 'metatarget' ? (
         <MetaTargetView {...analyticsProps} />
       ) : view === 'simulator' ? (
-        <FieldSimulatorView />
+        <FieldSimulatorView allDecks={allDecks} />
       ) : view === 'trends' ? (
         <TrendsView {...analyticsProps} deckCards={deckCards} />
       ) : view === 'draws' ? (

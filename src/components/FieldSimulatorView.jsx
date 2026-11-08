@@ -10,7 +10,8 @@ import './Analytics.css'
 
 const LS_KEY = 'riftdecks_field_simulator'
 const MATRIX = winrateData.matrix
-const LEGENDS = (winrateData.legends || []).map((l) => l.name).sort((a, b) => a.localeCompare(b))
+const MATRIX_LEGENDS = (winrateData.legends || []).map((l) => l.name)
+const MATRIX_SET = new Set(MATRIX_LEGENDS)
 const GLOBAL = fieldFromMatrix(winrateData)
 const BY_PRESENCE = [...GLOBAL.entries()].sort((a, b) => b[1] - a[1]).map(([k]) => k)
 const short = (name) => (name || '').split(',')[0]
@@ -37,8 +38,16 @@ function wrStyle(p, n) {
  * Field Simulator: list the legends you expect to face (with how many of
  * each), and see which legend has the best winrate against exactly that field.
  */
-export default function FieldSimulatorView() {
+export default function FieldSimulatorView({ allDecks = [] }) {
   const saved = useMemo(loadSaved, [])
+  // Every legend seen in the matrix or in tournament results, so legends the
+  // matrix doesn't cover yet can still be chosen as opponents.
+  const LEGENDS = useMemo(() => {
+    const names = new Set(MATRIX_LEGENDS)
+    for (const d of allDecks) if (d.legendName) names.add(d.legendName)
+    return [...names].sort((a, b) => a.localeCompare(b))
+  }, [allDecks])
+  const noDataCount = LEGENDS.filter((l) => !MATRIX_SET.has(l)).length
   // Opponents: legend -> expected count (relative weight).
   const [opponents, setOpponents] = useState(() =>
     saved.opponents && typeof saved.opponents === 'object'
@@ -104,8 +113,10 @@ export default function FieldSimulatorView() {
       <DataSourceNote
         dataset="matches"
         filters={`${winrateData.metagame} · ${(winrateData.source?.dateRange || '').replace(/_/g, ' ')}`}
-        counts={`${(winrateData.matchesAnalyzed || 0).toLocaleString()} matches · ${LEGENDS.length} legends`}
-        extra="Matchup winrates come from riftDecks head-to-head data for that metagame; legends or sets it doesn't cover (e.g. brand-new Radiance cards) can't be modelled yet."
+        counts={`${(winrateData.matchesAnalyzed || 0).toLocaleString()} matches · ${LEGENDS.length} legends (${MATRIX_LEGENDS.length} with matchup data)`}
+        extra={`Matchup winrates come from riftDecks head-to-head data for that metagame.${
+          noDataCount ? ` ${noDataCount} legends seen in tournaments have no matchups in it: you can pick them, but they count as 50% and rank last as candidates.` : ''
+        }`}
       />
 
       <div className="an-card">
@@ -139,7 +150,10 @@ export default function FieldSimulatorView() {
           <div className="an-slider-grid">
             {Object.entries(opponents).map(([name, w]) => (
               <div key={name} className="an-slider-row" style={{ gridTemplateColumns: '1fr 70px 64px 20px' }}>
-                <span title={name}>{short(name)}</span>
+                <span title={MATRIX_SET.has(name) ? name : `${name}: no matchup data in this matrix, treated as 50%`}>
+                  {short(name)}
+                  {!MATRIX_SET.has(name) && <span className="an-small"> · no data</span>}
+                </span>
                 <input
                   className="an-input"
                   style={{ width: 64 }}
