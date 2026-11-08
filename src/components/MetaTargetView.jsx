@@ -36,6 +36,9 @@ const SOURCE_DATE = winrateData.source?.scrapedAt
   ? new Date(winrateData.source.scrapedAt).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })
   : 'unknown date'
 const SOURCE_RANGE = (winrateData.source?.dateRange || '').replace(/_/g, ' ')
+// How thin the matrix is: a new set can have many matchups with only a few games.
+const CELLS = Object.values(winrateData.matrix || {}).flatMap((row) => Object.values(row))
+const countCells = (min) => CELLS.filter((c) => c.matches >= min).length
 
 function WrCell({ pct }) {
   const cls = pct >= 55 ? 'mt-wr-good' : pct <= 45 ? 'mt-wr-bad' : 'mt-wr-even'
@@ -82,11 +85,12 @@ export default function MetaTargetView({ allDecks = [], scope, onScopeChange, le
     }
   }, [fieldMode, custom, allDecks, scope, coverage])
 
+  // Most-played legend in the matrix, used as the presence comparison example.
+  const topLegend = result.field[0]
   const presencePctOnMeta = useMemo(() => {
     const decks = applyScope(allDecks, scope, { skip: ['legends', 'maxPlacement', 'maxPlacePct', 'maxPrice'], coverage })
-    const kennen = 'Kennen, Heart of the Tempest'
-    return decks.length ? decks.filter((d) => d.legendName === kennen).length / decks.length : null
-  }, [allDecks, scope, coverage])
+    return decks.length ? decks.filter((d) => d.legendName === topLegend?.legend).length / decks.length : null
+  }, [allDecks, scope, coverage, topLegend])
 
   const downloadJson = () => {
     const blob = new Blob([result.json], { type: 'application/json' })
@@ -98,7 +102,8 @@ export default function MetaTargetView({ allDecks = [], scope, onScopeChange, le
     URL.revokeObjectURL(url)
   }
 
-  const kennenHere = result.field.find((f) => f.legend.startsWith('Kennen'))?.presencePct
+  // The matrix is one fixed snapshot; say so when the site is scoped to another set.
+  const metaMismatch = scope.meta && scope.meta !== 'all' && !metagame.toLowerCase().includes(scope.meta.toLowerCase())
 
   return (
     <section className="mt-view">
@@ -115,12 +120,18 @@ export default function MetaTargetView({ allDecks = [], scope, onScopeChange, le
         dataset="matches"
         filters={`${metagame} · ${SOURCE_RANGE} · scraped ${SOURCE_DATE} · date/meta filters don't apply to this dataset`}
         counts={`${matchesAnalyzed.toLocaleString()} matches · ${MATRIX_LEGENDS.length} legends`}
-        extra={
-          kennenHere != null && presencePctOnMeta != null
-            ? `Presence here = share of match seats in riftDecks data, so it differs from deck share on Meta (e.g. Kennen ${kennenHere}% here vs ${formatPct(presencePctOnMeta)} of tournament decks in your current scope).`
-            : null
-        }
+        extra={`${countCells(minMatches)} of ${CELLS.length} matchup cells have ≥ ${minMatches} matches; thinner matchups are ignored here or shrunk toward 50%.${
+          topLegend && presencePctOnMeta != null
+            ? ` Presence = share of match seats in riftDecks data, so it differs from deck share on Meta (e.g. ${short(topLegend.legend)} ${topLegend.presencePct}% here vs ${formatPct(presencePctOnMeta)} of tournament decks in your current scope).`
+            : ''
+        }`}
       />
+      {metaMismatch && (
+        <p className="an-note">
+          This matrix is for <strong>{metagame}</strong>, but the site filter is set to <strong>{scope.meta}</strong>. Matchups below
+          are not from {scope.meta}.
+        </p>
+      )}
 
       <div className="an-tabs">
         {TABS.map(([k, l]) => (
